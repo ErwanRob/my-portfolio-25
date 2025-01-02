@@ -1,8 +1,13 @@
+import ParticlesComponent from "./components/ParticlesComponent";
+
 function App() {
   return (
-    <>
-      <div>Hi, we doing it!</div>
-    </>
+    <div style={{ position: "relative" }}>
+      <ParticlesComponent />
+      <div className="content">
+        <h1>Welcome.</h1>
+      </div>
+    </div>
   );
 }
 

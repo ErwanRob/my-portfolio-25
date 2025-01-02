@@ -1,0 +1,42 @@
+// ORDER MATTERS FRIENDS!
+@use "abstracts" as abs;
+@use "base" as base;
+@use "components" as comp;
+@use "layout" as lay;
+@use "pages" as pg;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  color: #eaeaea;
+  /*  overflow: hidden; */
+
+  //BG choice
+
+  // stacking backgrounds ACTUALLY works WOOOH
+  /* background: abs.$body-bg-gradient, abs.$body-bg; */
+
+  //Pattern BG
+  background: #1a1a1a;
+  background-image: abs.$body-bg-pattern;
+}
+
+.content {
+  position: "relative";
+  height: inherit;
+  width: inherit;
+  z-index: 1;
+  font-family: "Inter", sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 5px;
+  text-shadow: -60px -120px 4px #9c27b0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
