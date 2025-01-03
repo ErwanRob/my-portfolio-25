@@ -24,7 +24,7 @@ const Hero = () => {
           text="Learn more"
           onClick={handleClick}
           variant="secondary"
-          disabled="true"
+          disabled={true}
         ></Button>
       </div>
     </div>
