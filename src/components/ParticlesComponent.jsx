@@ -78,7 +78,7 @@ const ParticlesComponent = () => {
               },
             },
             push: {
-              quantity: 4, // Number of particles added on click
+              quantity: 2, // Number of particles added on click
             },
           },
         },

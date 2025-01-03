@@ -1,0 +1,35 @@
+@use "../../styles/abstracts" as abs;
+@use "../../styles/base" as base;
+
+.hero {
+  background: none; /* Optional content background */
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 3rem;
+  height: 100vh;
+  max-width: 1200px;
+
+  &__content {
+    &__title {
+      letter-spacing: 5px;
+      color: abs.$light-grey;
+    }
+
+    /* &__button {
+      font-family: base.$main-btn-font;
+      background: abs.$dark-purple;
+      color: abs.$light-grey;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.15s ease;
+
+      &:hover {
+        background: abs.$mid-purple;
+        color: #ffffff;
+      } 
+    }*/
+  }
+}

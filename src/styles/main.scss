@@ -6,37 +6,40 @@
 @use "pages" as pg;
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
+/* Global Styles */
 body {
-  height: 100vh;
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100vh;
   font-family: "Inter", sans-serif;
-  color: #eaeaea;
-  /*  overflow: hidden; */
-
-  //BG choice
-
-  // stacking backgrounds ACTUALLY works WOOOH
-  /* background: abs.$body-bg-gradient, abs.$body-bg; */
-
-  //Pattern BG
+  color: abs.$white;
   background: #1a1a1a;
   background-image: abs.$body-bg-pattern;
 }
 
-.content {
-  position: "relative";
-  height: inherit;
-  width: inherit;
-  z-index: 1;
-  font-family: "Inter", sans-serif;
-  font-size: 2.5rem;
-  letter-spacing: 5px;
-  text-shadow: -60px -120px 4px #9c27b0;
-  text-align: center;
+/* Wrapper for the entire app */
+.App {
+  position: relative; /* For positioning particles properly */
+  height: 100%; /* Ensure it takes up the full viewport */
+  width: 100%; /* Ensure it takes up the full viewport */
+}
+
+/* Particles wrapper */
+.particles-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Push particles behind content */
+}
+
+/* Content container */
+.content-wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  z-index: 1; /* Ensure it stays above particles */
 }

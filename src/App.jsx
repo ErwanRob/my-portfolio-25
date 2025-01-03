@@ -1,11 +1,14 @@
 import ParticlesComponent from "./components/ParticlesComponent";
+import Hero from "./components/Hero/Hero";
 
 function App() {
   return (
-    <div style={{ position: "relative" }}>
-      <ParticlesComponent />
-      <div className="content">
-        <h1>Welcome.</h1>
+    <div className="App">
+      <div className="particles-wrapper">
+        <ParticlesComponent />
+      </div>
+      <div className="content-wrapper">
+        <Hero />
       </div>
     </div>
   );

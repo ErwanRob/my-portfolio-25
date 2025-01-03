@@ -1,12 +1,27 @@
 /* #aa7fb1 cool coolor*/
-/* opacity */
-/* fill='% 
-1a1a1a
-7C3CEB
 
-*/
+$dark-purple-rgba: rgba(124, 58, 237, 0.2);
+$mid-purple-rgba: rgba(136, 78, 237, 0.2);
+$light-purple-rgba: rgba(162, 135, 243, 0.2);
 
-$body-bg: #1a1a1a;
+$dark-grey-rgba: rgba(26, 26, 26, 0.2);
+$grey-rgba: rgba(41, 41, 41, 0.2);
+$mid-grey-rgba: rgba(224, 224, 224, 0.2);
+$light-grey-rgba: rgba(234, 234, 234, 0.2);
+$white-rgba: rgba(255, 255, 255, 0.2);
+
+$dark-grey: #1a1a1a;
+$grey: #292929;
+$mid-grey: #e0e0e0;
+$light-grey: #eaeaea;
+$white: #ffffff;
+$dark-purple: #7c3aed;
+$mid-purple: #884eed;
+$light-purple: #a287f3;
+$hover-purple: #8b5cf6;
+$active-purple: #5a23b5;
+
+$body-bg: $dark-grey;
 
 $body-bg-gradient: radial-gradient(
   circle,
