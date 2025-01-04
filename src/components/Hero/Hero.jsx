@@ -12,7 +12,6 @@ const Hero = () => {
         <div className={styles["hero__content__titleWrapper"]}>
           <h1 className={styles["hero__content__titleWrapper__title"]}>
             Welcome.
-            {/* <span className={styles.typingText}>Welcome.</span> */}
           </h1>
           <span
             className={styles["hero__content__titleWrapper__blinkingCursor"]}
