@@ -16,6 +16,10 @@ body {
   background-image: abs.$body-bg-pattern;
 }
 
+h1 {
+  margin: 0;
+}
+
 /* Wrapper for the entire app */
 .App {
   position: relative; /* For positioning particles properly */

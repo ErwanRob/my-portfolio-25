@@ -30,18 +30,69 @@ $body-bg-gradient: radial-gradient(
   rgba(124, 60, 235, 0.25) 100%
 );
 
+$body-bg-gradient2: radial-gradient(
+  circle,
+  rgba(26, 26, 26, 1) 0%,
+  rgba(26, 26, 26, 0.9) 95%,
+  /* rgba(41, 41, 41, 0.8) 90%, */ rgba(124, 60, 235, 0.25) 100%
+);
+
 $body-bg-pattern: url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%237C3CEB' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M8 0v20L0 10M16 0v10L8 0M16 10v10H8'/%3E%3C/g%3E%3C/svg%3E");
 
-/* $body-bg: radial-gradient(
+$body-bg-pattern2: url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23292929' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M8 0v20L0 10M16 0v10L8 0M16 10v10H8'/%3E%3C/g%3E%3C/svg%3E");
+
+$body-bg-gradient3: radial-gradient(
   circle,
   rgba(124, 60, 235, 1) 0%,
   rgba(41, 41, 41, 1) 60%,
   rgba(26, 26, 26, 1) 100%
-); */
+);
 
-/* $body-bg: linear-gradient(
+$body-bg-gradient4: linear-gradient(
   149deg,
   rgba(26, 26, 26, 1) 0%,
-  rgba(41, 41, 41, 1) 70%,
+  rgba(41, 41, 41, 1) 85%,
   rgba(124, 60, 235, 1) 100%
-  ); */
+);
+
+$body-bg-gradient5: linear-gradient(
+  180deg,
+  rgba(26, 26, 26, 1) 0%,
+  rgba(41, 41, 41, 1) 90%,
+  rgba(124, 60, 235, 1) 100%
+);
+/*Top & bottom fade*/
+$body-bg-gradient6: linear-gradient(
+  180deg,
+  rgba(26, 26, 26, 0) 0%,
+  rgba(26, 26, 26, 1) 25%,
+  rgba(26, 26, 26, 1) 75%,
+  rgba(26, 26, 26, 0) 100%
+);
+/*Top fade*/
+$body-bg-gradient7: linear-gradient(
+  180deg,
+  rgba(26, 26, 26, 0) 0%,
+  rgba(26, 26, 26, 1) 25%,
+  rgba(26, 26, 26, 1) 75%,
+  rgba(26, 26, 26, 1) 100%
+);
+
+/*Project circle radiant*/
+$body-bg-gradient8: radial-gradient(
+  circle,
+  rgba(26, 26, 26, 1) 0%,
+  rgba(26, 26, 26, 1) 40%,
+  rgba(41, 41, 41, 0.5) 80%,
+  rgba(124, 60, 235, 0.25) 100%
+);
+
+/*75% fade Hero section transition*/
+$body-bg-gradient9: linear-gradient(
+  185deg,
+  rgba(26, 26, 26, 0) 0%,
+  rgba(26, 26, 26, 0) 25%,
+  rgba(26, 26, 26, 0.3) 60%,
+  rgba(26, 26, 26, 1) 90%,
+  rgba(26, 26, 26, 1) 100%
+);

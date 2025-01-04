@@ -2,34 +2,84 @@
 @use "../../styles/base" as base;
 
 .hero {
-  background: none; /* Optional content background */
-  font-size: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   padding: 3rem;
+  width: 100%;
   height: 100vh;
-  max-width: 1200px;
+  box-sizing: border-box;
+  user-select: none; /*Prevent user blue-select*/
+  background: abs.$body-bg-pattern2, abs.$body-bg-gradient9; /* Optional content background */
 
+  /*Content*/
   &__content {
-    &__title {
-      letter-spacing: 5px;
-      color: abs.$light-grey;
+    max-width: 1200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*TitleWrapper*/
+    &__titleWrapper {
+      display: flex;
+      flex-direction: row;
+
+      /*Removed justfy-content & text-align center lines for Typing anim purpose, otherwise anim start from middle which is not bad but we'll see in the futur*/
+      /* justify-content: center;
+      text-align: center; */
+      &__title {
+        display: inline-block;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: base.$hero-title-font-size;
+        font-family: base.$hero-title-font-family;
+        letter-spacing: base.$hero-title-spacing;
+        color: abs.$light-grey;
+        /*Typing animation*/
+        overflow: hidden; /* Ensures hidden text doesn’t show up */
+        white-space: nowrap; /* Prevents wrapping */
+        border-right: 1px solid transparent; /* Placeholder for the cursor */
+        animation: typing 500ms steps(8, end);
+      }
+      &__blinkingCursor {
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        width: 2rem;
+        height: 100%;
+        box-sizing: border-box;
+        font-size: 5rem;
+        animation: blink 1500ms ease-out infinite;
+        /*    color: red;
+        background-color: abs.$light-grey; */
+      }
     }
+  }
+}
 
-    /* &__button {
-      font-family: base.$main-btn-font;
-      background: abs.$dark-purple;
-      color: abs.$light-grey;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background-color 0.15s ease;
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
-      &:hover {
-        background: abs.$mid-purple;
-        color: #ffffff;
-      } 
-    }*/
+/*Typing effect size expand*/
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
   }
 }
