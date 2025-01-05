@@ -10,6 +10,7 @@
   justify-content: center;
   text-align: center;
   padding: 20px;
+  z-index: 1; /* Allows About me to be above Projects, thus making the shadow box visible*/
 
   /*NEED TO CHOOSE BEETWEEN PIN 1 & 2 for sections backgrounds*/
   /* background: abs.$body-bg-gradient; */ /* PIN 1 */

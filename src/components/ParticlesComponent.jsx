@@ -34,13 +34,13 @@ const ParticlesComponent = () => {
             },
           },
           color: {
-            value: "#7C3CEB", // particles color (can be multiple colors)
+            value: "#7c3aed",
           },
           shape: {
             type: "circle", // Circle-shaped particles
           },
           opacity: {
-            value: 0.25, // Opacity of particles
+            value: 0.3, // Opacity of particles
           },
           size: {
             value: { min: 1, max: 4 }, // Random size for particles
@@ -48,13 +48,14 @@ const ParticlesComponent = () => {
           links: {
             enable: true, // Enable lines between particles
             distance: 120, // Maximum distance for lines
-            color: "#ffffff", // Line color
+            color: "#fff", // Line color
+            /* color: ["#7C3CEB", "#C30C09"] */
             opacity: 0.2, // Line opacity
             width: 1, // Line width
           },
           move: {
             enable: true,
-            speed: 1,
+            speed: 0.75,
             direction: "none",
             outModes: { default: "out" }, // Particles go outside the screen
           },
@@ -75,6 +76,7 @@ const ParticlesComponent = () => {
               distance: 120, // Distance for grab effect
               links: {
                 opacity: 0.9, // Opacity of lines during grab
+                color: "#fff", // Line color
               },
             },
             push: {
