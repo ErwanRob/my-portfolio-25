@@ -1,6 +1,6 @@
 import ParticlesComponent from "./components/ParticlesComponent";
 import Options from "./components/Options/Options";
-import Navbar from "./components/Navbar/Navbar";
+import NavigationBar from "./components/NavigationBar/NavigationBar";
 import Hero from "./components/Hero/Hero";
 import AboutMe from "./components/AboutMe/AboutMe";
 import Projects from "./components/Projects/Projects";
@@ -17,7 +17,7 @@ const App = () => {
         <Options />
       </div>
       <div className="navbar-wrapper">
-        <Navbar />
+        <NavigationBar />
       </div>
       <div className="content-wrapper">
         <Hero />

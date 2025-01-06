@@ -1,6 +1,6 @@
-import styles from "./NavBar.module.scss";
+import styles from "./NavigationBar.module.scss";
 
-const NavBar = () => {
+const NavigationBar = () => {
   return (
     <nav className={styles.nav}>
       <a className={styles["nav__items"]} href="#hero">
@@ -22,4 +22,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default NavigationBar;
