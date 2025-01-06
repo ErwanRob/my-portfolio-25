@@ -1,14 +1,10 @@
 @use "../../styles/abstracts" as abs;
 
 .projects {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  background: abs.$body-bg-pattern2, abs.$body-bg-gradient8;
+  /* Double Gradient version, linear above circlular */
+  background: abs.$bg-pattern2, abs.$bg-gradient-project2,
+    abs.$bg-gradient-project1;
+
+  /* Single Gradient version, circlular only */
+  /*  background: abs.$bg-pattern2, abs.$bg-gradient-project1; */
 }

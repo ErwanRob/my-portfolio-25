@@ -7,7 +7,7 @@ const Hero = () => {
   };
 
   return (
-    <div className={styles.hero}>
+    <div className={`section ${styles.hero}`}>
       <div className={styles["hero__content"]}>
         <div className={styles["hero__content__titleWrapper"]}>
           <h1 className={styles["hero__content__titleWrapper__title"]}>
@@ -21,20 +21,25 @@ const Hero = () => {
         </div>
         <div className="hero__content__buttonWrapper">
           <Button
-            text="Learn more"
+            text="Discover my work"
             onClick={handleClick}
             variant="primary"
           ></Button>
           <Button
-            text="Learn more"
+            text="Feedbacks"
             onClick={handleClick}
             variant="secondary"
           ></Button>
           <Button
-            text="Learn more"
+            text="Settings"
             onClick={handleClick}
             variant="secondary"
             disabled={true}
+          ></Button>
+          <Button
+            text="Hire me"
+            onClick={handleClick}
+            variant="tertiary"
           ></Button>
         </div>
       </div>

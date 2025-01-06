@@ -19,11 +19,6 @@ const ParticlesComponent = () => {
       loaded={particlesLoaded}
       options={{
         fullScreen: { enable: true }, // Enable full-screen mode
-        /* background: {
-          color: {
-            value: "#1a1a1a",
-          }, 
-        },*/
         fpsLimit: 60, // Limit FPS for smoother animations
         particles: {
           number: {
@@ -49,7 +44,6 @@ const ParticlesComponent = () => {
             enable: true, // Enable lines between particles
             distance: 120, // Maximum distance for lines
             color: "#fff", // Line color
-            /* color: ["#7C3CEB", "#C30C09"] */
             opacity: 0.2, // Line opacity
             width: 1, // Line width
           },
@@ -73,7 +67,7 @@ const ParticlesComponent = () => {
           },
           modes: {
             grab: {
-              distance: 120, // Distance for grab effect
+              distance: 160, // Distance for grab effect
               links: {
                 opacity: 0.9, // Opacity of lines during grab
                 color: "#fff", // Line color

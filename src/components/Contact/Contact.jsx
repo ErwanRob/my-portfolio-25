@@ -2,7 +2,7 @@ import styles from "./Contact.module.scss";
 
 const Contact = () => {
   return (
-    <div className={styles.contact}>
+    <div className={`section ${styles.contact}`}>
       <h1>Contact</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam qui, quas

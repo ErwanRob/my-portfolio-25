@@ -1,20 +1,8 @@
 @use "../../styles/abstracts" as abs;
 
 .aboutMe {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
   z-index: 1; /* Allows About me to be above Projects, thus making the shadow box visible*/
-
-  /*NEED TO CHOOSE BEETWEEN PIN 1 & 2 for sections backgrounds*/
-  /* background: abs.$body-bg-gradient; */ /* PIN 1 */
-  background: abs.$body-bg-pattern2, abs.$dark-grey; /* PIN 2 */
+  background: abs.$bg-pattern2, abs.$dark-grey;
   /*Shadow to define, not final*/
-  box-shadow: 0 16px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: abs.$sc-shdw;
 }

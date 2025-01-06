@@ -17,7 +17,7 @@ const Button = ({ text, onClick, variant = "primary", disabled = false }) => {
 Button.propTypes = {
   text: PropTypes.string.isRequired, // Text is required and should be a string
   onClick: PropTypes.func, // onClick is optional but should be a function if provided
-  variant: PropTypes.oneOf(["primary", "secondary", "danger"]), // Only specific values are allowed
+  variant: PropTypes.oneOf(["primary", "secondary", "tertiary", "danger"]), // Only specific values are allowed
   disabled: PropTypes.bool, // Disabled is optional and should be a boolean
 };
 

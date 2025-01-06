@@ -1,14 +1,5 @@
 @use "../../styles/abstracts" as abs;
 
 .contact {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 50vh;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  background: abs.$body-bg-pattern2, abs.$body-bg-gradient4;
+  background: abs.$bg-pattern2, abs.$bg-gradient-contact;
 }

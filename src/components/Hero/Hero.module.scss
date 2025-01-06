@@ -2,18 +2,12 @@
 @use "../../styles/base" as base;
 
 .hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  /* z-index: -1; */
+  /* position: sticky; */ /* Prevents scroll-snap from skipping this section */
+  /*   top: 0; */
   padding: 3rem;
-  width: 100%;
-  height: 100vh;
-  box-sizing: border-box;
   user-select: none; /*Prevent user blue-select*/
-  background: abs.$body-bg-pattern2, abs.$body-bg-gradient9; /* Optional content background */
-
+  background: abs.$bg-pattern2, abs.$bg-gradient-hero; /* Optional content background */
   /*Content*/
   &__content {
     max-width: 1200px;
@@ -21,14 +15,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     /*TitleWrapper*/
     &__titleWrapper {
       display: flex;
       flex-direction: row;
+      /*  justify-content: center;
+      text-align: center; */
 
       /*Removed justfy-content & text-align center lines for Typing anim purpose, otherwise anim start from middle which is not bad but we'll see in the futur*/
-      /* justify-content: center;
-      text-align: center; */
       &__title {
         display: inline-block;
         flex-direction: row;
@@ -42,7 +37,7 @@
         overflow: hidden; /* Ensures hidden text doesn’t show up */
         white-space: nowrap; /* Prevents wrapping */
         border-right: 1px solid transparent; /* Placeholder for the cursor */
-        animation: typing 500ms steps(8, end);
+        animation: typing 750ms steps(8, end);
       }
       &__blinkingCursor {
         overflow: hidden;
