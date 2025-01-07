@@ -1,13 +1,14 @@
 import styles from "./Hero.module.scss";
 import Button from "../Button/Button";
+import PropTypes from "prop-types";
 
-const Hero = () => {
+const Hero = ({ toggleSettings }) => {
   const handleClick = () => {
     console.log("Button clicked!");
   };
 
   return (
-    <div className={`section ${styles.hero}`}>
+    <div className={`section ${styles.hero} `} id="hero">
       <div className={styles["hero__content"]}>
         <div className={styles["hero__content__titleWrapper"]}>
           <h1 className={styles["hero__content__titleWrapper__title"]}>
@@ -19,7 +20,7 @@ const Hero = () => {
             |
           </span>
         </div>
-        <div className="hero__content__buttonWrapper">
+        <div className={styles["hero__content__buttonWrapper"]}>
           <Button
             text="Discover my work"
             onClick={handleClick}
@@ -32,9 +33,9 @@ const Hero = () => {
           ></Button>
           <Button
             text="Settings"
-            onClick={handleClick}
+            onClick={toggleSettings}
             variant="secondary"
-            disabled={true}
+            disabled={false}
           ></Button>
           <Button
             text="Hire me"
@@ -48,3 +49,7 @@ const Hero = () => {
 };
 
 export default Hero;
+
+Hero.propTypes = {
+  toggleSettings: PropTypes.func.isRequired, // Text is required and should be a string
+};

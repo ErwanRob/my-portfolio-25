@@ -8,6 +8,12 @@
   justify-content: center;
   align-items: flex-start;
   width: auto;
+  &.fadein {
+    animation: fadein 750ms ease backwards;
+  }
+  &.fadeout {
+    animation: fadeout 1s ease forwards;
+  }
   &__items {
     font-family: base.$main-btn-font-family;
     font-weight: base.$main-btn-font-weight;
@@ -24,14 +30,10 @@
     color: abs.$mid-grey;
     font-size: 1.5rem;
     transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    white-space: nowrap;
 
     &:hover {
-      //V1
-      /*  transform: scale(0.95);
-        color: abs.$hover-purple2;
-        background-color: abs.$grey;
-        box-shadow: abs.$sc-shdw-navitems; */
-      //V2
       color: abs.$hover-purple;
     }
   }
@@ -47,5 +49,39 @@
     padding: 0 1.5rem;
     text-align: start;
     color: abs.$mid-grey;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    transform: translateX(-16rem);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  10% {
+    opacity: 0;
+    transform: translateX(-16rem);
+  }
+  100% {
+    transform: translateX(-16rem);
+    opacity: 0;
   }
 }

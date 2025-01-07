@@ -6,27 +6,50 @@ import AboutMe from "./components/AboutMe/AboutMe";
 import Projects from "./components/Projects/Projects";
 import Skills from "./components/Skills/Skills";
 import Contact from "./components/Contact/Contact";
+import { useState } from "react";
+import { ReactLenis } from "lenis/react";
 
 const App = () => {
+  const [isSettingsVisible, setSettingsVisible] = useState(false);
+
+  const toggleSettings = () => {
+    setSettingsVisible(!isSettingsVisible);
+  };
+
   return (
-    <div className="App">
-      <div className="particles-wrapper">
-        <ParticlesComponent />
+    <ReactLenis
+      root
+      options={{
+        /* lerp: 0.1, */
+        easing: function easeOutQuint(x) {
+          return 1 - Math.pow(1 - x, 5);
+        },
+        duration: 0.75,
+        wheelMultiplier: 2,
+        /* infinite: true, */
+      }}
+    >
+      <div className="App">
+        <div className="particles-wrapper">
+          <ParticlesComponent />
+        </div>
+        <div
+          className={`options-wrapper ${isSettingsVisible ? "visible" : " "}`}
+        >
+          <Options isSettingsVisible={isSettingsVisible} />
+        </div>
+        <div className="navbar-wrapper">
+          <NavigationBar />
+        </div>
+        <div className="content-wrapper">
+          <Hero toggleSettings={toggleSettings} />
+          <AboutMe />
+          <Projects />
+          <Skills />
+          <Contact />
+        </div>
       </div>
-      <div className="options-wrapper">
-        <Options />
-      </div>
-      <div className="navbar-wrapper">
-        <NavigationBar />
-      </div>
-      <div className="content-wrapper">
-        <Hero />
-        <AboutMe />
-        <Projects />
-        <Skills />
-        <Contact />
-      </div>
-    </div>
+    </ReactLenis>
   );
 };
 

@@ -1,23 +1,52 @@
 import styles from "./NavigationBar.module.scss";
+import { useLenis } from "lenis/react";
 
 const NavigationBar = () => {
+  const lenis = useLenis();
+
+  const handleScroll = (target) => {
+    if (lenis) {
+      lenis.scrollTo(target, {
+        duration: 1,
+        easing: (x) => 1 - Math.pow(1 - x, 5), // easeOutQuint
+        offset: 0, // adjust if needed
+        lock: true, // lock scrolling until animation completes
+      });
+    }
+  };
+
   return (
     <nav className={styles.nav}>
-      <a className={styles["nav__items"]} href="#hero">
+      <button
+        className={styles["nav__items"]}
+        onClick={() => handleScroll("#hero")}
+      >
         Home
-      </a>
-      <a className={styles["nav__items"]} href="#about-me">
+      </button>
+      <button
+        className={styles["nav__items"]}
+        onClick={() => handleScroll("#about-me")}
+      >
         About Me
-      </a>
-      <a className={styles["nav__items"]} href="#projects">
+      </button>
+      <button
+        className={styles["nav__items"]}
+        onClick={() => handleScroll("#projects")}
+      >
         Projects
-      </a>
-      <a className={styles["nav__items"]} href="#skills">
+      </button>
+      <button
+        className={styles["nav__items"]}
+        onClick={() => handleScroll("#skills")}
+      >
         Skills
-      </a>
-      <a className={styles["nav__items"]} href="#contact">
+      </button>
+      <button
+        className={styles["nav__items"]}
+        onClick={() => handleScroll("#contact")}
+      >
         Contact
-      </a>
+      </button>
     </nav>
   );
 };

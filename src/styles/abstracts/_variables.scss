@@ -11,7 +11,7 @@ $hover-purple: #8b5cf6;
 $hover-purple2: #cebcf7;
 $active-purple: #5a23b5;
 /*RGBA Colors*/
-$dark-purple-rgba: rgba(124, 58, 237, 0.2);
+$dark-purple-rgba: rgba(124, 58, 237, 0.5);
 $mid-purple-rgba: rgba(136, 78, 237, 0.2);
 $light-purple-rgba: rgba(162, 135, 243, 0.2);
 $dark-grey-rgba: rgba(26, 26, 26, 0.2);
@@ -74,7 +74,8 @@ $bg-pattern2: url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0
 /*Shadow Box*/
 $sc-shdw: 0 16px 20px rgba(0, 0, 0, 0.2);
 $sc-shdw2: 0 -16px 20px rgba(0, 0, 0, 0.2);
-$sc-shdw-purple: 0 16px 20px rgba(124, 58, 237, 0.2);
+$sc-shdw-grey: 0px 0px 20px rgba(41, 41, 41, 0.7);
+$sc-shdw-purple: 4px 2px 20px rgba(124, 58, 237, 0.3);
 $sc-shdw-navitems: 0 0px 10px rgba(124, 58, 237, 0.2);
 $sc-shdw-navitems2: 0 0px 30px rgba(238, 231, 249, 0.05);
 

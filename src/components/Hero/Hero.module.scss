@@ -32,6 +32,7 @@
         font-size: base.$hero-title-font-size;
         font-family: base.$hero-title-font-family;
         letter-spacing: base.$hero-title-spacing;
+        font-weight: base.$hero-title-font-weight;
         color: abs.$light-grey;
         /*Typing animation*/
         overflow: hidden; /* Ensures hidden text doesn’t show up */
@@ -53,6 +54,12 @@
         /*    color: red;
         background-color: abs.$light-grey; */
       }
+    }
+    &__buttonWrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
     }
   }
 }
