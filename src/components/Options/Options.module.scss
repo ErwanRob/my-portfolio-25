@@ -9,7 +9,7 @@
   align-items: flex-start;
   width: auto;
   &.fadein {
-    animation: fadein 750ms ease backwards;
+    animation: fadein 500ms ease backwards;
   }
   &.fadeout {
     animation: fadeout 1s ease forwards;
