@@ -1,0 +1,17 @@
+@use "../../styles/abstracts" as abs;
+@use "../../styles/base" as base;
+
+.footer {
+  /*   position: sticky;
+  bottom: 0; */
+  font-size: 3rem;
+  font-weight: 500;
+  letter-spacing: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  width: 100%;
+  background: abs.$bg-pattern2, abs.$dark-grey;
+  z-index: 10;
+}

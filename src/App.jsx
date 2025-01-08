@@ -6,6 +6,7 @@ import AboutMe from "./components/AboutMe/AboutMe";
 import Projects from "./components/Projects/Projects";
 import Skills from "./components/Skills/Skills";
 import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
 import { useState } from "react";
 import { ReactLenis } from "lenis/react";
 
@@ -47,6 +48,7 @@ const App = () => {
           <Projects />
           <Skills />
           <Contact />
+          <Footer />
         </div>
       </div>
     </ReactLenis>

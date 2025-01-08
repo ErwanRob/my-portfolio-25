@@ -121,6 +121,11 @@ button {
   scroll-snap-align: start; /* Snap each section to the top */
   scroll-snap-stop: always; /* Ensure snapping is always enforced */
   box-sizing: border-box;
+  h3 {
+    font-size: 3rem;
+    letter-spacing: 5px;
+    font-weight: 500;
+  }
 }
 
 /*   scroll-snap-type: y proximity;  */

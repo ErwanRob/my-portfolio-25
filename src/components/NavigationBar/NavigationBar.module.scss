@@ -36,8 +36,8 @@
     transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover {
-      color: abs.$hover-purple;
-      background: abs.$dark-grey abs.$bg-pattern2;
+      color: abs.$light-purple;
+      background: abs.$grey abs.$bg-pattern2;
       transform: translateX(-0.25rem);
     }
     &:active {
