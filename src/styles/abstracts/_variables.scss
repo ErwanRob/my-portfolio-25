@@ -69,10 +69,11 @@ $bg-gradient-contact: linear-gradient(
   rgba(124, 58, 237, 0.2) 100%
 );
 /*SVG Patterns*/
-$bg-pattern: url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%237C3CEB' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M8 0v20L0 10M16 0v10L8 0M16 10v10H8'/%3E%3C/g%3E%3C/svg%3E");
+$bg-pattern: url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%237C3CEB' fill-opacity='0.025' fill-rule='evenodd'%3E%3Cpath d='M8 0v20L0 10M16 0v10L8 0M16 10v10H8'/%3E%3C/g%3E%3C/svg%3E");
 $bg-pattern2: url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23292929' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M8 0v20L0 10M16 0v10L8 0M16 10v10H8'/%3E%3C/g%3E%3C/svg%3E");
 /*Shadow Box*/
 $sc-shdw: 0 16px 20px rgba(0, 0, 0, 0.2);
+$sc-shdw-inner: inset 0rem 2rem rgba(0, 0, 0, 0.1);
 $sc-shdw2: 0 -16px 20px rgba(0, 0, 0, 0.2);
 $sc-shdw-grey: 0px 0px 20px rgba(41, 41, 41, 0.7);
 $sc-shdw-purple: 4px 2px 20px rgba(124, 58, 237, 0.05);

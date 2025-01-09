@@ -65,10 +65,11 @@
 .tertiary {
   background: abs.$light-grey;
   color: abs.$dark-grey;
-  font-weight: bold;
+  font-weight: 700;
   &:hover {
     /* font-size: 1.1rem; */
-    transform: translateX(0.25rem); /* scale(1.025); */
+    transform: translateX(0.25rem); /* scaleX(1.025); */
+    color: abs.$dark-purple;
     box-shadow: abs.$sc-shdw-white;
   }
   &:active {
