@@ -1,10 +1,12 @@
 import styles from "./Projects.module.scss";
+import ProjectBgCircleLoader from "../ProjectBGCircleLoader/ProjectBgCircleLoader";
 
 const Projects = () => {
   return (
     <div className={`section ${styles.projects}`} id="projects">
       <div className={styles["projects__container"]}>
         <div className={styles["projects__container__loader"]}></div>
+        <ProjectBgCircleLoader />
         <div className={styles["projects__container__content"]}>
           <h3 className={styles["projects__container__content__title"]}>
             Projects
