@@ -17,72 +17,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /*TitleWrapper*/
-    &__titleWrapper {
+    /*TitleWrapper turned into HeadLine*/
+    &__container {
       display: flex;
-      flex-direction: row;
-      /*  justify-content: center;
-      text-align: center; */
-
-      /*Removed justfy-content & text-align center lines for Typing anim purpose, otherwise anim start from middle which is not bad but we'll see in the futur*/
-      &__title {
-        display: inline-block;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        font-size: base.$hero-title-font-size;
-        font-family: base.$hero-title-font-family;
-        letter-spacing: base.$hero-title-spacing;
-        font-weight: base.$hero-title-font-weight;
-        color: abs.$light-grey;
-        /*Typing animation*/
-        overflow: hidden; /* Ensures hidden text doesn’t show up */
-        white-space: nowrap; /* Prevents wrapping */
-        border-right: 1px solid transparent; /* Placeholder for the cursor */
-        animation: typing 750ms steps(8, end);
-      }
-      &__blinkingCursor {
-        overflow: hidden;
+      flex-direction: column;
+      width: auto;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      &__buttonWrapper {
+        margin-top: 2rem;
         display: flex;
         flex-direction: row;
-        justify-content: flex-end;
+        justify-content: space-between;
+        gap: 1.5rem;
         align-items: center;
-        width: 2rem;
-        height: 100%;
-        box-sizing: border-box;
-        font-size: 5rem;
-        animation: blink 1500ms ease-out infinite;
-        /*    color: red;
-        background-color: abs.$light-grey; */
       }
     }
-    &__buttonWrapper {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-  }
-}
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/*Typing effect size expand*/
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
   }
 }
