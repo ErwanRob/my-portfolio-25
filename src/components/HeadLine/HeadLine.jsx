@@ -26,21 +26,33 @@ const HeadLine = () => {
   const preLoaderExit = 3000; // Delay before Preloader exit after anim end
   const wordDisplayTime = 200; // Time for each word in ms
   const wordAnimeDuration = 0.05; // Time for anim swap in SECONDS
-  const endDelay = 0; // Time to pause before exiting wods panel anim in rms
+  const endDelay = 250; // Time to pause before exiting wods panel anim in rms
   const welcomeDelay = 0.25;
   const totalTime =
     words.length * (wordDisplayTime / 1000 + wordAnimeDuration) +
     endDelay / 1000; //in sec, Total time of the PreLoader Animation
 
   return (
-    <div className={styles.headLine}>
+    <motion.div
+      className={styles.headLine}
+      /* initial={{
+        x: 0,
+        y: 0,
+      }}
+      animate={{ x: 0, y: "-5rem" }}
+      transition={{
+        duration: 0.5,
+        delay: 3,
+        ease: backOut,
+      }} */
+    >
       <motion.h1 //Welcome animation
         initial={{
           x: "2rem",
           opacity: 0,
         }}
         animate={{
-          x: "0rem",
+          x: "-10.25rem",
           opacity: 1,
         }}
         transition={{
@@ -64,7 +76,7 @@ const HeadLine = () => {
           totalTime={totalTime}
         />
       )}
-    </div>
+    </motion.div>
   );
 };
 

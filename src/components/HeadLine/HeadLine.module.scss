@@ -2,12 +2,12 @@
 @use "../../styles/base" as base;
 
 .headLine {
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
 
@@ -29,6 +29,7 @@
     /* animation: typing 750ms steps(8, end); */
   }
   &__blinkingCursor {
+    opacity: 0;
     overflow: hidden;
     position: absolute;
     right: 0;
@@ -40,7 +41,7 @@
     height: 100%;
     box-sizing: border-box;
     font-size: 5rem;
-    animation: blink 1500ms ease-out 2s infinite;
+    animation: blink 1500ms ease-out 3s infinite;
     /*  color: red;
     background-color: abs.$light-grey; */
     /* right: 0; */
