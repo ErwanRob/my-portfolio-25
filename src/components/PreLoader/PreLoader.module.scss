@@ -6,19 +6,36 @@
   position: absolute;
   box-sizing: border-box;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: left;
   align-items: center;
   text-align: center;
+  white-space: nowrap;
   right: 0;
-  background-color: abs.$light-grey;
+  background-color: abs.$mid-grey;
   border-radius: 4px;
+  font-size: 4rem;
   height: 6rem;
   width: 100%;
-
+  font-family: base.$hero-title-font-family;
+  font-weight: base.$hero-title-font-weight;
+  &__puce {
+    // # before
+    margin: 0 1rem 0 2rem;
+    font-size: 4rem;
+    color: abs.$dark-purple;
+    text-align: right;
+  }
   &__txt {
+    // txt of words array (hi hello)
     color: black;
-    font-size: 5rem;
-    font-family: base.$hero-title-font-family;
-    font-weight: base.$hero-title-font-weight;
+    text-align: left;
+    z-index: 10;
+  }
+  &__txtpHolder {
+    // First Word as a PlaceHolder (avoid first empty space while animation gets in view)
+    background: transparent;
+    color: black;
+    z-index: -1;
   }
 }
