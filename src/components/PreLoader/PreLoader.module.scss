@@ -30,12 +30,10 @@
     // txt of words array (hi hello)
     color: black;
     text-align: left;
-    z-index: 10;
   }
   &__txtpHolder {
     // First Word as a PlaceHolder (avoid first empty space while animation gets in view)
     background: transparent;
     color: black;
-    z-index: -1;
   }
 }
