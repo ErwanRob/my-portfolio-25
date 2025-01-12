@@ -1,0 +1,48 @@
+@use "../../styles/abstracts" as abs;
+
+.progressBar {
+  display: flex;
+  position: absolute;
+  bottom: -7rem;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 4px;
+  width: 100%;
+  height: 0.1rem;
+  background-color: abs.$light-grey-rgba;
+  &__fill {
+    position: relative;
+    height: 0.2rem;
+    width: 100%;
+    background-color: abs.$light-grey;
+    border-radius: 4px;
+  }
+  &__dot {
+    position: relative;
+    opacity: 1;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: abs.$mid-grey;
+    filter: drop-shadow(0 0 10px abs.$dark-purple);
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      width: 0.7rem;
+      height: 0.7rem;
+      top: 50%;
+      bottom: 50%;
+      opacity: 0.5;
+      background: abs.$dark-purple;
+      transform: translate(-50%, -50%);
+      filter: blur(5px);
+    }
+    &::after {
+      width: 1rem; // Make the second glow larger
+      height: 1rem;
+      opacity: 0.5; // Softer brightness for the outer glow
+    }
+  }
+}

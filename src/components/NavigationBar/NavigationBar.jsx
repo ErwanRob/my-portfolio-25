@@ -1,5 +1,7 @@
 import styles from "./NavigationBar.module.scss";
 import { useLenis } from "lenis/react";
+import { easeOut } from "motion";
+import { motion } from "motion/react";
 
 const NavigationBar = () => {
   const lenis = useLenis();
@@ -16,7 +18,22 @@ const NavigationBar = () => {
   };
 
   return (
-    <nav className={styles.nav}>
+    <motion.nav
+      className={styles.nav}
+      initial={{
+        y: "0.5rem",
+        opacity: 0,
+      }}
+      animate={{
+        y: 0,
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.5,
+        delay: 3.2,
+        ease: easeOut,
+      }}
+    >
       <button
         className={styles["nav__items"]}
         onClick={() => handleScroll("#hero")}
@@ -47,7 +64,7 @@ const NavigationBar = () => {
       >
         Contact
       </button>
-    </nav>
+    </motion.nav>
   );
 };
 

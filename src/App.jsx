@@ -9,6 +9,7 @@ import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import { useState } from "react";
 import { ReactLenis } from "lenis/react";
+import { motion } from "motion/react";
 
 const App = () => {
   const [isSettingsVisible, setSettingsVisible] = useState(false);
@@ -31,9 +32,22 @@ const App = () => {
       }}
     >
       <div className="App">
-        <div className="particles-wrapper">
+        <motion.div
+          className="particles-wrapper"
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.25,
+            delay: 3.2,
+            type: "linear",
+          }}
+        >
           <ParticlesComponent />
-        </div>
+        </motion.div>
         <div
           className={`options-wrapper ${isSettingsVisible ? "visible" : " "}`}
         >

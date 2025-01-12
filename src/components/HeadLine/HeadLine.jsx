@@ -1,7 +1,7 @@
 import styles from "./HeadLine.module.scss";
 import PreLoader from "../PreLoader/PreLoader";
 import { motion } from "motion/react";
-import { easeInOut, spring } from "motion";
+import { backIn, easeInOut, spring } from "motion";
 import { useState } from "react";
 
 const HeadLine = () => {
@@ -33,20 +33,9 @@ const HeadLine = () => {
     endDelay / 1000; //in sec, Total time of the PreLoader Animation
 
   return (
-    <motion.div
-      className={styles.headLine}
-      /* initial={{
-        x: 0,
-        y: 0,
-      }}
-      animate={{ x: 0, y: "-5rem" }}
-      transition={{
-        duration: 0.5,
-        delay: 3,
-        ease: backOut,
-      }} */
-    >
-      <motion.h1 //Welcome animation
+    <div className={styles.headLine}>
+      <motion.h1
+        className={styles["headLine__title"]} //Welcome animation
         initial={{
           x: "2rem",
           opacity: 0,
@@ -61,11 +50,21 @@ const HeadLine = () => {
           ease: easeInOut,
           type: spring,
         }}
-        className={styles["headLine__title"]}
       >
         Welcome.
       </motion.h1>
-      <span className={styles["headLine__blinkingCursor"]}>|</span>
+      <motion.span
+        className={styles["headLine__blinkingCursor"]}
+        initial={{ x: 0 }}
+        animate={{ x: "-14.5rem" }}
+        transition={{
+          delay: 3,
+          duration: 0.2,
+          ease: backIn,
+        }}
+      >
+        |
+      </motion.span>
       {shouldRenderPreLoader && ( //Allow me to unmount PreLoader
         <PreLoader
           onFinish={() => handlePreLoaderExit(false)}
@@ -76,7 +75,7 @@ const HeadLine = () => {
           totalTime={totalTime}
         />
       )}
-    </motion.div>
+    </div>
   );
 };
 

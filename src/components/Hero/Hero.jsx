@@ -3,8 +3,6 @@ import HeadLine from "../HeadLine/HeadLine";
 import SubLine from "../SubLine/SubLine";
 import Button from "../Button/Button";
 import PropTypes from "prop-types";
-/* import { motion } from "motion/react";
-import { backOut } from "motion"; */
 
 const Hero = ({ toggleSettings }) => {
   const handleClick = () => {

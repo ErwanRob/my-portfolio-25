@@ -40,7 +40,8 @@ const PreLoader = ({
 
   return (
     <AnimatePresence mode="popLayout">
-      <motion.div // PreLoader closing animation
+      <motion.div
+        className={styles.preLoader} // PreLoader closing animation
         initial={{
           width: "100%",
           x: 0,
@@ -54,12 +55,12 @@ const PreLoader = ({
           delay: totalTime,
           ease: backIn,
         }}
-        className={styles.preLoader}
       >
         <div className={styles["preLoader__puce"]}>#</div>
         <AnimatePresence mode="popLayout">
           {isFirstWordVisible ? (
-            <motion.div // Words display Animation
+            <motion.div
+              className={styles["preLoader__txtpHolder"]} // Words display Animation
               key={"initial-word"} //FirstWord PlaceHolder
               initial={{ y: "0" }}
               animate={{ y: "0" }}
@@ -71,12 +72,12 @@ const PreLoader = ({
                 damping: 90,
                 mass: 3,
               }}
-              className={styles["preLoader__txtpHolder"]}
             >
               {"Hi"}
             </motion.div>
           ) : (
-            <motion.div // Words display Animation
+            <motion.div
+              className={styles["preLoader__txt"]} // Words display Animation
               key={currentWordIndex} // Reinitialize animation when word changes
               initial={{ y: "200%" }}
               animate={{ y: "0%" }}
@@ -88,7 +89,6 @@ const PreLoader = ({
                 damping: 90,
                 mass: 3,
               }}
-              className={styles["preLoader__txt"]}
             >
               {words[currentWordIndex]}
             </motion.div>

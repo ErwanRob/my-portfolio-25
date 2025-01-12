@@ -29,7 +29,7 @@
     /* animation: typing 750ms steps(8, end); */
   }
   &__blinkingCursor {
-    opacity: 0;
+    /* opacity: 0; */
     overflow: hidden;
     position: absolute;
     right: 0;
@@ -41,7 +41,7 @@
     height: 100%;
     box-sizing: border-box;
     font-size: 5rem;
-    animation: blink 1500ms ease-out 3s infinite;
+    animation: blink 1500ms ease-out 3.5s infinite;
     /*  color: red;
     background-color: abs.$light-grey; */
     /* right: 0; */

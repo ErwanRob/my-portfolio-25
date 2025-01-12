@@ -2,7 +2,85 @@
 
 .aboutMe {
   z-index: 1; /* Allows About me to be above Projects, thus making the shadow box visible*/
+  box-shadow: abs.$sc-shdw; /*Shadow to define, not final*/
   background: abs.$bg-pattern2, abs.$dark-grey;
-  /*Shadow to define, not final*/
-  box-shadow: abs.$sc-shdw;
+
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  /*   text-align: center; */
+
+  &__txtContent {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*  align-items: center; */
+    gap: 2rem;
+    /* background-color: rgba(1, 1, 1, 0.109); */ // DEV COLOR
+    &__title {
+      padding: 1rem;
+      background: abs.$light-grey;
+      color: black;
+      border-radius: 4px;
+      width: fit-content;
+    }
+    &__paraWrapper {
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+
+      /*   background-color: abs.$mid-purple-rgba; */ // DEV COLOR
+      &__paraOne,
+      &__paraTwo,
+      &__paraThree {
+        padding: 1rem;
+        font-size: 1.5rem;
+
+        &__hLine {
+          display: flex;
+          font-size: 2.5rem;
+          /*  color: red; */ // DEV COLOR
+        }
+      }
+      &__paraOne {
+        /*   color: abs.$mid-purple; */ // DEV COLOR
+      }
+      &__paraTwo {
+        /*   color: abs.$light-grey; */ // DEV COLOR
+      }
+      &__paraThree {
+        /*   color: abs.$dark-purple; */ // DEV COLOR
+      }
+    }
+  }
+  &__imageWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 40%;
+    height: 100%;
+    /*    background: rgba(133, 5, 133, 0.06); */ // DEV COLOR
+    &__imgContainer {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      /*   background: rgba(0, 0, 0, 0.148); */
+      width: 500px;
+      height: 500px;
+
+      &__img {
+        /* border-radius: ; */
+        width: 400px;
+        height: 400px;
+      }
+    }
+  }
 }
