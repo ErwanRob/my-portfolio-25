@@ -36,10 +36,11 @@
       &__paraOne,
       &__paraTwo,
       &__paraThree {
-        padding: 1rem;
-        font-size: 1.5rem;
+        padding: 0.5rem;
+        font-size: 1.25rem;
 
         &__hLine {
+          margin: 2rem 0 0 0;
           display: flex;
           font-size: 2.5rem;
           /*  color: red; */ // DEV COLOR

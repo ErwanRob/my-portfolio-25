@@ -2,8 +2,8 @@
 
 .circleLoader {
   position: absolute;
-  width: 600px;
-  height: 600px;
+  width: 350px;
+  height: 350px;
   border-radius: 50%;
   background: linear-gradient(
     90deg,
@@ -16,10 +16,10 @@
   &::before {
     content: "";
     position: absolute;
-    top: 60px;
-    bottom: 60px;
-    left: 60px;
-    right: 60px;
+    top: 35px;
+    bottom: 35px;
+    left: 35px;
+    right: 35px;
     background: abs.$dark-grey;
     border-radius: 50%;
     z-index: 2;

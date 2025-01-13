@@ -1,5 +1,6 @@
 import styles from "./Projects.module.scss";
 import CircleLoader from "../CircleLoader/CircleLoader";
+import Button from "../Button/Button";
 
 const Projects = () => {
   return (
@@ -8,7 +9,7 @@ const Projects = () => {
         <CircleLoader />
         <div className={styles["projects__container__content"]}>
           <h3 className={styles["projects__container__content__title"]}>
-            Projects
+            Works.
           </h3>
           {/* <p className={styles["projects__container__content__sub"]}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam qui,
@@ -17,6 +18,7 @@ const Projects = () => {
             esse quo.
           </p> */}
         </div>
+        <Button text="More Projects |>" variant="primary"></Button>
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ const AboutMe = () => {
               }
             >
               Hi, I’m a passionate front-end developer <br />
-              dedicated to crafting engaging, <br />
+              dedicated to crafting engaging and <br />
               user-friendly websites.
             </span>
             <br />I specialize in blending clean, modern design with seamless
