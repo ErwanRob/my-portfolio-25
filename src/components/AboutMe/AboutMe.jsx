@@ -3,10 +3,15 @@ import portrait from "../../assets/img/profilp/img5.jpg";
 import MaskText from "../MaskText/MaskText";
 import { motion } from "framer-motion";
 
-const phrasesHeadline = ["Hi, I’m a passionate front-end developer,"];
-const hrasesHeadlineBis = [
+/* const phrasesHeadline = ["Hi, I’m a passionate front-end developer,"];
+const phrasesHeadlineBis = [
   "dedicated to crafting engaging and user-friendly websites.",
+]; */
+const phrasesHeadline = ["HI, I’M A PASSIONATE FRONT-END DEVELOPER,"];
+const phrasesHeadlineBis = [
+  "DEDICATED TO CRAFTING ENGAGING AND USER-FRIENDLY WEBSITES.",
 ];
+
 const phraseBuildSomething = ["Let’s create something together."];
 
 /* const phrases2 = [
@@ -59,7 +64,7 @@ const AboutMe = () => {
         <div className={styles["aboutMe__container__headLine"]}>
           <MaskText phrases={phrasesHeadline} variant="primary" align="left" />
           <MaskText
-            phrases={hrasesHeadlineBis}
+            phrases={phrasesHeadlineBis}
             variant="primary"
             align="right"
           />
