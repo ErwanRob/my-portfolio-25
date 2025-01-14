@@ -1,0 +1,105 @@
+@use "../../styles/abstracts" as abs;
+@use "../../styles/base" as base;
+
+.maskText {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  box-sizing: border-box;
+  width: auto;
+  &--left {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  &--center {
+    justify-content: center;
+    align-items: center;
+  }
+  &--right {
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  /* MaskText--primary */
+  &--primary {
+    border-radius: 4px;
+  }
+  /* MaskText--secondary */
+  &--secondary {
+    border-radius: 4px;
+  }
+  /* MaskText--tertiary */
+  &--tertiary {
+    border-radius: 4px;
+    flex-direction: row;
+    width: auto;
+    box-shadow: abs.$light-purple-rgba 2px 6px 20px;
+  }
+  /*lineMask*/
+  &__lineMask {
+    padding: 0.25rem 0.5rem;
+    overflow: hidden;
+    border-radius: 4px;
+    /*lineMask--primary*/
+    &--primary {
+      /*  padding: 0.1rem 0.5rem; */
+      padding: 1rem;
+      background: abs.$dark-purple;
+      /* background: linear-gradient(
+        -45deg,
+        rgba(124, 58, 237, 0.6) 0%,
+        rgba(162, 135, 243, 0.2) 40%,
+        rgba(26, 26, 26, 0.6)
+      ); */
+    }
+    /*lineMask--secondary*/
+    &--secondary {
+      padding: 0.25rem 0;
+    }
+    /*lineMask--tertiary*/
+    &--tertiary {
+      letter-spacing: 2px;
+      padding: 0.25rem 0.5rem;
+      /* background: linear-gradient(
+        30deg,
+        rgba(124, 58, 237, 0.9) 0%,
+        rgba(207, 18, 198, 0.3) 50%,
+        rgba(234, 234, 234, 0.7) 100%
+      ); */
+      background: abs.$dark-grey;
+    }
+  }
+  /*p*/
+  &__lineMask__p {
+    display: flex;
+    font-size: 1rem;
+    line-height: 1.5;
+    /*p--primary*/
+    &--primary {
+      font-size: 1.75rem;
+    }
+    /*p--secondary*/
+    &--secondary {
+      font-size: 1.25rem;
+    }
+    /*p--tertiary*/
+    &--tertiary {
+      font-size: 1.75rem;
+      font-weight: 500;
+      font-size: 1.75rem;
+      color: abs.$light-purple;
+      /*   color: black; */
+      /* filter: (drop-shadow(6px 6px 20px rgba(225, 10, 218, 1))); */
+      filter: drop-shadow(4px 4px 8px rgba(1, 0, 1, 1));
+    }
+  }
+}
+
+/*   background: linear-gradient(
+      30deg,
+      rgba(124, 58, 237, 0) 0%,
+      rgba(162, 135, 243, 0) 30%,
+      rgba(26, 26, 26, 0.6) 70%,
+      rgb(205, 36, 56, 0.4) 100%
+    ); */
+/*   rgb(205, 36, 56, 0.6) 100% red color*/
