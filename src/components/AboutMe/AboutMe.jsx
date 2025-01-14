@@ -12,7 +12,8 @@ const phrasesHeadlineBis = [
   "DEDICATED TO CRAFTING ENGAGING AND USER-FRIENDLY WEBSITES.",
 ];
 
-const phraseBuildSomething = ["Let’s create something together."];
+/* const phraseBuildSomething = ["Let’s create something together."]; */
+const phraseBuildSomething = ["LET’S CREATE SOMETHING TOGETHER."];
 
 /* const phrases2 = [
   "I specialize in blending clean, modern design with seamless functionality",
