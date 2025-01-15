@@ -25,8 +25,8 @@ $active-purple-rgba: rgba(91, 35, 181, 0.5);
 $bg-gradient-hero: linear-gradient(
   185deg,
   rgba(26, 26, 26, 0) 0%,
-  rgba(26, 26, 26, 0) 25%,
-  rgba(26, 26, 26, 0.3) 75%,
+  rgba(26, 26, 26, 0) 70%,
+  rgba(26, 26, 26, 0) 75%,
   rgba(26, 26, 26, 1) 90%,
   rgba(26, 26, 26, 1) 100%
 );
@@ -78,8 +78,9 @@ $bg-gradient-contact: linear-gradient(
   rgba(124, 58, 237, 0.2) 100%
 );
 /*SVG Patterns*/
-$bg-pattern: url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%237C3CEB' fill-opacity='0.015' fill-rule='evenodd'%3E%3Cpath d='M8 0v20L0 10M16 0v10L8 0M16 10v10H8'/%3E%3C/g%3E%3C/svg%3E");
-$bg-pattern2: url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23292929' fill-opacity='0.015' fill-rule='evenodd'%3E%3Cpath d='M8 0v20L0 10M16 0v10L8 0M16 10v10H8'/%3E%3C/g%3E%3C/svg%3E");
+$bg-patternLos-purpleish: url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%237C3CEB' fill-opacity='0.015' fill-rule='evenodd'%3E%3Cpath d='M8 0v20L0 10M16 0v10L8 0M16 10v10H8'/%3E%3C/g%3E%3C/svg%3E");
+$bg-patternLos-blackish: url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23292929' fill-opacity='0.015' fill-rule='evenodd'%3E%3Cpath d='M8 0v20L0 10M16 0v10L8 0M16 10v10H8'/%3E%3C/g%3E%3C/svg%3E");
+$bg-noise: url("../../assets/img/bgd/n2.svg");
 /*Shadow Box*/
 $sc-shdw: 0 16px 20px rgba(0, 0, 0, 0.2);
 $sc-shdw-inner: inset 0rem 2rem rgba(0, 0, 0, 0.1);

@@ -19,8 +19,7 @@ body {
   margin: 0;
   font-family: "Inter", sans-serif;
   color: abs.$white;
-  background: abs.$dark-grey;
-  background-image: abs.$bg-pattern;
+  background: abs.$bg-patternLos-purpleish, abs.$dark-grey;
 }
 
 h1 {
@@ -30,7 +29,9 @@ h1 {
 h1,
 h3,
 button,
-p {
+p,
+ul,
+li {
   all: unset;
 }
 

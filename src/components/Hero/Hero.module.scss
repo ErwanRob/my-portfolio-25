@@ -2,12 +2,8 @@
 @use "../../styles/base" as base;
 
 .hero {
-  /* z-index: -1; */
-  /* position: sticky; */ /* Prevents scroll-snap from skipping this section */
-  /*   top: 0; */
-  /*   padding: 3rem; */
   user-select: none; /*Prevent user blue-select*/
-  background: abs.$bg-pattern2, abs.$bg-gradient-hero; /* Optional content background */
+  background: abs.$bg-patternLos-blackish, abs.$bg-gradient-hero;
   /*Content*/
   &__content {
     /* max-width: 1200px */

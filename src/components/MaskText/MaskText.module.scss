@@ -37,14 +37,11 @@
   }
   /*lineMask*/
   &__lineMask {
-    padding: 0.25rem 0.5rem;
     overflow: hidden;
     border-radius: 4px;
     /*lineMask--primary*/
     &--primary {
       letter-spacing: 4px;
-      /*  padding: 0.1rem 0.5rem; */
-      padding: 1rem;
       /*  background: abs.$dark-purple; */
       /* background: linear-gradient(
         -45deg,
@@ -60,14 +57,6 @@
     /*lineMask--tertiary*/
     &--tertiary {
       letter-spacing: 2px;
-      padding: 0.25rem 0.5rem;
-      /* background: linear-gradient(
-        30deg,
-        rgba(124, 58, 237, 0.9) 0%,
-        rgba(207, 18, 198, 0.3) 50%,
-        rgba(234, 234, 234, 0.7) 100%
-      ); */
-      /*  background: abs.$dark-grey; */
     }
   }
   /*p*/
@@ -78,16 +67,19 @@
     /*p--primary*/
     &--primary {
       font-size: 1.75rem;
+      font-weight: 200;
+      color: abs.$light-grey;
     }
     /*p--secondary*/
     &--secondary {
       font-size: 1.25rem;
+      font-weight: 200;
+      color: abs.$light-grey;
     }
     /*p--tertiary*/
     &--tertiary {
       font-size: 1.75rem;
       font-weight: 500;
-      font-size: 1.75rem;
       color: abs.$light-purple;
       /*   color: black; */
       /* filter: (drop-shadow(6px 6px 20px rgba(225, 10, 218, 1))); */

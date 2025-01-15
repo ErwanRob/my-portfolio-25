@@ -1,5 +1,5 @@
 import styles from "./AboutMe.module.scss";
-import portrait from "../../assets/img/profilp/img5.jpg";
+import portrait from "../../assets/img/portrait.jpg";
 import MaskText from "../MaskText/MaskText";
 import { motion } from "framer-motion";
 
@@ -70,57 +70,70 @@ const AboutMe = () => {
             align="right"
           />
         </div>
-        <motion.div
-          className={styles["aboutMe__container__midWrapper"]}
-          initial={{ x: "-2rem" }}
-          whileInView={{ x: 0 }}
+
+        <motion.h3
+          className={styles["aboutMe__container__title"]}
+          initial={{ y: "-5rem" }}
+          whileInView={{ y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <motion.h3
-            className={styles["aboutMe__container__midWrapper__cardTitle"]}
-            initial={{ y: "-1rem" }}
+          <ul className={styles["aboutMe__container__title__lList"]}>
+            <li className={styles["aboutMe__container__title__lList__letter"]}>
+              A
+            </li>
+            <li className={styles["aboutMe__container__title__lList__letter"]}>
+              B
+            </li>
+            <li className={styles["aboutMe__container__title__lList__letter"]}>
+              O
+            </li>
+            <li className={styles["aboutMe__container__title__lList__letter"]}>
+              U
+            </li>
+            <li className={styles["aboutMe__container__title__lList__letter"]}>
+              T
+            </li>
+            <li
+              className={
+                styles["aboutMe__container__title__lList__letter__notV"]
+              }
+            >
+              .
+            </li>
+            <li className={styles["aboutMe__container__title__lList__letter"]}>
+              M
+            </li>
+            <li className={styles["aboutMe__container__title__lList__letter"]}>
+              E
+            </li>
+          </ul>
+        </motion.h3>
+
+        <div className={styles["aboutMe__container__content"]}>
+          <motion.div
+            className={styles["aboutMe__container__content__portraitContainer"]}
+            initial={{ y: "5rem" }}
             whileInView={{ y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.6 }}
           >
-            ABOUT ME
-          </motion.h3>
-          <div className={styles["aboutMe__container__midWrapper__profil"]}>
+            <img
+              className={
+                styles[
+                  "aboutMe__container__content__portraitContainer__portraitImg"
+                ]
+              }
+              src={portrait}
+              alt="selfPortrait"
+            />
+          </motion.div>
+          <div className={styles["aboutMe__container__content__description"]}>
             <div
               className={
-                styles["aboutMe__container__midWrapper__profil__imgContainer"]
+                styles[
+                  "aboutMe__container__content__description__maskTextWrapper"
+                ]
               }
             >
-              <img
-                className={
-                  styles[
-                    "aboutMe__container__midWrapper__profil__imgContainer__img"
-                  ]
-                }
-                src={portrait}
-                alt="selfPortrait"
-              />
-            </div>
-          </div>
-          <div className={styles["aboutMe__container__midWrapper__info"]}>
-            <div
-              className={
-                styles["aboutMe__container__midWrapper__info__titleTogether"]
-              }
-            >
-              <MaskText
-                phrases={phraseBuildSomething}
-                variant="tertiary"
-                align="right"
-              />
-            </div>
-            <div
-              className={
-                styles["aboutMe__container__midWrapper__info__masksWrapper"]
-              }
-            >
-              {/*  <MaskText phrases={phrases2} variant="secondary" align="left" />
-              <MaskText phrases={phrases3} variant="secondary" align="left" />
-              <MaskText phrases={phrases4} variant="secondary" align="left" /> */}
               <MaskText phrases={phrases1} variant="secondary" align="left" />
               <MaskText phrases={phrases2} variant="secondary" align="left" />
               <MaskText phrases={phrases3} variant="secondary" align="left" />
@@ -130,9 +143,19 @@ const AboutMe = () => {
               <MaskText phrases={phrases7} variant="secondary" align="left" />
               <MaskText phrases={phrases8} variant="secondary" align="left" />
             </div>
+            <div
+              className={
+                styles["aboutMe__container__content__description__subLine"]
+              }
+            >
+              <MaskText
+                phrases={phraseBuildSomething}
+                variant="tertiary"
+                align="right"
+              />
+            </div>
           </div>
-        </motion.div>
-        <div className={styles["aboutMe__container__bottomLine"]}></div>
+        </div>
       </div>
     </div>
   );
@@ -141,37 +164,72 @@ const AboutMe = () => {
 export default AboutMe;
 
 {
-  /* <p className={styles["aboutMe__info__masksWrapper__paraOne"]}>
-            <span
-              className={
-                styles["aboutMe__info__masksWrapper__paraOne__hLine"]
-              }
-            >
-              Hi, I’m a passionate front-end developer <br />
-              dedicated to crafting engaging and <br />
-              user-friendly websites.
-            </span>
-            <br />I specialize in blending clean, modern design with seamless
-            functionality to deliver solutions that are not only visually
-            appealing but also highly effective.
-          </p>
-          <p className={styles["aboutMe__info__masksWrapper__paraTwo"]}>
-            Whether it’s building responsive layouts, creating intuitive user
-            interfaces, or optimizing websites for performance and SEO, my focus
-            is on delivering measurable value to my clients.
-            <br />I take pride in solving problems and turning ideas into
-            reality with precision and creativity.
-          </p>
-          <p className={styles["aboutMe__info__masksWrapper__paraThree"]}>
-            I’m committed to staying at the forefront of web development
-            practices and helping clients achieve their vision with impactful,
-            efficient, and scalable web solutions.
-            <span
-              className={
-                styles["aboutMe__info__masksWrapper__paraThree__hLine"]
-              }
-            >
-              Let’s create something amazing together.
-            </span>
-          </p> */
+  /* <div className={styles["aboutMe__container__headLine"]}>
+<MaskText phrases={phrasesHeadline} variant="primary" align="left" />
+<MaskText
+  phrases={phrasesHeadlineBis}
+  variant="primary"
+  align="right"
+/>
+</div>
+<motion.div
+className={styles["aboutMe__container__midWrapper"]}
+initial={{ x: "-2rem" }}
+whileInView={{ x: 0 }}
+transition={{ duration: 0.6 }}
+>
+<motion.h3
+  className={styles["aboutMe__container__midWrapper__cardTitle"]}
+  initial={{ y: "-1rem" }}
+  whileInView={{ y: 0 }}
+  transition={{ duration: 0.6, delay: 0.1 }}
+>
+  ABOUT ME
+</motion.h3>
+<div className={styles["aboutMe__container__midWrapper__profil"]}>
+  <div
+    className={
+      styles["aboutMe__container__midWrapper__profil__imgContainer"]
+    }
+  >
+    <img
+      className={
+        styles[
+          "aboutMe__container__midWrapper__profil__imgContainer__img"
+        ]
+      }
+      src={portrait}
+      alt="selfPortrait"
+    />
+  </div>
+</div>
+<div className={styles["aboutMe__container__midWrapper__info"]}>
+  <div
+    className={
+      styles["aboutMe__container__midWrapper__info__titleTogether"]
+    }
+  >
+    <MaskText
+      phrases={phraseBuildSomething}
+      variant="tertiary"
+      align="right"
+    />
+  </div>
+  <div
+    className={
+      styles["aboutMe__container__midWrapper__info__masksWrapper"]
+    }
+  >
+    <MaskText phrases={phrases1} variant="secondary" align="left" />
+    <MaskText phrases={phrases2} variant="secondary" align="left" />
+    <MaskText phrases={phrases3} variant="secondary" align="left" />
+    <MaskText phrases={phrases4} variant="secondary" align="left" />
+    <MaskText phrases={phrases5} variant="secondary" align="left" />
+    <MaskText phrases={phrases6} variant="secondary" align="left" />
+    <MaskText phrases={phrases7} variant="secondary" align="left" />
+    <MaskText phrases={phrases8} variant="secondary" align="left" />
+  </div>
+</div>
+</motion.div>
+<div className={styles["aboutMe__container__bottomLine"]}></div> */
 }

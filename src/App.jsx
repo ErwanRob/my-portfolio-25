@@ -27,7 +27,7 @@ const App = () => {
           return 1 - Math.pow(1 - x, 5);
         },
         duration: 0.75,
-        wheelMultiplier: 2,
+        wheelMultiplier: 1.5,
         /* infinite: true, */
       }}
     >
