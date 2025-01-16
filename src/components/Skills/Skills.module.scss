@@ -2,6 +2,81 @@
 
 .skills {
   z-index: 1; /* Allows About me to be above Projects, thus making the shadow box visible*/
-  background: abs.$bg-patternLos-blackish, abs.$dark-grey;
+  background: /* abs.$bg-gradient-project2, */ abs.$bg-noise,
+    abs.$bg-patternLos-blackish, abs.$dark-grey;
   box-shadow: abs.$sc-shdw2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    padding: 2rem;
+    box-sizing: border-box;
+    /*    background: abs.$grey; */
+
+    &__title {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      /*   margin: 0 0 4rem 0; */
+    }
+
+    &__grid {
+      box-sizing: border-box;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+      gap: 3.5rem;
+      width: 80%;
+      max-width: 1150px;
+      height: auto;
+      /*  padding: 1rem; */
+      margin: 4rem 0;
+
+      &__item {
+        box-sizing: border-box;
+        /* background: rgba(0, 140, 255, 0.302); */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        /*  padding: 1rem; */
+        width: auto;
+        height: auto;
+        &__logo {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          /*  background: rgba(255, 255, 0, 0.625); */
+          box-sizing: border-box;
+          padding: 0.5rem;
+          width: 6rem;
+          height: auto;
+        }
+
+        &__name {
+          /*     background: rgba(255, 0, 0, 0.22); */
+          box-sizing: border-box;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0.5rem;
+          width: 100%;
+          font-size: 0.875rem;
+          color: abs.$light-grey;
+          font-weight: 200;
+        }
+      }
+    }
+  }
 }

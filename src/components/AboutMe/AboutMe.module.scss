@@ -5,8 +5,10 @@
   box-shadow: abs.$sc-shdw; /*Shadow to define, not final*/
   /* background: abs.$bg-patternLos-blackish, abs.$dark-grey; */
   /* background-image: url("../../assets/img/bgd/n2.svg"); */
-  background: /* abs.$bg-patternLos-blackish, */ abs.$bg-gradient-project2,
-    abs.$bg-noise, abs.$dark-grey;
+  background: abs.$bg-gradient-project2, abs.$bg-noise,
+    abs.$bg-patternLos-blackish, abs.$dark-grey;
+
+  /*   abs.$bg-noise, abs.$bg-patternLos-blackish, */
   display: flex;
   justify-content: center;
   align-items: center;
