@@ -1,6 +1,6 @@
 import styles from "./Hero.module.scss";
-import HeadLine from "../HeadLine/HeadLine";
-import SubLine from "../SubLine/SubLine";
+import HeadLine from "./HeadLine/HeadLine";
+import SubLine from "./SubLine/SubLine";
 import Button from "../Button/Button";
 import PropTypes from "prop-types";
 

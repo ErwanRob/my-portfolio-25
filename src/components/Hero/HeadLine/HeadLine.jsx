@@ -1,5 +1,5 @@
 import styles from "./HeadLine.module.scss";
-import PreLoader from "../PreLoader/PreLoader";
+import PreLoader from "../../PreLoader/PreLoader";
 import { motion } from "motion/react";
 import { backIn, easeInOut, spring } from "motion";
 import { useState } from "react";

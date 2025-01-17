@@ -1,6 +1,8 @@
 import styles from "./Skills.module.scss";
 import { SkillsList } from "./SkillsList";
-import { motion } from "motion/react";
+import MagneticPull from "../MagneticPull";
+
+const MagnetComponentClassName = styles["skills__container__grid__item__logo"];
 
 const Skills = () => {
   return (
@@ -13,19 +15,9 @@ const Skills = () => {
               key={index}
               className={styles["skills__container__grid__item"]}
             >
-              <motion.div
-                className={styles["skills__container__grid__item__logo"]}
-                initial={{ scale: 1 }}
-                whileHover={{ scale: 1.1 }}
-                transition={{
-                  duration: 0.1,
-                  type: "spring",
-                  stiffness: 400,
-                  damping: 15,
-                }}
-              >
+              <MagneticPull className={MagnetComponentClassName}>
                 {skill.svgContent}
-              </motion.div>
+              </MagneticPull>
               <p className={styles["skills__container__grid__item__name"]}>
                 {skill.name}
               </p>
