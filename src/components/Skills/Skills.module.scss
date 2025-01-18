@@ -15,7 +15,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 80%;
     padding: 2rem;
     box-sizing: border-box;
 
@@ -39,8 +39,8 @@
       align-items: center;
       grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
       gap: 3.5rem;
-      width: 80%;
-      max-width: 1150px; // To redefine, care when going through breakpoints later on
+      width: 100%;
+      /* max-width: 1200px;  */ // To redefine, care when going through breakpoints later on
       height: auto;
       margin: 4rem 0;
 
@@ -62,7 +62,9 @@
           box-sizing: border-box;
           padding: 0.5rem;
           width: 6rem;
-          height: auto;
+          height: 6rem;
+          /*   height: auto; */
+          /* cursor: none; */
         }
 
         &__name {

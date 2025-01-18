@@ -2,7 +2,7 @@ import styles from "./Skills.module.scss";
 import { SkillsList } from "./SkillsList";
 import MagneticPull from "../MagneticPull";
 
-const MagnetComponentClassName = styles["skills__container__grid__item__logo"];
+/* const MagnetComponentClassName = styles["skills__container__grid__item__logo"]; */
 
 const Skills = () => {
   return (
@@ -15,8 +15,10 @@ const Skills = () => {
               key={index}
               className={styles["skills__container__grid__item"]}
             >
-              <MagneticPull className={MagnetComponentClassName}>
-                {skill.svgContent}
+              <MagneticPull>
+                <div className={styles["skills__container__grid__item__logo"]}>
+                  {skill.svgContent}
+                </div>
               </MagneticPull>
               <p className={styles["skills__container__grid__item__name"]}>
                 {skill.name}
