@@ -15,7 +15,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 60%;
     padding: 2rem;
     box-sizing: border-box;
 
@@ -40,7 +40,7 @@
       grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
       gap: 3.5rem;
       width: 100%;
-      /* max-width: 1200px;  */ // To redefine, care when going through breakpoints later on
+      max-width: 900px; // To redefine, care when going through breakpoints later on
       height: auto;
       margin: 4rem 0;
 

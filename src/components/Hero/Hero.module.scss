@@ -3,7 +3,9 @@
 
 .hero {
   user-select: none; /*Prevent user blue-select*/
-  background: abs.$bg-patternLos-blackish, abs.$bg-gradient-hero;
+  /* background: abs.$bg-patternLos-blackish, abs.$bg-gradient-hero; */
+  background: abs.$bg-patternLos-blackish, abs.$bg-gradient-hero,
+    abs.$bg-patternLos-purpleish;
   /*Content*/
   &__content {
     /* max-width: 1200px */

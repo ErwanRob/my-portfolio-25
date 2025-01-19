@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 const MaskText = ({ phrases, variant = "primary", align = "left" }) => {
   const { ref, inView } = useInView({
     threshold: 1,
+    rootMargin: "-100px 0px -150px 0px",
     /* triggerOnce: true, */
   });
   //Base class and variants modifiers to keep control of base styles anyways.
@@ -17,9 +18,10 @@ const MaskText = ({ phrases, variant = "primary", align = "left" }) => {
   const pVariantClass = styles[`maskText__lineMask__p--${variant}`];
 
   const animation = {
-    initial: { y: "150%" },
+    initial: { y: "150%", opacity: 0 },
     enter: (i) => ({
       y: "0%",
+      opacity: 1,
       transition: {
         duration: 0.75,
         ease: [0.33, 1, 0.68, 1],

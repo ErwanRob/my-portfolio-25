@@ -2,14 +2,19 @@
 
 .projects {
   display: flex;
+  /* justify-content: center;
+  align-items: center; */
   width: 100%;
   height: 100%;
   //is way enough no need to re-add commented pattern
-  background: abs.$bg-gradient-project2, abs.$bg-gradient-project1;
+  background: abs.$bg-gradient-project2, abs.$bg-gradient-project1,
+    abs.$bg-noise2;
   /* abs.$bg-patternLos-blackish */
   box-shadow: inset 0rem 2rem 2rem -2rem abs.$dark-grey;
+
   &__container {
-    z-index: 1;
+    position: relative;
+    z-index: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,11 +22,57 @@
     align-items: center;
     width: 100%;
     height: 100%;
+
     &__content {
-      z-index: 1;
-      &__title {
+      z-index: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 40%;
+
+      &__trigger {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 6rem;
+        font-weight: 300;
         color: abs.$light-grey;
+        width: auto;
+        height: 100%;
+
+        &__PR {
+          transform-origin: right;
+          margin: 0 0 0 30rem;
+          animation: pulse 6s ease-in-out infinite;
+          letter-spacing: 2rem;
+        }
+
+        &__JECTS {
+          transform-origin: left;
+          letter-spacing: 2rem;
+          animation: pulse 6s ease-in-out infinite;
+        }
       }
     }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.5;
   }
 }

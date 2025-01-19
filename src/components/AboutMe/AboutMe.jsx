@@ -3,34 +3,12 @@ import portrait from "../../assets/img/portrait.jpg";
 import MaskText from "../MaskText/MaskText";
 import { motion } from "framer-motion";
 
-/* const phrasesHeadline = ["Hi, I’m a passionate front-end developer,"];
-const phrasesHeadlineBis = [
-  "dedicated to crafting engaging and user-friendly websites.",
-]; */
 const phrasesHeadline = ["HI, I’M A PASSIONATE FRONT-END DEVELOPER,"];
 const phrasesHeadlineBis = [
   "DEDICATED TO CRAFTING ENGAGING AND USER-FRIENDLY WEBSITES.",
 ];
 
-/* const phraseBuildSomething = ["Let’s create something together."]; */
 const phraseBuildSomething = ["LET’S CREATE SOMETHING TOGETHER."];
-
-/* const phrases2 = [
-  "I specialize in blending clean, modern design with seamless functionality",
-  " to deliver solutions that are not only visually appealing but also highly effective.",
-];
-const phrases3 = [
-  "Whether it’s building responsive layouts, creating intuitive user interfaces,",
-  "optimizing websites for performance and SEO, my focus on delivering",
-  "measurable value to my clients. I take pride in solving problems and",
-  "turning ideas into reality with precision and creativity.",
-];
-const phrases4 = [
-  "I’m committed to staying at the forefront of web development",
-  "practices and helping clients achieve their vision with impactful,",
-  "efficient, and scalable web solutions.",
-]; */
-/* const spreadPhrase5 = phrases5.flatMap((phrase) => phrase.split(" ")); */
 
 const phrases1 = [
   "I specialize in blending clean, modern design with seamless functionality",
