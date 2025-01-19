@@ -50,12 +50,14 @@
           margin: 0 0 0 30rem;
           animation: pulse 6s ease-in-out infinite;
           letter-spacing: 2rem;
+          user-select: none;
         }
 
         &__JECTS {
           transform-origin: left;
           letter-spacing: 2rem;
           animation: pulse 6s ease-in-out infinite;
+          user-select: none;
         }
       }
     }

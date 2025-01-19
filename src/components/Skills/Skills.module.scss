@@ -30,6 +30,7 @@
       margin: 1rem -3rem 3rem 0; // negative margin compensate letter spacing
       box-sizing: border-box;
       text-transform: uppercase; // Probably will change that
+      user-select: none;
     }
 
     &__grid {
@@ -77,6 +78,7 @@
           font-size: 0.875rem;
           color: abs.$light-grey;
           font-weight: 200;
+          user-select: none;
         }
       }
     }
