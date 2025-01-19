@@ -1,11 +1,12 @@
 import ParticlesComponent from "./components/ParticlesComponent";
 import Options from "./components/Options/Options";
-import NavigationBar from "./components/NavigationBar/NavigationBar";
+import NavigationBar from "./components/SideMenuNavigation/SideMenuNavigation";
 import Hero from "./components/Hero/Hero";
 import AboutMe from "./components/AboutMe/AboutMe";
 import Projects from "./components/Projects/Projects";
 import Skills from "./components/Skills/Skills";
 import Contact from "./components/Contact/Contact";
+import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { useState } from "react";
 import { ReactLenis } from "lenis/react";
@@ -48,12 +49,15 @@ const App = () => {
         >
           <ParticlesComponent />
         </motion.div>
+        <div className="header-wrapper">
+          <Header />
+        </div>
         <div
           className={`options-wrapper ${isSettingsVisible ? "visible" : " "}`}
         >
           <Options isSettingsVisible={isSettingsVisible} />
         </div>
-        <div className="navbar-wrapper">
+        <div className="sideMenuNavigation-wrapper">
           <NavigationBar />
         </div>
         <div className="content-wrapper">

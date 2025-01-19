@@ -1,7 +1,11 @@
+/*margins, paddings, widths, heights*/
+$headerHeight: 4rem;
+
 /*Hex Colors*/
 $dark-grey: #1a1a1a;
 $darker-grey: #101010;
 $grey: #292929;
+$medium-grey: #a3a3a3;
 $mid-grey: #e0e0e0;
 $light-grey: #eaeaea;
 $white: #ffffff;
@@ -21,7 +25,15 @@ $mid-grey-rgba: rgba(224, 224, 224, 0.2);
 $light-grey-rgba: rgba(234, 234, 234, 0.2);
 $white-rgba: rgba(255, 255, 255, 0.2);
 $active-purple-rgba: rgba(91, 35, 181, 0.5);
+$medium-grey-rgba: rgba(163, 163, 163, 1);
 /*Gradient Colors*/
+
+$bg-gradient-header: linear-gradient(
+  180deg,
+  rgba(26, 26, 26, 1) 0%,
+  rgba(26, 26, 26, 1) 85%,
+  rgba(26, 26, 26, 0) 100%
+);
 /*75% fade Hero section transition*/
 $bg-gradient-hero: linear-gradient(
   185deg,
@@ -39,21 +51,6 @@ $bg-gradient-about: linear-gradient(
   rgba(26, 26, 26, 0.7) 90%,
   rgba(26, 26, 26, 0) 100%
 );
-/* $bg-gradient-project1: radial-gradient(
-  circle,
-  rgba(26, 26, 26, 1) 0%,
-  rgba(26, 26, 26, 1) 30%,
-  rgba(41, 41, 41, 0.5) 60%,
-  rgba(124, 60, 235, 0.25) 100%
-); */
-
-/* $bg-gradient-project1: radial-gradient(
-  circle at 50% 50%,
-  rgba(26, 26, 26, 1) 0%,
-  rgba(26, 26, 26, 1) 10%,
-  rgba(41, 41, 41, 00) 60%,
-  rgba(124, 60, 235, 0.25) 100%
-); */
 
 $bg-gradient-project1: radial-gradient(
   circle at 50% 50%,
@@ -93,8 +90,7 @@ $bg-patternLos-blackish: url("data:image/svg+xml,%3Csvg width='16' height='20' v
 $bg-noise: url("../../assets/img/bgd/n2.svg");
 $bg-noise2: url("../../assets/img/bgd/n1.svg");
 $bg-circle1: url("../../../assets/img/bgd/c1.svg");
-$bg-circle2: url("../../../assets/img/bgd/c2.svg");
-$bg-circle3: url("../../../assets/img/bgd/c3.svg");
+
 /*Shadow Box*/
 $sc-shdw: 0 16px 20px rgba(0, 0, 0, 0.2);
 $sc-shdw-inner: inset 0rem 2rem rgba(0, 0, 0, 0.1);

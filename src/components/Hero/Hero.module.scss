@@ -7,6 +7,7 @@
   background: abs.$bg-patternLos-blackish, abs.$bg-gradient-hero,
     abs.$bg-patternLos-purpleish;
   /*Content*/
+  margin: -#{abs.$headerHeight} 0 0 0; // compensate for header
   &__content {
     /* max-width: 1200px */
     width: 100%;

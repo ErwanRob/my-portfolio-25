@@ -38,7 +38,7 @@ li {
 
 /* Wrapper for the entire app */
 .App {
-  position: relative; /* For positioning particles properly */
+  /* position: relative; */ /* For positioning particles properly */
   height: 100%; /* Ensure it takes up the full viewport */
   width: 100%; /* Ensure it takes up the full viewport */
 }
@@ -52,6 +52,20 @@ li {
   height: 100%;
   z-index: -1; /* Push particles behind content */
 }
+
+.header-wrapper {
+  z-index: 999;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: abs.$headerHeight;
+  width: 100%;
+}
+
 .options-wrapper {
   box-sizing: border-box;
   position: absolute;
@@ -82,7 +96,7 @@ li {
   }
 }
 
-.navbar-wrapper {
+.sideMenuNavigation-wrapper {
   box-sizing: border-box;
   position: absolute;
   display: flex;
@@ -106,18 +120,16 @@ li {
   }
   position: relative;
   margin: 0 auto;
-  height: 100vh;
+  /*  height: 100vh; */ // problem with stiky header
   /* width: 100%; */
+  min-height: 100vh;
   z-index: 1;
 }
+
 .section {
   overflow: hidden;
   display: flex;
   width: 100%;
   height: 100vh; /* Full viewport height for each section */
-  /* flex-direction: column; */
-  /* justify-content: center;
-  align-items: center;
-  text-align: center; */
   box-sizing: border-box;
 }
