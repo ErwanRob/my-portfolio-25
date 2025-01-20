@@ -13,9 +13,6 @@
   margin: 0 0.5rem 0 0;
 
   &__container {
-    /* top: 50%;
-      left: 50%; */
-    /*  transform: translate(-50%, -50%); */
     position: absolute;
     overflow: hidden;
     display: flex;
@@ -23,18 +20,12 @@
     align-items: center;
     align-content: center;
     box-sizing: border-box;
-    /* background: abs.$darker-grey; */
-    background: transparent;
     border-radius: 50%;
     width: 300px;
     height: 300px;
     z-index: 2;
     filter: drop-shadow(0rem 0rem 3rem abs.$dark-purple);
-    /* animation: loader 3s linear infinite; */
-    animation: boostedLoaderBackgroundOnExit 0.5s linear forwards;
-    &:hover {
-      animation: boostedLoaderBackground 0.5s linear forwards;
-    }
+
     &__orb {
       margin: -1.25rem;
       box-sizing: border-box;
@@ -43,20 +34,11 @@
       width: 350px;
       height: 350px;
       z-index: 3;
-      animation: loader 2s linear infinite;
+      animation: boostedLoader 2s linear infinite;
       &:hover {
         animation: boostedLoader 0.5s linear infinite;
       }
     }
-  }
-}
-
-@keyframes loader {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
 
@@ -65,24 +47,6 @@
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(720deg);
-  }
-}
-
-@keyframes boostedLoaderBackground {
-  0% {
-    background: transparent;
-  }
-  100% {
-    background: abs.$dark-grey;
-  }
-}
-
-@keyframes boostedLoaderBackgroundOnExit {
-  0% {
-    background: abs.$dark-grey;
-  }
-  100% {
-    background: transparent;
+    transform: rotate(360deg);
   }
 }
