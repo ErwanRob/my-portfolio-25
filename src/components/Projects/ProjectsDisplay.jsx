@@ -4,19 +4,19 @@ const ProjectsDisplay = () => {
   return (
     <div className={styles.projectsDisplay}>
       <div className={styles["projectsDisplay__container"]}>
-        <div className={styles["projectsDisplay__container__list"]}>
-          <div
-            className={styles["projectsDisplay__container__list__item"]}
-          ></div>
-          <div
-            className={styles["projectsDisplay__container__list__item"]}
-          ></div>
-          <div
-            className={styles["projectsDisplay__container__list__item"]}
-          ></div>
-          <div
-            className={styles["projectsDisplay__container__list__item"]}
-          ></div>
+        <div className={styles["projectsDisplay__container__grid"]}>
+          <div className={styles["projectsDisplay__container__grid__item"]}>
+            1
+          </div>
+          <div className={styles["projectsDisplay__container__grid__item"]}>
+            2
+          </div>
+          <div className={styles["projectsDisplay__container__grid__item"]}>
+            3
+          </div>
+          <div className={styles["projectsDisplay__container__grid__item"]}>
+            4
+          </div>
         </div>
         <div />
       </div>

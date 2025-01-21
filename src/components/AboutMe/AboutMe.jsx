@@ -48,11 +48,11 @@ const AboutMe = () => {
       //Canvas drawing
       /*  ctx.fillStyle = "#1a1a1afc"; */
       /* ctx.fillStyle = "#A287f3fc"; */
-      ctx.fillStyle = "#292929c1";
+      ctx.fillStyle = "#292929e1";
       ctx.fillRect(0, 0, canvasWidth, canvasHeight);
       //Text drawing
-      ctx.fillStyle = "#A287f3fc"; //text color
       ctx.font = "200 30px Inter";
+      ctx.fillStyle = "#A287f3fc"; //text color
       ctx.letterSpacing = "3px";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
