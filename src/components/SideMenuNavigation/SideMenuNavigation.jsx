@@ -9,10 +9,10 @@ const NavigationBar = () => {
   const handleScroll = (target) => {
     if (lenis) {
       lenis.scrollTo(target, {
-        duration: 0.75,
-        easing: (x) => 1 - Math.pow(1 - x, 5), // easeOutQuint
-        offset: 0, // adjust if needed
-        lock: true, // lock scrolling until animation completes
+        duration: 1,
+        easing: (x) => 1 - Math.pow(1 - x, 5),
+        offset: 0,
+        lock: true,
       });
     }
   };

@@ -74,25 +74,3 @@ const App = () => {
 };
 
 export default App;
-
-/* 
-
- */
-
-{
-  /*  <div className="section hero">
-          <Hero />
-        </div>
-        <div className="section about-me">
-          <AboutMe />
-        </div>
-        <div className="section projects">
-          <Projects />
-        </div>
-        <div className="section skills">
-          <Skills />
-        </div>
-        <div className="section contact">
-          <Contact />
-        </div> */
-}

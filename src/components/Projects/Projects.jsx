@@ -1,8 +1,8 @@
 import { backOut } from "motion";
 import styles from "./Projects.module.scss";
-/* import Button from "../Button/Button"; */
 import { motion } from "motion/react";
 import GlowingPlanet from "./GlowingPlanet/GlowingPlanet";
+/* import ProjectsDisplay from "./ProjectsDisplay"; */
 
 const Projects = () => {
   return (
@@ -25,17 +25,13 @@ const Projects = () => {
               J.E.C.T.S_
             </h3>
           </div>
-          {/*   <Button text="View more" variant="primary"></Button> */}
         </motion.div>
+        {/* <div className={styles["projects__altContainer"]}>
+          <ProjectsDisplay />
+        </div> */}
       </div>
     </div>
   );
 };
 
 export default Projects;
-
-{
-  /* <CircleLoader /> */
-  /* */
-  /*  ...........P.R........J.E.C.T.S_. */
-}

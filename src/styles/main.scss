@@ -8,10 +8,13 @@
 
 /* Global Styles */
 html {
-  -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
-  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  /* Hide scrollbar in IE and Edge */
+  /* Hide scrollbar in Firefox */
+  /* Hide scrollbar in Chrome, Safari and Opera */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   &::-webkit-scrollbar {
-    display: none; /* Hide scrollbar in Chrome, Safari and Opera */
+    display: none;
   }
 }
 
@@ -76,17 +79,8 @@ li {
   top: 0;
   left: 0;
   padding: 0 3rem 0 3rem;
-  //V1
-  /*  z-index: 10;
-  background: abs.$bg-gradient-contact; */
-  //V2
-  /*   z-index: 10;
-  background: abs.$bg-gradient-contact, abs.$dark-grey; */
-  //V3
   z-index: 10;
   background: abs.$dark-grey;
-
-  /* Instead of width */
   transform: scaleX(0);
   transform-origin: left;
   overflow: hidden;
@@ -110,14 +104,6 @@ li {
 }
 
 .content-wrapper {
-  /* Hide scrollbar in IE and Edge */
-  /* Hide scrollbar in Firefox */
-  /* Hide scrollbar in Chrome, Safari and Opera */
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
   position: relative;
   margin: 0 auto;
   /*  height: 100vh; */ // problem with stiky header

@@ -48,6 +48,7 @@ const GlowingPlanet = () => {
           isBlackHole
             ? {
                 scale: 16,
+                rotate: -960,
                 backgroundColor: "var(--dark-grey)",
                 y: "0",
                 x: "0",
