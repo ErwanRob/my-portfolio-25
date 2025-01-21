@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 const MaskText = ({ phrases, variant = "primary", align = "left" }) => {
   const { ref, inView } = useInView({
     threshold: 1,
-    rootMargin: "-100px 0px -150px 0px",
+    rootMargin: "-100px 0px -100px 0px",
     /* triggerOnce: true, */
   });
   //Base class and variants modifiers to keep control of base styles anyways.

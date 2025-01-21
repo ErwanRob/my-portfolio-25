@@ -1,5 +1,6 @@
 @use "../../styles/abstracts" as abs;
 
 .contact {
+  height: 100vh;
   background: abs.$bg-patternLos-blackish, abs.$bg-gradient-contact;
 }

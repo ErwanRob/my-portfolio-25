@@ -2,6 +2,7 @@
 @use "../../styles/base" as base;
 
 .hero {
+  height: 100vh;
   user-select: none; /*Prevent user blue-select*/
   /* background: abs.$bg-patternLos-blackish, abs.$bg-gradient-hero; */
   background: abs.$bg-patternLos-blackish, abs.$bg-gradient-hero,

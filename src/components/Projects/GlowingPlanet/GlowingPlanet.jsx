@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import styles from "./GlowingPlanet.module.scss";
-import { backOut, easeIn, easeInOut } from "motion";
+import { backOut } from "motion";
 import { useState } from "react";
 
 const GlowingPlanet = () => {
@@ -55,8 +55,12 @@ const GlowingPlanet = () => {
                 opacity: 1,
                 transition: {
                   backgroundColor: {
-                    duration: 0.25,
-                    ease: easeIn,
+                    duration: 0.1,
+                    ease: "easeIn",
+                  },
+                  scale: {
+                    duration: 0.75,
+                    ease: "easeOut",
                   },
                   duration: 0.75,
                   ease: "easeInOut",
@@ -74,7 +78,7 @@ const GlowingPlanet = () => {
                 transition: {
                   backgroundColor: {
                     duration: 0.75,
-                    ease: easeInOut,
+                    ease: "easeInOut",
                   },
                   duration: 0.75,
                   ease: "easeInOut",
@@ -87,7 +91,7 @@ const GlowingPlanet = () => {
         onClick={handleClick}
         onHoverStart={handleHoverStart}
         onHoverEnd={handleHoverEnd}
-        transition={{ duration: 0.5, ease: easeInOut }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
       >
         <div className={styles["glowingPlanet__container__orb"]} />
       </motion.div>

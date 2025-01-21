@@ -10,7 +10,7 @@ import { backOut } from "motion";
 const Skills = () => {
   const { ref, inView } = useInView({
     threshold: 0.5,
-    rootMargin: "200px 0px 100px 0px",
+    rootMargin: "150px 0px 100px 0px",
     /* triggerOnce: true, */
   });
 
