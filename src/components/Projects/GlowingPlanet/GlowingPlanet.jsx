@@ -2,14 +2,28 @@ import { motion } from "motion/react";
 import styles from "./GlowingPlanet.module.scss";
 import { backOut } from "motion";
 import { useState } from "react";
+import { useLenis } from "lenis/react";
 
 const GlowingPlanet = () => {
   const [isBlackHole, setIsBlackHole] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
+  const lenis = useLenis();
+
+  const handleScroll = () => {
+    if (lenis) {
+      lenis.scrollTo("#gallery", {
+        duration: 1,
+        easing: (x) => 1 - Math.pow(1 - x, 5), // easeOutQuint
+        offset: 0, // might need to adjust for animation later, i'll see
+        lock: false, // lock scrolling during ScrollTo animation
+      });
+    }
+  };
 
   const handleClick = () => {
     setIsBlackHole(!isBlackHole);
     setIsHovering(false); // hover resets when clicking
+    handleScroll();
   };
 
   const handleHoverStart = () => {
@@ -48,9 +62,9 @@ const GlowingPlanet = () => {
           isBlackHole
             ? {
                 scale: 16,
-                rotate: -960,
+                rotate: -1920,
                 backgroundColor: "var(--dark-grey)",
-                y: "0",
+                y: "200vh",
                 x: "0",
                 opacity: 1,
                 transition: {
@@ -59,8 +73,16 @@ const GlowingPlanet = () => {
                     ease: "easeIn",
                   },
                   scale: {
-                    duration: 0.75,
+                    duration: 0.5,
                     ease: "easeOut",
+                  },
+                  rotate: {
+                    duration: 1,
+                    ease: "easeInOut",
+                  },
+                  y: {
+                    duration: 0.5,
+                    ease: "easeIn",
                   },
                   duration: 0.75,
                   ease: "easeInOut",
@@ -100,3 +122,19 @@ const GlowingPlanet = () => {
 };
 
 export default GlowingPlanet;
+
+/* 
+//Version if i need a delay on lenis scrollTo
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const handleScroll = async () => {
+  if (lenis) {
+    await delay(2000); 
+    lenis.scrollTo("#gallery", {
+      duration: 3,
+      easing: (x) => 1 - Math.pow(1 - x, 5), 
+      offset: -300, 
+      lock: false, 
+    });
+  }
+}; */

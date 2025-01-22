@@ -1,6 +1,12 @@
 @use "../../styles/abstracts" as abs;
 
 .contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
   height: 100vh;
+  width: 100vw;
   background: abs.$bg-patternLos-blackish, abs.$bg-gradient-contact;
 }

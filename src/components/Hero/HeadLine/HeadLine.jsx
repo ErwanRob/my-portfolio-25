@@ -24,8 +24,8 @@ const HeadLine = () => {
     "Ciao",
   ];
   const preLoaderExit = 3000; // Delay before Preloader exit after anim end
-  const wordDisplayTime = 200; // Time for each word in ms
-  const wordAnimeDuration = 0.05; // Time for anim swap in SECONDS
+  const wordDisplayTime = 100; // Time for each word in ms
+  const wordAnimeDuration = 0.1; // Time for anim swap in SECONDS
   const endDelay = 50; // Time to pause before exiting wods panel anim in rms
   const welcomeDelay = 0.25;
   const totalTime =

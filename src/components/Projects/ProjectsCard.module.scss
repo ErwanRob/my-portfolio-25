@@ -1,0 +1,35 @@
+@use "../../styles/abstracts" as abs;
+
+.projectsCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 1440px;
+  height: 100%;
+  /*   background-color: rgba(109, 196, 122, 0.397); */
+
+  &__img {
+    box-sizing: border-box;
+    z-index: 1;
+    width: 100%;
+    height: 80%;
+    background-size: cover; // change if not using image later on
+    background-position: center;
+  }
+  &__title {
+    z-index: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    font-size: 2rem;
+    padding: 2rem;
+    /* background: abs.$dark-grey; */
+    background-color: transparent;
+  }
+}

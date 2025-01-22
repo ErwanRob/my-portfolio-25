@@ -1,15 +1,18 @@
 @use "../../styles/abstracts" as abs;
 
 .skills {
-  height: 100vh;
-  z-index: 1; /* Allows Skills to be above Projects, thus making the shadow box visible*/
-  background: abs.$bg-gradient-skills, abs.$bg-noise,
-    abs.$bg-patternLos-blackish, abs.$dark-grey;
-  box-shadow: abs.$sc-shdw2;
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  background: abs.$bg-gradient-skills, abs.$bg-noise,
+    abs.$bg-patternLos-blackish, abs.$dark-grey;
+  box-shadow: abs.$sc-shdw2;
 
   &__container {
     display: flex;

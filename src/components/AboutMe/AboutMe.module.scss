@@ -1,20 +1,19 @@
 @use "../../styles/abstracts" as abs;
 
 .aboutMe {
-  height: 100vh;
-  z-index: 1; /* Allows About me to be above Projects, thus making the shadow box visible*/
-  box-shadow: abs.$sc-shdw; /*Shadow to define, not final*/
-  /* background: abs.$bg-patternLos-blackish, abs.$dark-grey; */
-  /* background-image: url("../../assets/img/bgd/n2.svg"); */
-  background: abs.$bg-gradient-project2, abs.$bg-noise,
-    abs.$bg-patternLos-blackish, abs.$dark-grey;
-
-  /*   abs.$bg-noise, abs.$bg-patternLos-blackish, */
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
   overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  z-index: 1; /* Allows About me to be above Projects, thus making the shadow box visible*/
+  background: abs.$bg-gradient-project2, abs.$bg-noise,
+    abs.$bg-patternLos-blackish, abs.$dark-grey;
+  box-shadow: abs.$sc-shdw; /*Shadow to define, not final*/
+
   &__container {
     display: grid;
     grid-template-columns: auto auto;
@@ -28,6 +27,7 @@
     border-radius: 50px;
     margin: 1rem;
     padding: 2rem 6rem;
+
     &__headLine {
       grid-area: aboutMe__container__headLine;
       display: flex;
@@ -38,6 +38,7 @@
       gap: 2rem;
       box-sizing: border-box;
     }
+
     &__title {
       grid-area: aboutMe__container__title;
       display: flex;
@@ -49,11 +50,13 @@
       width: 4rem;
       box-sizing: border-box;
       user-select: none;
+
       &__lList {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+
         &__letter {
           list-style: none;
           display: flex;
@@ -81,6 +84,7 @@
       box-sizing: border-box;
       width: auto;
       height: auto;
+
       &__portraitContainer {
         z-index: 2;
         position: relative;
@@ -105,6 +109,7 @@
           box-sizing: border-box;
           clip-path: circle(65% at 50% 50%);
         }
+
         &__portraitCanvas {
           z-index: 3;
           position: absolute;
@@ -114,6 +119,7 @@
           height: 100%;
           clip-path: circle(65% at 50% 50%);
         }
+
         &__resetButton {
           width: 3rem;
           height: 1rem;
@@ -121,7 +127,6 @@
           display: flex;
           justify-content: center;
           align-items: center;
-
           bottom: 5%; // Adjust position as needed
           left: 50%;
           transform: translateX(-50%);
@@ -151,6 +156,7 @@
         padding: 0 3rem 0 0;
         box-sizing: border-box;
         gap: 3.5rem;
+
         &__maskTextWrapper {
           display: flex;
           position: relative;
@@ -159,6 +165,7 @@
           gap: 0.25rem;
           box-sizing: border-box;
         }
+
         &__subLine {
           display: flex;
           width: 100%;

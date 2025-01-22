@@ -106,7 +106,7 @@ const AboutMe = () => {
   }, []);
 
   return (
-    <div className={`section ${styles.aboutMe}`} id="about-me">
+    <div className={styles.aboutMe} id="about-me">
       <div className={styles["aboutMe__container"]}>
         <div className={styles["aboutMe__container__headLine"]}>
           <MaskText phrases={phrasesHeadline} variant="primary" align="left" />

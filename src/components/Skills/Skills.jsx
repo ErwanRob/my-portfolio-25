@@ -28,7 +28,7 @@ const Skills = () => {
   };
 
   return (
-    <div className={`section ${styles.skills}`} id="skills">
+    <div className={styles.skills} id="skills">
       <div className={styles["skills__container"]}>
         <h3 className={styles["skills__container__title"]}>Skills & Tools</h3>
         <div className={styles["skills__container__grid"]}>

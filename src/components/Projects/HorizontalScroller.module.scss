@@ -1,0 +1,43 @@
+@use "../../styles/abstracts" as abs;
+
+.horizontalScroller {
+  /*   overflow: hidden; */
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 400vh;
+  /*   background: rgba(95, 163, 95, 0.058); */
+  /*   background: abs.$dark-grey; */
+
+  &__stickyContainer {
+    position: sticky;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100vh;
+    top: 0;
+    padding: abs.$headerHeight 0;
+    background:/*  abs.$bg-noise2, */ abs.$bg-patternLos-blackish,
+      abs.$dark-grey;
+
+    &__content {
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      gap: 20vw;
+      /*   background-color: rgba(190, 196, 109, 0.397); */
+    }
+  }
+}

@@ -10,7 +10,7 @@ const Hero = ({ toggleSettings }) => {
   };
 
   return (
-    <div className={`section ${styles.hero} `} id="hero">
+    <div className={styles.hero} id="hero">
       <div className={styles["hero__content"]}>
         <div className={styles["hero__content__container"]}>
           <HeadLine />
