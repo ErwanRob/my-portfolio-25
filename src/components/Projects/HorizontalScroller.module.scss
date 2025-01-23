@@ -1,7 +1,6 @@
 @use "../../styles/abstracts" as abs;
 
 .horizontalScroller {
-  /*   overflow: hidden; */
   position: relative;
   z-index: 1;
   display: flex;
@@ -24,8 +23,7 @@
     height: 100vh;
     top: 0;
     padding: abs.$headerHeight 0;
-    background:/*  abs.$bg-noise2, */ abs.$bg-patternLos-blackish,
-      abs.$dark-grey;
+    background: abs.$bg-patternLos-blackish, abs.$dark-grey;
 
     &__content {
       overflow: hidden;
