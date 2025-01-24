@@ -54,11 +54,15 @@ const GlowingPlanet = ({
         }}
         whileHover={{
           scale: 1.2,
-          rotate: 720,
+          rotate: 1800,
           backgroundColor: "rgba(26, 26, 26,1)",
           transition: {
             backgroundColor: {
               duration: 0.75,
+              ease: "easeInOut",
+            },
+            scale: {
+              duration: 0.25,
               ease: "easeInOut",
             },
             duration: 0.75,
