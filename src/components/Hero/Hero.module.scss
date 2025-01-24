@@ -9,8 +9,7 @@
   height: 100vh;
   user-select: none; /*Prevent user blue-select*/
   margin: -#{abs.$headerHeight} 0 0 0; // compensate for header
-  background: abs.$bg-patternLos-blackish, abs.$bg-gradient-hero,
-    abs.$bg-patternLos-purpleish;
+  background: abs.$bg-patternLos-blackish, abs.$bg-patternLos-purpleish;
 
   &__content {
     /* max-width: 1200px */

@@ -1,4 +1,3 @@
-import ParticlesComponent from "./components/ParticlesComponent";
 import Options from "./components/Options/Options";
 import NavigationBar from "./components/SideMenuNavigation/SideMenuNavigation";
 import Hero from "./components/Hero/Hero";
@@ -10,7 +9,6 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { useState } from "react";
 import { ReactLenis } from "lenis/react";
-import { motion } from "motion/react";
 
 const App = () => {
   const [isSettingsVisible, setSettingsVisible] = useState(false);
@@ -28,27 +26,11 @@ const App = () => {
           return 1 - Math.pow(1 - x, 5);
         },
         duration: 0.75,
-        wheelMultiplier: 1.5,
+        wheelMultiplier: 1.25,
         /* infinite: true, */
       }}
     >
       <div className="App">
-        <motion.div
-          className="particles-wrapper"
-          initial={{
-            opacity: 0,
-          }}
-          animate={{
-            opacity: 1,
-          }}
-          transition={{
-            duration: 0.25,
-            delay: 3.2,
-            type: "linear",
-          }}
-        >
-          <ParticlesComponent />
-        </motion.div>
         <div className="header-wrapper">
           <Header />
         </div>

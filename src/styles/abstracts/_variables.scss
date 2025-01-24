@@ -1,5 +1,7 @@
 :root {
   --dark-grey: #1a1a1a;
+  --projectSection-height: 800vh;
+  --scrollingSection-height: calc(var(--projectSection-height) - 100vh);
 }
 
 /*margins, paddings, widths, heights*/
@@ -30,6 +32,7 @@ $light-grey-rgba: rgba(234, 234, 234, 0.2);
 $white-rgba: rgba(255, 255, 255, 0.2);
 $active-purple-rgba: rgba(91, 35, 181, 0.5);
 $medium-grey-rgba: rgba(163, 163, 163, 1);
+$hover-purple2-rgba: rgb(206, 188, 247, 0.5);
 /*Gradient Colors*/
 
 $bg-gradient-header: linear-gradient(
@@ -56,13 +59,22 @@ $bg-gradient-about: linear-gradient(
   rgba(26, 26, 26, 0) 100%
 );
 
-$bg-gradient-project1: radial-gradient(
+/* $bg-gradient-project1: radial-gradient( // Not used anymore
   circle at 50% 50%,
   rgba(26, 26, 26, 1) 0%,
   rgba(26, 26, 26, 1) 10%,
   rgba(26, 26, 26, 0) 11%,
   rgba(41, 41, 41, 0) 60%,
   rgba(124, 60, 235, 0.25) 100%
+); */
+
+$bg-gradient-project1-2: radial-gradient(
+  circle at 50% 50%,
+  rgba(26, 26, 26, 1) 0%,
+  rgba(26, 26, 26, 1) 78%,
+  rgba(26, 26, 26, 0.7) 80%,
+  rgba(124, 60, 235, 0.2) 90%,
+  rgba(124, 60, 235, 0.5) 100%
 );
 $bg-gradient-project2: linear-gradient(
   200deg,

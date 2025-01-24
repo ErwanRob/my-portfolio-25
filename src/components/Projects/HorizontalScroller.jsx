@@ -3,6 +3,7 @@ import { useRef } from "react";
 import styles from "./HorizontalScroller.module.scss";
 import ProjectsCard from "./ProjectsCard";
 import imgSpot from "../../assets/img/test2.jpg";
+import PropTypes from "prop-types";
 
 const cards = [
   {
@@ -42,16 +43,20 @@ const cards = [
   },
 ];
 
-const HorizontalScroller = () => {
+const HorizontalScroller = ({ bgTransform }) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["50%", "-50%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["60%", "-45%"]);
 
   return (
-    <div ref={targetRef} className={styles.horizontalScroller} id="gallery">
+    <motion.div
+      ref={targetRef}
+      className={styles.horizontalScroller}
+      style={{ backgroundColor: bgTransform }}
+    >
       <div className={styles["horizontalScroller__stickyContainer"]}>
         <motion.div
           style={{ x }}
@@ -62,8 +67,15 @@ const HorizontalScroller = () => {
           })}
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
 export default HorizontalScroller;
+
+HorizontalScroller.propTypes = {
+  bgTransform: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.any }),
+  ]),
+};

@@ -12,7 +12,7 @@ const ProjectsCard = ({ card }) => {
         y: "0",
         opacity: 1,
         transition: {
-          duration: 0.5,
+          duration: 0.25,
           delay: 0.1,
           ease: "easeOut",
         },
@@ -26,7 +26,9 @@ const ProjectsCard = ({ card }) => {
         }}
       />
 
-      <div className={styles["projectsCard__title"]}>{card.title}</div>
+      <div id={`idProject${card.id}`} className={styles["projectsCard__title"]}>
+        {card.title}
+      </div>
     </motion.div>
   );
 };

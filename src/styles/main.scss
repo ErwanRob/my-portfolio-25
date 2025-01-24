@@ -23,7 +23,6 @@ body {
   margin: 0;
   font-family: "Inter", sans-serif;
   color: abs.$white;
-  /*  background: abs.$bg-patternLos-purpleish, abs.$dark-grey; */
   background: abs.$dark-grey;
 }
 
@@ -42,7 +41,7 @@ li {
 
 /* Wrapper for the entire app */
 .App {
-  /* position: relative; */ /* For positioning particles properly */
+  position: relative;
   height: 100%; /* Ensure it takes up the full viewport */
   width: 100%; /* Ensure it takes up the full viewport */
 }
@@ -52,9 +51,19 @@ li {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   z-index: -1; /* Push particles behind content */
+}
+/* Particles id props i have to pass */
+#tsparticlesHero {
+  width: 100vw;
+  height: 100vh;
+}
+
+#tsparticlesProjects {
+  width: 100vw;
+  height: 100vh;
 }
 
 .header-wrapper {
@@ -108,7 +117,7 @@ li {
   position: relative;
   margin: 0 auto;
   /*  height: 100vh; */ // problem with stiky header
-  /* width: 100%; */
+  width: 100vw;
   min-height: 100vh;
   z-index: 1;
 }

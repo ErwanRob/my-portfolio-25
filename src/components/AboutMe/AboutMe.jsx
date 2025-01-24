@@ -48,15 +48,15 @@ const AboutMe = () => {
       //Canvas drawing
       /*  ctx.fillStyle = "#1a1a1afc"; */
       /* ctx.fillStyle = "#A287f3fc"; */
-      ctx.fillStyle = "#292929e1";
+      ctx.fillStyle = "#29292931";
       ctx.fillRect(0, 0, canvasWidth, canvasHeight);
       //Text drawing
-      ctx.font = "200 30px Inter";
+      ctx.font = "100 24px Inter";
       ctx.fillStyle = "#A287f3fc"; //text color
       ctx.letterSpacing = "3px";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      ctx.fillText("Paint Board", canvasWidth / 2, canvasHeight / 2);
+      ctx.fillText("Paint", canvasWidth / 2, canvasHeight / 1.05);
       ctx.globalCompositeOperation = "destination-out";
     };
 
@@ -83,7 +83,7 @@ const AboutMe = () => {
           const t = i / numSteps;
           const interpolatedX = lerp(prevX, x, t);
           const interpolatedY = lerp(prevY, y, t);
-          drawCircle(interpolatedX, interpolatedY, 40); // Adjust radius for brush size
+          drawCircle(interpolatedX, interpolatedY, 60); // Adjust radius for brush size
         }
       }
       prevPosition.current = { x, y };
@@ -164,25 +164,31 @@ const AboutMe = () => {
               duration: 1,
             }}
           >
-            <img
+            <div
               className={
                 styles[
-                  "aboutMe__container__content__portraitContainer__portraitImg"
-                ]
-              }
-              src={portrait}
-              alt="selfPortrait"
-            />
-            <canvas
-              ref={canvasRef}
-              className={
-                styles[
-                  "aboutMe__container__content__portraitContainer__portraitCanvas"
+                  "aboutMe__container__content__portraitContainer__imgWrapper"
                 ]
               }
             >
-              <p>Click</p>
-            </canvas>
+              <img
+                className={
+                  styles[
+                    "aboutMe__container__content__portraitContainer__imgWrapper__img"
+                  ]
+                }
+                src={portrait}
+                alt="selfPortrait"
+              />
+              <canvas
+                ref={canvasRef}
+                className={
+                  styles[
+                    "aboutMe__container__content__portraitContainer__imgWrapper__canvas"
+                  ]
+                }
+              />
+            </div>
           </motion.div>
           <div className={styles["aboutMe__container__content__description"]}>
             <div
@@ -220,9 +226,3 @@ const AboutMe = () => {
 };
 
 export default AboutMe;
-
-/*   
-    hardcoded draw for debug
-    ctx.beginPath();
-    ctx.arc(canvas.width / 2, canvas.height / 2, 50, 0, Math.PI * 2);
-    ctx.fill(); */

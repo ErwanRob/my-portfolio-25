@@ -9,8 +9,8 @@ import { backOut } from "motion";
 
 const Skills = () => {
   const { ref, inView } = useInView({
-    threshold: 0.5,
-    rootMargin: "150px 0px 100px 0px",
+    threshold: 1,
+    rootMargin: "150px 0px 300px 0px",
     /* triggerOnce: true, */
   });
 
@@ -20,9 +20,9 @@ const Skills = () => {
       y: "0%",
       opacity: 1,
       transition: {
-        duration: 1,
+        duration: 0.5,
         ease: backOut,
-        delay: 0.01 + i * 0.025,
+        delay: 0.01 + i * 0.01,
       },
     }),
   };

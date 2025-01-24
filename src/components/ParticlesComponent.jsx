@@ -1,25 +1,22 @@
+import PropTypes from "prop-types";
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 
-const ParticlesComponent = () => {
+const ParticlesComponent = ({ id }) => {
   const particlesInit = useCallback(async (engine) => {
     // Load the slim version of tsparticles
     await loadSlim(engine);
   }, []);
 
-  const particlesLoaded = useCallback((container) => {
-    console.log(container);
-  }, []);
-
   return (
     <Particles
-      id="tsparticles"
+      id={id}
       init={particlesInit}
-      loaded={particlesLoaded}
       options={{
-        fullScreen: { enable: true }, // Enable full-screen mode
+        fullScreen: { enable: false }, // Enable full-screen mode
         fpsLimit: 60, // Limit FPS for smoother animations
+        pauseOnOutsideViewport: true,
         particles: {
           number: {
             value: 100, // Number of particles
@@ -91,69 +88,6 @@ const ParticlesComponent = () => {
 
 export default ParticlesComponent;
 
-/* return (
-  <Particles
-    id="tsparticles"
-    init={particlesInit}
-    loaded={particlesLoaded}
-    options={{
-      fullScreen: { enable: true },
-      background: {
-        color: { value: "#1a1a1a" }, // Dark background
-      },
-      fpsLimit: 120, // Limit frame rate
-      particles: {
-        number: {
-          value: 50, // Number of particles
-          density: { enable: true, area: 800 }, // Density settings
-        },
-        color: {
-          value: ["#ffffff", "#7c3ceb", "#00ffff"], // Array for multiple colors
-        },
-        shape: {
-          type: ["circle", "star"], // Array for multiple shapes
-          options: {
-            star: { sides: 5 }, // Shape-specific settings
-          },
-        },
-        opacity: {
-          value: 0.7, // Slight transparency
-          random: true, // Random opacity
-        },
-        size: {
-          value: { min: 3, max: 7 }, // Random size range
-          animation: {
-            enable: true,
-            speed: 3,
-            minimumValue: 1,
-            sync: false,
-          },
-        },
-        move: {
-          enable: true,
-          speed: 2, // Movement speed
-          direction: "none", // "none", "top", "bottom", "left", "right"
-          outModes: { default: "out" }, // Particles exit the screen and re-enter
-        },
-      },
-      interactivity: {
-        events: {
-          onHover: { enable: true, mode: "bubble" }, // Hover effect: bubble
-          onClick: { enable: true, mode: "push" }, // Click effect: add particles
-        },
-        modes: {
-          bubble: {
-            distance: 200,
-            size: 10,
-            duration: 2,
-            opacity: 0.8,
-            speed: 3,
-          },
-          push: { quantity: 4 }, // Add particles on click
-        },
-      },
-      detectRetina: true, // Retina display support
-    }}
-  />
-);
-}; */
+ParticlesComponent.propTypes = {
+  id: PropTypes.string.isRequired,
+};

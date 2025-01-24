@@ -1,127 +1,99 @@
 import { motion } from "motion/react";
 import styles from "./GlowingPlanet.module.scss";
 import { backOut } from "motion";
-import { useState } from "react";
 import { useLenis } from "lenis/react";
+import PropTypes from "prop-types";
 
-const GlowingPlanet = () => {
-  const [isBlackHole, setIsBlackHole] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
+const GlowingPlanet = ({
+  yTransform,
+  scaleTransform,
+  bgTransformBlackHole,
+  spinTranformBlackHole,
+}) => {
   const lenis = useLenis();
 
   const handleScroll = () => {
     if (lenis) {
-      lenis.scrollTo("#gallery", {
+      lenis.scrollTo("#idProject1", {
         duration: 1,
         easing: (x) => 1 - Math.pow(1 - x, 5), // easeOutQuint
-        offset: 0, // might need to adjust for animation later, i'll see
+        offset: 0, // Bad for responsiveness, i shall not use
         lock: false, // lock scrolling during ScrollTo animation
       });
     }
   };
 
   const handleClick = () => {
-    setIsBlackHole(!isBlackHole);
-    setIsHovering(false); // hover resets when clicking
     handleScroll();
   };
 
-  const handleHoverStart = () => {
-    if (!isBlackHole) {
-      setIsHovering(true);
-    }
-  };
-
-  const handleHoverEnd = () => {
-    setIsHovering(false);
-  };
-
-  /* const handleClose = () => {
-    setIsBlackHole(false);
-  }; */
-
   return (
-    <div className={styles.glowingPlanet}>
+    <motion.div
+      style={{ y: yTransform, scale: scaleTransform }}
+      className={styles.glowingPlanet}
+    >
       <motion.div
+        style={{
+          backgroundColor: bgTransformBlackHole,
+          rotate: spinTranformBlackHole,
+        }}
         className={styles["glowingPlanet__container"]}
-        initial={{ y: "20rem", x: "20rem", opacity: 0, rotate: -960 }}
-        //InView
-        whileInView={
-          !isBlackHole
-            ? {
-                y: "0",
-                x: "0",
-                opacity: 1,
-                rotate: 0,
-                transition: { duration: 1.5, ease: backOut },
-              }
-            : {} // Disable WhileInView animation if black hole is active
-        }
-        //Animate
-        animate={
-          isBlackHole
-            ? {
-                scale: 16,
-                rotate: -1920,
-                backgroundColor: "var(--dark-grey)",
-                y: "200vh",
-                x: "0",
-                opacity: 1,
-                transition: {
-                  backgroundColor: {
-                    duration: 0.1,
-                    ease: "easeIn",
-                  },
-                  scale: {
-                    duration: 0.5,
-                    ease: "easeOut",
-                  },
-                  rotate: {
-                    duration: 1,
-                    ease: "easeInOut",
-                  },
-                  y: {
-                    duration: 0.5,
-                    ease: "easeIn",
-                  },
-                  duration: 0.75,
-                  ease: "easeInOut",
-                },
-              } // Animate scale if black hole turns active
-            : {}
-        }
-        //Hover
-        whileHover={
-          isHovering
-            ? {
-                scale: 1.2,
-                rotate: 720,
-                backgroundColor: "var(--dark-grey)",
-                transition: {
-                  backgroundColor: {
-                    duration: 0.75,
-                    ease: "easeInOut",
-                  },
-                  duration: 0.75,
-                  ease: "easeInOut",
-                },
-              }
-            : {} // Disable WhileHover animation if black hole is active
-        }
-        //general transition
-        //on click
+        initial={{
+          y: "-30rem",
+          x: "0rem",
+          opacity: 0,
+          rotate: -960,
+          backgroundColor: "rgba(26, 26, 26,0)",
+        }}
+        whileInView={{
+          y: "0rem",
+          x: "0rem",
+          opacity: 1,
+          rotate: 1080,
+          transition: { duration: 1.5, ease: backOut },
+        }}
+        whileHover={{
+          scale: 1.2,
+          rotate: 720,
+          backgroundColor: "rgba(26, 26, 26,1)",
+          transition: {
+            backgroundColor: {
+              duration: 0.75,
+              ease: "easeInOut",
+            },
+            duration: 0.75,
+            ease: "easeInOut",
+          },
+        }}
         onClick={handleClick}
-        onHoverStart={handleHoverStart}
-        onHoverEnd={handleHoverEnd}
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
         <div className={styles["glowingPlanet__container__orb"]} />
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 
 export default GlowingPlanet;
+
+GlowingPlanet.propTypes = {
+  yTransform: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.any }),
+  ]),
+  scaleTransform: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.any }),
+  ]),
+  bgTransformBlackHole: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.any }),
+  ]),
+  spinTranformBlackHole: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.any }),
+  ]),
+};
 
 /* 
 //Version if i need a delay on lenis scrollTo
@@ -137,4 +109,24 @@ const handleScroll = async () => {
       lock: false, 
     });
   }
-}; */
+}; 
+
+  /* const handleClose = () => {
+    setIsBlackHole(false);
+  }; */
+
+/*   const handleHoverStart = () => {
+    if (!isBlackHole) {
+      setIsHovering(true);
+    }
+  };
+
+  const handleHoverEnd = () => {
+    setIsHovering(false);
+  }; */
+
+/*   setIsBlackHole(!isBlackHole);
+    setIsHovering(false);  */ // hover resets when clicking
+
+/*   const [isBlackHole, setIsBlackHole] = useState(false);
+  const [isHovering, setIsHovering] = useState(false); */

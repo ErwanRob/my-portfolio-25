@@ -2,17 +2,16 @@
 
 .horizontalScroller {
   position: relative;
-  z-index: 1;
+  z-index: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  height: 400vh;
-  /*   background: rgba(95, 163, 95, 0.058); */
-  /*   background: abs.$dark-grey; */
+  height: var(--scrollingSection-height);
 
   &__stickyContainer {
+    z-index: 1;
     position: sticky;
     box-sizing: border-box;
     overflow: hidden;
@@ -22,8 +21,7 @@
     width: auto;
     height: 100vh;
     top: 0;
-    padding: abs.$headerHeight 0;
-    background: abs.$bg-patternLos-blackish, abs.$dark-grey;
+    padding: abs.$headerHeight 0 0 0;
 
     &__content {
       overflow: hidden;
@@ -34,8 +32,8 @@
       box-sizing: border-box;
       width: 100%;
       height: 100%;
-      gap: 20vw;
-      /*   background-color: rgba(190, 196, 109, 0.397); */
+      gap: 30vw;
+      padding: 4rem 0;
     }
   }
 }

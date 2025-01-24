@@ -23,14 +23,15 @@ const HeadLine = () => {
     "Namaste",
     "Ciao",
   ];
-  const preLoaderExit = 3000; // Delay before Preloader exit after anim end
-  const wordDisplayTime = 100; // Time for each word in ms
-  const wordAnimeDuration = 0.1; // Time for anim swap in SECONDS
+  const wordDisplayTime = 25; // Time for each word in ms
+  const wordAnimeDuration = 0.2; // Time for anim swap in SECONDS
   const endDelay = 50; // Time to pause before exiting wods panel anim in rms
   const welcomeDelay = 0.25;
+  const blinkingCursorDelay = 2.5;
   const totalTime =
     words.length * (wordDisplayTime / 1000 + wordAnimeDuration) +
     endDelay / 1000; //in sec, Total time of the PreLoader Animation
+  const preLoaderExit = 3000; // Delay before Preloader exit after anim end
 
   return (
     <div className={styles.headLine}>
@@ -58,7 +59,7 @@ const HeadLine = () => {
         initial={{ x: 0 }}
         animate={{ x: "-14.5rem" }}
         transition={{
-          delay: 3,
+          delay: blinkingCursorDelay,
           duration: 0.2,
           ease: backIn,
         }}

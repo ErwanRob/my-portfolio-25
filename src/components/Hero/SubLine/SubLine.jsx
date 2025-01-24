@@ -17,7 +17,7 @@ const Subline = () => {
         opacity: 1,
       }}
       transition={{
-        delay: 3.2,
+        delay: 2.7, // blinkingCursorDelay (slashleft) + 0.2sec
         duration: 0.15,
         ease: backOut,
       }}
