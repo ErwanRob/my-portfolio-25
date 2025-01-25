@@ -2,44 +2,59 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import styles from "./HorizontalScroller.module.scss";
 import ProjectsCard from "./ProjectsCard";
-import imgSpot from "../../assets/img/test2.jpg";
+import imgProject1 from "../../assets/img/projects/project1.jpg";
+import placeHolderProjectImg from "../../assets/img/projects/projectPlaceholder1.jpg";
 import PropTypes from "prop-types";
 
 const cards = [
   {
-    url: imgSpot,
-    title: "Title 1",
+    url: imgProject1,
+    title: "TMPO",
     id: 1,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quaerat ratione eaque optio quam at architecto deserunt laborum assumenda, perferendis totam! Eum libero maiores voluptas fugiat impedit ipsam similique modi! ",
   },
   {
-    url: imgSpot,
-    title: "Title 2",
+    url: placeHolderProjectImg,
+    title: "Project 2 T.B.D",
     id: 2,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quaerat ratione eaque optio quam at architecto deserunt laborum assumenda, perferendis totam! Eum libero maiores voluptas fugiat impedit ipsam similique modi! ",
   },
   {
-    url: imgSpot,
-    title: "Title 3",
+    url: placeHolderProjectImg,
+    title: "Project 3 T.B.D",
     id: 3,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quaerat ratione eaque optio quam at architecto deserunt laborum assumenda, perferendis totam! Eum libero maiores voluptas fugiat impedit ipsam similique modi! ",
   },
   {
-    url: imgSpot,
-    title: "Title 4",
+    url: placeHolderProjectImg,
+    title: "Project 4 T.B.D",
     id: 4,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quaerat ratione eaque optio quam at architecto deserunt laborum assumenda, perferendis totam! Eum libero maiores voluptas fugiat impedit ipsam similique modi! ",
   },
   {
-    url: imgSpot,
-    title: "Title 5",
+    url: placeHolderProjectImg,
+    title: "Project 5 T.B.D",
     id: 5,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quaerat ratione eaque optio quam at architecto deserunt laborum assumenda, perferendis totam! Eum libero maiores voluptas fugiat impedit ipsam similique modi! ",
   },
   {
-    url: imgSpot,
-    title: "Title 6",
+    url: placeHolderProjectImg,
+    title: "Project 6 T.B.D",
     id: 6,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quaerat ratione eaque optio quam at architecto deserunt laborum assumenda, perferendis totam! Eum libero maiores voluptas fugiat impedit ipsam similique modi! ",
   },
   {
-    url: imgSpot,
-    title: "Title 7",
+    url: placeHolderProjectImg,
+    title: "Project 7 T.B.D",
     id: 7,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quaerat ratione eaque optio quam at architecto deserunt laborum assumenda, perferendis totam! Eum libero maiores voluptas fugiat impedit ipsam similique modi! ",
   },
 ];
 

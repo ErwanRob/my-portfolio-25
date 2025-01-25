@@ -45,7 +45,11 @@ const Hero = ({ toggleSettings }) => {
         }}
       >
         {shouldRenderParticles && particlesInView && (
-          <ParticlesComponent id="tsparticlesHero" />
+          <ParticlesComponent
+            id="tsparticlesHero"
+            direction="none"
+            speed={0.75}
+          />
         )}
       </motion.div>
       <div className={styles["hero__content"]}>

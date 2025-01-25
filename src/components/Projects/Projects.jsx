@@ -71,15 +71,14 @@ const Projects = () => {
           }}
         >
           {shouldRenderParticles && particlesInView && (
-            <ParticlesComponent id="tsparticlesProjects" />
+            <ParticlesComponent
+              id="tsparticlesProjects"
+              direction="top"
+              speed={1.75}
+            />
           )}
         </motion.div>
-        <motion.div
-          className={styles["projects__container__content"]}
-          /*   initial={{ x: "10rem" }}
-          whileInView={{ x: "0" }}
-          transition={{ duration: 1.5, ease: backOut }} */
-        >
+        <div className={styles["projects__container__content"]}>
           <div className={styles["projects__container__content__trigger"]}>
             <motion.h3
               className={styles["projects__container__content__trigger__PR"]}
@@ -104,7 +103,7 @@ const Projects = () => {
               J.E.C.T.S_
             </motion.h3>
           </div>
-        </motion.div>
+        </div>
       </div>
       <HorizontalScroller bgTransform={bgTransform} />
     </div>
@@ -124,7 +123,4 @@ export default Projects;
     const unsubscribe = scrollYProgress.on("change", (latestValue) => {
       console.log("ScrollYProgress:", latestValue);
     });
-
-    // Cleanup on unmount
-    return () => unsubscribe();
-  }, [scrollYProgress]); */
+*/

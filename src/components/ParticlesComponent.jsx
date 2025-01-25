@@ -3,7 +3,7 @@ import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 
-const ParticlesComponent = ({ id }) => {
+const ParticlesComponent = ({ id, direction, speed }) => {
   const particlesInit = useCallback(async (engine) => {
     // Load the slim version of tsparticles
     await loadSlim(engine);
@@ -46,8 +46,8 @@ const ParticlesComponent = ({ id }) => {
           },
           move: {
             enable: true,
-            speed: 0.75,
-            direction: "none",
+            speed: speed,
+            direction: direction,
             outModes: { default: "out" }, // Particles go outside the screen
           },
         },
@@ -90,4 +90,6 @@ export default ParticlesComponent;
 
 ParticlesComponent.propTypes = {
   id: PropTypes.string.isRequired,
+  direction: PropTypes.oneOf(["none", "top", "bottom", "right", "left"]),
+  speed: PropTypes.number.isRequired,
 };

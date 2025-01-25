@@ -26,8 +26,13 @@ const ProjectsCard = ({ card }) => {
         }}
       />
 
-      <div id={`idProject${card.id}`} className={styles["projectsCard__title"]}>
-        {card.title}
+      <div id={`idProject${card.id}`} className={styles["projectsCard__info"]}>
+        <div className={styles["projectsCard__info__title"]}>{card.title}</div>
+        <div className={styles["projectsCard__info__description"]}>
+          <p className={styles["projectsCard__info__description__txt"]}>
+            {card.description}
+          </p>
+        </div>
       </div>
     </motion.div>
   );
@@ -40,5 +45,6 @@ ProjectsCard.propTypes = {
     url: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
   }),
 };
