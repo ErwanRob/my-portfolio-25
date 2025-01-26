@@ -7,16 +7,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 /* Global Styles */
+/* Hide scrollbar in IE and Edge */
+/* Hide scrollbar in Firefox */
+/* Hide scrollbar in Chrome, Safari and Opera */
+h1,
+h3,
+button,
+p,
+ul,
+li,
+textarea,
+input,
+form {
+  all: unset;
+}
+
+/* 
+// FIX THE PROBLEM OF SCROLLING OUT OF VIEW WITH TOUCH DEVICES (mobiles)
+// NOT TO USE WHEN NOT ON MOBILES
+// The problem comes from the overflow-x: hidden for body as it cancels the horizontal scroll of projects section
+// But overflow-x: hidden on html {} FIXES THE PROBLEM middle mouse button problem on Desktop
+
+html, body {
+  overflow-x: hidden;
+}
+body {
+  position: relative
+} */
+
 html {
-  /* Hide scrollbar in IE and Edge */
-  /* Hide scrollbar in Firefox */
-  /* Hide scrollbar in Chrome, Safari and Opera */
   -ms-overflow-style: none;
   scrollbar-width: none;
   &::-webkit-scrollbar {
     display: none;
   }
-  position: relative;
+  overflow-x: hidden;
+}
+
+html,
+body {
+  position: relative; // removes the console warning for scrollX
 }
 
 body {
@@ -24,26 +54,19 @@ body {
   font-family: "Inter", sans-serif;
   color: abs.$white;
   background: abs.$dark-grey;
-}
 
-h1 {
-  margin: 0;
-}
-
-h1,
-h3,
-button,
-p,
-ul,
-li {
-  all: unset;
+  @media (pointer: coarse) {
+    // detect touch devices
+    overflow-x: hidden;
+  }
 }
 
 /* Wrapper for the entire app */
 .App {
-  position: relative;
+  /* position: relative; */
   height: 100%; /* Ensure it takes up the full viewport */
   width: 100%; /* Ensure it takes up the full viewport */
+  position: relative;
 }
 
 /* Particles wrapper */

@@ -27,7 +27,8 @@ const App = () => {
         },
         duration: 0.75,
         wheelMultiplier: 1.25,
-        /* infinite: true, */
+        /* infinite: true, needed for mobile devices ?*/
+        /*  overscroll: true, */
       }}
     >
       <div className="App">
