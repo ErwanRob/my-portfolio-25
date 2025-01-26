@@ -9,25 +9,23 @@ const Options = ({ isSettingsVisible }) => {
       }`}
     >
       {/* These will not be 'a' tag as they all will serve a special action */}
-      <a className={styles["options__items"]} href="#hero">
+      <a className={styles["options__items"]} href="#">
         Language (T.B.D)
       </a>
       <p className={styles["options__sub"]}>Select your prefered language.</p>
-      <a className={styles["options__items"]} href="#about-me">
+      <a className={styles["options__items"]} href="#">
         Animations (T.B.D)
       </a>
       <p className={styles["options__sub"]}>Enable/Disable all animations.</p>
-      <a className={styles["options__items"]} href="#projects">
+      <a className={styles["options__items"]} href="#">
         Light mode (T.B.D)
       </a>
       <p className={styles["options__sub"]}>Turn the light on, or off.</p>
-      <a className={styles["options__items"]} href="#skills">
+      <a className={styles["options__items"]} href="#">
         ColorBlind (T.B.D)
       </a>
-      <p className={styles["options__sub"]}>
-        Enable/Disable all color blind mode.
-      </p>
-      <a className={styles["options__items"]} href="#contact">
+      <p className={styles["options__sub"]}>Enable/Disable color blind mode.</p>
+      <a className={styles["options__items"]} href="#">
         High Contrast(T.B.D)
       </a>
       <p className={styles["options__sub"]}>

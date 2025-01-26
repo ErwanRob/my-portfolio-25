@@ -1,9 +1,10 @@
 import { useLenis } from "lenis/react";
 import styles from "./Header.module.scss";
+import { motion, useScroll, useMotionValueEvent } from "motion/react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const lenis = useLenis();
-
   const handleScroll = (target) => {
     if (lenis) {
       lenis.scrollTo(target, {
@@ -14,8 +15,47 @@ const Header = () => {
       });
     }
   };
+
+  const [hidden, setHidden] = useState(true);
+  const [viewPortHeight, setViewPortHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    const handleResize = () => setViewPortHeight(window.innerHeight);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    console.log("previous:", previous, " latest:", latest);
+    if (latest > previous || latest < viewPortHeight) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
+
   return (
-    <header className={styles.header}>
+    <motion.div
+      className={styles.header}
+      variants={{
+        visible: {
+          opacity: 1,
+          y: 0,
+        },
+        hidden: {
+          opacity: 0,
+          y: -100,
+        },
+      }}
+      animate={hidden ? "hidden" : "visible"}
+      transition={{
+        duration: 0.3,
+        ease: "easeInOut",
+      }}
+    >
       <nav className={styles["header__nav"]}>
         <ul className={styles["header__nav__list"]}>
           <li className={styles["header__nav__list__item"]}>
@@ -80,7 +120,7 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-    </header>
+    </motion.div>
   );
 };
 

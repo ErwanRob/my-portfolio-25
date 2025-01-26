@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import styles from "./HorizontalScroller.module.scss";
 import ProjectsCard from "./ProjectsCard";
-import imgProject1 from "../../assets/img/projects/project1.jpg";
+import imgProject1 from "../../assets/img/projects/projectTMPO.png";
 import placeHolderProjectImg from "../../assets/img/projects/projectPlaceholder1.jpg";
 import PropTypes from "prop-types";
 
