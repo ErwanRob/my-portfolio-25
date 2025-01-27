@@ -2,58 +2,61 @@
 @use "../../styles/base" as base;
 
 .nav {
+  z-index: 2;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: flex-end;
   width: auto;
+  padding: 0 0 0 2rem;
 
-  &__items {
-    font-family: base.$main-btn-font-family;
-    font-weight: base.$main-btn-font-weight;
-    font-size: base.$main-btn-font-size;
-    letter-spacing: base.$main-btn-spacing;
-    z-index: 10;
-    cursor: pointer;
-    text-decoration: solid;
-    box-sizing: border-box;
-    width: auto;
-    padding: 0.75rem 1.5rem;
-    margin: 1rem;
-    text-align: end;
-    //V1
-    /* border-radius: 4px;
-    background: abs.$dark-purple;
-    color: abs.$mid-grey;
-    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: abs.$sc-shdw-navitems2; */
-
-    //V2
+  &__list {
+    user-select: none;
+    z-index: 3;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
     border-radius: 4px;
-    color: abs.$mid-grey;
-    font-size: 1.5rem;
-    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    &:hover {
-      //V1
-      /* color: abs.$light-purple;
-      background: abs.$grey; */
-      //V2
-      color: abs.$dark-purple;
-      background: abs.$light-grey;
-
-      transform: translateX(-0.2rem);
-    }
-    &:active {
-      //V1
-      /*  transform: scale(0.95);
-        color: abs.$hover-purple2;
-        background-color: abs.$grey;
-        box-shadow: abs.$sc-shdw-navitems; */
-      //V2
+    &__item {
+      box-sizing: border-box;
+      z-index: 4;
+      display: flex;
+      width: auto;
+      height: auto;
+      gap: 1rem;
+      font-family: base.$main-btn-font-family;
+      letter-spacing: base.$main-btn-spacing;
+      font-weight: 200;
+      padding: 2rem 2rem;
+      text-align: end;
+      border-radius: 4px;
+      font-size: 1.5rem;
       color: abs.$white;
-      background: abs.$active-purple abs.$bg-patternLos-blackish;
+      cursor: pointer;
+
+      &__icon {
+        box-sizing: border-box;
+      }
+    }
+
+    &__bubble {
+      z-index: -10;
+      box-sizing: border-box;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      align-self: center;
+      right: 0; //important
+      margin: 1.5rem 0 0 0;
+      height: 3rem;
+      border-radius: 4px;
+      background: abs.$dark-purple;
     }
   }
 }

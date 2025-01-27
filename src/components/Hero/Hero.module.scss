@@ -2,6 +2,7 @@
 @use "../../styles/base" as base;
 
 .hero {
+  z-index: 1;
   position: relative;
   box-sizing: border-box;
   display: flex;

@@ -29,7 +29,6 @@ const Header = () => {
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
-    console.log("previous:", previous, " latest:", latest);
     if (latest > previous || latest < viewPortHeight) {
       setHidden(true);
     } else {

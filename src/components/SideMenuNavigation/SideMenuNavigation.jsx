@@ -1,27 +1,33 @@
 import styles from "./SideMenuNavigation.module.scss";
-import { useLenis } from "lenis/react";
-import { easeOut } from "motion";
-import { motion } from "motion/react";
+import { motion, backOut } from "motion/react";
+import { useState } from "react";
+import SideMenuBubble from "./SideMenuBubble";
+import SideMenuItem from "./SideMenuItem";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
+import { faAddressBook } from "@fortawesome/free-solid-svg-icons";
+import { faScrewdriverWrench } from "@fortawesome/free-solid-svg-icons";
 
 const NavigationBar = () => {
-  const lenis = useLenis();
-
-  const handleScroll = (target) => {
-    if (lenis) {
-      lenis.scrollTo(target, {
-        duration: 1,
-        easing: (x) => 1 - Math.pow(1 - x, 5),
-        offset: 0,
-        lock: true,
-      });
-    }
-  };
+  const [position, setPosition] = useState({
+    top: 0,
+    width: 0,
+    opacity: 0,
+  });
+  const navList = [
+    { id: "hero", label: "Home", icon: faHouse },
+    { id: "about-me", label: "About Me", icon: faAddressBook },
+    { id: "projects", label: "Projects", icon: faBriefcase },
+    { id: "skills", label: "Skills", icon: faScrewdriverWrench },
+    { id: "contact", label: "Contact", icon: faEnvelope },
+  ];
 
   return (
     <motion.nav
       className={styles.nav}
       initial={{
-        y: "0.5rem",
+        y: "3rem",
         opacity: 0,
       }}
       animate={{
@@ -31,39 +37,21 @@ const NavigationBar = () => {
       transition={{
         duration: 0.5,
         delay: 3.2,
-        ease: easeOut,
+        ease: backOut,
       }}
     >
-      <button
-        className={styles["nav__items"]}
-        onClick={() => handleScroll("#hero")}
-      >
-        Home
-      </button>
-      <button
-        className={styles["nav__items"]}
-        onClick={() => handleScroll("#about-me")}
-      >
-        About Me
-      </button>
-      <button
-        className={styles["nav__items"]}
-        onClick={() => handleScroll("#projects")}
-      >
-        Projects
-      </button>
-      <button
-        className={styles["nav__items"]}
-        onClick={() => handleScroll("#skills")}
-      >
-        Skills
-      </button>
-      <button
-        className={styles["nav__items"]}
-        onClick={() => handleScroll("#contact")}
-      >
-        Contact
-      </button>
+      <ul className={styles["nav__list"]}>
+        {navList.map((item) => (
+          <SideMenuItem
+            key={item.id}
+            id={item.id}
+            label={item.label}
+            icon={item.icon}
+            setPosition={setPosition}
+          ></SideMenuItem>
+        ))}
+        <SideMenuBubble position={position} />
+      </ul>
     </motion.nav>
   );
 };
