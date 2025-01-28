@@ -34,26 +34,28 @@ const ContactForm = () => {
   };
 
   const validationVariants = {
-    initial: { y: "10rem", opacity: 0 /* , scale: 0.95 */ },
+    initial: { y: "51.5rem", opacity: 0 /* , scale: 0.95 */ },
     active: { y: "0rem", opacity: 1 /* , scale: 1 */ },
-    inactive: { y: "10rem", opacity: 0 /* , scale: 0  */ },
+    inactive: { y: "51.5rem", opacity: 0 /* , scale: 0  */ },
   };
 
   const formTrans = {
-    duration: 0.5,
+    duration: 0.1,
     ease: "easeIn",
   };
 
   const validationTrans = {
     opacity: { duration: 0.1, ease: "easeOut" },
-    y: { duration: 0.5, ease: "backOut" },
-    ease: "backInOut",
+    y: { duration: 0.1, type: "spring", stiffness: 150, damping: 19 },
+    /* ease: "backInOut", */
   };
 
   const checkMarkTrans = {
     duration: 0.4,
-    delay: 0.4,
-    ease: "backOut",
+    delay: 0.5,
+    type: "spring",
+    stiffness: 400,
+    damping: 10,
   };
 
   return (
@@ -71,6 +73,12 @@ const ContactForm = () => {
             exit="inactive"
             transition={formTrans}
           >
+            <div className={styles["contactForm__form__infos"]}>
+              <p className={styles["contactForm__form__infos__txt"]}>
+                Send me a quick message or use my email adress for more detailed
+                informations & inquieries.
+              </p>
+            </div>
             <input
               className={styles["contactForm__form__name"]}
               type="text"
@@ -127,11 +135,7 @@ const ContactForm = () => {
                 </p>
               </div>
             </div>
-            <Button
-              text="Send another message"
-              onClick={handleClick}
-              variant="secondary"
-            />
+            <Button text="Close" onClick={handleClick} variant="secondary" />
           </motion.div>
         )}
       </AnimatePresence>
