@@ -3,28 +3,30 @@
 .glowingPlanet {
   position: relative;
   z-index: 1;
-  display: flex;
+  @include abs.flxAllCtrBox;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
   width: 400px;
   height: 400px;
   margin: 0 0.5rem 0 0;
+  @include abs.respond-to("xs") {
+    width: 2rem;
+    height: 2rem;
+  }
 
   &__container {
     position: absolute;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include abs.flxAllCtrBox;
     align-content: center;
-    box-sizing: border-box;
     border-radius: 50%;
     width: 300px;
     height: 300px;
     z-index: 2;
     filter: drop-shadow(0rem 0rem 3rem abs.$dark-purple);
+    @include abs.respond-to("xs") {
+      width: 2rem;
+      height: 2rem;
+    }
 
     &__orb {
       margin: -1.25rem;
@@ -36,6 +38,11 @@
       animation: boostedLoader 2s linear infinite;
       &:hover {
         animation: boostedLoader 0.5s linear infinite;
+      }
+
+      @include abs.respond-to("xs") {
+        width: 2rem;
+        height: 2rem;
       }
     }
   }

@@ -14,28 +14,32 @@
 
   &__content {
     /* max-width: 1200px */
+    @include abs.flxAllCtrBox;
     width: 100%;
     height: 100%;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
     &__container {
-      display: flex;
+      @include abs.flxAllCtrBox;
       flex-direction: column;
       width: auto;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      @include abs.respond-to("xs") {
+        width: 100%;
+        /*   margin: auto 2rem; */
+        padding: 0 2rem;
+      }
 
       &__buttonWrapper {
         margin-top: 2rem;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        gap: 1.5rem;
         align-items: center;
+        gap: 1.5rem;
+        @include abs.respond-to("xs") {
+          gap: 1rem;
+          flex-direction: column;
+        }
       }
     }
   }

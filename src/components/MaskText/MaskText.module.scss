@@ -33,7 +33,6 @@
     border-radius: 4px;
     flex-direction: row;
     width: auto;
-    /*  box-shadow: abs.$light-purple-rgba 2px 6px 20px; */
   }
   /*lineMask*/
   &__lineMask {
@@ -42,13 +41,6 @@
     /*lineMask--primary*/
     &--primary {
       letter-spacing: 4px;
-      /*  background: abs.$dark-purple; */
-      /* background: linear-gradient(
-        -45deg,
-        rgba(124, 58, 237, 0.6) 0%,
-        rgba(162, 135, 243, 0.2) 40%,
-        rgba(26, 26, 26, 0.6)
-      ); */
     }
     /*lineMask--secondary*/
     &--secondary {
@@ -70,31 +62,29 @@
       font-weight: 200;
       color: abs.$light-grey;
       filter: drop-shadow(2px 2px 6px rgb(0, 0, 0));
+      @include abs.respond-to("xs") {
+        font-size: 1.125rem;
+      }
     }
     /*p--secondary*/
     &--secondary {
       font-size: 1.25rem;
       font-weight: 200;
       color: abs.$light-grey;
+      @include abs.respond-to("xs") {
+        font-size: 1rem;
+      }
     }
     /*p--tertiary*/
     &--tertiary {
       font-size: 1.75rem;
       font-weight: 500;
       color: abs.$light-purple;
-      /*   color: black; */
-      /* filter: (drop-shadow(6px 6px 20px rgba(225, 10, 218, 1))); */
-      /* filter: drop-shadow(4px 4px 8px rgba(1, 0, 1, 1)); */
       filter: drop-shadow(2px 2px 6px rgba(234, 234, 234, 0.2));
+
+      @include abs.respond-to("xs") {
+        font-size: 1.125rem;
+      }
     }
   }
 }
-
-/*   background: linear-gradient(
-      30deg,
-      rgba(124, 58, 237, 0) 0%,
-      rgba(162, 135, 243, 0) 30%,
-      rgba(26, 26, 26, 0.6) 70%,
-      rgb(205, 36, 56, 0.4) 100%
-    ); */
-/*   rgb(205, 36, 56, 0.6) 100% red color*/

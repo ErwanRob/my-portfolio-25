@@ -4,14 +4,18 @@
 .footer {
   /*   position: sticky;
   bottom: 0; */
-  font-size: 3rem;
+  font-size: 1rem;
   font-weight: 500;
-  letter-spacing: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20vh;
+  letter-spacing: 5px;
+  @include abs.flxAllCtrBox;
+  height: 10vh;
   width: 100%;
   background: abs.$darker-grey;
   z-index: 10;
+
+  @include abs.respond-to("xs") {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
 }

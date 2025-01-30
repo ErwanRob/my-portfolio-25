@@ -3,38 +3,45 @@
 .skills {
   position: relative;
   z-index: 1;
-  display: flex;
+  @include abs.flxAllCtrBox;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
   width: 100vw;
   height: 100vh;
   background: abs.$bg-gradient-skills, abs.$bg-noise,
     abs.$bg-patternLos-blackish, abs.$dark-grey;
   box-shadow: abs.$sc-shdw2;
 
+  @include abs.respond-to("xs") {
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+  }
+
   &__container {
-    display: flex;
+    @include abs.flxAllCtrBox;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 60%;
     padding: 2rem;
-    box-sizing: border-box;
+
+    @include abs.respond-to("xs") {
+      width: 100%;
+      padding: 0;
+    }
 
     &__title {
       width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include abs.flxAllCtrBox;
       font-size: 3rem;
       font-weight: 100;
       letter-spacing: 3rem;
       margin: 1rem -3rem 3rem 0; // negative margin compensate letter spacing
-      box-sizing: border-box;
       text-transform: uppercase; // Probably will change that
       user-select: none;
+      @include abs.respond-to("xs") {
+        font-size: 1.25rem;
+        letter-spacing: 0.5rem;
+        margin: 0;
+      }
     }
 
     &__grid {
@@ -49,40 +56,50 @@
       height: auto;
       margin: 4rem 0;
 
+      @include abs.respond-to("xs") {
+        font-size: 1.25rem;
+        letter-spacing: 0rem;
+        margin: 2rem 0;
+        gap: 1rem;
+      }
+
       &__item {
-        box-sizing: border-box;
-        display: flex;
+        @include abs.flxAllCtrBox;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         text-align: center;
         width: auto;
         height: auto;
 
         &__logo {
           position: relative;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          box-sizing: border-box;
+          @include abs.flxAllCtrBox;
           padding: 0.5rem;
           width: 6rem;
           height: 6rem;
           /*   height: auto; */
           /* cursor: none; */
+          @include abs.respond-to("xs") {
+            padding: 0.25rem;
+            width: 3rem;
+            height: 3rem;
+          }
         }
 
         &__name {
-          box-sizing: border-box;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          @include abs.flxAllCtrBox;
           padding: 0.5rem;
           width: 100%;
           font-size: 0.875rem;
           color: abs.$light-grey;
           font-weight: 200;
           user-select: none;
+
+          @include abs.respond-to("xs") {
+            padding: 0.25rem;
+            width: 3rem;
+            height: 3rem;
+            font-size: 0.75rem;
+          }
         }
       }
     }

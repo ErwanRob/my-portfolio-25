@@ -1,11 +1,8 @@
 @use "../../styles/abstracts" as abs;
 
 .aboutMe {
+  @include abs.flxAllCtrBox;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
   overflow: hidden;
   width: 100%;
   height: 100vh;
@@ -13,6 +10,11 @@
   background: abs.$bg-gradient-project2, abs.$bg-noise,
     abs.$bg-patternLos-blackish, abs.$dark-grey;
   box-shadow: abs.$sc-shdw; /*Shadow to define, not final*/
+  @include abs.respond-to("xs") {
+    height: auto;
+    /*   margin: auto 2rem; */
+    padding: 2rem 2rem;
+  }
 
   &__container {
     display: grid;
@@ -27,6 +29,14 @@
     border-radius: 50px;
     margin: 1rem;
     padding: 2rem 6rem;
+    @include abs.respond-to("xs") {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      /*   margin: auto 2rem; */
+      padding: 0;
+      margin: 0;
+    }
 
     &__headLine {
       grid-area: aboutMe__container__headLine;
@@ -37,19 +47,25 @@
       padding: 0 0 0 4rem;
       gap: 2rem;
       box-sizing: border-box;
+      @include abs.respond-to("xs") {
+        padding: 0;
+      }
     }
 
     &__title {
       grid-area: aboutMe__container__title;
-      display: flex;
-      justify-content: center;
+      @include abs.flxAllCtrBox;
       width: auto;
       height: 100%;
       padding: 0 1rem;
       overflow: hidden;
       width: 4rem;
-      box-sizing: border-box;
       user-select: none;
+      @include abs.respond-to("xs") {
+        width: 100%;
+        padding: 0;
+        justify-content: space-between;
+      }
 
       &__lList {
         display: flex;
@@ -57,10 +73,14 @@
         justify-content: space-between;
         align-items: center;
 
+        @include abs.respond-to("xs") {
+          flex-direction: row;
+          width: 100%;
+        }
+
         &__letter {
           list-style: none;
-          display: flex;
-          justify-content: center;
+          @include abs.flxAllCtrBox;
           width: 1.75rem;
           height: auto;
           color: abs.$light-purple;
@@ -84,24 +104,32 @@
       box-sizing: border-box;
       width: auto;
       height: auto;
+      @include abs.respond-to("xs") {
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+      }
 
       &__portraitContainer {
         z-index: 2;
         position: relative;
         /* overflow: hidden; */
-        display: flex;
+        @include abs.flxAllCtrBox;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         width: auto;
         height: auto;
-        box-sizing: border-box;
         user-select: none;
         cursor: grab;
         filter: drop-shadow(4px 6px 20px black);
         &__imgWrapper {
           width: 425px;
           height: 425px;
+          @include abs.respond-to("xs") {
+            width: 320px;
+            height: 320px;
+            /*   margin: auto 2rem; */
+            padding: 0;
+          }
           &__img {
             z-index: 2;
             display: flex;
@@ -120,16 +148,18 @@
             width: 100%;
             height: 100%;
             clip-path: circle(65% at 50% 50%);
+            @include abs.respond-to("xs") {
+              display: none;
+              /*   margin: auto 2rem; */
+            }
           }
         }
 
         &__resetButton {
+          @include abs.flxAllCtrBox;
           width: 3rem;
           height: 1rem;
           position: absolute;
-          display: flex;
-          justify-content: center;
-          align-items: center;
           bottom: 5%; // Adjust position as needed
           left: 50%;
           transform: translateX(-50%);
@@ -159,6 +189,9 @@
         padding: 0 3rem 0 0;
         box-sizing: border-box;
         gap: 3.5rem;
+        @include abs.respond-to("xs") {
+          padding: 0;
+        }
 
         &__maskTextWrapper {
           display: flex;

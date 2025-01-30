@@ -3,11 +3,32 @@
   font-size: calc-rem-value($size);
 } */
 
-@mixin flexAllCenter {
+@use "sass:map";
+
+$breakpoints: (
+  "xs": 480px,
+  // Phones
+  "sm": 768px,
+  // Tablets
+  "md": 1024px,
+  // Laptops
+  "lg": 1280px,
+  // Desktops
+  "xl": 1536px // Large screens,,,,,,,,,,
+);
+
+// Mixin for responsive design
+@mixin respond-to($size) {
+  @media (max-width: map.get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+@mixin flxAllCtrBox {
   display: flex;
   justify-content: center;
   align-items: center;
-  align-content: center;
+  box-sizing: border-box;
 }
 
 /* @mixin fontType{

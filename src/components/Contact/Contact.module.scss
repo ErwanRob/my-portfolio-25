@@ -1,21 +1,15 @@
 @use "../../styles/abstracts" as abs;
 
 .contact {
-  display: flex;
+  @include abs.flxAllCtrBox;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
   height: 100vh;
   width: 100%;
   /* background: abs.$bg-noise; */
 
   &__container {
-    display: flex;
+    @include abs.flxAllCtrBox;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
     height: 70%;
     width: 80%;
     max-width: 1440px;
@@ -24,11 +18,8 @@
     border-radius: 4px;
 
     &__content {
-      display: flex;
+      @include abs.flxAllCtrBox;
       flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      box-sizing: border-box;
       width: 100%;
       height: 100%;
       padding: 2rem 2rem;
@@ -40,11 +31,8 @@
       box-shadow: 4px 4px 8px abs.$darker-grey;
 
       &__LBlock {
-        display: flex;
+        @include abs.flxAllCtrBox;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        box-sizing: border-box;
         width: 50%;
         height: 100%;
         /*     border-bottom: 1px solid abs.$hover-purple; */
@@ -53,11 +41,8 @@
 
       &__RBlock {
         position: relative;
-        display: flex;
+        @include abs.flxAllCtrBox;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        box-sizing: border-box;
         width: 50%;
         height: 100%;
         /* border-top: 1px solid abs.$hover-purple; */

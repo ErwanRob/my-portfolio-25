@@ -9,50 +9,60 @@
   height: var(--projectSection-height);
   box-shadow: inset 0rem 2rem 2rem -2rem abs.$dark-grey;
   background: abs.$bg-gradient-project1-2, abs.$bg-noise2;
+  @include abs.respond-to("xs") {
+    height: auto;
+  }
 
   /* Particles id props i have to pass */
 
   &__container {
     position: relative;
-    display: flex;
+    @include abs.flxAllCtrBox;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
     width: 100vw;
     height: 100vh;
+    @include abs.respond-to("xs") {
+      height: auto;
+      width: 100%;
+    }
 
     &__content {
       z-index: 0;
-      display: flex;
+      @include abs.flxAllCtrBox;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
       width: 100vw;
       height: 40vh;
 
       &__trigger {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+        @include abs.flxAllCtrBox;
         text-align: center;
         font-size: 6rem;
         font-weight: 300;
         color: abs.$light-grey;
         width: auto;
         height: 100%;
+        @include abs.respond-to("xs") {
+          height: auto;
+          font-size: 2rem;
+        }
 
         &__PR {
           margin: 0 0 0 30rem;
           letter-spacing: 2rem;
           user-select: none;
+          @include abs.respond-to("xs") {
+            margin: 0 0 0 0rem;
+            letter-spacing: 0.5rem;
+          }
         }
 
         &__JECTS {
           letter-spacing: 2rem;
           user-select: none;
+          @include abs.respond-to("xs") {
+            margin: 0 0 0 0rem;
+            letter-spacing: 0.5rem;
+          }
         }
       }
     }

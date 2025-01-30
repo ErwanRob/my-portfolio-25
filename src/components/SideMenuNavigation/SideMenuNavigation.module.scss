@@ -45,13 +45,10 @@
 
     &__bubble {
       z-index: -10;
-      box-sizing: border-box;
       position: absolute;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      @include abs.flxAllCtrBox;
       align-self: center;
+      flex-direction: column;
       right: 0; //important
       margin: 1.5rem 0 0 0;
       height: 3rem;

@@ -20,6 +20,9 @@
     font-size: 3rem;
     color: abs.$light-grey;
     font-weight: 500;
+    @include abs.respond-to("xs") {
+      font-size: 2rem;
+    }
   }
   &__hobbie {
     letter-spacing: 5px;
@@ -27,5 +30,8 @@
     font-weight: 200;
     color: abs.$mid-purple;
     filter: drop-shadow(1px 2px 2px abs.$mid-purple-rgba);
+    @include abs.respond-to("xs") {
+      font-size: 1rem;
+    }
   }
 }

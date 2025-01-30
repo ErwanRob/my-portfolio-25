@@ -2,14 +2,16 @@
 
 .projectsCard {
   position: relative;
-  display: flex;
+  @include abs.flxAllCtrBox;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
   width: 1440px;
   height: 80vh;
   /*   background-color: rgba(109, 196, 122, 0.397); */
+
+  @include abs.respond-to("xs") {
+    width: 320px;
+    height: 200px;
+  }
 
   &__img {
     box-sizing: border-box;
@@ -20,7 +22,13 @@
     background-position: center;
     /*   box-shadow: 0.5rem 1rem 1rem rgba(26, 26, 26, 1); */
     filter: drop-shadow(0.5rem 1rem 0.5rem rgba(26, 26, 26, 1));
+
+    @include abs.respond-to("xs") {
+      width: 320px;
+      height: 200px;
+    }
   }
+
   &__info {
     z-index: 0;
     box-sizing: border-box;
@@ -34,6 +42,11 @@
     padding: 2rem 0;
     /* background: abs.$dark-grey; */
     background-color: transparent;
+
+    @include abs.respond-to("xs") {
+      display: none;
+    }
+
     &__title {
       font-size: 2.5rem;
       font-weight: 200;

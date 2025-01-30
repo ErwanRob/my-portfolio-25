@@ -91,23 +91,17 @@ body {
 
 .header-wrapper {
   z-index: 999;
-  box-sizing: border-box;
   position: sticky;
   top: 0;
   left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include abs.flxAllCtrBox;
   height: abs.$headerHeight;
   width: 100%;
 }
 
 .options-wrapper {
-  box-sizing: border-box;
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include abs.flxAllCtrBox;
   height: 100vh;
   top: 0;
   left: 0;
@@ -124,16 +118,18 @@ body {
 }
 
 .sideMenuNavigation-wrapper {
-  box-sizing: border-box;
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include abs.flxAllCtrBox;
   height: 100vh;
   width: auto;
   padding: 0 100px 0 0;
   top: 0;
   right: 0;
+  @include abs.respond-to("xs") {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
 }
 
 .content-wrapper {
