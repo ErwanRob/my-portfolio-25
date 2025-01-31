@@ -1,4 +1,4 @@
-import Options from "./components/Options/Options";
+import Settings from "./components/Settings/Settings";
 import NavigationBar from "./components/SideMenuNavigation/SideMenuNavigation";
 import Hero from "./components/Hero/Hero";
 import AboutMe from "./components/AboutMe/AboutMe";
@@ -33,12 +33,15 @@ const App = () => {
     >
       <div className="App">
         <div className="header-wrapper">
-          <Header />
+          <Header toggleSettings={toggleSettings} />
         </div>
         <div
-          className={`options-wrapper ${isSettingsVisible ? "visible" : " "}`}
+          className={`settings-wrapper ${isSettingsVisible ? "visible" : " "}`}
         >
-          <Options isSettingsVisible={isSettingsVisible} />
+          <Settings
+            toggleSettings={toggleSettings}
+            isSettingsVisible={isSettingsVisible}
+          />
         </div>
         <div className="sideMenuNavigation-wrapper">
           <NavigationBar />

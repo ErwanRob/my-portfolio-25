@@ -2,8 +2,6 @@
 
 .header {
   z-index: 999;
-  /*  background: abs.$bg-patternLos-blackish,
-    abs.$bg-gradient-header;  */
   background: abs.$dark-grey;
   width: 100%;
   height: 100%;
@@ -12,7 +10,6 @@
 
   &__nav {
     display: flex;
-    /*  width: 100%; */
     max-width: 1200px;
 
     &__list {
@@ -30,7 +27,6 @@
           font-size: 1.25rem;
           font-weight: 200;
           color: abs.$medium-grey-rgba;
-
           &:hover {
             scale: 1.025;
             color: abs.$hover-purple2;
@@ -38,5 +34,34 @@
         }
       }
     }
+    &__settingsBtn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      @include abs.flxAllCtrBox;
+      width: 4rem;
+      height: 100%;
+      border-radius: 50%;
+      background: abs.$bg-gradient-header;
+      cursor: pointer;
+      color: abs.$light-grey;
+      font-size: 1.5rem;
+      scale: 0.8;
+
+      &:hover {
+        color: abs.$hover-purple;
+        scale: 1;
+        animation: boostedWheel 3s linear infinite;
+      }
+    }
+  }
+}
+
+@keyframes boostedWheel {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

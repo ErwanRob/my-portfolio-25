@@ -99,8 +99,9 @@ body {
   width: 100%;
 }
 
-.options-wrapper {
-  position: absolute;
+.settings-wrapper {
+  box-sizing: border-box;
+  position: fixed;
   @include abs.flxAllCtrBox;
   height: 100vh;
   top: 0;

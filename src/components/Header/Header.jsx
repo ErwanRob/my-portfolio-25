@@ -2,8 +2,11 @@ import { useLenis } from "lenis/react";
 import styles from "./Header.module.scss";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGear } from "@fortawesome/free-solid-svg-icons";
+import PropTypes from "prop-types";
 
-const Header = () => {
+const Header = ({ toggleSettings }) => {
   const lenis = useLenis();
   const handleScroll = (target) => {
     if (lenis) {
@@ -118,9 +121,15 @@ const Header = () => {
             </a>
           </li>
         </ul>
+        <div className={styles["header__nav__settingsBtn"]}>
+          <FontAwesomeIcon icon={faGear} onClick={toggleSettings} size="lg" />
+        </div>
       </nav>
     </motion.div>
   );
 };
 
+Header.propTypes = {
+  toggleSettings: PropTypes.func.isRequired,
+};
 export default Header;
