@@ -5,6 +5,7 @@ import ProjectsCard from "./ProjectsCard";
 import imgProject1 from "../../assets/img/projects/projectTMPO.png";
 import placeHolderProjectImg from "../../assets/img/projects/projectPlaceholder1.jpg";
 import PropTypes from "prop-types";
+import useMediaQuery from "../Hooks/useMediaQuery";
 
 const cards = [
   {
@@ -59,6 +60,7 @@ const cards = [
 ];
 
 const HorizontalScroller = ({ bgTransform }) => {
+  const isXSmall = useMediaQuery("(max-width: 480px)");
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -74,7 +76,7 @@ const HorizontalScroller = ({ bgTransform }) => {
     >
       <div className={styles["horizontalScroller__stickyContainer"]}>
         <motion.div
-          style={{ x }}
+          style={isXSmall ? null : { x }}
           className={styles["horizontalScroller__stickyContainer__content"]}
         >
           {cards.map((card) => {

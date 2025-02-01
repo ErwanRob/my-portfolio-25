@@ -11,7 +11,9 @@
   height: var(--scrollingSection-height);
 
   @include abs.respond-to("xs") {
+    padding: 2rem;
     height: auto;
+    box-sizing: border-box;
   }
 
   &__stickyContainer {
@@ -26,9 +28,9 @@
 
     @include abs.respond-to("xs") {
       position: relative;
-      /*   flex-direction: column; */
       width: 100%;
       padding: 0;
+      height: auto;
     }
 
     &__content {
@@ -40,7 +42,7 @@
       padding: 4rem 0;
       @include abs.respond-to("xs") {
         flex-direction: column;
-        gap: 2rem;
+        gap: 1rem;
         height: auto;
         padding: 0rem 0;
       }

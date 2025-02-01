@@ -23,16 +23,25 @@
   /* MaskText--primary */
   &--primary {
     border-radius: 4px;
+    @include abs.respond-to("xs") {
+      text-align: center;
+    }
   }
   /* MaskText--secondary */
   &--secondary {
     border-radius: 4px;
+    @include abs.respond-to("xs") {
+      text-align: center;
+    }
   }
   /* MaskText--tertiary */
   &--tertiary {
     border-radius: 4px;
     flex-direction: row;
     width: auto;
+    @include abs.respond-to("xs") {
+      text-align: center;
+    }
   }
   /*lineMask*/
   &__lineMask {

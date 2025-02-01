@@ -1,17 +1,19 @@
 import styles from "./Skills.module.scss";
 import { SkillsList } from "./SkillsList";
-import MagneticPull from "../MagneticPull";
+/* import MagneticPull from "../MagneticPull"; */
 import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import { backOut } from "motion";
+import useMediaQuery from "../Hooks/useMediaQuery";
 
 /* const MagnetComponentClassName = styles["skills__container__grid__item__logo"]; */
 
 const Skills = () => {
+  const isXSmall = useMediaQuery("(max-width: 480px)");
   const { ref, inView } = useInView({
     threshold: 1,
     rootMargin: "150px 0px 300px 0px",
-    /* triggerOnce: true, */
+    triggerOnce: isXSmall ? true : false,
   });
 
   const animation = {
@@ -42,11 +44,10 @@ const Skills = () => {
               initial={{ y: "150%", opacity: 0 }}
               animate={inView ? "enter" : "initial"}
             >
-              <MagneticPull>
-                <div className={styles["skills__container__grid__item__logo"]}>
-                  {skill.svgContent}
-                </div>
-              </MagneticPull>
+              <div className={styles["skills__container__grid__item__logo"]}>
+                {skill.svgContent}
+              </div>
+
               <p className={styles["skills__container__grid__item__name"]}>
                 {skill.name}
               </p>
@@ -59,3 +60,19 @@ const Skills = () => {
 };
 
 export default Skills;
+
+{
+  /*   {isXSmall ? (
+                <MagneticPull>
+                  <div
+                    className={styles["skills__container__grid__item__logo"]}
+                  >
+                    {skill.svgContent}
+                  </div>
+                </MagneticPull>
+              ) : ( 
+              
+              
+              
+            )}*/
+}

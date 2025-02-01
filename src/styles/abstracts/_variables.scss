@@ -2,6 +2,76 @@
   --dark-grey: #1a1a1a;
   --projectSection-height: 800vh;
   --scrollingSection-height: calc(var(--projectSection-height) - 100vh);
+
+  /*Query Breakpoints*/
+
+  /*Default*/
+  /*PreLoader.jsx*/
+  --initial-pL-x: 2rem;
+  --initial-pL-opacity: 0;
+  --animate-pL-x: -10.25rem;
+  --animate-pL-opacity: 1;
+  /*Cursor*/
+  --initial-bC-x: 0;
+  --animate-bC-x: -14.5rem;
+
+  /*glowingPlanet*/
+  --initial-gP-y: -30rem;
+  --whileInView-gP-y: 0;
+
+  /*Trigger PR*/
+  --initial-pR-x: -15rem;
+  --initial-pR-opacity: 0;
+  --whileInView-pR-x: 0;
+  --whileInView-pR-opacity: 1;
+
+  /*xSmall*/
+  @media (max-width: 480px) {
+    --initial-pL-x: 0;
+    --initial-pL-opacity: 0;
+    --animate-pL-x: 0;
+    --animate-pL-opacity: 1;
+    --initial-bC-x: 0;
+    --animate-bC-x: 0;
+    --initial-gP-y: 0;
+    --whileInView-gP-y: 0;
+    --initial-pR-x: 0;
+    --initial-pR-opacity: 0;
+    --whileInView-pR-x: 0;
+    --whileInView-pR-opacity: 1;
+  }
+
+  /*Small*/
+  /* @media (max-width: 768px) {
+    --initial-pL-x: "2rem";
+    --initial-pL-opacity: 0;
+    --animate-pL-x: "-10.25rem";
+    --animate-pL-opacity: 1;
+  }
+ */
+  /*Medium*/
+  /* @media (max-width: 1024px) {
+    --initial-pL-x: "2rem";
+    --initial-pL-opacity: 0;
+    --animate-pL-x: "-10.25rem";
+    --animate-pL-opacity: 1;
+  } */
+
+  /*Large*/
+  /*   @media (max-width: 1280px) {
+    --initial-pL-x: "2rem";
+    --initial-pL-opacity: 0;
+    --animate-pL-x: "-10.25rem";
+    --animate-pL-opacity: 1;
+  } */
+
+  /*XLarge*/
+  /*   @media (max-width: 1536px) {
+    --initial-pL-x: "2rem";
+    --initial-pL-opacity: 0;
+    --animate-pL-x: "-10.25rem";
+    --animate-pL-opacity: 1;
+  } */
 }
 
 /*margins, paddings, widths, heights*/

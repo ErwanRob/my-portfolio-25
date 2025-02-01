@@ -6,6 +6,10 @@
   height: 100vh;
   width: 100%;
   /* background: abs.$bg-noise; */
+  @include abs.respond-to("xs") {
+    width: 100%;
+    height: auto;
+  }
 
   &__container {
     @include abs.flxAllCtrBox;
@@ -16,6 +20,11 @@
     /*   background-color: abs.$grey; */
     padding: 0.25rem;
     border-radius: 4px;
+    @include abs.respond-to("xs") {
+      width: 100%;
+      padding: 0;
+      height: auto;
+    }
 
     &__content {
       @include abs.flxAllCtrBox;
@@ -26,9 +35,12 @@
       background-color: abs.$darker-grey;
       overflow: hidden;
       border-radius: 4px;
-      /*   filter: drop-shadow(4px 4px 12px abs.$darker-grey); */
-
       box-shadow: 4px 4px 8px abs.$darker-grey;
+
+      @include abs.respond-to("xs") {
+        padding: 2rem;
+        flex-direction: column;
+      }
 
       &__LBlock {
         @include abs.flxAllCtrBox;
@@ -37,6 +49,10 @@
         height: 100%;
         /*     border-bottom: 1px solid abs.$hover-purple; */
         box-shadow: 0 1px 0 abs.$hover-purple;
+        @include abs.respond-to("xs") {
+          width: 100%;
+          height: 100vh;
+        }
       }
 
       &__RBlock {
@@ -45,9 +61,10 @@
         flex-direction: column;
         width: 50%;
         height: 100%;
-        /* border-top: 1px solid abs.$hover-purple; */
-        /* box-shadow: 0 1px 0 abs.$hover-purple; */
-        /*   padding: 0 2rem; */
+        @include abs.respond-to("xs") {
+          width: 100%;
+          height: 100vh;
+        }
       }
     }
   }

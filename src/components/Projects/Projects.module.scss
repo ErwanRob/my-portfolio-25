@@ -24,6 +24,8 @@
     @include abs.respond-to("xs") {
       height: auto;
       width: 100%;
+      padding: 2rem;
+      box-sizing: border-box;
     }
 
     &__content {
@@ -32,6 +34,9 @@
       flex-direction: column;
       width: 100vw;
       height: 40vh;
+      @include abs.respond-to("xs") {
+        width: 100%;
+      }
 
       &__trigger {
         @include abs.flxAllCtrBox;
@@ -44,14 +49,16 @@
         @include abs.respond-to("xs") {
           height: auto;
           font-size: 2rem;
+          flex-wrap: wrap;
         }
 
         &__PR {
+          width: auto;
           margin: 0 0 0 30rem;
           letter-spacing: 2rem;
           user-select: none;
           @include abs.respond-to("xs") {
-            margin: 0 0 0 0rem;
+            margin: 0 0.5rem 0 0rem;
             letter-spacing: 0.5rem;
           }
         }

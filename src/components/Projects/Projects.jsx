@@ -5,9 +5,12 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "motion/react";
 import { backOut } from "motion";
 import ParticlesComponent from "../ParticlesComponent";
+import useMediaQuery from "../Hooks/useMediaQuery";
 
 const Projects = () => {
   const targetRef = useRef(null);
+
+  const isXSmall = useMediaQuery("(max-width: 480px)");
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -82,16 +85,19 @@ const Projects = () => {
           <div className={styles["projects__container__content__trigger"]}>
             <motion.h3
               className={styles["projects__container__content__trigger__PR"]}
-              initial={{ x: "-15rem", opacity: 0 }}
+              initial={{
+                x: "var(--initial-pR-x)",
+                opacity: "var(--initial-pR-opacity)",
+              }}
               whileInView={{ x: "0", opacity: 1 }}
               transition={{ duration: 1, ease: backOut }}
             >
               P.R
             </motion.h3>
             <GlowingPlanet
-              yTransform={yTransform}
-              scaleTransform={scaleTransform}
-              bgTransformBlackHole={bgTransformBlackHole}
+              yTransform={isXSmall ? null : yTransform}
+              scaleTransform={isXSmall ? null : scaleTransform}
+              bgTransformBlackHole={isXSmall ? null : bgTransformBlackHole}
             />
             {/* Actual Trigger */}
             <motion.h3
@@ -105,7 +111,7 @@ const Projects = () => {
           </div>
         </div>
       </div>
-      <HorizontalScroller bgTransform={bgTransform} />
+      <HorizontalScroller bgTransform={isXSmall ? null : bgTransform} />
     </div>
   );
 };

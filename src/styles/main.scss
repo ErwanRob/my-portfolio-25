@@ -127,9 +127,9 @@ body {
   top: 0;
   right: 0;
   @include abs.respond-to("xs") {
-    display: none;
-    visibility: hidden;
-    opacity: 0;
+    display: flex;
+    padding: 0 1rem 4rem 0;
+    align-items: flex-end;
   }
 }
 

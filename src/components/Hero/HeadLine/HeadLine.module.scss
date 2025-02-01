@@ -10,6 +10,9 @@
   justify-content: flex-start;
   align-items: center;
   text-align: center;
+  @include abs.respond-to("xs") {
+    justify-content: center;
+  }
 
   /*Removed justfy-content & text-align center lines for Typing anim purpose, otherwise anim start from middle which is not bad but we'll see in the futur*/
   &__title {
@@ -42,6 +45,9 @@
     box-sizing: border-box;
     font-size: 5rem;
     animation: blink 1500ms ease-out 3s infinite;
+    @include abs.respond-to("xs") {
+      display: none;
+    }
   }
 }
 

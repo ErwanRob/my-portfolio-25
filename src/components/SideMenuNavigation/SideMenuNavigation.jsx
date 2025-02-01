@@ -8,8 +8,11 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
 import { faAddressBook } from "@fortawesome/free-solid-svg-icons";
 import { faScrewdriverWrench } from "@fortawesome/free-solid-svg-icons";
+import useMediaQuery from "../Hooks/useMediaQuery";
 
 const NavigationBar = () => {
+  const isXSmall = useMediaQuery("(max-width: 480px)");
+
   const [position, setPosition] = useState({
     top: 0,
     width: 0,
@@ -50,7 +53,8 @@ const NavigationBar = () => {
             setPosition={setPosition}
           ></SideMenuItem>
         ))}
-        <SideMenuBubble position={position} />
+
+        {isXSmall ? null : <SideMenuBubble position={position} />}
       </ul>
     </motion.nav>
   );

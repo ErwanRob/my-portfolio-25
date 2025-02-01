@@ -11,12 +11,15 @@
   user-select: none; /*Prevent user blue-select*/
   margin: -#{abs.$headerHeight} 0 0 0; // compensate for header
   background: abs.$bg-patternLos-blackish, abs.$bg-patternLos-purpleish;
+  @include abs.respond-to("xs") {
+    background: abs.$dark-grey;
+  }
 
   &__content {
     /* max-width: 1200px */
     @include abs.flxAllCtrBox;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     flex-direction: column;
 
     &__container {
@@ -25,8 +28,10 @@
       width: auto;
       @include abs.respond-to("xs") {
         width: 100%;
-        /*   margin: auto 2rem; */
+        height: 100vh;
         padding: 0 2rem;
+        justify-content: flex-start;
+        margin-top: 6rem;
       }
 
       &__buttonWrapper {
@@ -37,8 +42,11 @@
         align-items: center;
         gap: 1.5rem;
         @include abs.respond-to("xs") {
-          gap: 1rem;
+          /*   gap: 1rem;
           flex-direction: column;
+          position: absolute;
+          bottom: 1rem; */
+          display: none;
         }
       }
     }

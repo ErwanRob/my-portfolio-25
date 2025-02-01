@@ -56,7 +56,20 @@ const Hero = ({ toggleSettings }) => {
         <div className={styles["hero__content__container"]}>
           <HeadLine />
           <SubLine />
-          <div className={styles["hero__content__container__buttonWrapper"]}>
+          <motion.div
+            className={styles["hero__content__container__buttonWrapper"]}
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+            }}
+            transition={{
+              duration: 0.5,
+              delay: 2.7,
+              type: "linear",
+            }}
+          >
             <Button
               text="Discover my work"
               onClick={handleClick}
@@ -78,7 +91,7 @@ const Hero = ({ toggleSettings }) => {
               onClick={handleClick}
               variant="tertiary"
             ></Button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

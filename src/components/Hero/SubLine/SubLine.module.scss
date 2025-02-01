@@ -9,19 +9,18 @@
   align-items: flex-start;
   margin: 0px;
   letter-spacing: 1px;
-
-  color: white;
+  color: abs.$light-grey;
   font-weight: 400;
-  /*   &__iam {
-    font-size: 3rem;
-    color: abs.$light-grey;
-  } */
+  @include abs.respond-to("xs") {
+    align-items: center;
+  }
+
   &__name {
     font-size: 3rem;
     color: abs.$light-grey;
     font-weight: 500;
     @include abs.respond-to("xs") {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
   }
   &__hobbie {
@@ -32,6 +31,7 @@
     filter: drop-shadow(1px 2px 2px abs.$mid-purple-rgba);
     @include abs.respond-to("xs") {
       font-size: 1rem;
+      color: abs.$hover-purple2;
     }
   }
 }

@@ -7,7 +7,7 @@ const MaskText = ({ phrases, variant = "primary", align = "left" }) => {
   const { ref, inView } = useInView({
     threshold: 1,
     rootMargin: "-100px 0px -100px 0px",
-    /* triggerOnce: true, */
+    triggerOnce: true,
   });
   //Base class and variants modifiers to keep control of base styles anyways.
   const alignmentClass = styles[`maskText--${align}`];

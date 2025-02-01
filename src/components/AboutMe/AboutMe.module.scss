@@ -49,6 +49,7 @@
       box-sizing: border-box;
       @include abs.respond-to("xs") {
         padding: 0;
+        gap: 0rem;
       }
     }
 
@@ -110,6 +111,8 @@
         flex-direction: column;
         margin: 0;
         padding: 0;
+        align-items: center;
+        gap: 1.5rem;
       }
 
       &__portraitContainer {
@@ -127,8 +130,8 @@
           width: 425px;
           height: 425px;
           @include abs.respond-to("xs") {
-            width: 320px;
-            height: 320px;
+            width: 240px;
+            height: 240px;
             /*   margin: auto 2rem; */
             padding: 0;
           }

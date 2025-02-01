@@ -39,15 +39,13 @@ const GlowingPlanet = ({
         }}
         className={styles["glowingPlanet__container"]}
         initial={{
-          y: "-30rem",
-          x: "0rem",
+          y: "var(--initial-gP-y)",
           opacity: 0,
           rotate: -960,
           backgroundColor: "rgba(26, 26, 26,0)",
         }}
         whileInView={{
-          y: "0rem",
-          x: "0rem",
+          y: "var(--whileInView-gP-y)",
           opacity: 1,
           rotate: 1080,
           transition: { duration: 1.5, ease: backOut },

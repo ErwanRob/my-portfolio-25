@@ -44,7 +44,8 @@
     background-color: transparent;
 
     @include abs.respond-to("xs") {
-      display: none;
+      padding: 1rem;
+      height: auto;
     }
 
     &__title {
@@ -58,6 +59,12 @@
       width: 40%;
       height: 100%;
       box-sizing: border-box;
+      @include abs.respond-to("xs") {
+        padding: 0rem;
+        width: 100%;
+        justify-content: center;
+        font-size: 1rem;
+      }
     }
     &__description {
       display: flex;
@@ -67,6 +74,9 @@
       width: 60%;
       height: 100%;
       box-sizing: border-box;
+      @include abs.respond-to("xs") {
+        display: none;
+      }
       &__txt {
         font-size: 1.25rem;
         font-weight: 100;

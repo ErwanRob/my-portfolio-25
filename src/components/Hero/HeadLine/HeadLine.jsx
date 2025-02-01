@@ -38,12 +38,12 @@ const HeadLine = () => {
       <motion.h1
         className={styles["headLine__title"]} //Welcome animation
         initial={{
-          x: "2rem",
-          opacity: 0,
+          x: "var(--initial-pL-x)",
+          opacity: "var(--initial-pL-opacity)",
         }}
         animate={{
-          x: "-10.25rem",
-          opacity: 1,
+          x: "var(--animate-pL-x)",
+          opacity: "var(--animate-pL-opacity)",
         }}
         transition={{
           duration: 0.3,
@@ -56,8 +56,8 @@ const HeadLine = () => {
       </motion.h1>
       <motion.span
         className={styles["headLine__blinkingCursor"]}
-        initial={{ x: 0 }}
-        animate={{ x: "-14.5rem" }}
+        initial={{ x: "var(--initial-bC-x)" }}
+        animate={{ x: "var(--animate-bC-x)" }}
         transition={{
           delay: blinkingCursorDelay,
           duration: 0.2,

@@ -122,6 +122,7 @@ const AboutMe = () => {
           initial={{ y: "-5rem" }}
           whileInView={{ y: 0 }}
           transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
         >
           <ul className={styles["aboutMe__container__title__lList"]}>
             <li className={styles["aboutMe__container__title__lList__letter"]}>
@@ -163,6 +164,7 @@ const AboutMe = () => {
             transition={{
               duration: 1,
             }}
+            viewport={{ once: true }}
           >
             <div
               className={

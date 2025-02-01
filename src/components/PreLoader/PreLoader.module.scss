@@ -22,7 +22,9 @@
   @include abs.respond-to("xs") {
     font-size: 2rem;
     height: 4rem;
+    background-color: abs.$dark-grey;
   }
+
   &__puce {
     // # before
     margin: 0 1rem 0 2rem;
@@ -33,12 +35,20 @@
       font-size: 2rem;
     }
   }
+
   &__txt {
     color: abs.$darker-grey;
     text-align: left;
+    @include abs.respond-to("xs") {
+      color: abs.$light-grey;
+      height: 4rem;
+    }
   }
   &__txtpHolder {
     background: transparent;
     color: abs.$darker-grey;
+    @include abs.respond-to("xs") {
+      color: abs.$light-grey;
+    }
   }
 }
