@@ -20,7 +20,7 @@
     overflow: hidden;
     box-shadow: 0 1px 0 abs.$hover-purple;
     @include abs.respond-to("xs") {
-      /* padding: 10rem 0; */
+      padding: 0;
       gap: 2rem;
       box-shadow: none;
       justify-content: center;
