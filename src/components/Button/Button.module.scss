@@ -2,7 +2,9 @@
 @use "../../styles/base" as base;
 
 .button {
-  /* margin: 12px; */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   height: 1.5rem;
   background-color: abs.$dark-purple;
   color: abs.$light-grey;
@@ -16,6 +18,7 @@
   border-radius: 4px;
   cursor: pointer;
   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
 
   &:disabled {
     background: abs.$grey;

@@ -1,30 +1,23 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import styles from "./ContactForm.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import Button from "../Button/Button";
+import TextareaAutosize from "react-textarea-autosize";
 
 const ContactForm = () => {
-  const textAreaRef = useRef(null);
   const [status, setStatus] = useState("active");
-
-  const handleInput = () => {
-    const textarea = textAreaRef.current;
-    if (textarea) {
-      textarea.style.height = "auto";
-      textarea.style.height = `${textarea.scrollHeight}px`;
-
-      textarea.style.overflowY =
-        textarea.scrollHeight > parseInt(getComputedStyle(textarea).maxHeight)
-          ? "auto"
-          : "hidden";
-    }
-  };
 
   const handleClick = () => {
     event.preventDefault();
     setStatus(status === "active" ? "inactive" : "active");
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setStatus("inactive");
+    console.log("Form submitted");
   };
 
   const formVariants = {
@@ -72,6 +65,7 @@ const ContactForm = () => {
             variants={formVariants}
             exit="inactive"
             transition={formTrans}
+            onSubmit={handleSubmit}
           >
             <div className={styles["contactForm__form__infos"]}>
               <p className={styles["contactForm__form__infos__txt"]}>
@@ -79,28 +73,54 @@ const ContactForm = () => {
                 informations & inquieries.
               </p>
             </div>
+            <label
+              htmlFor="name"
+              className={styles["contactForm__form__sr-only"]}
+            >
+              Name
+            </label>
             <input
+              id="name"
               className={styles["contactForm__form__name"]}
               type="text"
               name="name"
               placeholder="Name"
+              autoComplete="name"
+              required
               /* defaultValue="Pomme Granite" */
             />
+            <label
+              htmlFor="email"
+              className={styles["contactForm__form__sr-only"]}
+            >
+              Email
+            </label>
             <input
+              id="email"
               className={styles["contactForm__form__email"]}
               type="email"
               name="email"
               placeholder="Email"
+              autoComplete="email"
+              required
               /*   defaultValue="pommegranite@gmail.com" */
             />
-            <textarea
-              ref={textAreaRef}
+            <label
+              htmlFor="message"
+              className={styles["contactForm__form__sr-only"]}
+            >
+              Message
+            </label>
+            <TextareaAutosize
+              id="message"
               className={styles["contactForm__form__message"]}
               name="message"
               placeholder="Message"
-              onInput={handleInput}
-            ></textarea>
-            <Button text="Send" onClick={handleClick} variants="primary" />
+              minRows={3}
+              maxRows={15}
+              required
+            />
+            <Button text="Send" onClick={handleSubmit} variants="primary" />
           </motion.form>
         )}
       </AnimatePresence>
@@ -135,7 +155,12 @@ const ContactForm = () => {
                 </p>
               </div>
             </div>
-            <Button text="Close" onClick={handleClick} variant="secondary" />
+            <Button
+              text="Close"
+              type="submit"
+              onClick={handleClick}
+              variant="secondary"
+            />
           </motion.div>
         )}
       </AnimatePresence>
@@ -152,3 +177,29 @@ export default ContactForm;
       } else {
         textarea.style.overflowY = "auto";
       } */
+
+/* const textAreaRef = useRef(null); */
+
+/* const handleInput = () => {
+    const textarea = textAreaRef.current;
+    if (textarea) {
+      textarea.style.height = "auto";
+      textarea.style.height = `${textarea.scrollHeight}px`;
+
+      textarea.style.overflowY =
+        textarea.scrollHeight > parseInt(getComputedStyle(textarea).maxHeight)
+          ? "auto"
+          : "hidden";
+    }
+  };
+  
+  
+  
+  {/* <textarea
+              ref={textAreaRef}
+              className={styles["contactForm__form__message"]}
+              name="message"
+              placeholder="Message"
+              onInput={handleInput}
+              required
+            ></textarea> */

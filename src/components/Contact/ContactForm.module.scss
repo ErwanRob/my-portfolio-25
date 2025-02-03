@@ -26,6 +26,18 @@
       justify-content: center;
     }
 
+    &__sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
     &__infos {
       @include abs.flxAllCtrBox;
       flex-direction: column;
@@ -80,16 +92,16 @@
     }
 
     &__message {
+      box-sizing: border-box;
       font-size: 1.125rem;
       margin: 2rem 0 2rem 0;
       height: auto;
-      max-height: 20rem;
-      min-height: 5rem;
       resize: none;
       overflow-y: auto;
       word-wrap: break-word;
       white-space: pre-wrap;
       scrollbar-color: abs.$hover-purple abs.$dark-grey;
+      overscroll-behavior: contain;
       /*   scrollbar-width: thin; */
     }
 

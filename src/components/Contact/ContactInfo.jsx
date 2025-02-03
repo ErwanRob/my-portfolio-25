@@ -25,10 +25,14 @@ const infoList = [
 ];
 
 const linksList = [
-  { icon: faGithub, text: "GitHub", url: "#contact" },
-  { icon: faLinkedinIn, text: "LinkedIn", url: "#contact" },
+  { icon: faGithub, text: "GitHub", url: "https://github.com/ErwanRob" },
+  {
+    icon: faLinkedinIn,
+    text: "LinkedIn",
+    url: "https://www.linkedin.com/in/erwan-robin-0b7b58172/",
+  },
   { icon: faInstagram, text: "Instgram", url: "#contact" },
-  { icon: faDownload, text: "C.V.", url: "#contact" },
+  { icon: faDownload, text: "C.V.", url: "/cv.pdf", download: true },
 ];
 
 const ContactInfo = () => {
@@ -82,6 +86,9 @@ const ContactInfo = () => {
             >
               <a
                 href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                {...(item.download ? { download: "ErwanRob_CV.pdf" } : {})}
                 className={
                   styles["contactInfo__container__links__itemWrapper__item"]
                 }

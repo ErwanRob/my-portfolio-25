@@ -6,8 +6,10 @@ import PropTypes from "prop-types";
 import ParticlesComponent from "../ParticlesComponent";
 import { motion, useInView } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
-const Hero = ({ toggleSettings }) => {
+const Hero = (/* { toggleSettings } */) => {
   const handleClick = () => {
     console.log("Button clicked!");
   };
@@ -71,21 +73,31 @@ const Hero = ({ toggleSettings }) => {
             }}
           >
             <Button
-              text="Discover my work"
+              href={"https://github.com/ErwanRob"}
+              icon={faGithub}
+              text="GitHub"
               onClick={handleClick}
               variant="primary"
+            ></Button>
+            <Button
+              href={"/cv.pdf"}
+              download={"ROBIN_Erwan_CV_18-07-2024"}
+              icon={faDownload}
+              text="C.V."
+              onClick={handleClick}
+              variant="secondary"
             ></Button>
             <Button
               text="Feedbacks"
               onClick={handleClick}
               variant="secondary"
             ></Button>
-            <Button
+            {/* <Button
               text="Settings"
               onClick={toggleSettings}
               variant="secondary"
               disabled={false}
-            ></Button>
+            ></Button> */}
             <Button
               text="Hire me"
               onClick={handleClick}
