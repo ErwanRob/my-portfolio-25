@@ -31,7 +31,11 @@ const linksList = [
     text: "LinkedIn",
     url: "https://www.linkedin.com/in/erwan-robin-0b7b58172/",
   },
-  { icon: faInstagram, text: "Instgram", url: "#contact" },
+  {
+    icon: faInstagram,
+    text: "Instgram",
+    url: "https://www.instagram.com/erwan.rob/",
+  },
   { icon: faDownload, text: "C.V.", url: "/cv.pdf", download: true },
 ];
 
