@@ -102,7 +102,7 @@
       white-space: pre-wrap;
       scrollbar-color: abs.$hover-purple abs.$dark-grey;
       overscroll-behavior: contain;
-      /*   scrollbar-width: thin; */
+      scrollbar-width: thin;
     }
 
     &__sendButton {

@@ -18,17 +18,16 @@ const App = () => {
   };
 
   return (
+    /* infinite: true, needed for mobile devices ? */
+    /* lerp: 0.1, */
     <ReactLenis
       root
       options={{
-        /* lerp: 0.1, */
         easing: function easeOutQuint(x) {
           return 1 - Math.pow(1 - x, 5);
         },
         duration: 0.75,
         wheelMultiplier: 1.25,
-        /* infinite: true, needed for mobile devices ?*/
-        /*  overscroll: true, */
       }}
     >
       <div className="App">

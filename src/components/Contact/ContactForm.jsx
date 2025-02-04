@@ -1,24 +1,14 @@
-import { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import { AnimatePresence, motion } from "motion/react";
 import styles from "./ContactForm.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import Button from "../Button/Button";
 import TextareaAutosize from "react-textarea-autosize";
+import PropTypes from "prop-types";
 
-const ContactForm = () => {
-  const [status, setStatus] = useState("active");
-
-  const handleClick = () => {
-    event.preventDefault();
-    setStatus(status === "active" ? "inactive" : "active");
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setStatus("inactive");
-    console.log("Form submitted");
-  };
+const ContactForm = ({ onReset }) => {
+  const [state, handleSubmit] = useForm("xnnjvyye"); // formSpree hook with its id
 
   const formVariants = {
     initial: { opacity: 0 },
@@ -27,9 +17,9 @@ const ContactForm = () => {
   };
 
   const validationVariants = {
-    initial: { y: "51.5rem", opacity: 0 /* , scale: 0.95 */ },
-    active: { y: "0rem", opacity: 1 /* , scale: 1 */ },
-    inactive: { y: "51.5rem", opacity: 0 /* , scale: 0  */ },
+    initial: { y: "51.5rem", opacity: 0 },
+    active: { y: "0rem", opacity: 1 },
+    inactive: { y: "51.5rem", opacity: 0 },
   };
 
   const formTrans = {
@@ -40,7 +30,6 @@ const ContactForm = () => {
   const validationTrans = {
     opacity: { duration: 0.1, ease: "easeOut" },
     y: { duration: 0.1, type: "spring", stiffness: 150, damping: 19 },
-    /* ease: "backInOut", */
   };
 
   const checkMarkTrans = {
@@ -54,14 +43,14 @@ const ContactForm = () => {
   return (
     <div className={styles.contactForm}>
       <AnimatePresence mode="popLayout">
-        {status === "active" && (
+        {!state.succeeded && (
           <motion.form
             className={styles["contactForm__form"]}
-            key="form" // required for animatePresence
-            action="#"
+            key="form"
+            action="https://formspree.io/f/xnnjvyye" //formSpree endpoint
             method="POST"
             initial="initial"
-            animate={status}
+            animate="active"
             variants={formVariants}
             exit="inactive"
             transition={formTrans}
@@ -69,10 +58,12 @@ const ContactForm = () => {
           >
             <div className={styles["contactForm__form__infos"]}>
               <p className={styles["contactForm__form__infos__txt"]}>
-                Send me a quick message or use my email adress for more detailed
-                informations & inquieries.
+                Got feedback, questions, or a detailed inquiry? <br /> Use the
+                form below for a quick message, or contact me by email for
+                comprehensive information.
               </p>
             </div>
+
             <label
               htmlFor="name"
               className={styles["contactForm__form__sr-only"]}
@@ -83,12 +74,12 @@ const ContactForm = () => {
               id="name"
               className={styles["contactForm__form__name"]}
               type="text"
-              name="name"
+              name="Name"
               placeholder="Name"
               autoComplete="name"
               required
-              /* defaultValue="Pomme Granite" */
             />
+            <ValidationError prefix="Name" field="name" errors={state.errors} />
             <label
               htmlFor="email"
               className={styles["contactForm__form__sr-only"]}
@@ -99,12 +90,17 @@ const ContactForm = () => {
               id="email"
               className={styles["contactForm__form__email"]}
               type="email"
-              name="email"
+              name="Email"
               placeholder="Email"
               autoComplete="email"
               required
-              /*   defaultValue="pommegranite@gmail.com" */
             />
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
+            />
+
             <label
               htmlFor="message"
               className={styles["contactForm__form__sr-only"]}
@@ -112,20 +108,42 @@ const ContactForm = () => {
               Message
             </label>
             <TextareaAutosize
+              data-lenis-prevent
               id="message"
               className={styles["contactForm__form__message"]}
-              name="message"
+              name="Message"
               placeholder="Message"
               minRows={3}
               maxRows={15}
               required
             />
-            <Button text="Send" onClick={handleSubmit} variants="primary" />
+            <ValidationError
+              prefix="Message"
+              field="message"
+              errors={state.errors}
+            />
+
+            {/* Honeypot field to deter spam bots */}
+            <input
+              type="text"
+              name="_gotcha"
+              style={{ display: "none" }}
+              tabIndex="-1"
+              autoComplete="off"
+            />
+
+            <Button
+              text="Send"
+              type="submit"
+              variants="primary"
+              disabled={state.submitting}
+            />
           </motion.form>
         )}
       </AnimatePresence>
+
       <AnimatePresence mode="popLayout">
-        {status === "inactive" && (
+        {state.succeeded && (
           <motion.div
             className={styles.divTest}
             key="validation"
@@ -139,9 +157,7 @@ const ContactForm = () => {
               <motion.div
                 className={styles["divTest__content__icon"]}
                 initial={{ rotate: 45 }}
-                animate={{
-                  rotate: 0,
-                }}
+                animate={{ rotate: 0 }}
                 transition={checkMarkTrans}
               >
                 <FontAwesomeIcon icon={faCheck} />
@@ -155,12 +171,7 @@ const ContactForm = () => {
                 </p>
               </div>
             </div>
-            <Button
-              text="Close"
-              type="submit"
-              onClick={handleClick}
-              variant="secondary"
-            />
+            <Button text="Close" onClick={onReset} variant="secondary" />
           </motion.div>
         )}
       </AnimatePresence>
@@ -169,6 +180,10 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+
+ContactForm.propTypes = {
+  onReset: PropTypes.func.isRequired,
+};
 
 /* if (
         textarea.scrollHeight > parseInt(getComputedStyle(textarea).maxHeight)

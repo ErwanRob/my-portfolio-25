@@ -1,5 +1,5 @@
 import styles from "./Contact.module.scss";
-import ContactForm from "./ContactForm";
+import ContactFormWrapper from "./contactFormWrapper";
 import ContactInfo from "./ContactInfo";
 
 const Contact = () => {
@@ -11,7 +11,7 @@ const Contact = () => {
             <ContactInfo />
           </div>
           <div className={styles["contact__container__content__RBlock"]}>
-            <ContactForm />
+            <ContactFormWrapper />
           </div>
         </div>
       </div>
