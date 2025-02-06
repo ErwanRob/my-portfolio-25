@@ -19,7 +19,7 @@
     max-height: 90%;
     width: 80%;
     max-width: 1440px;
-    /*   background-color: abs.$grey; */
+    background-color: abs.$mid-purple;
     padding: 0.25rem;
     border-radius: 4px;
     @include abs.respond-to("xs") {
@@ -27,6 +27,7 @@
       padding: 0;
       height: auto;
       min-height: none;
+      background-color: none;
     }
 
     &__content {
@@ -43,6 +44,7 @@
       @include abs.respond-to("xs") {
         padding: 2rem;
         flex-direction: column;
+        gap: 10rem;
       }
 
       &__LBlock {
@@ -54,7 +56,7 @@
         box-shadow: 0 1px 0 abs.$hover-purple;
         @include abs.respond-to("xs") {
           width: 100%;
-          height: 100vh;
+          height: auto;
         }
       }
 
@@ -66,7 +68,7 @@
         height: 100%;
         @include abs.respond-to("xs") {
           width: 100%;
-          height: 100vh;
+          height: auto;
         }
       }
     }

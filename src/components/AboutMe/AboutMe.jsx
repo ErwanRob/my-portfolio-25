@@ -3,40 +3,87 @@ import portrait from "../../assets/img/portrait.jpg";
 import MaskText from "../MaskText/MaskText";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
+import useMediaQuery from "../Hooks/useMediaQuery";
 
 const phrasesHeadline = ["HI, I’M A PASSIONATE FRONT-END DEVELOPER,"];
 const phrasesHeadlineBis = [
   "DEDICATED TO CRAFTING ENGAGING AND USER-FRIENDLY WEBSITES.",
 ];
 const phraseBuildSomething = ["LET’S CREATE SOMETHING TOGETHER."];
-const phrases1 = [
-  "I specialize in blending clean, modern design with seamless functionality",
+
+const pPhrasesList = [
+  {
+    id: 1,
+    phrase:
+      "I specialize in blending clean, modern design with seamless functionality",
+    variant: "secondary",
+    align: "left",
+  },
+  {
+    id: 2,
+    phrase:
+      "to deliver solutions that are not only visually appealing but also highly effective.",
+    variant: "secondary",
+    align: "left",
+  },
+  {
+    id: 3,
+    phrase:
+      "Whether it’s building responsive layouts, creating intuitive user interfaces,",
+    variant: "secondary",
+    align: "left",
+  },
+  {
+    id: 4,
+    phrase:
+      "or optimizing websites for performance and SEO, my focus is on delivering",
+    variant: "secondary",
+    align: "left",
+  },
+  {
+    id: 5,
+    phrase:
+      "measurable value to my clients. I take pride in solving problems and turning",
+    variant: "secondary",
+    align: "left",
+  },
+  {
+    id: 6,
+    phrase: "ideas into reality with precision and creativity.",
+    variant: "secondary",
+    align: "left",
+  },
+  {
+    id: 7,
+    phrase:
+      "I’m committed to staying at the forefront of web development practices,",
+    variant: "secondary",
+    align: "left",
+  },
+  {
+    id: 8,
+    phrase:
+      "helping clients achieve their vision with impactful, efficient, scalable solutions.",
+    variant: "secondary",
+    align: "left",
+  },
 ];
-const phrases2 = [
-  "to deliver solutions that are not only visually appealing but also highly effective.",
+
+const allPhrases = [
+  "  I specialize in blending clean, modern design with seamless functionality to deliver solutions that are not only visually appealing but also highly effective. Whether it’s building responsive layouts, creating intuitive user interfaces, or optimizing websites for performance and SEO, my focus is on delivering measurable value to my clients. I take pride in solving problems and turning ideas into reality with precision and creativity. I’m committed to staying at the forefront of web development practices, helping clients achieve their vision with impactful, efficient, scalable solutions.",
 ];
-const phrases3 = [
-  "Whether it’s building responsive layouts, creating intuitive user interfaces,",
-];
-const phrases4 = [
-  "or optimizing websites for performance and SEO, my focus is on delivering",
-];
-const phrases5 = [
-  "measurable value to my clients. I take pride in solving problems and turning",
-];
-const phrases6 = ["ideas into reality with precision and creativity."];
-const phrases7 = [
-  "I’m committed to staying at the forefront of web development practices,",
-];
-const phrases8 = [
-  "helping clients achieve their vision with impactful, efficient, scalable solutions.",
+
+const allHeadPhrases = [
+  "Hi, i'm a passionate front-end developer, dedicated to crafting engaging and user-friendly websites.",
 ];
 
 const AboutMe = () => {
+  const isXSmall = useMediaQuery("(max-width: 480px)");
   const canvasRef = useRef(null);
   const prevPosition = useRef(null);
 
   useEffect(() => {
+    if (isXSmall) return;
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
     const canvasWidth = canvas.offsetWidth;
@@ -45,9 +92,6 @@ const AboutMe = () => {
     canvas.height = canvasHeight;
 
     const initializeCanvas = () => {
-      //Canvas drawing
-      /*  ctx.fillStyle = "#1a1a1afc"; */
-      /* ctx.fillStyle = "#A287f3fc"; */
       ctx.fillStyle = "#29292931";
       ctx.fillRect(0, 0, canvasWidth, canvasHeight);
       //Text drawing
@@ -103,18 +147,28 @@ const AboutMe = () => {
       canvas.removeEventListener("mousemove", handleMouseMove);
       canvas.removeEventListener("mouseup", handleMouseUp);
     };
-  }, []);
+  }, [isXSmall]);
 
   return (
     <div className={styles.aboutMe} id="about-me">
       <div className={styles["aboutMe__container"]}>
         <div className={styles["aboutMe__container__headLine"]}>
-          <MaskText phrases={phrasesHeadline} variant="primary" align="left" />
-          <MaskText
-            phrases={phrasesHeadlineBis}
-            variant="primary"
-            align="right"
-          />
+          {isXSmall ? (
+            <p>{allHeadPhrases}</p>
+          ) : (
+            <>
+              <MaskText
+                phrases={phrasesHeadline}
+                variant="primary"
+                align="left"
+              />
+              <MaskText
+                phrases={phrasesHeadlineBis}
+                variant="primary"
+                align="right"
+              />
+            </>
+          )}
         </div>
 
         <motion.h3
@@ -200,14 +254,20 @@ const AboutMe = () => {
                 ]
               }
             >
-              <MaskText phrases={phrases1} variant="secondary" align="left" />
-              <MaskText phrases={phrases2} variant="secondary" align="left" />
-              <MaskText phrases={phrases3} variant="secondary" align="left" />
-              <MaskText phrases={phrases4} variant="secondary" align="left" />
-              <MaskText phrases={phrases5} variant="secondary" align="left" />
-              <MaskText phrases={phrases6} variant="secondary" align="left" />
-              <MaskText phrases={phrases7} variant="secondary" align="left" />
-              <MaskText phrases={phrases8} variant="secondary" align="left" />
+              {isXSmall ? (
+                <p>{allPhrases}</p>
+              ) : (
+                <>
+                  {pPhrasesList.map((phrase) => (
+                    <MaskText
+                      key={phrase.id}
+                      phrases={[phrase.phrase]}
+                      variant={phrase.variant}
+                      align={phrase.align}
+                    />
+                  ))}
+                </>
+              )}
             </div>
             <div
               className={

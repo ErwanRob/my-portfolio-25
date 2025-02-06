@@ -20,9 +20,12 @@
   font-family: base.$hero-title-font-family;
   font-weight: base.$hero-title-font-weight;
   @include abs.respond-to("xs") {
+    justify-content: center;
     font-size: 2rem;
     height: 4rem;
     background-color: abs.$dark-grey;
+    width: 50%;
+    top: 15rem;
   }
 
   &__puce {
@@ -33,21 +36,27 @@
     text-align: right;
     @include abs.respond-to("xs") {
       font-size: 2rem;
+      width: 10%;
     }
   }
 
   &__txt {
+    width: 100%;
     color: abs.$darker-grey;
     text-align: left;
     @include abs.respond-to("xs") {
       color: abs.$light-grey;
       height: 4rem;
+      width: 50%;
     }
   }
   &__txtpHolder {
+    width: 100%;
     background: transparent;
     color: abs.$darker-grey;
+    text-align: left;
     @include abs.respond-to("xs") {
+      width: 50%;
       color: abs.$light-grey;
     }
   }

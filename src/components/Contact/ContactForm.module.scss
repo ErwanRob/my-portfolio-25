@@ -56,8 +56,9 @@
         font-size: 1.25rem;
         font-weight: 200;
         font-style: italic;
-        /* letter-spacing: 2px; */
-        /* line-height: 1; */
+        @include abs.respond-to("xs") {
+          text-align: left;
+        }
       }
     }
 

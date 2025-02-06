@@ -1,3 +1,4 @@
+import useMediaQuery from "../Hooks/useMediaQuery";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import styles from "./HorizontalScroller.module.scss";
@@ -5,7 +6,6 @@ import ProjectsCard from "./ProjectsCard";
 import imgProject1 from "../../assets/img/projects/projectTMPO.png";
 import placeHolderProjectImg from "../../assets/img/projects/projectPlaceholder1.jpg";
 import PropTypes from "prop-types";
-import useMediaQuery from "../Hooks/useMediaQuery";
 
 const cards = [
   {
@@ -79,9 +79,13 @@ const HorizontalScroller = ({ bgTransform }) => {
           style={isXSmall ? null : { x }}
           className={styles["horizontalScroller__stickyContainer__content"]}
         >
-          {cards.map((card) => {
-            return <ProjectsCard card={card} key={card.id} />;
-          })}
+          {isXSmall
+            ? cards
+                .slice(0, 2)
+                .map((card) => <ProjectsCard card={card} key={card.id} />)
+            : cards.map((card) => {
+                return <ProjectsCard card={card} key={card.id} />;
+              })}
         </motion.div>
       </div>
     </motion.div>
