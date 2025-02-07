@@ -46,7 +46,6 @@ const Projects = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShouldRenderParticles(true);
-      console.log("Projects Particles rendered");
     }, 3000); // Timeout avoid mount on ScrollTo animation
 
     return () => clearTimeout(timeout); // Cleanup timeout on unmount
@@ -73,7 +72,7 @@ const Projects = () => {
             type: "linear",
           }}
         >
-          {shouldRenderParticles && particlesInView && (
+          {shouldRenderParticles && particlesInView && !isXSmall && (
             <ParticlesComponent
               id="tsparticlesProjects"
               direction="top"

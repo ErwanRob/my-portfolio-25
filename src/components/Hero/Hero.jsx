@@ -2,14 +2,13 @@ import styles from "./Hero.module.scss";
 import HeadLine from "./HeadLine/HeadLine";
 import SubLine from "./SubLine/SubLine";
 import Button from "../Button/Button";
-import PropTypes from "prop-types";
 import ParticlesComponent from "../ParticlesComponent";
 import { motion, useInView } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
-const Hero = (/* { toggleSettings } */) => {
+const Hero = () => {
   const handleClick = () => {
     console.log("Button clicked!");
   };
@@ -20,7 +19,6 @@ const Hero = (/* { toggleSettings } */) => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShouldRenderParticles(true);
-      console.log("Hero Particles rendered");
     }, 2700); // Timeout to match Preloader animation end. and not impact load time
 
     return () => clearTimeout(timeout); // Cleanup timeout on unmount
@@ -92,12 +90,6 @@ const Hero = (/* { toggleSettings } */) => {
               onClick={handleClick}
               variant="secondary"
             ></Button>
-            {/* <Button
-              text="Settings"
-              onClick={toggleSettings}
-              variant="secondary"
-              disabled={false}
-            ></Button> */}
             <Button
               text="Hire me"
               onClick={handleClick}
@@ -111,7 +103,3 @@ const Hero = (/* { toggleSettings } */) => {
 };
 
 export default Hero;
-
-Hero.propTypes = {
-  toggleSettings: PropTypes.func.isRequired,
-};

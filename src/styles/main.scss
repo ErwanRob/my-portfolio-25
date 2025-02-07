@@ -119,6 +119,7 @@ body {
 }
 
 .sideMenuNavigation-wrapper {
+  z-index: 2;
   position: absolute;
   @include abs.flxAllCtrBox;
   height: 100vh;
@@ -126,10 +127,36 @@ body {
   padding: 0 100px 0 0;
   top: 0;
   right: 0;
+  transform-origin: right;
+  transition: transform 500ms cubic-bezier(0.19, 0.99, 0.31, 0.98);
   @include abs.respond-to("xs") {
+    position: fixed;
+    transform: scaleX(0);
     display: flex;
     padding: 0 1rem 4rem 0;
-    align-items: flex-end;
+    align-items: center;
+    background-color: abs.$dark-grey;
+  }
+  &.visible {
+    transform: scaleX(1);
+  }
+}
+
+.sideMenuNavigation-toggle {
+  z-index: 999;
+  position: fixed;
+  @include abs.flxAllCtrBox;
+  align-self: center;
+  flex-direction: column;
+  right: 1rem;
+  bottom: 2rem;
+  border-radius: 9999px;
+  background: abs.$dark-purple;
+  height: 3rem;
+  width: 3rem;
+
+  &__btn {
+    font-size: 1.5rem;
   }
 }
 

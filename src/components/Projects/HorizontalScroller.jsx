@@ -81,7 +81,7 @@ const HorizontalScroller = ({ bgTransform }) => {
         >
           {isXSmall
             ? cards
-                .slice(0, 2)
+                .slice(0, 4)
                 .map((card) => <ProjectsCard card={card} key={card.id} />)
             : cards.map((card) => {
                 return <ProjectsCard card={card} key={card.id} />;

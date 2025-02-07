@@ -5,8 +5,11 @@ import { useRef } from "react";
 import styles from "./SideMenuNavigation.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon } from "@fortawesome/fontawesome-svg-core";
+import useMediaQuery from "../Hooks/useMediaQuery";
 
-const SideMenuItem = ({ id, label, icon, setPosition }) => {
+const SideMenuItem = ({ id, label, icon, setPosition, onClick }) => {
+  const isXSmall = useMediaQuery("(max-width: 480px)");
+
   const lenis = useLenis();
   const handleScroll = (target) => {
     if (lenis) {
@@ -38,6 +41,9 @@ const SideMenuItem = ({ id, label, icon, setPosition }) => {
       className={styles["nav__list__item"]}
       onClick={() => {
         handleScroll(`#${id}`);
+        if (onClick && isXSmall) {
+          onClick();
+        }
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={() => setPosition((prev) => ({ ...prev, opacity: 0 }))}
@@ -64,4 +70,5 @@ SideMenuItem.propTypes = {
   label: PropTypes.string.isRequired,
   setPosition: PropTypes.func.isRequired,
   icon: PropTypes.shape(icon).isRequired,
+  onClick: PropTypes.func.isRequired,
 };

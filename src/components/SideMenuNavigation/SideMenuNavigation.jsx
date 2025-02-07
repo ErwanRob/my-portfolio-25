@@ -9,8 +9,9 @@ import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
 import { faAddressBook } from "@fortawesome/free-solid-svg-icons";
 import { faScrewdriverWrench } from "@fortawesome/free-solid-svg-icons";
 import useMediaQuery from "../Hooks/useMediaQuery";
+import PropTypes from "prop-types";
 
-const NavigationBar = () => {
+const SideMenuNavigation = ({ isSideMenuVisible, toggleSideMenu }) => {
   const isXSmall = useMediaQuery("(max-width: 480px)");
 
   const [position, setPosition] = useState({
@@ -18,6 +19,7 @@ const NavigationBar = () => {
     width: 0,
     opacity: 0,
   });
+
   const navList = [
     { id: "hero", label: "Home", icon: faHouse },
     { id: "about-me", label: "About Me", icon: faAddressBook },
@@ -28,7 +30,9 @@ const NavigationBar = () => {
 
   return (
     <motion.nav
-      className={styles.nav}
+      className={`${styles.nav} ${
+        isSideMenuVisible ? styles.fadein : styles.fadeout
+      }`}
       initial={{
         y: "3rem",
         opacity: 0,
@@ -43,7 +47,7 @@ const NavigationBar = () => {
         ease: backOut,
       }}
     >
-      <ul className={styles["nav__list"]}>
+      <motion.ul className={styles["nav__list"]}>
         {navList.map((item) => (
           <SideMenuItem
             key={item.id}
@@ -51,13 +55,19 @@ const NavigationBar = () => {
             label={item.label}
             icon={item.icon}
             setPosition={setPosition}
+            onClick={toggleSideMenu}
           ></SideMenuItem>
         ))}
 
         {isXSmall ? null : <SideMenuBubble position={position} />}
-      </ul>
+      </motion.ul>
     </motion.nav>
   );
 };
 
-export default NavigationBar;
+export default SideMenuNavigation;
+
+SideMenuNavigation.propTypes = {
+  isSideMenuVisible: PropTypes.bool.isRequired,
+  toggleSideMenu: PropTypes.func.isRequired,
+};

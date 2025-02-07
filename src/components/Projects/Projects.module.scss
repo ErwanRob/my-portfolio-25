@@ -11,6 +11,7 @@
   background: abs.$bg-gradient-project1-2, abs.$bg-noise2;
   @include abs.respond-to("xs") {
     height: auto;
+    background: abs.$dark-grey;
   }
 
   /* Particles id props i have to pass */
@@ -36,6 +37,7 @@
       height: 40vh;
       @include abs.respond-to("xs") {
         width: 100%;
+        height: 10vh;
       }
 
       &__trigger {

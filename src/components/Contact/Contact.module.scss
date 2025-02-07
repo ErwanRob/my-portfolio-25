@@ -20,14 +20,14 @@
     width: 80%;
     max-width: 1440px;
     background-color: abs.$mid-purple;
+    filter: drop-shadow(-20px -30px 2rem abs.$mid-purple-rgba);
     padding: 0.25rem;
     border-radius: 4px;
     @include abs.respond-to("xs") {
       width: 100%;
       padding: 0;
       height: auto;
-      min-height: none;
-      background-color: none;
+      filter: none;
     }
 
     &__content {
@@ -44,7 +44,6 @@
       @include abs.respond-to("xs") {
         padding: 2rem;
         flex-direction: column;
-        gap: 10rem;
       }
 
       &__LBlock {
@@ -57,6 +56,7 @@
         @include abs.respond-to("xs") {
           width: 100%;
           height: auto;
+          box-shadow: none;
         }
       }
 
