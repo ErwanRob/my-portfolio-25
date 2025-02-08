@@ -16,16 +16,20 @@ import useMediaQuery from "./components/Hooks/useMediaQuery";
 
 const App = () => {
   const isXSmall = useMediaQuery("(max-width: 480px)");
+  const isSmall = useMediaQuery("(max-width: 768px)");
   const [isSideMenuVisible, setSideMenuVisible] = useState(false);
   const [isSettingsVisible, setSettingsVisible] = useState(false);
+  const [isHeaderVisible, setHeaderVisible] = useState(true);
 
   useEffect(() => {
-    if (isXSmall) {
+    if (isXSmall || isSmall) {
       setSideMenuVisible(false);
+      setHeaderVisible(false);
     } else {
       setSideMenuVisible(true);
+      setHeaderVisible(true);
     }
-  }, [isXSmall]);
+  }, [isXSmall, isSmall]);
 
   const toggleSettings = () => {
     setSettingsVisible(!isSettingsVisible);
@@ -45,12 +49,16 @@ const App = () => {
         },
         duration: 0.75,
         wheelMultiplier: 1.25,
+        infinite: isXSmall ? true : false,
       }}
     >
       <div className="App">
-        <div className="header-wrapper">
-          <Header toggleSettings={toggleSettings} />
-        </div>
+        {isHeaderVisible ? (
+          <div className="header-wrapper">
+            <Header toggleSettings={toggleSettings} />
+          </div>
+        ) : null}
+
         <div
           className={`settings-wrapper ${isSettingsVisible ? "visible" : " "}`}
         >
