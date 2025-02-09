@@ -23,6 +23,12 @@
     filter: drop-shadow(-20px -30px 2rem abs.$mid-purple-rgba);
     padding: 0.25rem;
     border-radius: 4px;
+
+    @include abs.respond-to("lg") {
+      width: 90%;
+      height: auto;
+      filter: none;
+    }
     @include abs.respond-to("xs") {
       width: 100%;
       padding: 0;
@@ -53,6 +59,12 @@
         height: 100%;
         /*     border-bottom: 1px solid abs.$hover-purple; */
         box-shadow: 0 1px 0 abs.$hover-purple;
+
+        @include abs.respond-to("lg") {
+          /*   width: 100%;
+          height: auto;
+          box-shadow: none; */
+        }
         @include abs.respond-to("xs") {
           width: 100%;
           height: auto;

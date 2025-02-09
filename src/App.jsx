@@ -17,19 +17,20 @@ import useMediaQuery from "./components/Hooks/useMediaQuery";
 const App = () => {
   const isXSmall = useMediaQuery("(max-width: 480px)");
   const isSmall = useMediaQuery("(max-width: 768px)");
+  const isMedium = useMediaQuery("(max-width: 1024px)");
   const [isSideMenuVisible, setSideMenuVisible] = useState(false);
   const [isSettingsVisible, setSettingsVisible] = useState(false);
   const [isHeaderVisible, setHeaderVisible] = useState(true);
 
   useEffect(() => {
-    if (isXSmall || isSmall) {
+    if (isXSmall || isSmall || isMedium) {
       setSideMenuVisible(false);
       setHeaderVisible(false);
     } else {
       setSideMenuVisible(true);
       setHeaderVisible(true);
     }
-  }, [isXSmall, isSmall]);
+  }, [isXSmall, isSmall, isMedium]);
 
   const toggleSettings = () => {
     setSettingsVisible(!isSettingsVisible);
@@ -49,7 +50,6 @@ const App = () => {
         },
         duration: 0.75,
         wheelMultiplier: 1.25,
-        infinite: isXSmall ? true : false,
       }}
     >
       <div className="App">
@@ -79,7 +79,7 @@ const App = () => {
           />
         </div>
 
-        {isXSmall ? (
+        {isXSmall || isSmall || isMedium ? (
           <div className="sideMenuNavigation-toggle">
             <button
               className={"sideMenuNavigation-toggle__btn"}

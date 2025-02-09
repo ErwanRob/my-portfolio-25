@@ -71,6 +71,9 @@
       font-weight: 200;
       color: abs.$light-grey;
       filter: drop-shadow(2px 2px 6px rgb(0, 0, 0));
+      @include abs.respond-to("lg") {
+        font-size: 1.125rem;
+      }
       @include abs.respond-to("xs") {
         font-size: 1.125rem;
       }
@@ -80,6 +83,11 @@
       font-size: 1.25rem;
       font-weight: 200;
       color: abs.$light-grey;
+
+      @include abs.respond-to("lg") {
+        font-size: 1rem;
+      }
+
       @include abs.respond-to("xs") {
         font-size: 1rem;
       }

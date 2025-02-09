@@ -79,11 +79,14 @@ const allHeadPhrases = [
 
 const AboutMe = () => {
   const isXSmall = useMediaQuery("(max-width: 480px)");
+  const isSmall = useMediaQuery("(max-width: 768px)");
+  const isMedium = useMediaQuery("(max-width: 1024px)");
+  const isLarge = useMediaQuery("(max-width: 1280px)");
   const canvasRef = useRef(null);
   const prevPosition = useRef(null);
 
   useEffect(() => {
-    if (isXSmall) return;
+    if (isXSmall || isSmall || isMedium) return;
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
     const canvasWidth = canvas.offsetWidth;
@@ -147,13 +150,13 @@ const AboutMe = () => {
       canvas.removeEventListener("mousemove", handleMouseMove);
       canvas.removeEventListener("mouseup", handleMouseUp);
     };
-  }, [isXSmall]);
+  }, [isXSmall, isSmall, isMedium, isLarge]);
 
   return (
     <div className={styles.aboutMe} id="about-me">
       <div className={styles["aboutMe__container"]}>
         <div className={styles["aboutMe__container__headLine"]}>
-          {isXSmall ? (
+          {isXSmall || isSmall || isMedium ? (
             <p>{allHeadPhrases}</p>
           ) : (
             <>
@@ -254,7 +257,7 @@ const AboutMe = () => {
                 ]
               }
             >
-              {isXSmall ? (
+              {isXSmall || isSmall || isMedium ? (
                 <p>{allPhrases}</p>
               ) : (
                 <>

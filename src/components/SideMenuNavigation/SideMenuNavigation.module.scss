@@ -50,6 +50,11 @@
       font-size: 1.5rem;
       color: abs.$white;
       cursor: pointer;
+      @include abs.respond-to("lg") {
+        padding: 1.5rem 1.5rem;
+        font-size: 1.25rem;
+      }
+
       @include abs.respond-to("xs") {
         padding: 1rem 1rem;
       }

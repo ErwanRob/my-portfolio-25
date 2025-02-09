@@ -8,6 +8,11 @@
   height: 80vh;
   /*   background-color: rgba(109, 196, 122, 0.397); */
 
+  @include abs.respond-to("lg") {
+    width: 70vw;
+    height: 80vh;
+  }
+
   @include abs.respond-to("xs") {
     width: 320px;
     height: 200px;
@@ -40,9 +45,10 @@
     height: 20%;
     font-size: 2rem;
     padding: 2rem 0;
-    /* background: abs.$dark-grey; */
-    background-color: transparent;
 
+    @include abs.respond-to("lg") {
+      padding: 1rem;
+    }
     @include abs.respond-to("xs") {
       padding: 1rem;
       height: auto;
@@ -59,6 +65,11 @@
       width: 40%;
       height: 100%;
       box-sizing: border-box;
+
+      @include abs.respond-to("lg") {
+        font-size: 1.5rem;
+        padding: 1rem 2rem 1rem 1rem;
+      }
       @include abs.respond-to("xs") {
         padding: 0rem;
         width: 100%;
@@ -86,7 +97,20 @@
         overflow: hidden;
         border-left: 2px solid abs.$light-grey;
         padding: 0 0 0 4rem;
+        @include abs.respond-to("lg") {
+          padding: 0 0 0 2rem;
+        }
       }
     }
   }
 }
+
+/* 
+ easy elipsis on a certain number of lines
+
+display: -webkit-box;
+margin: auto;
+-webkit-line-clamp: 3;
+-webkit-box-orient: vertical;
+overflow: hidden;
+text-overflow: ellipsis; */

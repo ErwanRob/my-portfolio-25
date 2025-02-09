@@ -14,7 +14,7 @@
   &__container {
     display: flex;
     flex-direction: column;
-    /*   justify-content: space-between; */
+    justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
     width: 100%;
@@ -45,6 +45,10 @@
         line-height: 1;
         text-transform: uppercase;
         gap: 0.25rem;
+
+        @include abs.respond-to("lg") {
+          font-size: 1.75rem;
+        }
         @include abs.respond-to("xs") {
           /*   width: 100%; */
         }
@@ -77,6 +81,10 @@
       width: 100%;
       height: auto;
       gap: 1rem;
+      @include abs.respond-to("xs") {
+        padding: 0 0 0 1rem;
+        box-shadow: -1px 0 0 abs.$hover-purple;
+      }
       @include abs.respond-to("xs") {
         padding: 0 0 0 1rem;
         box-shadow: -1px 0 0 abs.$hover-purple;
@@ -118,6 +126,11 @@
       width: 100%;
       height: auto;
       gap: 2rem;
+
+      @include abs.respond-to("lg") {
+        padding: 0;
+        flex-wrap: wrap;
+      }
       @include abs.respond-to("xs") {
         display: grid;
         grid-template-columns: auto auto;

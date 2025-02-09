@@ -11,6 +11,10 @@
     abs.$bg-patternLos-blackish, abs.$dark-grey;
   box-shadow: abs.$sc-shdw2;
 
+  /* @include abs.respond-to("lg") {
+    height: auto;
+    padding: 2rem;
+  } */
   @include abs.respond-to("xs") {
     width: 100%;
     height: auto;
@@ -23,6 +27,9 @@
     width: 60%;
     padding: 2rem;
 
+    @include abs.respond-to("lg") {
+      width: 100%;
+    }
     @include abs.respond-to("xs") {
       width: 100%;
       padding: 0;
@@ -37,6 +44,12 @@
       margin: 1rem -3rem 3rem 0; // negative margin compensate letter spacing
       text-transform: uppercase; // Probably will change that
       user-select: none;
+
+      @include abs.respond-to("lg") {
+        font-size: 2.5rem;
+        letter-spacing: 2rem;
+        /*     margin: 0; */
+      }
       @include abs.respond-to("xs") {
         font-size: 1.25rem;
         letter-spacing: 0.5rem;
@@ -55,6 +68,13 @@
       max-width: 900px; // To redefine, care when going through breakpoints later on
       height: auto;
       margin: 4rem 0;
+
+      @include abs.respond-to("lg") {
+        font-size: 1.25rem;
+        letter-spacing: 0rem;
+        margin: 2rem 0;
+        gap: 3rem;
+      }
 
       @include abs.respond-to("xs") {
         font-size: 1.25rem;
@@ -78,6 +98,12 @@
           height: 6rem;
           /*   height: auto; */
           /* cursor: none; */
+
+          @include abs.respond-to("lg") {
+            padding: 0.25rem;
+            width: 4.5rem;
+            height: 4.5rem;
+          }
           @include abs.respond-to("xs") {
             padding: 0.25rem;
             width: 3rem;

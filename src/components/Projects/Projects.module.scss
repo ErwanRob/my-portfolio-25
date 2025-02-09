@@ -48,6 +48,9 @@
         color: abs.$light-grey;
         width: auto;
         height: 100%;
+        @include abs.respond-to("lg") {
+          font-size: 3rem;
+        }
         @include abs.respond-to("xs") {
           height: auto;
           font-size: 2rem;
@@ -59,6 +62,9 @@
           margin: 0 0 0 30rem;
           letter-spacing: 2rem;
           user-select: none;
+          @include abs.respond-to("lg") {
+            margin: 0 0 0 0rem;
+          }
           @include abs.respond-to("xs") {
             margin: 0 0.5rem 0 0rem;
             letter-spacing: 0.5rem;
@@ -68,6 +74,10 @@
         &__JECTS {
           letter-spacing: 2rem;
           user-select: none;
+
+          @include abs.respond-to("lg") {
+            margin: 0 0 0 1rem;
+          }
           @include abs.respond-to("xs") {
             margin: 0 0 0 0rem;
             letter-spacing: 0.5rem;

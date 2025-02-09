@@ -11,6 +11,16 @@
   user-select: none; /*Prevent user blue-select*/
   margin: -#{abs.$headerHeight} 0 0 0; // compensate for header
   background: abs.$bg-patternLos-blackish, abs.$bg-patternLos-purpleish;
+
+  @include abs.respond-to("md") {
+    background: abs.$dark-grey;
+  }
+  @include abs.respond-to("md") {
+    background: abs.$dark-grey;
+  }
+  @include abs.respond-to("sm") {
+    background: abs.$dark-grey;
+  }
   @include abs.respond-to("xs") {
     background: abs.$dark-grey;
   }
@@ -41,6 +51,16 @@
         justify-content: space-between;
         align-items: center;
         gap: 1.5rem;
+
+        @include abs.respond-to("lg") {
+          margin-top: 1rem;
+          gap: 1rem;
+          /*   gap: 1rem;
+          flex-direction: column;
+          position: absolute;
+          bottom: 1rem; */
+          /*   display: none; */
+        }
         @include abs.respond-to("xs") {
           display: grid;
           margin: 0;
