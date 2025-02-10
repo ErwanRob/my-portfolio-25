@@ -10,10 +10,12 @@ import useMediaQuery from "../Hooks/useMediaQuery";
 
 const Skills = () => {
   const isXSmall = useMediaQuery("(max-width: 480px)");
+  const isSmall = useMediaQuery("(max-width: 768px)");
+  const isMedium = useMediaQuery("(max-width: 1024px)");
   const { ref, inView } = useInView({
     threshold: 1,
-    rootMargin: "150px 0px 300px 0px",
-    triggerOnce: isXSmall ? true : false,
+    rootMargin: "0px 0px 300px 0px",
+    triggerOnce: isXSmall || isSmall || isMedium,
   });
 
   const animation = {

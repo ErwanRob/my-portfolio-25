@@ -14,9 +14,7 @@
   &__container {
     @include abs.flxAllCtrBox;
     flex-direction: column;
-    height: auto;
-    min-height: 70%;
-    max-height: 90%;
+    height: 70%;
     width: 80%;
     max-width: 1440px;
     background-color: abs.$mid-purple;
@@ -26,9 +24,15 @@
 
     @include abs.respond-to("lg") {
       width: 90%;
-      height: auto;
       filter: none;
     }
+
+    @include abs.respond-to("md") {
+      height: 90%;
+
+      filter: none;
+    }
+
     @include abs.respond-to("xs") {
       width: 100%;
       padding: 0;
@@ -46,6 +50,11 @@
       overflow: hidden;
       border-radius: 4px;
       box-shadow: 4px 4px 8px abs.$darker-grey;
+
+      @include abs.respond-to("md") {
+        padding: 2rem;
+        flex-direction: column;
+      }
 
       @include abs.respond-to("xs") {
         padding: 2rem;
@@ -65,6 +74,11 @@
           height: auto;
           box-shadow: none; */
         }
+
+        @include abs.respond-to("md") {
+          width: 100%;
+          height: 50%;
+        }
         @include abs.respond-to("xs") {
           width: 100%;
           height: auto;
@@ -78,6 +92,11 @@
         flex-direction: column;
         width: 50%;
         height: 100%;
+
+        @include abs.respond-to("md") {
+          width: 100%;
+          height: 50%;
+        }
         @include abs.respond-to("xs") {
           width: 100%;
           height: auto;

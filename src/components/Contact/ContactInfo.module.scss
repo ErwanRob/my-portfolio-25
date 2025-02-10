@@ -7,6 +7,9 @@
   width: 100%;
   height: 100%;
   padding: 2rem 2rem;
+  @include abs.respond-to("md") {
+    padding: 0rem 0;
+  }
   @include abs.respond-to("xs") {
     padding: 2rem 0;
   }
@@ -20,6 +23,10 @@
     width: 100%;
     height: 100%;
     gap: 2rem;
+    @include abs.respond-to("md") {
+      gap: 4rem;
+      height: auto;
+    }
     @include abs.respond-to("xs") {
       gap: 6rem;
       height: auto;
@@ -34,6 +41,13 @@
       width: 100%;
       height: auto;
       user-select: none;
+      @include abs.respond-to("md") {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: flex-start;
+        flex-direction: row;
+        font-size: 1.75rem;
+      }
 
       &__txt {
         display: flex;
@@ -81,9 +95,8 @@
       width: 100%;
       height: auto;
       gap: 1rem;
-      @include abs.respond-to("xs") {
-        padding: 0 0 0 1rem;
-        box-shadow: -1px 0 0 abs.$hover-purple;
+      @include abs.respond-to("lg") {
+        padding: 0 0 0 0rem;
       }
       @include abs.respond-to("xs") {
         padding: 0 0 0 1rem;

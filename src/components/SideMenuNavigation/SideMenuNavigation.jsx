@@ -13,6 +13,8 @@ import PropTypes from "prop-types";
 
 const SideMenuNavigation = ({ isSideMenuVisible, toggleSideMenu }) => {
   const isXSmall = useMediaQuery("(max-width: 480px)");
+  const isSmall = useMediaQuery("(max-width: 768px)");
+  const isMedium = useMediaQuery("(max-width: 1024px)");
 
   const [position, setPosition] = useState({
     top: 0,
@@ -59,7 +61,9 @@ const SideMenuNavigation = ({ isSideMenuVisible, toggleSideMenu }) => {
           ></SideMenuItem>
         ))}
 
-        {isXSmall ? null : <SideMenuBubble position={position} />}
+        {isXSmall || isSmall || isMedium ? null : (
+          <SideMenuBubble position={position} />
+        )}
       </motion.ul>
     </motion.nav>
   );

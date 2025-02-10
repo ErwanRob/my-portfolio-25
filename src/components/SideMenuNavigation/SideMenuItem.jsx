@@ -9,6 +9,8 @@ import useMediaQuery from "../Hooks/useMediaQuery";
 
 const SideMenuItem = ({ id, label, icon, setPosition, onClick }) => {
   const isXSmall = useMediaQuery("(max-width: 480px)");
+  const isSmall = useMediaQuery("(max-width: 768px)");
+  const isMedium = useMediaQuery("(max-width: 1024px)");
 
   const lenis = useLenis();
   const handleScroll = (target) => {
@@ -41,7 +43,11 @@ const SideMenuItem = ({ id, label, icon, setPosition, onClick }) => {
       className={styles["nav__list__item"]}
       onClick={() => {
         handleScroll(`#${id}`);
-        if (onClick && isXSmall) {
+        if (
+          (onClick && isXSmall) ||
+          (onClick && isSmall) ||
+          (onClick && isMedium)
+        ) {
           onClick();
         }
       }}

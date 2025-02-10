@@ -19,6 +19,13 @@
     /*   border-radius: 4px; */
     overflow: hidden;
     box-shadow: 0 1px 0 abs.$hover-purple;
+
+    @include abs.respond-to("md") {
+      padding: 0 2rem;
+      /*   gap: 2rem; */
+      box-shadow: none;
+      justify-content: center;
+    }
     @include abs.respond-to("xs") {
       padding: 0;
       gap: 2rem;
