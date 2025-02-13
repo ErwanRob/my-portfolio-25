@@ -61,6 +61,7 @@ const cards = [
 
 const HorizontalScroller = ({ bgTransform }) => {
   const isXSmall = useMediaQuery("(max-width: 480px)");
+  const isSmall = useMediaQuery("(max-width: 768px)");
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -76,10 +77,10 @@ const HorizontalScroller = ({ bgTransform }) => {
     >
       <div className={styles["horizontalScroller__stickyContainer"]}>
         <motion.div
-          style={isXSmall ? null : { x }}
+          style={isXSmall || isSmall ? null : { x }}
           className={styles["horizontalScroller__stickyContainer__content"]}
         >
-          {isXSmall
+          {isXSmall || isSmall
             ? cards
                 .slice(0, 4)
                 .map((card) => <ProjectsCard card={card} key={card.id} />)

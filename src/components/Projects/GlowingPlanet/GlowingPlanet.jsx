@@ -3,6 +3,7 @@ import styles from "./GlowingPlanet.module.scss";
 import { backOut } from "motion";
 import { useLenis } from "lenis/react";
 import PropTypes from "prop-types";
+import useMediaQuery from "../../Hooks/useMediaQuery";
 
 const GlowingPlanet = ({
   yTransform,
@@ -10,6 +11,8 @@ const GlowingPlanet = ({
   bgTransformBlackHole,
   spinTranformBlackHole,
 }) => {
+  const isXSmall = useMediaQuery("(max-width: 480px)");
+  const isSmall = useMediaQuery("(max-width: 768px)");
   const lenis = useLenis();
 
   const handleScroll = () => {
@@ -29,7 +32,9 @@ const GlowingPlanet = ({
 
   return (
     <motion.div
-      style={{ y: yTransform, scale: scaleTransform }}
+      style={
+        isXSmall || isSmall ? null : { y: yTransform, scale: scaleTransform }
+      }
       className={styles.glowingPlanet}
     >
       <motion.div

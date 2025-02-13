@@ -37,14 +37,15 @@
     border-right: 1px solid transparent; /* Placeholder for the cursor */
 
     @include abs.respond-to("lg") {
-      font-size: 4rem;
+      font-size: 5rem;
     }
     @include abs.respond-to("md") {
-      font-size: 3rem;
+      font-size: 4rem;
     }
     @include abs.respond-to("sm") {
     }
     @include abs.respond-to("xs") {
+      font-size: 3rem;
     }
   }
   &__blinkingCursor {
@@ -62,10 +63,15 @@
     font-size: 5rem;
     animation: blink 1500ms ease-out 3s infinite;
     @include abs.respond-to("lg") {
+      font-size: 4rem;
+    }
+    @include abs.respond-to("md") {
       font-size: 3rem;
     }
-    @include abs.respond-to("xs") {
+    @include abs.respond-to("md") {
       display: none;
+    }
+    @include abs.respond-to("xs") {
     }
   }
 }

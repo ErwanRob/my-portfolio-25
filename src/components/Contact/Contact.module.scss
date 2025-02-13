@@ -6,6 +6,11 @@
   height: 100vh;
   width: 100%;
   /* background: abs.$bg-noise; */
+  @include abs.respond-to("sm") {
+    width: 100%;
+    height: auto;
+    margin: 3rem 0 0 0;
+  }
   @include abs.respond-to("xs") {
     width: 100%;
     height: auto;
@@ -29,15 +34,18 @@
 
     @include abs.respond-to("md") {
       height: 90%;
-
       filter: none;
     }
 
+    @include abs.respond-to("sm") {
+      width: 100%;
+      padding: 0;
+      height: auto;
+    }
     @include abs.respond-to("xs") {
       width: 100%;
       padding: 0;
       height: auto;
-      filter: none;
     }
 
     &__content {
@@ -55,9 +63,11 @@
         padding: 2rem;
         flex-direction: column;
       }
-
+      @include abs.respond-to("sm") {
+        padding-top: 6rem;
+        flex-direction: column;
+      }
       @include abs.respond-to("xs") {
-        padding: 2rem;
         flex-direction: column;
       }
 

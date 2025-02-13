@@ -11,9 +11,14 @@
   letter-spacing: 1px;
   color: abs.$light-grey;
   font-weight: 400;
+  @include abs.respond-to("sm") {
+    align-items: center;
+    margin: 1rem 0 0rem 0;
+  }
+
   @include abs.respond-to("xs") {
     align-items: center;
-    margin: 3rem 0 0rem 0;
+    margin: 2rem 0 0rem 0;
   }
 
   &__name {

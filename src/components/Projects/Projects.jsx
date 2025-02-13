@@ -11,6 +11,7 @@ const Projects = () => {
   const targetRef = useRef(null);
 
   const isXSmall = useMediaQuery("(max-width: 480px)");
+  const isSmall = useMediaQuery("(max-width: 768px)");
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -72,13 +73,16 @@ const Projects = () => {
             type: "linear",
           }}
         >
-          {shouldRenderParticles && particlesInView && !isXSmall && (
-            <ParticlesComponent
-              id="tsparticlesProjects"
-              direction="top"
-              speed={1.75}
-            />
-          )}
+          {shouldRenderParticles &&
+            particlesInView &&
+            !isXSmall &&
+            !isSmall && (
+              <ParticlesComponent
+                id="tsparticlesProjects"
+                direction="top"
+                speed={1.75}
+              />
+            )}
         </motion.div>
         <div className={styles["projects__container__content"]}>
           <div className={styles["projects__container__content__trigger"]}>

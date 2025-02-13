@@ -24,7 +24,7 @@ To run this project locally:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/my-portfolio.git
+   git clone https://github.com/ErwanRob/my-portfolio.git
    cd my-portfolio
    ```
 
