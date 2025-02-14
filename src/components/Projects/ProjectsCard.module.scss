@@ -8,9 +8,13 @@
   height: 80vh;
   /*   background-color: rgba(109, 196, 122, 0.397); */
 
+  @include abs.respond-to("xl") {
+    width: 80vw;
+    height: 70vh;
+  }
+
   @include abs.respond-to("lg") {
-    width: 70vw;
-    height: auto;
+    height: 60vh;
   }
 
   @include abs.respond-to("sm") {

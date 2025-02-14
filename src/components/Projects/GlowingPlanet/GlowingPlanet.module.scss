@@ -8,6 +8,12 @@
   width: 400px;
   height: 400px;
   margin: 0 0.5rem 0 0;
+
+  @include abs.respond-to("xl") {
+    width: 10rem;
+    height: 10rem;
+  }
+
   @include abs.respond-to("lg") {
     width: 6rem;
     height: 6rem;
@@ -31,6 +37,10 @@
     height: 300px;
     z-index: 2;
     filter: drop-shadow(0rem 0rem 3rem abs.$dark-purple);
+    @include abs.respond-to("xl") {
+      width: 9rem;
+      height: 9rem;
+    }
     @include abs.respond-to("lg") {
       width: 5.5rem;
       height: 5.5rem;
@@ -54,6 +64,11 @@
       animation: boostedLoader 2s linear infinite;
       &:hover {
         animation: boostedLoader 0.5s linear infinite;
+      }
+
+      @include abs.respond-to("xl") {
+        width: 10rem;
+        height: 10rem;
       }
 
       @include abs.respond-to("lg") {
