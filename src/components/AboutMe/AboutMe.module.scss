@@ -10,48 +10,72 @@
   background: abs.$bg-gradient-project2, abs.$bg-noise,
     abs.$bg-patternLos-blackish, abs.$dark-grey;
   box-shadow: abs.$sc-shdw; /*Shadow to define, not final*/
+
   @include abs.respond-to("lg") {
     height: 100%;
     min-height: 100vh;
     padding: 2rem 2rem;
   }
 
+  @include abs.respond-to("sm") {
+    height: 100%;
+    padding: 8rem 2rem;
+  }
   @include abs.respond-to("xs") {
     height: 100%;
-    padding: 2rem 2rem;
+    padding: 6rem 1rem;
   }
 
   &__container {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
     grid-template-rows: auto auto;
-    gap: 0rem 5rem;
     grid-template-areas:
-      "aboutMe__container__headLine aboutMe__container__headLine"
-      "aboutMe__container__title aboutMe__container__content";
+      "aboutMe__container__headLine aboutMe__container__headLine aboutMe__container__headLine"
+      "aboutMe__container__title aboutMe__container__portrait aboutMe__container__description";
     width: auto;
     max-width: 1440px;
     height: auto;
     border-radius: 50px;
     margin: 1rem;
-    padding: 2rem 6rem;
+    padding: 2rem 4rem;
+    gap: 0rem 5rem;
 
-    @include abs.respond-to("lg") {
+    @include abs.respond-to("xl") {
       grid-template-columns: 4rem auto;
-      grid-template-rows: auto auto;
-      padding: 0;
-      box-sizing: border-box;
-      gap: 2rem 5rem;
-    }
-    @include abs.respond-to("xs") {
-      grid-template-columns: auto;
       grid-template-rows: auto auto auto;
       grid-template-areas:
-        "aboutMe__container__title "
-        "aboutMe__container__headLine"
-        "aboutMe__container__content";
+        "aboutMe__container__headLine aboutMe__container__headLine"
+        "aboutMe__container__title aboutMe__container__portrait" "aboutMe__container__title aboutMe__container__description";
+      gap: 1.5rem 2rem;
+      padding: 1rem 3rem;
+      width: 80%;
+    }
+    @include abs.respond-to("lg") {
+      gap: 1.5rem 2rem;
       padding: 0;
-      margin: 5rem 0;
+      width: 90%;
+      margin: 0;
+    }
+
+    @include abs.respond-to("md") {
+      gap: 1.5rem 2rem;
+      padding: 0;
+      width: 100%;
+      margin: 0;
+    }
+
+    @include abs.respond-to("sm") {
+      grid-template-columns: auto;
+      grid-template-rows: auto auto auto auto;
+      grid-template-areas:
+        "aboutMe__container__title"
+        "aboutMe__container__portrait"
+        "aboutMe__container__headLine"
+        "aboutMe__container__description";
+    }
+    @include abs.respond-to("xs") {
+      padding: 0;
       gap: 2rem 0rem;
     }
 
@@ -64,14 +88,21 @@
       padding: 0 0 0 4rem;
       gap: 2rem;
       box-sizing: border-box;
+
+      @include abs.respond-to("xl") {
+        gap: 1rem;
+        padding: 0 0 0 1.5rem;
+      }
       @include abs.respond-to("lg") {
         gap: 0.5rem;
+        padding: 0 0 0 1.5rem;
+      }
+
+      @include abs.respond-to("sm") {
         padding: 0;
       }
       @include abs.respond-to("xs") {
-        font-size: 1.5rem;
         gap: 0rem;
-        font-weight: 200;
         text-align: center;
       }
     }
@@ -86,14 +117,13 @@
       width: 4rem;
       user-select: none;
 
-      @include abs.respond-to("lg") {
-      }
-      @include abs.respond-to("xs") {
+      @include abs.respond-to("sm") {
+        width: 100%;
         height: 3rem;
         margin: auto;
-        width: 100%;
+      }
+      @include abs.respond-to("xs") {
         padding: 0;
-        justify-content: space-between;
       }
 
       &__lList {
@@ -102,18 +132,14 @@
         justify-content: space-between;
         align-items: center;
         height: 100%;
-        @include abs.respond-to("lg") {
-          /*   justify-content: center;
+        @include abs.respond-to("sm") {
+          justify-content: space-between;
           flex-direction: row;
           width: 100%;
           height: auto;
-          gap: 0.1rem; */
+          gap: 0.1rem;
         }
         @include abs.respond-to("xs") {
-          justify-content: center;
-          flex-direction: row;
-          width: 100%;
-          height: auto;
           gap: 0.1rem;
         }
 
@@ -131,9 +157,9 @@
         }
       }
     }
-    &__content {
+    &__portrait {
       z-index: 1;
-      grid-area: aboutMe__container__content;
+      grid-area: aboutMe__container__portrait;
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
@@ -143,11 +169,32 @@
       box-sizing: border-box;
       width: auto;
       height: auto;
-      @include abs.respond-to("lg") {
-        flex-direction: column;
-        margin: 0;
-        box-shadow: 1px 0 0 abs.$hover-purple;
+
+      @include abs.respond-to("xl") {
+        width: 100%;
+        border-radius: 4px;
         gap: 2rem;
+        margin: 0 0 0 0;
+        background-color: abs.$light-purple-rgba;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5rem;
+        height: 12.5rem;
+      }
+      @include abs.respond-to("lg") {
+        padding: 0 2rem;
+      }
+
+      @include abs.respond-to("md") {
+        padding: 0 1rem;
+        height: 10rem;
+        justify-content: space-around;
+      }
+
+      @include abs.respond-to("sm") {
+        justify-content: center;
+        padding: 0;
+        height: 15rem;
       }
       @include abs.respond-to("xs") {
         box-shadow: none;
@@ -158,59 +205,63 @@
         gap: 2rem;
       }
 
-      &__portraitContainer {
+      &__imgWrapper {
+        // old portraitCointainer now container
         z-index: 2;
         position: relative;
         /* overflow: hidden; */
         @include abs.flxAllCtrBox;
         flex-direction: column;
-        width: auto;
-        height: auto;
+        width: 425px;
+        height: 425px;
         user-select: none;
         cursor: grab;
         filter: drop-shadow(4px 6px 20px black);
+        @include abs.respond-to("xl") {
+          width: auto;
+          height: 100%;
+          padding: 0;
+          filter: none;
+        }
         @include abs.respond-to("lg") {
-          display: none;
+          width: auto;
+          height: 100%;
+          padding: 0;
         }
 
-        &__imgWrapper {
-          width: 425px;
-          height: 425px;
+        @include abs.respond-to("md") {
+          width: auto;
+          height: 100%;
+        }
 
-          @include abs.respond-to("lg") {
-            width: 280px;
-            height: 280px;
-            /*   margin: auto 2rem; */
-            padding: 0;
+        &__img {
+          z-index: 2;
+          display: flex;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          box-sizing: border-box;
+          clip-path: circle(65% at 50% 50%);
+          @include abs.respond-to("xl") {
+            width: 100%;
+            clip-path: none;
+            /*   padding: 0; */
+          }
+        }
+
+        &__canvas {
+          z-index: 3;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          clip-path: circle(65% at 50% 50%);
+          @include abs.respond-to("xl") {
+            display: none;
           }
           @include abs.respond-to("xs") {
-            width: 150px;
-            height: 150px;
-            /*   margin: auto 2rem; */
-            padding: 0;
-          }
-          &__img {
-            z-index: 2;
-            display: flex;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            box-sizing: border-box;
-            clip-path: circle(65% at 50% 50%);
-          }
-
-          &__canvas {
-            z-index: 3;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            clip-path: circle(65% at 50% 50%);
-            @include abs.respond-to("xs") {
-              display: none;
-              /*   margin: auto 2rem; */
-            }
+            display: none;
           }
         }
 
@@ -237,41 +288,51 @@
           }
         }
       }
-      &__description {
-        z-index: 1;
+    }
+    &__description {
+      grid-area: aboutMe__container__description;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      width: auto;
+      height: 100%;
+      padding: 0;
+      box-sizing: border-box;
+      gap: 3.5rem;
+      @include abs.respond-to("xl") {
+        gap: 1rem;
+        padding: 0 0 1rem 0;
+        box-shadow: 0 1px 0 abs.$hover-purple;
+      }
+      @include abs.respond-to("lg") {
+        gap: 2rem;
+        padding: 0 0 1rem 0;
+      }
+
+      &__maskTextWrapper {
         display: flex;
+        position: relative;
         flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-start;
-        width: auto;
-        height: 100%;
-        padding: 0 3rem 0 0;
+        width: 100%;
+        gap: 0.25rem;
         box-sizing: border-box;
-        gap: 3.5rem;
-        @include abs.respond-to("lg") {
-          gap: 2rem;
-          padding: 0 0 0 0;
-        }
         @include abs.respond-to("xs") {
-          padding: 0;
+          text-align: justify;
+          font-weight: 200;
+        }
+      }
+
+      &__subLine {
+        display: flex;
+        width: 100%;
+        @include abs.respond-to("xl") {
+          justify-content: flex-end;
         }
 
-        &__maskTextWrapper {
-          display: flex;
-          position: relative;
-          flex-direction: column;
-          width: 100%;
-          gap: 0.25rem;
-          box-sizing: border-box;
-          @include abs.respond-to("xs") {
-            text-align: justify;
-            font-weight: 200;
-          }
-        }
-
-        &__subLine {
-          display: flex;
-          width: 100%;
+        @include abs.respond-to("xs") {
+          justify-content: center;
         }
       }
     }

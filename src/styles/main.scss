@@ -59,6 +59,10 @@ body {
     // detect touch devices
     overflow-x: hidden;
   }
+
+  @include abs.respond-to("sm") {
+    overflow-x: hidden;
+  }
 }
 
 /* Wrapper for the entire app */
@@ -124,7 +128,8 @@ body {
   @include abs.flxAllCtrBox;
   height: 100vh;
   width: auto;
-  padding: 0 100px 0 0;
+  /*   padding: 0 100px 0 0; */
+  padding: 0 5rem 4rem 0;
   top: 0;
   right: 0;
   transform-origin: right;
@@ -140,22 +145,6 @@ body {
     padding: 0 1rem 4rem 0;
     align-items: center;
     background-color: abs.$dark-grey;
-  }
-  @include abs.respond-to("sm") {
-    /* position: fixed;
-    transform: scaleX(0);
-    display: flex;
-    padding: 0 1rem 4rem 0;
-    align-items: center;
-    background-color: abs.$dark-grey; */
-  }
-  @include abs.respond-to("xs") {
-    /*   position: fixed;
-    transform: scaleX(0);
-    display: flex;
-    padding: 0 1rem 4rem 0;
-    align-items: center;
-    background-color: abs.$dark-grey; */
   }
   &.visible {
     transform: scaleX(1);

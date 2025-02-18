@@ -1,5 +1,5 @@
 import styles from "./AboutMe.module.scss";
-import portrait from "../../assets/img/portrait.jpg";
+import portrait from "../../assets/img/portrait.png";
 import MaskText from "../MaskText/MaskText";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
@@ -82,6 +82,7 @@ const AboutMe = () => {
   const isSmall = useMediaQuery("(max-width: 768px)");
   const isMedium = useMediaQuery("(max-width: 1024px)");
   const isLarge = useMediaQuery("(max-width: 1280px)");
+  const isXLarge = useMediaQuery("(max-width: 1536px)");
   const canvasRef = useRef(null);
   const prevPosition = useRef(null);
 
@@ -150,14 +151,14 @@ const AboutMe = () => {
       canvas.removeEventListener("mousemove", handleMouseMove);
       canvas.removeEventListener("mouseup", handleMouseUp);
     };
-  }, [isXSmall, isSmall, isMedium, isLarge]);
+  }, [isXSmall, isSmall, isMedium, isLarge, isXLarge]);
 
   return (
     <div className={styles.aboutMe} id="about-me">
       <div className={styles["aboutMe__container"]}>
         <div className={styles["aboutMe__container__headLine"]}>
-          {isXSmall || isSmall || isMedium ? (
-            <p>{allHeadPhrases}</p>
+          {isXSmall || isSmall ? (
+            <MaskText phrases={allHeadPhrases} variant="primary" align="left" />
           ) : (
             <>
               <MaskText
@@ -213,77 +214,77 @@ const AboutMe = () => {
           </ul>
         </motion.h3>
 
-        <div className={styles["aboutMe__container__content"]}>
-          <motion.div
-            className={styles["aboutMe__container__content__portraitContainer"]}
-            initial={{ opacity: 0, y: "5rem" }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 1,
-            }}
-            viewport={{ once: true }}
-          >
-            <div
-              className={
-                styles[
-                  "aboutMe__container__content__portraitContainer__imgWrapper"
-                ]
-              }
-            >
-              <img
-                className={
-                  styles[
-                    "aboutMe__container__content__portraitContainer__imgWrapper__img"
-                  ]
-                }
-                src={portrait}
-                alt="selfPortrait"
-              />
-              <canvas
-                ref={canvasRef}
-                className={
-                  styles[
-                    "aboutMe__container__content__portraitContainer__imgWrapper__canvas"
-                  ]
-                }
-              />
-            </div>
-          </motion.div>
-          <div className={styles["aboutMe__container__content__description"]}>
-            <div
-              className={
-                styles[
-                  "aboutMe__container__content__description__maskTextWrapper"
-                ]
-              }
-            >
-              {isXSmall || isSmall || isMedium ? (
-                <p>{allPhrases}</p>
-              ) : (
-                <>
-                  {pPhrasesList.map((phrase) => (
-                    <MaskText
-                      key={phrase.id}
-                      phrases={[phrase.phrase]}
-                      variant={phrase.variant}
-                      align={phrase.align}
-                    />
-                  ))}
-                </>
-              )}
-            </div>
-            <div
-              className={
-                styles["aboutMe__container__content__description__subLine"]
-              }
-            >
+        <div className={styles["aboutMe__container__portrait"]}>
+          {isXLarge && !isSmall && !isXSmall ? (
+            <div className={styles["aboutMe__container__portrait__subLine"]}>
               <MaskText
                 phrases={phraseBuildSomething}
                 variant="tertiary"
                 align="right"
               />
             </div>
+          ) : null}
+          <motion.div
+            className={styles["aboutMe__container__portrait__imgWrapper"]}
+            initial={{
+              opacity: "var(--initial-imgP-opacity)",
+              y: "var(--initial-imgP-y)",
+            }}
+            whileInView={{
+              opacity: "var(--whileInView-imgP-opacity)",
+              y: "var(--whileInView-imgP-y)",
+            }}
+            transition={{
+              duration: 1,
+            }}
+            viewport={{ once: true }}
+          >
+            <img
+              className={
+                styles["aboutMe__container__portrait__imgWrapper__img"]
+              }
+              src={portrait}
+              alt="selfPortrait"
+            />
+            <canvas
+              ref={canvasRef}
+              className={
+                styles["aboutMe__container__portrait__imgWrapper__canvas"]
+              }
+            />
+          </motion.div>
+        </div>
+        <div className={styles["aboutMe__container__description"]}>
+          <div
+            className={
+              styles["aboutMe__container__description__maskTextWrapper"]
+            }
+          >
+            {isXLarge ? (
+              <MaskText phrases={allPhrases} variant="secondary" align="left" />
+            ) : (
+              <>
+                {pPhrasesList.map((phrase) => (
+                  <MaskText
+                    key={phrase.id}
+                    phrases={[phrase.phrase]}
+                    variant={phrase.variant}
+                    align={phrase.align}
+                  />
+                ))}
+              </>
+            )}
           </div>
+
+          {isXLarge && !isSmall && !isXSmall ? null : (
+            <div className={styles["aboutMe__container__description__subLine"]}>
+              <MaskText
+                phrases={phraseBuildSomething}
+                variant="tertiary"
+                align="right"
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>

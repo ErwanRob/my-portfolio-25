@@ -49,7 +49,7 @@
     border-radius: 4px;
     /*lineMask--primary*/
     &--primary {
-      letter-spacing: 4px;
+      /*     letter-spacing: 4px; */
     }
     /*lineMask--secondary*/
     &--secondary {
@@ -57,7 +57,7 @@
     }
     /*lineMask--tertiary*/
     &--tertiary {
-      letter-spacing: 2px;
+      /*   letter-spacing: 2px; */
     }
   }
   /*p*/
@@ -65,17 +65,30 @@
     display: flex;
     font-size: 1rem;
     line-height: 1.5;
+
     /*p--primary*/
     &--primary {
+      letter-spacing: 4px;
       font-size: 1.75rem;
       font-weight: 200;
       color: abs.$light-grey;
       filter: drop-shadow(2px 2px 6px rgb(0, 0, 0));
+      @include abs.respond-to("xl") {
+        font-size: 1.25rem;
+      }
       @include abs.respond-to("lg") {
+        letter-spacing: 1px;
+      }
+
+      @include abs.respond-to("md") {
+        letter-spacing: 1px;
         font-size: 1.125rem;
       }
+      @include abs.respond-to("sm") {
+        font-size: 1.25rem;
+      }
       @include abs.respond-to("xs") {
-        font-size: 1.125rem;
+        color: abs.$hover-purple2;
       }
     }
     /*p--secondary*/
@@ -83,24 +96,42 @@
       font-size: 1.25rem;
       font-weight: 200;
       color: abs.$light-grey;
-
+      @include abs.respond-to("xl") {
+        line-height: 1.75;
+        font-size: 1.125rem;
+        font-weight: 200;
+      }
       @include abs.respond-to("lg") {
         font-size: 1rem;
       }
 
       @include abs.respond-to("xs") {
-        font-size: 1rem;
+        text-align: justify;
       }
     }
     /*p--tertiary*/
     &--tertiary {
       font-size: 1.75rem;
       font-weight: 500;
+      letter-spacing: 2px;
       color: abs.$light-purple;
       filter: drop-shadow(2px 2px 6px rgba(234, 234, 234, 0.2));
+      @include abs.respond-to("xl") {
+        font-size: 1.25rem;
+        letter-spacing: 3px;
+      }
 
+      @include abs.respond-to("lg") {
+        font-size: 1rem;
+        letter-spacing: 3px;
+      }
+      @include abs.respond-to("md") {
+        font-size: 1.125rem;
+        letter-spacing: 1px;
+      }
       @include abs.respond-to("xs") {
         font-size: 1.125rem;
+        letter-spacing: 1px;
       }
     }
   }
