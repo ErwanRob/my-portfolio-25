@@ -24,6 +24,11 @@
   --initial-pR-opacity: 0;
   --whileInView-pR-x: 0;
   --whileInView-pR-opacity: 1;
+  /*Trigger JECTS*/
+  --initial-ject-x: 15rem;
+  --initial-ject-opacity: 0;
+  --whileInView-ject-x: 0;
+  --whileInView-ject-opacity: 1;
 
   /*imgPortrait*/
   --initial-imgP-opacity: 0;
@@ -85,10 +90,14 @@
     --animate-bC-x: 0;
     --initial-gP-y: 0;
     --whileInView-gP-y: 0;
-    --initial-pR-x: 0;
+    --initial-pR-x: -2rem;
     --initial-pR-opacity: 0;
     --whileInView-pR-x: 0;
     --whileInView-pR-opacity: 1;
+    --initial-ject-x: 2rem;
+    --initial-ject-opacity: 0;
+    --whileInView-ject-x: 0;
+    --whileInView-ject-opacity: 1;
   }
 
   /*xSmall*/
@@ -101,10 +110,14 @@
     --animate-bC-x: 0;
     --initial-gP-y: 0;
     --whileInView-gP-y: 0;
-    --initial-pR-x: 0;
+    --initial-pR-x: -1rem;
     --initial-pR-opacity: 0;
     --whileInView-pR-x: 0;
     --whileInView-pR-opacity: 1;
+    --initial-ject-x: 1rem;
+    --initial-ject-opacity: 0;
+    --whileInView-ject-x: 0;
+    --whileInView-ject-opacity: 1;
   }
 }
 

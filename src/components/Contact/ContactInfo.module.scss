@@ -10,7 +10,7 @@
   @include abs.respond-to("md") {
     padding: 0rem 0;
   }
-  @include abs.respond-to("xs") {
+  @include abs.respond-to("sm") {
     padding: 2rem 0;
   }
 
@@ -27,9 +27,8 @@
       gap: 4rem;
       height: auto;
     }
-    @include abs.respond-to("xs") {
+    @include abs.respond-to("sm") {
       gap: 6rem;
-      height: auto;
     }
 
     &__leftHeadLine {
@@ -63,9 +62,6 @@
         @include abs.respond-to("lg") {
           font-size: 1.75rem;
         }
-        @include abs.respond-to("xs") {
-          /*   width: 100%; */
-        }
 
         &__available {
           box-sizing: border-box;
@@ -78,7 +74,7 @@
           border-radius: 50%;
           animation: available 2s linear 1s infinite;
         }
-        @include abs.respond-to("xs") {
+        @include abs.respond-to("sm") {
           padding: 0;
           font-size: 2rem;
         }
@@ -98,7 +94,7 @@
       @include abs.respond-to("lg") {
         padding: 0 0 0 0rem;
       }
-      @include abs.respond-to("xs") {
+      @include abs.respond-to("sm") {
         padding: 0 0 0 1rem;
         box-shadow: -1px 0 0 abs.$hover-purple;
       }
@@ -120,7 +116,7 @@
         &__txt {
           font-size: 1.25rem;
           font-weight: 200;
-          @include abs.respond-to("xs") {
+          @include abs.respond-to("sm") {
             font-size: 1rem;
           }
         }

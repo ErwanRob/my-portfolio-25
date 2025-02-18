@@ -24,6 +24,7 @@
 
   @include abs.respond-to("xs") {
     width: 100%;
+    padding: 6rem 1rem 2rem 1rem;
   }
 
   &__container {

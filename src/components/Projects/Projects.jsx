@@ -105,8 +105,14 @@ const Projects = () => {
             {/* Actual Trigger */}
             <motion.h3
               className={styles["projects__container__content__trigger__JECTS"]}
-              initial={{ x: "15rem", opacity: 0 }}
-              whileInView={{ x: "0", opacity: 1 }}
+              initial={{
+                x: "var(--initial-ject-x)",
+                opacity: "var(--initial-ject-opacity)",
+              }}
+              whileInView={{
+                x: "var(--whileInView-ject-x)",
+                opacity: "var(--whileInView-ject-opacity)",
+              }}
               transition={{ duration: 1, ease: backOut }}
             >
               J.E.C.T.S_
@@ -114,7 +120,7 @@ const Projects = () => {
           </div>
         </div>
       </div>
-      <HorizontalScroller bgTransform={isXSmall ? null : bgTransform} />
+      <HorizontalScroller bgTransform={isSmall ? null : bgTransform} />
     </div>
   );
 };

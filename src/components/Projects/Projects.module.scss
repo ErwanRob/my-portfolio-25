@@ -20,29 +20,27 @@
     height: auto;
     background: abs.$dark-grey;
   }
-
-  /* Particles id props i have to pass */
-
   &__container {
     position: relative;
     @include abs.flxAllCtrBox;
     flex-direction: column;
     width: 100%;
     height: 100vh;
-    /*     @include abs.respond-to("lg") {
-      height: auto;
-    } */
+
     @include abs.respond-to("sm") {
       height: auto;
       width: 100%;
       padding: 2rem;
       box-sizing: border-box;
+      background: abs.$bg-noise2 abs.$darker-grey;
     }
     @include abs.respond-to("xs") {
       height: auto;
       width: 100%;
-      padding: 2rem;
+      padding: 1rem;
+
       box-sizing: border-box;
+      background: abs.$bg-noise2 abs.$darker-grey;
     }
 
     &__content {
@@ -52,8 +50,10 @@
       width: 100vw;
       height: 40vh;
       @include abs.respond-to("xs") {
+        border-radius: 4px;
+        box-sizing: border-box;
         width: 100%;
-        height: 10vh;
+        height: 30vh;
       }
 
       &__trigger {
@@ -64,6 +64,7 @@
         color: abs.$light-grey;
         width: auto;
         height: 100%;
+        padding: 0 2rem;
 
         @include abs.respond-to("xl") {
           font-size: 5rem;
@@ -73,24 +74,46 @@
           font-size: 3rem;
         }
 
+        @include abs.respond-to("md") {
+          height: auto;
+          font-size: 3rem;
+          flex-wrap: wrap;
+          /* gap: 1rem; */
+        }
+
         @include abs.respond-to("sm") {
           height: auto;
           font-size: 2rem;
           flex-wrap: wrap;
           gap: 1rem;
           line-height: 1.5;
+          padding: 0 1rem;
         }
         @include abs.respond-to("xs") {
+          gap: 0.5rem;
           height: auto;
-          font-size: 2rem;
+          font-size: 1.5rem;
           flex-wrap: wrap;
+        }
+
+        &__PR,
+        &__JECTS {
+          letter-spacing: 2rem;
+          user-select: none;
+          @include abs.respond-to("sm") {
+            letter-spacing: 0.875rem;
+          }
+          @include abs.respond-to("xs") {
+            letter-spacing: 0.5rem;
+            color: abs.$light-purple;
+            font-weight: 500;
+          }
         }
 
         &__PR {
           width: auto;
           margin: 0 0 0 30rem;
-          letter-spacing: 2rem;
-          user-select: none;
+
           @include abs.respond-to("xl") {
             margin: 0 2rem 0 0rem;
           }
@@ -99,22 +122,21 @@
           }
           @include abs.respond-to("xs") {
             margin: 0 0.5rem 0 0rem;
-            letter-spacing: 0.5rem;
           }
         }
 
         &__JECTS {
-          letter-spacing: 2rem;
-          user-select: none;
           @include abs.respond-to("xl") {
             margin: 0 0 0 2rem;
           }
           @include abs.respond-to("lg") {
             margin: 0 0 0 1rem;
           }
+          @include abs.respond-to("sm") {
+            margin: 0 0 0 0rem;
+          }
           @include abs.respond-to("xs") {
             margin: 0 0 0 0rem;
-            letter-spacing: 0.5rem;
           }
         }
       }

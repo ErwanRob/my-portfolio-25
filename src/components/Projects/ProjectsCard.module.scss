@@ -35,7 +35,6 @@
     height: 80%;
     background-size: cover; // change if not using image later on
     background-position: center;
-    /*   box-shadow: 0.5rem 1rem 1rem rgba(26, 26, 26, 1); */
     filter: drop-shadow(0.5rem 1rem 0.5rem rgba(26, 26, 26, 1));
 
     @include abs.respond-to("sm") {
@@ -45,6 +44,7 @@
     @include abs.respond-to("xs") {
       width: 320px;
       height: 200px;
+      filter: none;
     }
   }
 
@@ -70,8 +70,10 @@
       padding: 0;
     }
     @include abs.respond-to("xs") {
+      margin: 0;
       padding: 1rem;
       height: auto;
+      box-shadow: 0 1px 0 abs.$hover-purple;
     }
 
     &__title {
@@ -134,7 +136,8 @@
         }
         @include abs.respond-to("sm") {
           font-size: 1rem;
-
+          border-left: none;
+          box-shadow: -2px 0px 0 abs.$hover-purple;
           padding: 0 0 0 1.5rem;
           /*   word-wrap: break-word;
           hyphens: auto; */

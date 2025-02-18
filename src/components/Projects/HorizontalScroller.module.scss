@@ -11,16 +11,14 @@
   height: var(--scrollingSection-height);
 
   @include abs.respond-to("sm") {
-    padding: 2rem;
+    padding: 6rem 2rem;
     height: auto;
     box-sizing: border-box;
+    background-color: abs.$darker-grey !important;
   }
 
   @include abs.respond-to("xs") {
-    padding: 2rem;
-    height: auto;
-    box-sizing: border-box;
-    margin: 0 0 4rem 0;
+    padding: 6rem 1rem;
   }
 
   &__stickyContainer {
@@ -62,7 +60,7 @@
       }
       @include abs.respond-to("xs") {
         flex-direction: column;
-        gap: 1rem;
+        gap: 3rem;
         height: auto;
         padding: 0rem 0;
       }
