@@ -14,7 +14,10 @@ $breakpoints: (
   // Laptops
   "lg": 1280px,
   // Desktops
-  "xl": 1536px // Large screens,
+  "xl": 1536px,
+  // Large screens,
+  "xxl": 1920px,
+  // Extra large screens
 );
 
 // Mixin for responsive design

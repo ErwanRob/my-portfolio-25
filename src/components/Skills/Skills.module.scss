@@ -11,11 +11,6 @@
     abs.$bg-patternLos-blackish, abs.$dark-grey;
   box-shadow: abs.$sc-shdw2;
 
-  /* @include abs.respond-to("lg") {
-    height: auto;
-    padding: 2rem;
-  } */
-
   @include abs.respond-to("sm") {
     width: 100%;
     height: auto;
@@ -23,7 +18,6 @@
   }
 
   @include abs.respond-to("xs") {
-    width: 100%;
     padding: 6rem 1rem 2rem 1rem;
   }
 
@@ -32,18 +26,19 @@
     flex-direction: column;
     width: 60%;
     padding: 2rem;
-
+    @include abs.respond-to("xxl") {
+      width: 90%;
+    }
+    @include abs.respond-to("xl") {
+      width: 80%;
+    }
     @include abs.respond-to("lg") {
       width: 100%;
     }
-
     @include abs.respond-to("sm") {
-      width: 100%;
       padding: 0;
     }
     @include abs.respond-to("xs") {
-      width: 100%;
-      padding: 0;
     }
 
     &__title {
@@ -56,6 +51,11 @@
       text-transform: uppercase; // Probably will change that
       user-select: none;
 
+      @include abs.respond-to("xl") {
+        letter-spacing: 2rem;
+        margin: 1rem -2rem 3rem 0;
+      }
+
       @include abs.respond-to("lg") {
         font-size: 2.5rem;
         letter-spacing: 2rem;
@@ -63,16 +63,17 @@
       }
       @include abs.respond-to("md") {
         font-size: 2rem;
-        letter-spacing: 2rem;
-        margin: 1rem -2rem 3rem 0;
       }
       @include abs.respond-to("sm") {
+        font-weight: 200;
         font-size: 1.75rem;
         letter-spacing: 0.75rem;
         margin: 1rem -0.75rem 3rem 0;
       }
       @include abs.respond-to("xs") {
-        font-size: 1.25rem;
+        color: abs.$light-purple;
+        font-weight: 500;
+        font-size: 1.5rem;
         letter-spacing: 0.5rem;
         margin: 1rem -0.5rem 3rem 0;
       }
@@ -90,12 +91,15 @@
       height: auto;
       margin: 4rem 0;
 
-      @include abs.respond-to("lg") {
+      @include abs.respond-to("xxl") {
         margin: 2rem 0;
-        gap: 3rem;
+        gap: 1.5rem 3rem;
+      }
+
+      @include abs.respond-to("lg") {
       }
       @include abs.respond-to("md") {
-        gap: 2rem;
+        gap: 1rem 2rem;
       }
 
       @include abs.respond-to("sm") {
@@ -118,11 +122,17 @@
           padding: 0.5rem;
           width: 6rem;
           height: 6rem;
-          /*   height: auto; */
-          /* cursor: none; */
-
-          @include abs.respond-to("lg") {
+          @include abs.respond-to("xxl") {
             padding: 0.25rem;
+            width: 5.25rem;
+            height: 5.25rem;
+          }
+          @include abs.respond-to("xl") {
+            padding: 0.25rem;
+            width: 5rem;
+            height: 5rem;
+          }
+          @include abs.respond-to("lg") {
             width: 4.5rem;
             height: 4.5rem;
           }

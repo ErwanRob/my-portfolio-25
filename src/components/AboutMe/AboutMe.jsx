@@ -1,8 +1,10 @@
 import styles from "./AboutMe.module.scss";
-import portrait from "../../assets/img/portrait.png";
+/* import portrait from "../../assets/img/portraitPROResi.jpg"; */
+/* import portrait from "../../assets/img/portraitPROResi-nobgTEST.png"; */
+import portrait from "../../assets/img/portrait4CroppedResi.png";
+
 import MaskText from "../MaskText/MaskText";
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
 import useMediaQuery from "../Hooks/useMediaQuery";
 
 const phrasesHeadline = ["HI, I’M A PASSIONATE FRONT-END DEVELOPER,"];
@@ -80,78 +82,10 @@ const allHeadPhrases = [
 const AboutMe = () => {
   const isXSmall = useMediaQuery("(max-width: 480px)");
   const isSmall = useMediaQuery("(max-width: 768px)");
-  const isMedium = useMediaQuery("(max-width: 1024px)");
-  const isLarge = useMediaQuery("(max-width: 1280px)");
+  /* const isMedium = useMediaQuery("(max-width: 1024px)");
+  const isLarge = useMediaQuery("(max-width: 1280px)"); */
   const isXLarge = useMediaQuery("(max-width: 1536px)");
-  const canvasRef = useRef(null);
-  const prevPosition = useRef(null);
-
-  useEffect(() => {
-    if (isXSmall || isSmall || isMedium) return;
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
-    const canvasWidth = canvas.offsetWidth;
-    const canvasHeight = canvas.offsetHeight;
-    canvas.width = canvasWidth;
-    canvas.height = canvasHeight;
-
-    const initializeCanvas = () => {
-      ctx.fillStyle = "#29292931";
-      ctx.fillRect(0, 0, canvasWidth, canvasHeight);
-      //Text drawing
-      ctx.font = "100 24px Inter";
-      ctx.fillStyle = "#A287f3fc"; //text color
-      ctx.letterSpacing = "3px";
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
-      ctx.fillText("Paint", canvasWidth / 2, canvasHeight / 1.05);
-      ctx.globalCompositeOperation = "destination-out";
-    };
-
-    // Linear interpolation function for smoothing
-    const lerp = (start, end, t) => start * (1 - t) + end * t;
-    //Function to erase with circle brush
-    const drawCircle = (x, y, radius) => {
-      ctx.beginPath();
-      ctx.arc(x, y, radius, 0, Math.PI * 2);
-      ctx.fill();
-    };
-
-    const handleMouseMove = (e) => {
-      const rect = canvas.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      if (prevPosition.current) {
-        const { x: prevX, y: prevY } = prevPosition.current;
-        const distance = Math.hypot(x - prevX, y - prevY);
-        const numSteps = Math.ceil(distance / 5); // Adjust 5 for brush density
-
-        for (let i = 0; i < numSteps; i++) {
-          const t = i / numSteps;
-          const interpolatedX = lerp(prevX, x, t);
-          const interpolatedY = lerp(prevY, y, t);
-          drawCircle(interpolatedX, interpolatedY, 60); // Adjust radius for brush size
-        }
-      }
-      prevPosition.current = { x, y };
-    };
-
-    const handleMouseUp = () => {
-      prevPosition.current = null; // Reset on mouse up
-    };
-
-    // Initialize canvas on first load
-    initializeCanvas();
-
-    canvas.addEventListener("mousemove", handleMouseMove);
-    canvas.addEventListener("mouseup", handleMouseUp);
-
-    return () => {
-      canvas.removeEventListener("mousemove", handleMouseMove);
-      canvas.removeEventListener("mouseup", handleMouseUp);
-    };
-  }, [isXSmall, isSmall, isMedium, isLarge, isXLarge]);
+  /*   const canvasRef = useRef(null); */
 
   return (
     <div className={styles.aboutMe} id="about-me">
@@ -246,12 +180,12 @@ const AboutMe = () => {
               src={portrait}
               alt="selfPortrait"
             />
-            <canvas
+            {/*   <canvas
               ref={canvasRef}
               className={
                 styles["aboutMe__container__portrait__imgWrapper__canvas"]
               }
-            />
+            /> */}
           </motion.div>
         </div>
         <div className={styles["aboutMe__container__description"]}>

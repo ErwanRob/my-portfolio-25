@@ -14,7 +14,7 @@ const Skills = () => {
   const isMedium = useMediaQuery("(max-width: 1024px)");
   const { ref, inView } = useInView({
     threshold: 1,
-    rootMargin: "0px 0px 300px 0px",
+    rootMargin: "300px 0px 300px 0px",
     triggerOnce: isXSmall || isSmall || isMedium,
   });
 

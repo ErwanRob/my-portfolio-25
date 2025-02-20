@@ -27,14 +27,21 @@
     padding: 0.25rem;
     border-radius: 4px;
 
+    @include abs.respond-to("xxl") {
+      width: 70%;
+      height: 80%;
+    }
+    @include abs.respond-to("xl") {
+      width: 80%;
+    }
     @include abs.respond-to("lg") {
-      width: 90%;
       filter: none;
+      width: 90%;
+      height: 70%;
     }
 
     @include abs.respond-to("md") {
       height: 90%;
-      filter: none;
     }
 
     @include abs.respond-to("sm") {
