@@ -135,6 +135,12 @@ body {
   transform-origin: right;
   transition: transform 500ms cubic-bezier(0.19, 0.99, 0.31, 0.98);
 
+  @include abs.respond-to("xxl") {
+    padding: 0 3rem 4rem 0;
+  }
+  @include abs.respond-to("xl") {
+    padding: 0 2rem 4rem 0;
+  }
   @include abs.respond-to("lg") {
     padding: 0 0.5rem 4rem 0;
   }

@@ -28,7 +28,7 @@
     height: 100%;
     gap: 2rem;
     @include abs.respond-to("md") {
-      gap: 4rem;
+      gap: 3rem;
       height: auto;
     }
     @include abs.respond-to("sm") {
@@ -45,13 +45,6 @@
       height: auto;
       user-select: none;
 
-      @include abs.respond-to("xl") {
-        /*   flex-wrap: wrap; */
-        /* gap: 0.25rem; */
-        /*   justify-content: flex-start;
-        flex-direction: row;
-        font-size: 1.75rem; */
-      }
       @include abs.respond-to("md") {
         flex-wrap: wrap;
         gap: 0.5rem;
@@ -147,13 +140,11 @@
     }
 
     &__links {
-      /*   position: relative; */
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
       box-sizing: border-box;
-      /* padding: 0 2rem 0 0; */
       margin: 0 0 2rem 0;
       width: 100%;
       height: auto;
@@ -163,6 +154,8 @@
         padding: 0;
         flex-wrap: wrap;
         gap: 1.5rem;
+      }
+      @include abs.respond-to("md") {
       }
       @include abs.respond-to("xs") {
         display: grid;

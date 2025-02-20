@@ -18,8 +18,8 @@ const headLineList = [
 ];
 
 const infoList = [
-  { icon: faEnvelope, text: "pommegranite@example.com" },
-  { icon: faPhone, text: "+33 (0)6 10 10 10 10" },
+  { icon: faEnvelope, text: "erobin.contact@gmail.com" },
+  { icon: faPhone, text: "+33 (0)6 10 50 28 37" },
   { icon: faHome, text: "Strasbourg (67)" },
   { icon: faEarthEurope, text: "France" },
 ];

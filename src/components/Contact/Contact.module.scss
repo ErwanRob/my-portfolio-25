@@ -5,17 +5,11 @@
   flex-direction: column;
   height: 100vh;
   width: 100%;
-  /* background: abs.$bg-noise; */
   @include abs.respond-to("sm") {
     width: 100%;
     height: auto;
     margin: 3rem 0 0 0;
   }
-  @include abs.respond-to("xs") {
-    width: 100%;
-    height: auto;
-  }
-
   &__container {
     @include abs.flxAllCtrBox;
     flex-direction: column;
@@ -29,7 +23,6 @@
 
     @include abs.respond-to("xxl") {
       width: 70%;
-      height: 80%;
     }
     @include abs.respond-to("xl") {
       width: 80%;
@@ -37,19 +30,11 @@
     @include abs.respond-to("lg") {
       filter: none;
       width: 90%;
-      height: 70%;
     }
-
     @include abs.respond-to("md") {
       height: 90%;
     }
-
     @include abs.respond-to("sm") {
-      width: 100%;
-      padding: 0;
-      height: auto;
-    }
-    @include abs.respond-to("xs") {
       width: 100%;
       padding: 0;
       height: auto;
@@ -72,27 +57,25 @@
       }
       @include abs.respond-to("sm") {
         padding-top: 6rem;
-        flex-direction: column;
       }
       @include abs.respond-to("xs") {
-        flex-direction: column;
         padding: 6rem 1rem 1rem 1rem;
       }
 
       &__LBlock {
+        box-shadow: 0 1px 0 abs.$hover-purple;
+      }
+
+      &__RBlock {
+        position: relative;
+      }
+
+      &__LBlock,
+      &__RBlock {
         @include abs.flxAllCtrBox;
         flex-direction: column;
         width: 50%;
         height: 100%;
-        /*     border-bottom: 1px solid abs.$hover-purple; */
-        box-shadow: 0 1px 0 abs.$hover-purple;
-
-        @include abs.respond-to("lg") {
-          /*   width: 100%;
-          height: auto;
-          box-shadow: none; */
-        }
-
         @include abs.respond-to("md") {
           width: 100%;
           height: 50%;
@@ -101,23 +84,6 @@
           width: 100%;
           height: auto;
           box-shadow: none;
-        }
-      }
-
-      &__RBlock {
-        position: relative;
-        @include abs.flxAllCtrBox;
-        flex-direction: column;
-        width: 50%;
-        height: 100%;
-
-        @include abs.respond-to("md") {
-          width: 100%;
-          height: 50%;
-        }
-        @include abs.respond-to("xs") {
-          width: 100%;
-          height: auto;
         }
       }
     }

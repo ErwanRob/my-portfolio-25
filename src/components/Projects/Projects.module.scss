@@ -66,8 +66,11 @@
         height: 100%;
         padding: 0 2rem;
 
-        @include abs.respond-to("xl") {
+        @include abs.respond-to("xxl") {
           font-size: 5rem;
+        }
+        @include abs.respond-to("xl") {
+          font-size: 4rem;
         }
 
         @include abs.respond-to("lg") {
@@ -76,7 +79,7 @@
 
         @include abs.respond-to("md") {
           height: auto;
-          font-size: 3rem;
+          font-size: 2.5rem;
           flex-wrap: wrap;
           /* gap: 1rem; */
         }
@@ -100,6 +103,9 @@
         &__JECTS {
           letter-spacing: 2rem;
           user-select: none;
+          @include abs.respond-to("md") {
+            letter-spacing: 1.75rem;
+          }
           @include abs.respond-to("sm") {
             letter-spacing: 0.875rem;
           }
@@ -113,9 +119,11 @@
         &__PR {
           width: auto;
           margin: 0 0 0 30rem;
-
-          @include abs.respond-to("xl") {
+          @include abs.respond-to("xxl") {
             margin: 0 2rem 0 0rem;
+          }
+          @include abs.respond-to("xl") {
+            margin: 0 1.5rem 0 0rem;
           }
           @include abs.respond-to("lg") {
             margin: 0 0 0 0rem;
@@ -126,6 +134,9 @@
         }
 
         &__JECTS {
+          @include abs.respond-to("xxl") {
+            margin: 0 0 0 2.5rem;
+          }
           @include abs.respond-to("xl") {
             margin: 0 0 0 2rem;
           }

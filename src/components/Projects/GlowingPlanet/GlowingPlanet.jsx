@@ -11,8 +11,7 @@ const GlowingPlanet = ({
   bgTransformBlackHole,
   spinTranformBlackHole,
 }) => {
-  const isXSmall = useMediaQuery("(max-width: 480px)");
-  const isSmall = useMediaQuery("(max-width: 768px)");
+  const isMedium = useMediaQuery("(max-width: 1024px)");
   const lenis = useLenis();
 
   const handleScroll = () => {
@@ -32,9 +31,7 @@ const GlowingPlanet = ({
 
   return (
     <motion.div
-      style={
-        isXSmall || isSmall ? null : { y: yTransform, scale: scaleTransform }
-      }
+      style={isMedium ? null : { y: yTransform, scale: scaleTransform }}
       className={styles.glowingPlanet}
     >
       <motion.div
@@ -53,7 +50,7 @@ const GlowingPlanet = ({
           y: "var(--whileInView-gP-y)",
           opacity: 1,
           rotate: 1080,
-          transition: { duration: 1.5, ease: backOut },
+          transition: { duration: 1, ease: backOut },
         }}
         whileHover={{
           scale: 1.2,

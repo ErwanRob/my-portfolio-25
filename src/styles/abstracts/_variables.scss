@@ -16,7 +16,7 @@
   --animate-bC-x: -8.5rem;
 
   /*glowingPlanet*/
-  --initial-gP-y: -30rem;
+  --initial-gP-y: -15rem; // previously -30rem
   --whileInView-gP-y: 0;
 
   /*Trigger PR*/
@@ -72,12 +72,16 @@
     --animate-pL-opacity: 1;
     --initial-bC-x: 0;
     --animate-bC-x: -13.5rem;
-    --initial-gP-y: 0;
+    --initial-gP-y: -2rem;
     --whileInView-gP-y: 0;
-    --initial-pR-x: 0;
+    --initial-pR-x: -2rem;
     --initial-pR-opacity: 0;
     --whileInView-pR-x: 0;
     --whileInView-pR-opacity: 1;
+    --initial-ject-x: 2rem;
+    --initial-ject-opacity: 0;
+    --whileInView-ject-x: 0;
+    --whileInView-ject-opacity: 1;
   }
 
   /*Small*/
@@ -88,7 +92,7 @@
     --animate-pL-opacity: 1;
     --initial-bC-x: 0;
     --animate-bC-x: 0;
-    --initial-gP-y: 0;
+    --initial-gP-y: -2rem;
     --whileInView-gP-y: 0;
     --initial-pR-x: -2rem;
     --initial-pR-opacity: 0;

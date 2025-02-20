@@ -19,49 +19,43 @@ const cards = [
     url: placeHolderProjectImg,
     title: "Project 2 T.B.D",
     id: 2,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quaerat ratione eaque optio quam at architecto deserunt laborum assumenda, perferendis totam! Eum libero maiores voluptas fugiat impedit ipsam similique modi! ",
+    description: "No description yet",
   },
   {
     url: placeHolderProjectImg,
     title: "Project 3 T.B.D",
     id: 3,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quaerat ratione eaque optio quam at architecto deserunt laborum assumenda, perferendis totam! Eum libero maiores voluptas fugiat impedit ipsam similique modi! ",
+    description: "No description yet",
   },
   {
     url: placeHolderProjectImg,
     title: "Project 4 T.B.D",
     id: 4,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quaerat ratione eaque optio quam at architecto deserunt laborum assumenda, perferendis totam! Eum libero maiores voluptas fugiat impedit ipsam similique modi! ",
+    description: "No description yet",
   },
   {
     url: placeHolderProjectImg,
     title: "Project 5 T.B.D",
     id: 5,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quaerat ratione eaque optio quam at architecto deserunt laborum assumenda, perferendis totam! Eum libero maiores voluptas fugiat impedit ipsam similique modi! ",
+    description: "No description yet",
   },
   {
     url: placeHolderProjectImg,
     title: "Project 6 T.B.D",
     id: 6,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quaerat ratione eaque optio quam at architecto deserunt laborum assumenda, perferendis totam! Eum libero maiores voluptas fugiat impedit ipsam similique modi! ",
+    description: "No description yet",
   },
   {
     url: placeHolderProjectImg,
     title: "Project 7 T.B.D",
     id: 7,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quaerat ratione eaque optio quam at architecto deserunt laborum assumenda, perferendis totam! Eum libero maiores voluptas fugiat impedit ipsam similique modi! ",
+    description: "No description yet",
   },
 ];
 
 const HorizontalScroller = ({ bgTransform }) => {
   /*   const isXSmall = useMediaQuery("(max-width: 480px)"); */
-  const isSmall = useMediaQuery("(max-width: 768px)");
+  const isMedium = useMediaQuery("(max-width: 1024px)");
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -73,14 +67,14 @@ const HorizontalScroller = ({ bgTransform }) => {
     <motion.div
       ref={targetRef}
       className={styles.horizontalScroller}
-      style={isSmall ? null : { backgroundColor: bgTransform }}
+      style={isMedium ? null : { backgroundColor: bgTransform }}
     >
       <div className={styles["horizontalScroller__stickyContainer"]}>
         <motion.div
-          style={isSmall ? null : { x }}
+          style={isMedium ? null : { x }}
           className={styles["horizontalScroller__stickyContainer__content"]}
         >
-          {isSmall
+          {isMedium
             ? cards
                 .slice(0, 4)
                 .map((card) => <ProjectsCard card={card} key={card.id} />)

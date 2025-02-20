@@ -7,9 +7,10 @@
   width: 1440px;
   height: 80vh;
   /*   background-color: rgba(109, 196, 122, 0.397); */
-
+  @include abs.respond-to("xxl") {
+    width: 70vw;
+  }
   @include abs.respond-to("xl") {
-    width: 80vw;
     height: 70vh;
   }
 

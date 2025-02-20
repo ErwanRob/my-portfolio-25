@@ -28,7 +28,7 @@ const Projects = () => {
   const scaleTransform = useTransform(
     scrollYProgress,
     [0, 0.05, 0.14, 0.3, 0.4],
-    [1, 1, 15, 15, 1]
+    [1, 1, 20, 20, 1]
   );
   const bgTransform = useTransform(
     scrollYProgress,

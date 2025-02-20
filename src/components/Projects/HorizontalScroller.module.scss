@@ -10,6 +10,12 @@
   width: 100%;
   height: var(--scrollingSection-height);
 
+  @include abs.respond-to("md") {
+    padding: 6rem 2rem;
+    height: auto;
+    box-sizing: border-box;
+  }
+
   @include abs.respond-to("sm") {
     padding: 6rem 2rem;
     height: auto;
@@ -31,6 +37,12 @@
     top: 0;
     padding: abs.$headerHeight 0 0 0;
 
+    @include abs.respond-to("md") {
+      position: relative;
+      width: 100%;
+      padding: 0;
+      height: auto;
+    }
     @include abs.respond-to("sm") {
       position: relative;
       width: 100%;
@@ -52,6 +64,12 @@
       gap: 30vw;
       padding: 4rem 0;
 
+      @include abs.respond-to("md") {
+        flex-direction: column;
+        gap: 5rem;
+        height: auto;
+        padding: 0rem 0;
+      }
       @include abs.respond-to("sm") {
         flex-direction: column;
         gap: 5rem;
