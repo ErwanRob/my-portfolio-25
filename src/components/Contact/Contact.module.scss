@@ -23,6 +23,7 @@
 
     @include abs.respond-to("xxl") {
       width: 70%;
+      max-width: 1200px;
     }
     @include abs.respond-to("xl") {
       width: 80%;
