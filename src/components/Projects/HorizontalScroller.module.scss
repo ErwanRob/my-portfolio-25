@@ -82,6 +82,9 @@
         height: auto;
         padding: 0rem 0;
       }
+      @include abs.respond-to-custom("md", "sm") {
+        padding: 0rem 0 4rem 0;
+      }
     }
   }
 }

@@ -74,12 +74,9 @@
           grid-template-columns: auto auto;
           grid-template-rows: auto auto;
           gap: 1rem;
-
-          /*   gap: 1rem;
-          flex-direction: column;
-          position: absolute;
-          bottom: 1rem; */
-          /*   display: none; */
+        }
+        @include abs.respond-to-custom("md", "sm") {
+          margin-top: 1rem;
         }
       }
     }

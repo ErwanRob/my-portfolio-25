@@ -12,6 +12,7 @@ const GlowingPlanet = ({
   spinTranformBlackHole,
 }) => {
   const isMedium = useMediaQuery("(max-width: 1024px)");
+  const isHeightSm = useMediaQuery("(max-height: 768px)");
   const lenis = useLenis();
 
   const handleScroll = () => {
@@ -31,7 +32,9 @@ const GlowingPlanet = ({
 
   return (
     <motion.div
-      style={isMedium ? null : { y: yTransform, scale: scaleTransform }}
+      style={
+        isMedium || isHeightSm ? null : { y: yTransform, scale: scaleTransform }
+      }
       className={styles.glowingPlanet}
     >
       <motion.div

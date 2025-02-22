@@ -57,11 +57,9 @@
       @include abs.respond-to("xl") {
         font-size: 1.25rem;
       }
-
       @include abs.respond-to("lg") {
         padding: 1.25rem 1.5rem;
       }
-
       @include abs.respond-to("md") {
         padding: 1rem;
         &:hover {
@@ -71,9 +69,12 @@
           color: abs.$hover-purple2;
         }
       }
-
       @include abs.respond-to("xs") {
         padding: 1rem 1rem;
+      }
+
+      @include abs.respond-to-custom("md", "sm") {
+        padding: 1rem 1.5rem;
       }
       &__icon {
         box-sizing: border-box;
@@ -101,6 +102,12 @@
       @include abs.respond-to("lg") {
         height: 2.5rem;
         margin: 0.75rem 0 0 0;
+      }
+
+      @include abs.respond-to-custom("md", "sm") {
+        padding: 1rem 1.5rem;
+        height: 2.5rem;
+        margin: 0.5rem 0 0 0;
       }
     }
   }

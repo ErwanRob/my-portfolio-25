@@ -38,8 +38,6 @@
     @include abs.respond-to("sm") {
       padding: 0;
     }
-    @include abs.respond-to("xs") {
-    }
 
     &__title {
       width: 100%;
@@ -77,6 +75,11 @@
         letter-spacing: 0.5rem;
         margin: 1rem -0.5rem 3rem 0;
       }
+
+      @include abs.respond-to-custom("md", "sm") {
+        font-size: 1.5rem;
+        margin: 0 -2rem 1rem 0;
+      }
     }
 
     &__grid {
@@ -107,6 +110,11 @@
       }
       @include abs.respond-to("xs") {
         gap: 1rem;
+      }
+
+      @include abs.respond-to-custom("md", "sm") {
+        gap: 1rem 1rem;
+        max-width: 1200px;
       }
 
       &__item {
@@ -143,6 +151,11 @@
           @include abs.respond-to("xs") {
             width: 3rem;
             height: 3rem;
+          }
+
+          @include abs.respond-to-custom("md", "sm") {
+            width: 3.5rem;
+            height: 3.5rem;
           }
         }
 

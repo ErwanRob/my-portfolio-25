@@ -20,9 +20,31 @@ $breakpoints: (
   // Extra large screens
 );
 
+$height-breakpoints: (
+  "xs": 600px,
+  // Very short viewports
+  "sm": 768px,
+  // Short viewports
+  "md": 900px,
+  // Moderately tall viewports
+);
+
 // Mixin for responsive design
 @mixin respond-to($size) {
   @media (max-width: map.get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+// Mixin for height responsive design
+@mixin respond-to-height($size) {
+  @media (max-height: map.get($height-breakpoints, $size)) {
+    @content;
+  }
+}
+
+@mixin respond-to-custom($width, $height) {
+  @media (min-width: calc(map.get($breakpoints, $width) + 1px)) and (max-height: map.get($height-breakpoints, $height)) {
     @content;
   }
 }

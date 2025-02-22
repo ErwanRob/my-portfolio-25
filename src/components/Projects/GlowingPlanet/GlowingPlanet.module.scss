@@ -35,6 +35,10 @@
     width: 2rem;
     height: 2rem;
   }
+  @include abs.respond-to-custom("md", "sm") {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
 
   &__container {
     position: absolute;
@@ -72,6 +76,11 @@
       height: 1.875rem;
     }
 
+    @include abs.respond-to-custom("md", "sm") {
+      width: 4rem;
+      height: 4rem;
+    }
+
     &__orb {
       margin: -1.25rem;
       box-sizing: border-box;
@@ -104,10 +113,14 @@
         width: 3rem;
         height: 3rem;
       }
-
       @include abs.respond-to("xs") {
         width: 2rem;
         height: 2rem;
+      }
+
+      @include abs.respond-to-custom("md", "sm") {
+        width: 4.5rem;
+        height: 4.5rem;
       }
     }
   }

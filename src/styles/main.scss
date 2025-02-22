@@ -101,6 +101,10 @@ body {
   @include abs.flxAllCtrBox;
   height: abs.$headerHeight;
   width: 100%;
+
+  @include abs.respond-to-custom("md", "sm") {
+    height: abs.$headerHeight-sm;
+  }
 }
 
 .settings-wrapper {

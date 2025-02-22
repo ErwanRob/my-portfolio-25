@@ -47,6 +47,10 @@
     @include abs.respond-to("xs") {
       font-size: 3rem;
     }
+
+    @include abs.respond-to-custom("md", "sm") {
+      font-size: 4.5rem;
+    }
   }
   &__blinkingCursor {
     /* opacity: 0; */
@@ -72,6 +76,10 @@
       display: none;
     }
     @include abs.respond-to("xs") {
+    }
+
+    @include abs.respond-to-custom("md", "sm") {
+      font-size: 3.5rem;
     }
   }
 }

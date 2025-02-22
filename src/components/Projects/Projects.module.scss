@@ -99,6 +99,10 @@
           flex-wrap: wrap;
         }
 
+        @include abs.respond-to-custom("md", "sm") {
+          font-size: 3rem;
+        }
+
         &__PR,
         &__JECTS {
           letter-spacing: 2rem;

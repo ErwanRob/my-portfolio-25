@@ -27,6 +27,10 @@
     padding: 2rem 1rem 4rem 1rem;
   }
 
+  /* @include abs.respond-to-custom("md", "sm") {
+    
+  } */
+
   &__container {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -80,6 +84,10 @@
       gap: 1rem;
     }
 
+    @include abs.respond-to-custom("md", "sm") {
+      gap: 1rem 2rem;
+    }
+
     &__headLine {
       grid-area: aboutMe__container__headLine;
       display: flex;
@@ -105,6 +113,9 @@
       @include abs.respond-to("xs") {
         gap: 0rem;
         text-align: center;
+      }
+      @include abs.respond-to-custom("md", "sm") {
+        gap: 0.5rem;
       }
     }
 
@@ -152,6 +163,9 @@
           color: abs.$light-purple;
           font-size: 1.75rem;
           font-weight: 500;
+          @include abs.respond-to-custom("md", "sm") {
+            font-size: 1.25rem;
+          }
           &__notV {
             opacity: 0;
           }
@@ -205,6 +219,9 @@
         align-items: center;
         gap: 2rem;
       }
+      @include abs.respond-to-custom("md", "sm") {
+        height: 8rem;
+      }
 
       &__imgWrapper {
         // old portraitCointainer now container
@@ -218,6 +235,7 @@
         user-select: none;
         cursor: grab;
         filter: drop-shadow(4px 6px 20px black);
+        background: abs.$bg-gradient-portrait;
         @include abs.respond-to("xl") {
           width: auto;
           height: 100%;
