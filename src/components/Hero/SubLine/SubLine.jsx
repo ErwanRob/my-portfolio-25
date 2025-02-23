@@ -23,8 +23,8 @@ const Subline = () => {
       }}
     >
       {/*   <p className={styles["subLine__iam"]}>I`m</p> */}
-      <p className={styles["subLine__name"]}>Erwan Robin</p>
-      <p className={styles["subLine__hobbie"]}>Front-End developper</p>
+      <h2 className={styles["subLine__name"]}>Erwan Robin</h2>
+      <h2 className={styles["subLine__hobbie"]}>Front-End developper</h2>
     </motion.div>
   );
 };

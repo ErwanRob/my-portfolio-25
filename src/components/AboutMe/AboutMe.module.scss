@@ -27,11 +27,8 @@
     padding: 2rem 1rem 4rem 1rem;
   }
 
-  /* @include abs.respond-to-custom("md", "sm") {
-    
-  } */
-
   &__container {
+    /* box-shadow: -1px -1px 0 abs.$hover-purple; */
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto;
@@ -41,7 +38,8 @@
     width: auto;
     max-width: 1440px;
     height: auto;
-    border-radius: 50px;
+    border-radius: 4px;
+    border: 10px solid abs.$bg-gradient-project1-2;
     margin: 1rem;
     padding: 2rem 4rem;
     gap: 0rem 5rem;
@@ -180,7 +178,7 @@
       justify-content: flex-start;
       align-items: flex-start;
       gap: 3rem;
-      margin: 5rem 0 0 0;
+      margin: 4rem 0 0 0;
       box-sizing: border-box;
       width: auto;
       height: auto;
@@ -190,7 +188,8 @@
         border-radius: 4px;
         gap: 2rem;
         margin: 0 0 0 0;
-        background-color: abs.$light-purple-rgba;
+        /*   background-color: abs.$light-purple-rgba; */
+        background-color: abs.$darker-grey;
         justify-content: space-between;
         align-items: center;
         padding: 0 5rem;
@@ -212,7 +211,6 @@
         height: 15rem;
       }
       @include abs.respond-to("xs") {
-        box-shadow: none;
         flex-direction: column;
         margin: 0;
         padding: 0;

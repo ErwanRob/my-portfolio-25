@@ -43,6 +43,14 @@
         &__item {
           text-decoration: none;
           color: abs.$light-grey;
+          &__modTrig {
+            cursor: pointer;
+          }
+          &__connect {
+            /* letter-spacing: 1px; */
+            /* font-weight: 200; */
+            /*   font-size: 2rem; */
+          }
         }
       }
 
@@ -51,6 +59,7 @@
         &__item {
           transition: all 0.15s ease-in-out;
           transform-origin: left;
+
           &:hover {
             color: abs.$hover-purple2;
           }
