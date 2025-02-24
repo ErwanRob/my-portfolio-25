@@ -1,0 +1,71 @@
+@use "../../styles/abstracts" as abs;
+
+.feedBackForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  /*   padding: 1rem; */
+  box-sizing: border-box;
+  gap: 1rem;
+
+  textarea {
+    height: 2rem;
+    width: 100%;
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 0.5rem;
+    box-sizing: border-box;
+    input {
+      width: 100%;
+      height: 3rem;
+      border-radius: 4px;
+      border: none;
+      padding: 0.5rem;
+      font-size: 1.25rem;
+      font-weight: 200;
+      color: abs.$white;
+      background-color: abs.$dark-grey;
+      &::placeholder {
+        color: abs.$hover-purple2;
+        user-select: none;
+      }
+    }
+  }
+
+  &__rating {
+    width: 100%;
+    height: auto;
+    gap: 0.5rem;
+    box-sizing: border-box;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    label {
+      font-size: 1.25rem;
+      font-weight: 200;
+      color: abs.$white;
+      user-select: none;
+      width: 25%;
+    }
+    input {
+      border-radius: 9999px;
+
+      height: 100%;
+      width: 100%;
+      background-color: abs.$dark-grey;
+    }
+    span {
+      height: 100%;
+      font-size: 1.5rem;
+      user-select: none;
+    }
+  }
+}

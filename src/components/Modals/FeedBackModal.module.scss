@@ -1,0 +1,51 @@
+@use "../../styles/abstracts" as abs;
+
+.modal {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+
+  background-color: abs.$darker-grey;
+
+  &__content {
+    padding: 2rem;
+    box-sizing: border-box;
+    font-size: 1.25rem;
+    font-weight: 200;
+  }
+
+  &__closeBtn {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 5rem;
+    cursor: pointer;
+    color: abs.$light-grey;
+    padding: 0.25rem;
+    &:hover {
+      background-color: abs.$dark-grey;
+      color: abs.$hover-purple2;
+    }
+    svg {
+      width: 6rem;
+    }
+  }
+}
+
+.modalOverlay {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}

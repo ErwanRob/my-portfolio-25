@@ -82,6 +82,10 @@
           }
           &__connect {
           }
+          &__vercel {
+            text-decoration: none;
+            color: abs.$light-grey;
+          }
         }
       }
 

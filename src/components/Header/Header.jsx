@@ -58,7 +58,25 @@ const Header = ({ toggleSettings }) => {
         ease: "easeInOut",
       }}
     >
-      <nav className={styles["header__nav"]}>
+      <motion.nav
+        className={styles["header__nav"]}
+        variants={{
+          visible: {
+            opacity: 1,
+            y: 0,
+          },
+          hidden: {
+            opacity: 0,
+            y: -10,
+          },
+        }}
+        animate={hidden ? "hidden" : "visible"}
+        transition={{
+          delay: 0.3,
+          duration: 0.2,
+          ease: "backOut",
+        }}
+      >
         <ul className={styles["header__nav__list"]}>
           <li className={styles["header__nav__list__item"]}>
             <a
@@ -121,10 +139,10 @@ const Header = ({ toggleSettings }) => {
             </a>
           </li>
         </ul>
-        <div className={styles["header__nav__settingsBtn"]}>
-          <FontAwesomeIcon icon={faGear} onClick={toggleSettings} size="lg" />
-        </div>
-      </nav>
+      </motion.nav>
+      <div className={styles["header__settingsBtn"]}>
+        <FontAwesomeIcon icon={faGear} onClick={toggleSettings} size="lg" />
+      </div>
     </motion.div>
   );
 };

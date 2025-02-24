@@ -23,6 +23,21 @@ form {
   all: unset;
 }
 
+.ReactModal__Overlay {
+  opacity: 0;
+
+  transition: all 150ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+
+  transform: translateY(0rem);
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
 /* 
 // FIX THE PROBLEM OF SCROLLING OUT OF VIEW WITH TOUCH DEVICES (mobiles)
 // NOT TO USE WHEN NOT ON MOBILES

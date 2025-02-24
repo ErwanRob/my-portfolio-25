@@ -16,9 +16,6 @@ const LegalMentionModal = ({ isOpen, onClose }) => {
       overlayClassName={styles.modalOverlay}
       contentLabel="Legal Mentions Modal"
     >
-      {/*     <button className={styles["modal__closeBtn"]} onClick={onClose}>
-        CLOSE Button Holder
-      </button> */}
       <motion.div
         className={styles["modal__closeBtn"]}
         onClick={onClose}
@@ -27,10 +24,12 @@ const LegalMentionModal = ({ isOpen, onClose }) => {
         whileTap={{ scale: 0.8, color: "#fff" }}
         transition={{ duration: 0.15, ease: "backOut" }}
       >
-        <svg
+        <motion.svg
+          initial={{ rotate: 0 }}
+          whileHover={{ rotate: 90 }}
           fill="none"
           viewBox="0 0 24 24"
-          strokeWidth="0.5"
+          strokeWidth="0.9"
           stroke="currentColor"
         >
           <path
@@ -38,7 +37,7 @@ const LegalMentionModal = ({ isOpen, onClose }) => {
             strokeLinejoin="round"
             d="M6 18 18 6M6 6l12 12"
           />
-        </svg>
+        </motion.svg>
       </motion.div>
       <div className={styles["modal__content"]} data-lenis-prevent>
         <h4 className={styles["modal__content__title"]}>LEGAL NOTICE</h4>

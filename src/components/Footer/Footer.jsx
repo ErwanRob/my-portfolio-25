@@ -96,7 +96,15 @@ const Footer = () => {
 
             <div className={styles["footer__container__content__legal"]}>
               <p className={styles["footer__container__content__legal__item"]}>
-                Built with React.js &amp; Motion • Deployed on Vercel
+                Built with React.js &amp; Motion • Deployed on{" "}
+                <a
+                  className={
+                    styles["footer__container__content__legal__item__vercel"]
+                  }
+                  href="https://vercel.com/"
+                >
+                  Vercel
+                </a>
               </p>
               <p
                 className={
@@ -112,6 +120,14 @@ const Footer = () => {
                 }
               >
                 Let’s connect !
+              </p>
+
+              <p
+                className={
+                  styles["footer__container__content__legal__item__connect"]
+                }
+              >
+                Made with ❤️ by Erwan Robin
               </p>
             </div>
           </div>

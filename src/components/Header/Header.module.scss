@@ -1,12 +1,14 @@
 @use "../../styles/abstracts/" as abs;
 
 .header {
+  position: relative;
   z-index: 999;
   background: abs.$dark-grey;
   width: 100%;
   height: 100%;
   @include abs.flxAllCtrBox;
   padding: 0 1rem;
+  transform-origin: top;
 
   &__nav {
     display: flex;
@@ -37,25 +39,25 @@
         }
       }
     }
-    &__settingsBtn {
-      position: absolute;
-      top: 0;
-      right: 0;
-      @include abs.flxAllCtrBox;
-      width: 4rem;
-      height: 100%;
-      border-radius: 50%;
-      background: abs.$bg-gradient-header;
-      cursor: pointer;
-      color: abs.$light-grey;
-      font-size: 1.5rem;
-      scale: 0.8;
+  }
+  &__settingsBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include abs.flxAllCtrBox;
+    width: 4rem;
+    height: 100%;
+    border-radius: 50%;
+    background: abs.$bg-gradient-header;
+    cursor: pointer;
+    color: abs.$light-grey;
+    font-size: 1.5rem;
+    scale: 0.8;
 
-      &:hover {
-        color: abs.$hover-purple;
-        scale: 1;
-        animation: boostedWheel 3s linear infinite;
-      }
+    &:hover {
+      color: abs.$hover-purple;
+      scale: 1;
+      animation: boostedWheel 3s linear infinite;
     }
   }
 }
