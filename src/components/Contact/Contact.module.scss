@@ -10,6 +10,12 @@
     height: auto;
     margin: 3rem 0 0 0;
   }
+
+  @include abs.respond-to-custom("md", "sm") {
+    height: auto;
+    margin: 3rem 0 3rem 0;
+  }
+
   &__container {
     @include abs.flxAllCtrBox;
     flex-direction: column;
@@ -41,6 +47,15 @@
       height: auto;
     }
 
+    @include abs.respond-to-custom("md", "sm") {
+      height: 90vh;
+      width: 90%;
+    }
+
+    @include abs.respond-to-custom("md", "xs") {
+      height: auto;
+      width: 90%;
+    }
     &__content {
       @include abs.flxAllCtrBox;
       flex-direction: row;
@@ -61,6 +76,10 @@
       }
       @include abs.respond-to("xs") {
         padding: 6rem 1rem 1rem 1rem;
+      }
+
+      @include abs.respond-to-custom("md", "xs") {
+        flex-direction: column;
       }
 
       &__LBlock {
@@ -85,6 +104,12 @@
           width: 100%;
           height: auto;
           box-shadow: none;
+        }
+
+        @include abs.respond-to-custom("md", "xs") {
+          width: 100%;
+          height: 50%;
+          /*   box-shadow: none; */
         }
       }
     }

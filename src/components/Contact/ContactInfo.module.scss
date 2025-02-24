@@ -18,6 +18,13 @@
     padding: 2rem 0;
   }
 
+  @include abs.respond-to-custom("md", "sm") {
+    padding: 0rem 2rem 0rem 0rem;
+  }
+  @include abs.respond-to-custom("md", "xs") {
+    padding: 0rem 0rem 2rem 0rem;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -33,6 +40,11 @@
     }
     @include abs.respond-to("sm") {
       gap: 6rem;
+    }
+
+    @include abs.respond-to-custom("md", "xs") {
+      flex-direction: row;
+      align-items: flex-start;
     }
 
     &__leftHeadLine {
@@ -73,6 +85,13 @@
         @include abs.respond-to("lg") {
           font-size: 1.75rem;
         }
+        @include abs.respond-to("sm") {
+          padding: 0;
+          font-size: 2rem;
+        }
+        @include abs.respond-to-custom("md", "sm") {
+          font-size: 1.75rem;
+        }
 
         &__available {
           box-sizing: border-box;
@@ -84,10 +103,12 @@
           filter: drop-shadow(0 0 6px green);
           border-radius: 50%;
           animation: available 2s linear 1s infinite;
-        }
-        @include abs.respond-to("sm") {
-          padding: 0;
-          font-size: 2rem;
+
+          @include abs.respond-to-custom("md", "sm") {
+            margin: 0 0 3px 0;
+            width: 0.5rem;
+            height: 0.5rem;
+          }
         }
       }
     }
@@ -133,6 +154,9 @@
           font-size: 1.25rem;
           font-weight: 200;
           @include abs.respond-to("sm") {
+            font-size: 1rem;
+          }
+          @include abs.respond-to-custom("md", "sm") {
             font-size: 1rem;
           }
         }
