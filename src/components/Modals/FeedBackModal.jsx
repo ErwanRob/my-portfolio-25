@@ -16,6 +16,7 @@ const FeedBackModal = ({ isOpen, onClose }) => {
       onRequestClose={onClose}
       className={styles.modal}
       overlayClassName={styles.modalOverlay}
+      shouldCloseOnOverlayClick={false}
       contentLabel="FeedBack Modal"
     >
       <motion.div
@@ -43,14 +44,6 @@ const FeedBackModal = ({ isOpen, onClose }) => {
       </motion.div>
       <div className={styles["modal__content"]} data-lenis-prevent>
         <FeedBackForm />
-        {/*   Bonsoir
-        <br />
-        - Name here and maybe email ?
-        <br />
-        - Rating bar here / with a emoticon that changes regarding the rating
-        <br />
-        - feedback text area here
-        <br />- send button here */}
       </div>
     </Modal>
   );

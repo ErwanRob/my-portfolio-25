@@ -6,20 +6,41 @@
   flex-direction: column;
   box-sizing: border-box;
   position: absolute;
-  width: 30%;
-  height: 30%;
+  width: 40%;
+  max-width: 45rem;
+  height: auto;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 4px;
-
   background-color: abs.$darker-grey;
+  outline: none;
+
+  @include abs.respond-to("xl") {
+    width: 50%;
+  }
+  @include abs.respond-to("lg") {
+    width: 60%;
+  }
+  @include abs.respond-to("md") {
+    width: 70%;
+  }
+  @include abs.respond-to("sm") {
+    width: 90%;
+  }
 
   &__content {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    position: relative;
     padding: 2rem;
     box-sizing: border-box;
     font-size: 1.25rem;
     font-weight: 200;
+    @include abs.respond-to("sm") {
+      padding: 1rem;
+    }
   }
 
   &__closeBtn {
