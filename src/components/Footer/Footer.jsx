@@ -34,7 +34,7 @@ const Footer = () => {
     },
     {
       id: 3,
-      text: "Instgram",
+      text: "Instagram",
       url: "https://www.instagram.com/erwan.rob/",
     },
     { id: 4, text: "C.V.", url: "/cv.pdf", download: true },

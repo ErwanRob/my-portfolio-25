@@ -33,7 +33,7 @@ const linksList = [
   },
   {
     icon: faInstagram,
-    text: "Instgram",
+    text: "Instagram",
     url: "https://www.instagram.com/erwan.rob/",
   },
   { icon: faDownload, text: "C.V.", url: "/cv.pdf", download: true },
@@ -168,7 +168,7 @@ export default ContactInfo;
               }
             >
               <FontAwesomeIcon icon={faInstagram} />
-              Instgram
+              Instagram
             </a>
           </div>
           <div className={styles["contactInfo__container__links__itemWrapper"]}>
