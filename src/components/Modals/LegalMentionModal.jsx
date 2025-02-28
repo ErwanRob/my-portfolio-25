@@ -45,7 +45,7 @@ const LegalMentionModal = ({ isOpen, onClose }) => {
         <ul className={styles["modal__content__personals"]}>
           <li>Erwan ROBIN</li>
           <li>Residence: Strasbourg (67100)</li>
-          <li>Contact: er.contact@gmail.com</li>
+          <li>Contact: erobin.contact@gmail.com</li>
           <li>Tel: +33 (0)6 10 50 28 37</li>
         </ul>
         <h5 className={styles["modal__content__pTitles"]}>
