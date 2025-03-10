@@ -1,7 +1,5 @@
 import styles from "./AboutMe.module.scss";
-/* import portrait from "../../assets/img/portraitPROResi.jpg"; */
-/* import portrait from "../../assets/img/portraitPROResi-nobgTEST.png"; */
-import portrait from "../../assets/img/portrait4CroppedResi.png";
+import portrait from "../../assets/img/portrait/portrait.png";
 
 import MaskText from "../MaskText/MaskText";
 import { motion } from "framer-motion";
