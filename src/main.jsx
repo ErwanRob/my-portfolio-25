@@ -3,10 +3,12 @@ import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./styles/main.scss";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <App />
     <Analytics />
+    <SpeedInsights />
   </StrictMode>
 );
