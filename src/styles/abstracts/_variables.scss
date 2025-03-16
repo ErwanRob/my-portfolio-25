@@ -1,6 +1,6 @@
 :root {
   --dark-grey: #1a1a1a;
-  --projectSection-height: 800vh;
+  --projectSection-height: 500vh;
   --scrollingSection-height: calc(var(--projectSection-height) - 100vh);
 
   /*Query Breakpoints*/
@@ -154,6 +154,7 @@ $dark-purple-rgba: rgba(124, 58, 237, 0.5);
 $mid-purple-rgba: rgba(136, 78, 237, 0.2);
 $light-purple-rgba: rgba(162, 135, 243, 0.2);
 $dark-grey-rgba: rgba(26, 26, 26, 0.2);
+$darker-grey-rgba: rgb(26, 26, 26, 0.5);
 $grey-rgba: rgba(41, 41, 41, 0.2);
 $mid-grey-rgba: rgba(224, 224, 224, 0.2);
 $light-grey-rgba: rgba(234, 234, 234, 0.2);
@@ -196,7 +197,7 @@ $bg-gradient-about: linear-gradient(
   rgba(124, 60, 235, 0.25) 100%
 ); */
 
-$bg-gradient-project1-2: radial-gradient(
+$bg-gradient-project1-2-800vh: radial-gradient(
   circle at 50% 50%,
   rgba(26, 26, 26, 1) 0%,
   rgba(26, 26, 26, 1) 78%,
@@ -204,6 +205,15 @@ $bg-gradient-project1-2: radial-gradient(
   rgba(124, 60, 235, 0.2) 90%,
   rgba(124, 60, 235, 0.5) 100%
 );
+$bg-gradient-project1-2-500vh: radial-gradient(
+  circle at 50% 50%,
+  rgba(26, 26, 26, 1) 0%,
+  rgba(26, 26, 26, 1) 60%,
+  rgba(26, 26, 26, 0.7) 65%,
+  rgba(124, 60, 235, 0.2) 80%,
+  rgba(124, 60, 235, 0.5) 100%
+);
+
 $bg-gradient-project2: linear-gradient(
   200deg,
   rgba(26, 26, 26, 1) 0%,

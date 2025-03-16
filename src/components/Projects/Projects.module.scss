@@ -8,7 +8,7 @@
   width: 100vw;
   height: var(--projectSection-height);
   box-shadow: inset 0rem 2rem 2rem -2rem abs.$dark-grey;
-  background: abs.$bg-gradient-project1-2, abs.$bg-noise2;
+  background: abs.$bg-gradient-project1-2-500vh, abs.$bg-noise2;
   @include abs.respond-to("lg") {
     height: auto;
   }

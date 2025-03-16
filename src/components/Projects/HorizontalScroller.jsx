@@ -1,11 +1,11 @@
 import useMediaQuery from "../Hooks/useMediaQuery";
+import PropTypes from "prop-types";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import styles from "./HorizontalScroller.module.scss";
 import ProjectsCard from "./ProjectsCard";
 import imgProject1 from "../../assets/img/projects/projectTMPO.png";
-import placeHolderProjectImg from "../../assets/img/projects/projectPlaceholder1.jpg";
-import PropTypes from "prop-types";
+/* import placeHolderProjectImg from "../../assets/img/projects/projectPlaceholder1.jpg"; */
 
 const cards = [
   {
@@ -16,37 +16,37 @@ const cards = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quaerat ratione eaque optio quam at architecto deserunt laborum assumenda, perferendis totam! Eum libero maiores voluptas fugiat impedit ipsam similique modi! ",
   },
   {
-    url: placeHolderProjectImg,
+    /*   url: placeHolderProjectImg, */
     title: "Project 2 T.B.D",
     id: 2,
     description: "No description yet",
   },
   {
-    url: placeHolderProjectImg,
+    /*   url: placeHolderProjectImg, */
     title: "Project 3 T.B.D",
     id: 3,
     description: "No description yet",
   },
   {
-    url: placeHolderProjectImg,
+    /* url: placeHolderProjectImg, */
     title: "Project 4 T.B.D",
     id: 4,
     description: "No description yet",
   },
   {
-    url: placeHolderProjectImg,
+    /* url: placeHolderProjectImg, */
     title: "Project 5 T.B.D",
     id: 5,
     description: "No description yet",
   },
   {
-    url: placeHolderProjectImg,
+    /*   url: placeHolderProjectImg, */
     title: "Project 6 T.B.D",
     id: 6,
     description: "No description yet",
   },
   {
-    url: placeHolderProjectImg,
+    /* url: placeHolderProjectImg, */
     title: "Project 7 T.B.D",
     id: 7,
     description: "No description yet",
@@ -54,14 +54,14 @@ const cards = [
 ];
 
 const HorizontalScroller = ({ bgTransform }) => {
-  /*   const isXSmall = useMediaQuery("(max-width: 480px)"); */
   const isMedium = useMediaQuery("(max-width: 1024px)");
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["60%", "-45%"]);
+  /* const x = useTransform(scrollYProgress, [0, 1], ["60%", "-45%"]); */ // for 7 projects
+  const x = useTransform(scrollYProgress, [0, 1], ["70%", "-41%"]);
 
   return (
     <motion.div
@@ -78,7 +78,7 @@ const HorizontalScroller = ({ bgTransform }) => {
             ? cards
                 .slice(0, 4)
                 .map((card) => <ProjectsCard card={card} key={card.id} />)
-            : cards.map((card) => {
+            : cards.slice(0, 4).map((card) => {
                 return <ProjectsCard card={card} key={card.id} />;
               })}
         </motion.div>

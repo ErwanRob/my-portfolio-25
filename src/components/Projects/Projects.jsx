@@ -23,16 +23,16 @@ const Projects = () => {
   const yTransform = useTransform(
     scrollYProgress,
     [0, 0.074, 1],
-    ["0vh", "100vh", "700vh"]
+    ["0vh", "60vh", "400vh"]
   );
   const scaleTransform = useTransform(
     scrollYProgress,
-    [0, 0.05, 0.14, 0.3, 0.4],
+    [0, 0.08, 0.3, 0.4, 0.41],
     [1, 1, 20, 20, 1]
   );
   const bgTransform = useTransform(
     scrollYProgress,
-    [0, 0.1, 0.2],
+    [0, 0.2, 0.4],
     ["rgba(133, 44, 112, 0)", "rgba(133, 44, 112, 0)", "rgb(139, 92, 246)"]
   );
   const bgTransformBlackHole = useTransform(
@@ -127,15 +127,26 @@ const Projects = () => {
 
 export default Projects;
 
-// Smooth the scroll progress using a spring
-/*   const ySmooth = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-  }); */
+/* 
+//FOR 7 PROJECTS
 
-// Log scrollYProgress in real-time
-/*   useEffect(() => {
-    const unsubscribe = scrollYProgress.on("change", (latestValue) => {
-      console.log("ScrollYProgress:", latestValue);
-    });
-*/
+const yTransform = useTransform(
+  scrollYProgress,
+  [0, 0.074, 1],
+  ["0vh", "100vh", "700vh"]
+);
+const scaleTransform = useTransform(
+  scrollYProgress,
+  [0, 0.05, 0.14, 0.3, 0.4],
+  [1, 1, 20, 20, 1]
+);
+const bgTransform = useTransform(
+  scrollYProgress,
+  [0, 0.1, 0.2],
+  ["rgba(133, 44, 112, 0)", "rgba(133, 44, 112, 0)", "rgb(139, 92, 246)"]
+);
+const bgTransformBlackHole = useTransform(
+  scrollYProgress,
+  [0, 0.1],
+  ["rgba(26, 26, 26,0)", "rgba(26, 26, 26,1)"]
+); */
