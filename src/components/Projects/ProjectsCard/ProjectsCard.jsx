@@ -1,7 +1,7 @@
 import styles from "./ProjectsCard.module.scss";
 import PropTypes from "prop-types";
 import { motion } from "motion/react";
-import MirrorPlaceHolder from "./MirrorPlaceHolder/MirrorPlaceholder";
+import MirrorPlaceHolder from "../MirrorPlaceHolder/MirrorPlaceholder";
 
 const ProjectsCard = ({ card }) => {
   return (

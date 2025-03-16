@@ -1,6 +1,6 @@
 import styles from "./Projects.module.scss";
 import GlowingPlanet from "./GlowingPlanet/GlowingPlanet";
-import HorizontalScroller from "./HorizontalScroller";
+import HorizontalScroller from "./HorizontalScroller/HorizontalScroller";
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "motion/react";
 import { backOut } from "motion";

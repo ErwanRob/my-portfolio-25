@@ -1,10 +1,10 @@
-import useMediaQuery from "../Hooks/useMediaQuery";
+import useMediaQuery from "../../Hooks/useMediaQuery";
 import PropTypes from "prop-types";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import styles from "./HorizontalScroller.module.scss";
-import ProjectsCard from "./ProjectsCard";
-import imgProject1 from "../../assets/img/projects/projectTMPO.png";
+import ProjectsCard from "../ProjectsCard/ProjectsCard";
+import imgProject1 from "../../../assets/img/projects/projectTMPO.png";
 /* import placeHolderProjectImg from "../../assets/img/projects/projectPlaceholder1.jpg"; */
 
 const cards = [
