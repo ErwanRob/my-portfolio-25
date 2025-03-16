@@ -1,7 +1,11 @@
 import styles from "./MirrorPlaceHolder.module.scss";
+import useMediaQuery from "../../Hooks/useMediaQuery";
 
 const MirrorPlaceHolder = () => {
-  const numLayers = 10;
+  const isMedium = useMediaQuery("(max-width: 1024px)");
+
+  const numLayers = isMedium ? 10 : 15;
+
   const generateColors = (start, end, steps) => {
     const colors = [];
     for (let i = 0; i < steps; i++) {
@@ -23,9 +27,8 @@ const MirrorPlaceHolder = () => {
           key={i}
           className={styles["placeholderWrapper__layer"]}
           style={{
-            transform: `scale(${1 - i * 0.1})`,
+            transform: `scale(${1 - i * (1 / numLayers)})`,
             backgroundColor: colors[i],
-            boxShadow: `inset 2px 6px 6px 6px #101010`,
           }}
         />
       ))}
