@@ -56,22 +56,23 @@ const FeedBackForm = () => {
         transition={{ duration: 0.4, ease: "backIn" }}
       >
         <div className={styles["feedBackForm__name"]}>
+          <label
+            htmlFor="name"
+            className={styles["feedBackForm__name__sr-only"]}
+          >
+            Name
+          </label>
           <input
             className={styles["feedBackForm__name__input"]}
+            id="name"
+            name="name"
             type="text"
-            name="Name"
             placeholder="Full Name"
             required
           />
         </div>
         <ValidationError prefix="Name" field="name" errors={state.errors} />
         <div className={styles["feedBackForm__rating"]}>
-          <label
-            className={styles["feedBackForm__rating__label"]}
-            htmlFor="rating"
-          >
-            Your Rating :
-          </label>
           <ReactSlider
             className={styles["feedBackForm__rating__slider"]}
             //using renderThumb to customize each thumb
@@ -98,7 +99,7 @@ const FeedBackForm = () => {
           <div className={styles["feedBackForm__rating__emoji"]}>
             {getEmoticon(rating)}
           </div>
-          <input type="hidden" name="Rating" value={rating} />
+          <input type="hidden" name="rating" value={rating} />
         </div>
         <div className={styles["feedBackForm__message"]}>
           <label
@@ -109,16 +110,16 @@ const FeedBackForm = () => {
           </label>
           <TextareaAutosize
             data-lenis-prevent
-            id="Feedback"
+            id="message"
             className={styles["feedBackForm__message__textarea"]}
-            name="Feedback"
+            name="message"
             placeholder="Found a bug ? Have a suggestion ? Feedback is welcome and greatly appreciated! 😊"
             minRows={4}
             maxRows={4}
             required
           />
           <ValidationError
-            prefix="Message"
+            prefix="message"
             field="message"
             errors={state.errors}
           />

@@ -25,7 +25,7 @@
 
   @include abs.respond-to("xs") {
     width: 320px;
-    height: 200px;
+    /*   height: 200px; */ //Last update, keep an eye on this
   }
 
   @include abs.respond-to-custom("md", "sm") {
