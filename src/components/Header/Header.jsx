@@ -19,17 +19,15 @@ const Header = ({ toggleSettings }) => {
     }
   };
 
+  //viewPortHeight and the useEffect is used to get the height of the viewport in order to remove the header from the first section of the page, since the first section  is 100vh height, it works as intended.
   const [hidden, setHidden] = useState(true);
   const [viewPortHeight, setViewPortHeight] = useState(window.innerHeight);
-
+  const { scrollY } = useScroll();
   useEffect(() => {
     const handleResize = () => setViewPortHeight(window.innerHeight);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const { scrollY } = useScroll();
-
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
     if (latest > previous || latest < viewPortHeight) {

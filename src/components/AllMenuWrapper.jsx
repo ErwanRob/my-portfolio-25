@@ -7,23 +7,20 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import useMediaQuery from "./Hooks/useMediaQuery";
 
 const AllMenuWrapper = () => {
-  const isXSmall = useMediaQuery("(max-width: 480px)");
-  const isSmall = useMediaQuery("(max-width: 768px)");
   const isMedium = useMediaQuery("(max-width: 1024px)");
-
   const [isSideMenuVisible, setSideMenuVisible] = useState(false);
   const [isHeaderVisible, setHeaderVisible] = useState(true);
   const [isSettingsVisible, setSettingsVisible] = useState(false);
 
   useEffect(() => {
-    if (isXSmall || isSmall || isMedium) {
+    if (isMedium) {
       setSideMenuVisible(false);
       setHeaderVisible(false);
     } else {
       setSideMenuVisible(true);
       setHeaderVisible(true);
     }
-  }, [isXSmall, isSmall, isMedium]);
+  }, [isMedium]);
 
   const toggleSideMenu = () => {
     setSideMenuVisible(!isSideMenuVisible);
@@ -59,7 +56,7 @@ const AllMenuWrapper = () => {
         />
       </div>
 
-      {(isXSmall || isSmall || isMedium) && (
+      {isMedium && (
         <div className="sideMenuNavigation-toggle">
           <button
             className={"sideMenuNavigation-toggle__btn"}

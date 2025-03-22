@@ -81,6 +81,7 @@ const Projects = () => {
                 id="tsparticlesProjects"
                 direction="top"
                 speed={1.75}
+                pushQuantity={2}
               />
             )}
         </motion.div>

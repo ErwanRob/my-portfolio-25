@@ -8,13 +8,36 @@ import { useEffect, useRef, useState } from "react";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import FeedBackModal from "../Modals/FeedBackModal";
+import HireMeModal from "../Modals/HireMeModal";
+import useMediaQuery from "../Hooks/useMediaQuery";
+import { useLenis } from "lenis/react";
 
 const Hero = () => {
-  const handleClick = () => {
-    console.log("Button clicked!");
+  const lenis = useLenis();
+  const isSmall = useMediaQuery("(max-width: 768px)");
+  const isXSmallHeightThreshold = useMediaQuery("(max-height: 600px)");
+
+  const handleScroll = (target) => {
+    if (lenis) {
+      lenis.scrollTo(target, {
+        duration: 1,
+        easing: (x) => 1 - Math.pow(1 - x, 5),
+        offset: 0,
+        lock: true,
+      });
+    }
+  };
+
+  const handleHireMeClick = () => {
+    if (isSmall || isXSmallHeightThreshold) {
+      handleScroll("#contact");
+    } else {
+      setHireMeModalOpen(true);
+    }
   };
 
   const [isFeedbackModalOpen, setFeedbackModalOpen] = useState(false);
+  const [isHireMeModalOpen, setHireMeModalOpen] = useState(false);
   const [shouldRenderParticles, setShouldRenderParticles] = useState(false);
 
   // Delay mounting of ParticlesComponent by 3 seconds
@@ -52,6 +75,7 @@ const Hero = () => {
               id="tsparticlesHero"
               direction="none"
               speed={0.75}
+              pushQuantity={0}
             />
           )}
         </motion.div>
@@ -77,7 +101,6 @@ const Hero = () => {
                 href={"https://github.com/ErwanRob"}
                 icon={faGithub}
                 text="GitHub"
-                onClick={handleClick}
                 variant="primary"
               ></Button>
               <Button
@@ -85,7 +108,6 @@ const Hero = () => {
                 download={"ROBIN_Erwan_CV_18-07-2024"}
                 icon={faDownload}
                 text="C.V."
-                onClick={handleClick}
                 variant="secondary"
               ></Button>
               <Button
@@ -95,7 +117,7 @@ const Hero = () => {
               ></Button>
               <Button
                 text="Hire me"
-                onClick={handleClick}
+                onClick={handleHireMeClick}
                 variant="tertiary"
               ></Button>
             </motion.div>
@@ -105,6 +127,10 @@ const Hero = () => {
       <FeedBackModal
         isOpen={isFeedbackModalOpen}
         onClose={() => setFeedbackModalOpen(false)}
+      />
+      <HireMeModal
+        isOpen={isHireMeModalOpen}
+        onClose={() => setHireMeModalOpen(false)}
       />
     </>
   );

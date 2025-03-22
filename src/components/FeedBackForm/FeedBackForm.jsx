@@ -134,7 +134,7 @@ const FeedBackForm = () => {
         <Button
           type="submit"
           text="Send Feedback"
-          variants="primary"
+          variant="primary"
           disabled={state.submitting}
         />
       </motion.form>

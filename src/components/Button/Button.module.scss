@@ -68,6 +68,50 @@
   }
 }
 
+.primaryShort,
+.secondaryShort {
+  font-size: 1.25rem;
+  font-weight: 700;
+  width: 20rem;
+  height: 4rem;
+  letter-spacing: 2px;
+  line-height: 1;
+  text-transform: uppercase;
+  gap: 0.25rem;
+  @include abs.respond-to-custom("sm", "md") {
+    height: 3rem;
+    font-size: 1rem;
+  }
+  @include abs.respond-to-custom("sm", "sm") {
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+}
+
+.primaryShort {
+  background: abs.$dark-purple;
+  &:hover {
+    background: abs.$hover-purple;
+  }
+
+  &:active {
+    background: abs.$active-purple;
+    transform: scale(0.95);
+  }
+}
+
+.secondaryShort {
+  background: abs.$dark-grey;
+  &:hover {
+    background: abs.$grey;
+    box-shadow: abs.$sc-shdw-purple;
+    &:active {
+      background-color: abs.$active-purple;
+      transform: scale(0.95);
+    }
+  }
+}
+
 .tertiary {
   background: abs.$light-grey;
   color: abs.$dark-grey;

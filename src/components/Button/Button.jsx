@@ -48,7 +48,14 @@ Button.propTypes = {
   icon: PropTypes.object, // Icon is optional but should be a FontAwesomeIcon
   text: PropTypes.string.isRequired, // Text is required and should be a string
   onClick: PropTypes.func, // onClick is optional but should be a function if provided
-  variant: PropTypes.oneOf(["primary", "secondary", "tertiary", "danger"]), // Only specific values are allowed
+  variant: PropTypes.oneOf([
+    "primary",
+    "primaryShort",
+    "secondary",
+    "secondaryShort",
+    "tertiary",
+    "danger",
+  ]), // Only specific values are allowed
   disabled: PropTypes.bool, // Disabled is optional and should be a boolean
 };
 

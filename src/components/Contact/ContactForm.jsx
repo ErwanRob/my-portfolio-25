@@ -135,7 +135,7 @@ const ContactForm = ({ onReset }) => {
             <Button
               text="Send"
               type="submit"
-              variants="primary"
+              variant="primary"
               disabled={state.submitting}
             />
           </motion.form>
@@ -145,7 +145,7 @@ const ContactForm = ({ onReset }) => {
       <AnimatePresence mode="popLayout">
         {state.succeeded && (
           <motion.div
-            className={styles.divTest}
+            className={styles.confirmation}
             key="validation"
             initial="initial"
             variants={validationVariants}
@@ -153,20 +153,20 @@ const ContactForm = ({ onReset }) => {
             exit="inactive"
             transition={validationTrans}
           >
-            <div className={styles["divTest__content"]}>
+            <div className={styles["confirmation__content"]}>
               <motion.div
-                className={styles["divTest__content__icon"]}
+                className={styles["confirmation__content__icon"]}
                 initial={{ rotate: 45 }}
                 animate={{ rotate: 0 }}
                 transition={checkMarkTrans}
               >
                 <FontAwesomeIcon icon={faCheck} />
               </motion.div>
-              <div className={styles["divTest__content__txt"]}>
-                <p className={styles["divTest__content__txt__headLine"]}>
+              <div className={styles["confirmation__content__txt"]}>
+                <p className={styles["confirmation__content__txt__headLine"]}>
                   Message sent.
                 </p>
-                <p className={styles["divTest__content__txt__subLine"]}>
+                <p className={styles["confirmation__content__txt__subLine"]}>
                   Thank you!
                 </p>
               </div>

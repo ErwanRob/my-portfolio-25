@@ -3,7 +3,7 @@ import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 
-const ParticlesComponent = ({ id, direction, speed }) => {
+const ParticlesComponent = ({ id, direction, speed, pushQuantity }) => {
   const particlesInit = useCallback(async (engine) => {
     // Load the slim version of tsparticles
     await loadSlim(engine);
@@ -71,7 +71,7 @@ const ParticlesComponent = ({ id, direction, speed }) => {
               },
             },
             push: {
-              quantity: 2, // Number of particles added on click
+              quantity: pushQuantity, // Number of particles added on click
             },
           },
         },
@@ -92,4 +92,5 @@ ParticlesComponent.propTypes = {
   id: PropTypes.string.isRequired,
   direction: PropTypes.oneOf(["none", "top", "bottom", "right", "left"]),
   speed: PropTypes.number.isRequired,
+  pushQuantity: PropTypes.number.isRequired,
 };

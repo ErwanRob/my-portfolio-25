@@ -1,7 +1,10 @@
 :root {
   --dark-grey: #1a1a1a;
+  --darker-grey: #101010;
   --projectSection-height: 500vh;
   --scrollingSection-height: calc(var(--projectSection-height) - 100vh);
+  --headerHeight: 4rem;
+  --headerHeight-sm: 3rem;
 
   /*Query Breakpoints*/
 

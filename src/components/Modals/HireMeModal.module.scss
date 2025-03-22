@@ -1,0 +1,63 @@
+@use "../../styles/abstracts" as abs;
+
+.modal {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: var(--headerHeight) 0 0rem 0rem;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  background-color: abs.$darker-grey;
+  outline: none;
+
+  /* @include abs.respond-to("xl") {
+    width: 50%;
+  }
+  @include abs.respond-to("lg") {
+    width: 60%;
+  }
+  @include abs.respond-to("md") {
+    width: 70%;
+  }
+  @include abs.respond-to("sm") {
+    width: 90%;
+  } */
+
+  &__content {
+    width: 85%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding: 2rem;
+    box-sizing: border-box;
+    font-size: 1.25rem;
+    font-weight: 200;
+    @include abs.respond-to("md") {
+      width: 100%;
+      /* padding: 1rem; */
+    }
+
+    @include abs.respond-to-custom("sm", "sm") {
+      padding: 1rem;
+    }
+  }
+}
+
+.modalOverlay {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
