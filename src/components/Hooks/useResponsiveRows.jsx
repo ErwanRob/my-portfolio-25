@@ -7,6 +7,7 @@ const useResponsiveRows = () => {
   const isSmallHeightThreshold = useMediaQuery("(max-height: 768px)");
   const isMediumHeightThreshold = useMediaQuery("(max-height: 900px)");
   const isLargeHeightThreshold = useMediaQuery("(max-height: 1024px)");
+  const isXLargeHeightThreshold = useMediaQuery("(max-height: 1200px)");
 
   useEffect(() => {
     const updateRows = () => {
@@ -22,6 +23,9 @@ const useResponsiveRows = () => {
       } else if (isLargeHeightThreshold) {
         // // When height is below 1024px (but not below 900px)
         setRows({ minRows: 8, maxRows: 10 });
+      } else if (isXLargeHeightThreshold) {
+        // // When height is below 1200px (but not below 1024px)
+        setRows({ minRows: 10, maxRows: 15 });
       } else if (windowWidth < 1024) {
         // When height is high enough but the width is less than 1024px
         setRows({ minRows: 8, maxRows: 10 });
@@ -34,7 +38,12 @@ const useResponsiveRows = () => {
     updateRows();
     window.addEventListener("resize", updateRows);
     return () => window.removeEventListener("resize", updateRows);
-  }, [isSmallHeightThreshold, isMediumHeightThreshold, isLargeHeightThreshold]);
+  }, [
+    isSmallHeightThreshold,
+    isMediumHeightThreshold,
+    isLargeHeightThreshold,
+    isXLargeHeightThreshold,
+  ]);
 
   return rows;
 };

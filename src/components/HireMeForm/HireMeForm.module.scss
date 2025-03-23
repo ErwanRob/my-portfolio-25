@@ -18,7 +18,6 @@
     padding: 0rem 4rem 2rem 2rem;
     gap: 1rem;
     overflow: hidden;
-
     @include abs.respond-to("md") {
       padding: 0;
       box-shadow: none;
@@ -42,10 +41,12 @@
       padding: 2rem 0rem;
       gap: 0.5rem;
 
-      @include abs.respond-to("md") {
-        padding: 1rem 0rem;
+      @include abs.respond-to-height("xl") {
+        padding: 0.5rem 0rem;
       }
-
+      @include abs.respond-to("xl") {
+        padding: 0.5rem 0rem;
+      }
       @include abs.respond-to-custom("sm", "md") {
         padding: 0 0 0.5rem 0;
       }
@@ -55,7 +56,7 @@
         flex-direction: row;
         color: abs.$light-grey;
         font-weight: 900;
-        font-size: 2rem;
+        font-size: 2.5rem;
         letter-spacing: 1px;
         line-height: 1;
         text-transform: uppercase;
@@ -65,14 +66,28 @@
           color: abs.$dark-purple;
         }
 
+        @include abs.respond-to("xl") {
+          font-size: 2rem;
+        }
         @include abs.respond-to("xs") {
           text-align: left;
         }
+
+        @include abs.respond-to-custom("xl", "xl") {
+          font-size: 2rem;
+        }
+
         @include abs.respond-to-custom("sm", "md") {
           font-size: 1.5rem;
         }
+        @include abs.respond-to-custom("xl", "md") {
+          font-size: 2rem;
+        }
         @include abs.respond-to-custom("sm", "sm") {
           font-size: 1.25rem;
+        }
+        @include abs.respond-to-custom("lg", "sm") {
+          font-size: 1.5rem;
         }
       }
     }
@@ -98,10 +113,8 @@
         @include abs.flxAllCtrBox;
         padding: 0 1rem;
         flex-direction: column;
-        /*   width: 20%; */
         flex-grow: 1;
         min-width: 20rem;
-        /* box-shadow: 0 1px 0 abs.$hover-purple; */
         background-color: abs.$darker-grey;
         color: abs.$light-grey;
         font-size: 1.25rem;
@@ -115,23 +128,16 @@
           user-select: none;
           font-weight: 200;
         }
+        @include abs.respond-to("xl") {
+          font-size: 1.125rem;
+        }
+        @include abs.respond-to("md") {
+          font-size: 1rem;
+        }
+        @include abs.respond-to-custom("sm", "sm") {
+          font-size: 1rem;
+        }
       }
-
-      /* &__name {
-        max-width: 20%;
-      }
-
-      &__email {
-        max-width: 25%;
-      }
-
-      &__organization {
-        max-width: 35%;
-      }
-
-      &__phone {
-        max-width: 20%;
-      } */
     }
 
     &__txtContent {
@@ -139,7 +145,6 @@
       width: 100%;
       flex-direction: column;
       align-items: flex-start;
-      /*     margin: 1rem 0 0 0; */
       padding: 1rem 0;
       gap: 1rem;
       border-radius: 4px;
@@ -157,6 +162,9 @@
         }
         @include abs.respond-to-custom("sm", "sm") {
           padding: 0rem 0.5rem;
+        }
+        @include abs.respond-to-custom("md", "md") {
+          gap: 0.5rem;
         }
 
         &__object,
@@ -176,6 +184,15 @@
             color: abs.$light-grey;
             user-select: none;
             font-weight: 500;
+          }
+          @include abs.respond-to("xl") {
+            font-size: 1.125rem;
+          }
+          @include abs.respond-to("md") {
+            font-size: 1rem;
+          }
+          @include abs.respond-to-custom("sm", "sm") {
+            font-size: 1rem;
           }
         }
 
@@ -211,6 +228,12 @@
         &::placeholder {
           color: abs.$light-grey;
           user-select: none;
+        }
+        @include abs.respond-to("xl") {
+          font-size: 1.125rem;
+        }
+        @include abs.respond-to("md") {
+          font-size: 1rem;
         }
         @include abs.respond-to-custom("sm", "sm") {
           padding: 0.5rem 1rem;

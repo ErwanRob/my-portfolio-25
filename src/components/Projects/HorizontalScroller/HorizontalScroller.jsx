@@ -5,15 +5,13 @@ import { useRef } from "react";
 import styles from "./HorizontalScroller.module.scss";
 import ProjectsCard from "../ProjectsCard/ProjectsCard";
 import imgProject1 from "../../../assets/img/projects/projectTMPO.png";
-/* import placeHolderProjectImg from "../../assets/img/projects/projectPlaceholder1.jpg"; */
 
 const cards = [
   {
     url: imgProject1,
     title: "TMPO",
     id: 1,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quaerat ratione eaque optio quam at architecto deserunt laborum assumenda, perferendis totam! Eum libero maiores voluptas fugiat impedit ipsam similique modi! ",
+    description: "Pet sitting Website, to be released soon",
   },
   {
     /*   url: placeHolderProjectImg, */
