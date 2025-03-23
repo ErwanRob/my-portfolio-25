@@ -206,7 +206,6 @@ const HireMeForm = ({ onClose }) => {
                   name="deadline"
                   placeholder="Any Deadline?"
                   autoComplete="deadline"
-                  required
                 />
                 <ValidationError
                   prefix="Deadline"
@@ -297,7 +296,7 @@ const HireMeForm = ({ onClose }) => {
                 </p>
               </div>
             </div>
-            {/*   <Button text="Close" variant="secondaryShort" /> */}
+            <Button text="Close" variant="secondaryShort" onClick={onClose} />
           </motion.div>
         )}
       </AnimatePresence>
