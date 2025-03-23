@@ -6,7 +6,7 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import Button from "../Button/Button";
 import TextareaAutosize from "react-textarea-autosize";
 import PropTypes from "prop-types";
-import useResponsiveRows from "../Hooks/UseResponsiveRows";
+import useResponsiveRows from "../Hooks/useResponsiveRows";
 
 const HireMeForm = ({ onClose }) => {
   const { minRows, maxRows } = useResponsiveRows();
