@@ -123,6 +123,9 @@
         font-weight: 400;
         border: 2px solid abs.$grey;
         border-radius: 4px;
+        &:focus {
+          border: 2px solid abs.$active-purple-rgba;
+        }
         &::placeholder {
           color: abs.$hover-purple2;
           user-select: none;
@@ -180,6 +183,9 @@
           min-height: 3rem;
           font-weight: 500;
           border-radius: 4px;
+          &:focus {
+            border: 2px solid abs.$active-purple-rgba;
+          }
           &::placeholder {
             color: abs.$light-grey;
             user-select: none;
@@ -328,4 +334,30 @@
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+.customError {
+  @include abs.flxAllCtrBox;
+  position: absolute;
+  height: 4rem;
+  padding: 2rem;
+  font-weight: 500;
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: abs.$light-grey;
+  background-color: #ad2828;
+  transform-origin: center;
+  opacity: 0;
+  animation: errorPopUp 150ms ease-in-out forwards;
+}
+
+@keyframes errorPopUp {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

@@ -1,16 +1,36 @@
 import { useForm, ValidationError } from "@formspree/react";
 import { AnimatePresence, motion } from "motion/react";
-import styles from "./HireMeForm.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import Button from "../Button/Button";
-import TextareaAutosize from "react-textarea-autosize";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import useResponsiveRows from "../Hooks/useResponsiveRows";
+import styles from "./HireMeForm.module.scss";
+import Button from "../Button/Button";
+import TextareaAutosize from "react-textarea-autosize";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 const HireMeForm = ({ onClose }) => {
   const { minRows, maxRows } = useResponsiveRows();
   const [state, handleSubmit] = useForm("mpwpqvad"); // formSpree hook with its id
+
+  // fields whose errors should be hidden until next submit
+  const [hideErrors, setHideErrors] = useState({});
+  // marks field which gets focused so that its error stays hidden until next submit
+  const onFieldFocus = (fieldName) => {
+    setHideErrors((prev) => ({ ...prev, [fieldName]: true }));
+  };
+  // Wrap the handleSubmit to reset hideErrors so errors show up again on submission and not before
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
+    const res = await handleSubmit(e);
+    if (res?.ok) {
+      console.log("Submission succeeded!"); //gets unmounted on submission suceeds so doesnt really matter
+    } else {
+      console.log("Submission error!");
+    }
+    // Clear the hideErrors state only after the submission completes
+    setHideErrors({});
+  };
 
   const formVariants = {
     initial: { opacity: 0 },
@@ -54,14 +74,12 @@ const HireMeForm = ({ onClose }) => {
           <motion.form
             className={styles["hireMeForm__form"]}
             key="form"
-            action="https://formspree.io/f/mpwpqvad" //formSpree endpoint
-            method="POST"
             initial="initial"
             animate="active"
             variants={formVariants}
             exit="inactive"
             transition={formTrans}
-            onSubmit={handleSubmit}
+            onSubmit={onSubmitHandler}
           >
             <div className={styles["hireMeForm__form__headline"]}>
               <p className={styles["hireMeForm__form__headline__txt"]}>
@@ -106,9 +124,11 @@ const HireMeForm = ({ onClose }) => {
                 name="Name"
                 placeholder="Name*"
                 autoComplete="name"
+                onFocus={() => onFieldFocus("name")}
                 required
               />
               <ValidationError
+                className={styles.customError}
                 prefix="Name"
                 field="name"
                 errors={state.errors}
@@ -123,13 +143,18 @@ const HireMeForm = ({ onClose }) => {
                 name="Email"
                 placeholder="Email*"
                 autoComplete="email"
+                onFocus={() => onFieldFocus("email")}
                 required
               />
-              <ValidationError
-                prefix="Email"
-                field="email"
-                errors={state.errors}
-              />
+              {/* Conditionally render the error only if it hasn't been hidden */}
+              {!hideErrors.email && (
+                <ValidationError
+                  className={styles.customError}
+                  prefix="Email"
+                  field="email"
+                  errors={state.errors}
+                />
+              )}
               <label htmlFor="phone" className={styles.srOnly}>
                 Phone number (optional)
               </label>
@@ -140,8 +165,10 @@ const HireMeForm = ({ onClose }) => {
                 name="phone"
                 placeholder="Phone number"
                 autoComplete="phone"
+                onFocus={() => onFieldFocus("phone")}
               />
               <ValidationError
+                className={styles.customError}
                 prefix="phone"
                 field="phone"
                 errors={state.errors}
@@ -156,8 +183,10 @@ const HireMeForm = ({ onClose }) => {
                 name="organization"
                 placeholder="Organization / Company"
                 autoComplete="organization"
+                onFocus={() => onFieldFocus("organization")}
               />
               <ValidationError
+                className={styles.customError}
                 prefix="organization"
                 field="organization"
                 errors={state.errors}
@@ -185,9 +214,11 @@ const HireMeForm = ({ onClose }) => {
                   name="object"
                   placeholder="Object / Project name*"
                   autoComplete="object"
+                  onFocus={() => onFieldFocus("object")}
                   required
                 />
                 <ValidationError
+                  className={styles.customError}
                   prefix="Object"
                   field="object"
                   errors={state.errors}
@@ -206,8 +237,10 @@ const HireMeForm = ({ onClose }) => {
                   name="deadline"
                   placeholder="Any Deadline?"
                   autoComplete="deadline"
+                  onFocus={() => onFieldFocus("deadline")}
                 />
                 <ValidationError
+                  className={styles.customError}
                   prefix="Deadline"
                   field="deadline"
                   errors={state.errors}
@@ -224,9 +257,11 @@ const HireMeForm = ({ onClose }) => {
                 placeholder="Tell me about your project *"
                 minRows={minRows}
                 maxRows={maxRows}
+                onFocus={() => onFieldFocus("message")}
                 required
               />
               <ValidationError
+                className={styles.customError}
                 prefix="Message"
                 field="message"
                 errors={state.errors}
@@ -254,7 +289,7 @@ const HireMeForm = ({ onClose }) => {
                 disabled={state.submitting}
               />
               <Button
-                text="Send"
+                text={state.submitting ? "Sending ..." : "Send"}
                 type="submit"
                 variant="primaryShort"
                 disabled={state.submitting}
