@@ -28,9 +28,18 @@
     /*   height: 200px; */ //Last update, keep an eye on this
   }
 
+  @include abs.respond-to-custom("md", "lg") {
+    width: 50vw;
+    height: 100%;
+  }
+  @include abs.respond-to-custom("md", "md") {
+    width: 40vw;
+    height: 100%;
+  }
+
   @include abs.respond-to-custom("md", "sm") {
     flex-direction: row;
-    width: 70vw;
+    width: 50vw;
     height: 100%;
   }
 
@@ -126,6 +135,15 @@
         justify-content: center;
         font-size: 1rem;
       }
+
+      @include abs.respond-to-custom("md", "lg") {
+        letter-spacing: 0;
+        font-size: 2rem;
+      }
+      @include abs.respond-to-custom("md", "md") {
+        height: auto;
+      }
+
       @include abs.respond-to-custom("md", "sm") {
         justify-content: flex-start;
         padding: 0;

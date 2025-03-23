@@ -1,10 +1,7 @@
 import Modal from "react-modal";
 import styles from "./HireMeModal.module.scss";
 import PropTypes from "prop-types";
-/* import { motion } from "motion/react"; */
 import HireMeForm from "../HireMeForm/HireMeForm";
-
-/* import { useEffect } from "react"; */
 
 if (typeof window !== "undefined") {
   Modal.setAppElement(document.getElementById("root"));
