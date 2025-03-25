@@ -2,17 +2,21 @@ import styles from "./Hero.module.scss";
 import HeadLine from "./HeadLine/HeadLine";
 import SubLine from "./SubLine/SubLine";
 import Button from "../Button/Button";
-import ParticlesComponent from "../ParticlesComponent";
+import ParticlesComponent from "../common/ParticlesComponent";
 import { motion, useInView } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+import { faHandshakeSimple } from "@fortawesome/free-solid-svg-icons";
 import FeedBackModal from "../Modals/FeedBackModal";
 import HireMeModal from "../Modals/HireMeModal";
 import useMediaQuery from "../Hooks/useMediaQuery";
 import { useLenis } from "lenis/react";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t } = useTranslation();
   const lenis = useLenis();
   const isSmall = useMediaQuery("(max-width: 768px)");
   const isXSmallHeightThreshold = useMediaQuery("(max-height: 600px)");
@@ -75,7 +79,7 @@ const Hero = () => {
               id="tsparticlesHero"
               direction="none"
               speed={0.75}
-              pushQuantity={0}
+              pushQuantity={1}
             />
           )}
         </motion.div>
@@ -100,23 +104,25 @@ const Hero = () => {
               <Button
                 href={"https://github.com/ErwanRob"}
                 icon={faGithub}
-                text="GitHub"
+                text={t("hero.button.github")}
                 variant="primary"
               ></Button>
               <Button
                 href={"/cv.pdf"}
                 download={"ROBIN_Erwan_CV_18-07-2024"}
                 icon={faDownload}
-                text="C.V."
+                text={t("hero.button.download")}
                 variant="secondary"
               ></Button>
               <Button
-                text="Feedbacks"
+                icon={faThumbsUp}
+                text={t("hero.button.feedback")}
                 onClick={() => setFeedbackModalOpen(true)}
                 variant="secondary"
               ></Button>
               <Button
-                text="Hire me"
+                icon={faHandshakeSimple}
+                text={t("hero.button.hire_me")}
                 onClick={handleHireMeClick}
                 variant="tertiary"
               ></Button>

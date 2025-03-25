@@ -13,8 +13,8 @@
   justify-content: center;
   box-sizing: border-box;
   text-align: center;
-  gap: 0.5rem;
-  height: auto;
+  gap: 0.875rem;
+  height: 3rem;
   width: 100%;
   padding: 0.75rem 1.5rem;
   border: none;
@@ -27,6 +27,7 @@
   &:disabled {
     background: abs.$grey;
     color: #666;
+    filter: none;
     cursor: default;
     box-shadow: none;
     &:hover {
@@ -44,6 +45,7 @@
 /* Variants */
 .primary {
   background: abs.$dark-purple;
+  filter: drop-shadow(0px 0px 4px black);
   &:hover {
     background: abs.$hover-purple;
     /*  box-shadow: 0px 2px 10px abs.$dark-purple-rgba; */
@@ -57,12 +59,15 @@
 
 .secondary {
   background: abs.$dark-grey;
-  box-shadow: abs.$sc-shdw-grey;
+  /* box-shadow: abs.$sc-shdw-grey; */
+  filter: drop-shadow(0px 0px 4px black);
+
   &:hover {
-    background: abs.$grey;
-    box-shadow: abs.$sc-shdw-purple;
+    /* background: abs.$grey; */
+    /* box-shadow: abs.$sc-shdw-purple; */
+    color: abs.$hover-purple;
+    transform: scale(1.025);
     &:active {
-      background-color: abs.$active-purple;
       transform: scale(0.95);
     }
   }
@@ -116,6 +121,8 @@
   background: abs.$light-grey;
   color: abs.$dark-grey;
   font-weight: 700;
+  filter: drop-shadow(0px 0px 4px black);
+
   &:hover {
     /* font-size: 1.1rem; */
     transform: translateX(0.25rem); /* scaleX(1.025); */

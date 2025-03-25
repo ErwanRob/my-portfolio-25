@@ -4,12 +4,15 @@ import HorizontalScroller from "./HorizontalScroller/HorizontalScroller";
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "motion/react";
 import { backOut } from "motion";
-import ParticlesComponent from "../ParticlesComponent";
+import ParticlesComponent from "../common/ParticlesComponent";
 import useMediaQuery from "../Hooks/useMediaQuery";
+import { useTranslation } from "react-i18next";
 
 const Projects = () => {
   const targetRef = useRef(null);
+  const { t } = useTranslation();
 
+  //MediaQuery
   const isXSmall = useMediaQuery("(max-width: 480px)");
   const isSmall = useMediaQuery("(max-width: 768px)");
 
@@ -81,7 +84,7 @@ const Projects = () => {
                 id="tsparticlesProjects"
                 direction="top"
                 speed={1.75}
-                pushQuantity={2}
+                pushQuantity={1}
               />
             )}
         </motion.div>
@@ -96,7 +99,7 @@ const Projects = () => {
               whileInView={{ x: "0", opacity: 1 }}
               transition={{ duration: 1, ease: backOut }}
             >
-              P.R
+              {t("projects.sectionTitle.left")}
             </motion.h3>
             <GlowingPlanet
               yTransform={isXSmall ? null : yTransform}
@@ -116,7 +119,7 @@ const Projects = () => {
               }}
               transition={{ duration: 1, ease: backOut }}
             >
-              J.E.C.T.S_
+              {t("projects.sectionTitle.right")}
             </motion.h3>
           </div>
         </div>

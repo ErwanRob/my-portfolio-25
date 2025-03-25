@@ -106,12 +106,14 @@
       align-items: center;
       font-size: 0.875rem;
       /*   font-size: 1.25rem; */
+      font-size: 1rem;
       font-weight: 500;
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 2rem;
-      height: 2rem;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      transform: translate(-50%, 50%);
+      width: 2.25rem;
       background: abs.$grey;
       border: 2px solid abs.$mid-purple;
       border-radius: 50%;

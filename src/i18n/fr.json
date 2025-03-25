@@ -1,0 +1,293 @@
+{
+  "header": {
+    "home": "Accueil",
+    "about": "Profil",
+    "projects": "Projets",
+    "skills": "Compétences",
+    "contact": "Contact"
+  },
+
+  "navigation": {
+    "home": "Accueil",
+    "about": "Profil",
+    "projects": "Projets",
+    "skills": "Compétences",
+    "contact": "Contact"
+  },
+
+  "feedbackForm": {
+    "labels": {
+      "label_name": "Name",
+      "label_rating": "Note :",
+      "label_message": "Message"
+    },
+    "placeholder": {
+      "placeholder_name": "Nom / Prénom",
+      "placeholder_message": "« Vous avez trouvé un bug ? Une suggestion ? Vos retours sont les bienvenus et grandement appréciés ! 😊 »"
+    },
+    "submit": "J'envoie mon avis !",
+    "thanks": "Merci pour votre retour !"
+  },
+
+  "hireMeForm": {
+    "headline": {
+      "ready": "Prêt",
+      "collaborate": "à collaborer ?",
+      "share": "Partagez",
+      "details": "votre projet."
+    },
+    "labels": {
+      "label_name": "Nom",
+      "label_email": "Email",
+      "label_phone": "Téléphone",
+      "label_organization": "Organisation / Entreprise",
+      "label_object": "Objet / Intitulé du projet",
+      "label_deadline": "Date limite",
+      "label_message": "Message"
+    },
+    "placeholder": {
+      "placeholder_name": "Nom*",
+      "placeholder_email": "Email*",
+      "placeholder_phone": "Téléphone",
+      "placeholder_organization": "Organisation / Entreprise",
+      "placeholder_object": "Objet / Intitulé du projet*",
+      "placeholder_deadline": "Une date limite ?",
+      "placeholder_message": "Parlez-moi de votre projet*"
+    },
+    "button": {
+      "cancel": "Annuler",
+      "send": "Envoyer",
+      "sending": "Envoi en cours ...",
+      "close": "Fermer"
+    },
+    "confirmation": {
+      "message_sent": "Message envoyé.",
+      "talkSoon": "Je vous répondrai bientôt.",
+      "thanks": "Merci !"
+    }
+  },
+
+  "hero": {
+    "welcome_message": "Bienvenue.",
+    "name": "Erwan Robin",
+    "job": "Développeur Front-End",
+    "button": {
+      "github": "GitHub",
+      "download": "C.V.",
+      "feedback": "Votre avis",
+      "hire_me": "Votre projet"
+    }
+  },
+
+  "aboutMe": {
+    "sectionTitle": ["À", ".", "P", "R", "O", "P", "O", "S"],
+    "phrasesHeadline": [
+      " BONJOUR, JE SUIS UN DÉVELOPPEUR FRONT-END PASSIONNÉ,"
+    ],
+    "phrasesHeadlineBis": [
+      "DÉVOUÉ À CONCEVOIR DES SITES WEB ATTRAYANTS ET CONVIVIAUX."
+    ],
+    "phraseBuildSomething": ["RÉALISONS VOTRE PROJET ENSEMBLE"],
+    "pPhrasesList": [
+      {
+        "phrase": "J'associe un design épuré et moderne avec des fonctionnalités sans faille",
+        "variant": "secondary",
+        "align": "left"
+      },
+      {
+        "phrase": "pour offrir des solutions à la fois esthétiques et performantes.",
+        "variant": "secondary",
+        "align": "left"
+      },
+      {
+        "phrase": "Que ce soit pour concevoir des mises en page adaptatives,",
+        "variant": "secondary",
+        "align": "left"
+      },
+      {
+        "phrase": "ou pour créer des interfaces utilisateur intuitives,",
+        "variant": "secondary",
+        "align": "left"
+      },
+      {
+        "phrase": "ou pour optimiser des sites web pour la performance et le référencement,",
+        "variant": "secondary",
+        "align": "left"
+      },
+      {
+        "phrase": "mon objectif est de fournir une valeur mesurable à mes clients.",
+        "variant": "secondary",
+        "align": "left"
+      },
+      {
+        "phrase": "Je suis fier de résoudre des problèmes et de transformer des idées en réalité.",
+        "variant": "secondary",
+        "align": "left"
+      },
+      {
+        "phrase": "Je m'engage à rester à la pointe du développement web",
+        "variant": "secondary",
+        "align": "left"
+      },
+      {
+        "phrase": "en concrétisant votre vision avec des solutions percutantes, efficaces et évolutives.",
+        "variant": "secondary",
+        "align": "left"
+      }
+    ],
+    "allPhrases": [
+      "Je me spécialise dans l'alliance d'un design épuré et moderne à une fonctionnalité sans faille pour offrir des solutions non seulement esthétiques, mais également hautement performantes. Qu'il s'agisse de concevoir des mises en page responsives, de créer des interfaces utilisateur intuitives ou d'optimiser des sites web pour la performance et le référencement, mon objectif est de fournir une valeur mesurable à mes clients. Je suis fier de résoudre des problèmes et de transformer des idées en réalité avec précision et créativité. Je m'engage à rester à la pointe des pratiques de développement web, aidant ainsi mes clients à concrétiser leur vision grâce à des solutions percutantes, efficaces et évolutives."
+    ],
+    "allHeadPhrases": [
+      "Hi, i'm a passionate front-end developer, dedicated to crafting engaging and user-friendly websites."
+    ]
+  },
+
+  "projects": {
+    "sectionTitle": {
+      "left": "P.R",
+      "right": "J.E.T.S_"
+    },
+    "projectsCard": {
+      "project1": {
+        "title": "T.M.P.O",
+        "description": "Site de pet sitting, à venir"
+      },
+      "project2": {
+        "title": "Project 2 T.B.D",
+        "description": "Pas encore de description"
+      },
+      "project3": {
+        "title": "Project 3 T.B.D",
+        "description": "Pas encore de description"
+      },
+      "project4": {
+        "title": "Project 4 T.B.D",
+        "description": "Pas encore de description"
+      }
+    }
+  },
+
+  "skills": {
+    "sectionTitle": "Outils & Compétences"
+  },
+
+  "contact": {
+    "headLine": {
+      "head1": "Envoyez un avis.",
+      "head2": "Vos questions.",
+      "head3": "Contactez.",
+      "head4": "Engagez"
+    },
+    "info": {
+      "email": "erobin.contact@gmail.com",
+      "phone": "+33 (0)6 10 50 28 37",
+      "address": "Strasbourg (67)",
+      "country": "France"
+    },
+    "links": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "instagram": "Instagram",
+      "download": "C.V."
+    },
+    "contactForm": {
+      "instructions": {
+        "gotFeedback": "Vous avez une question? ",
+        "useForm": "Utilisez le formulaire ci-dessous pour me contacter.",
+        "comprehensive": "Pour de plus amples informations,",
+        "prefer": "préférez le bouton ",
+        "hireMeLink": "Votre projet ",
+        "byEmail": "ou contactez-moi par email."
+      },
+      "labels": {
+        "label_name": "Nom",
+        "label_email": "Email",
+        "label_message": "Message"
+      },
+      "placeholder": {
+        "placeholder_name": "Nom*",
+        "placeholder_email": "Email*",
+        "placeholder_message": "Votre message*"
+      },
+      "confirmation": {
+        "message_sent": "Message envoyé.",
+        "thanks": "Merci !"
+      },
+      "button": {
+        "send": "Envoyer mon message",
+        "sending": "Envoi en cours ...",
+        "close": "Fermer"
+      }
+    }
+  },
+  "footer": {
+    "builtWith": "Créer grâce à React.js & Motion • Déployé sur",
+    "vercel": "Vercel",
+    "legal": "Mentions légales",
+    "lets_connect": "Connectons-nous !",
+    "madeWith": "Fait avec ❤️ par Erwan Robin",
+    "copyright": "© 2025 Erwan Robin. Tous droits réservés."
+  },
+
+  "legalMentions": {
+    "title": "MENTIONS LÉGALES",
+    "sections": {
+      "sitePublisher": {
+        "title": "1. Éditeur du site",
+        "details": [
+          "Erwan ROBIN",
+          "Résidence : Strasbourg (67100)",
+          "Contact : erobin.contact@gmail.com",
+          "Tél : +33 (0)6 10 50 28 37"
+        ]
+      },
+      "directorOfPublication": {
+        "title": "2. Directeur de la publication",
+        "text": "Le directeur responsable du contenu du site est :",
+        "directorName": "Erwan ROBIN"
+      },
+      "hostingProvider": {
+        "title": "3. Hébergeur",
+        "text": "Ce site est hébergé par :",
+        "companyName": "Vercel, Inc.",
+        "address": "Adresse : 548 Market St, Suite 255, San Francisco, CA 94104, USA.",
+        "note": "Téléphone : Vercel ne publie pas de numéro de téléphone de manière régulière.",
+        "note2": "Pour toute question concernant l'hébergement, veuillez consulter leur site officiel."
+      },
+      "dataProtection": {
+        "title": "4. Protection des données & Traitement via Formspree",
+        "text": "Le site ne collecte pas directement de données personnelles. Cependant, le formulaire de contact est géré par le service tiers ",
+        "serviceName": "Formspree.",
+        "dataProcessing": {
+          "title": "Traitement des données : ",
+          "text": "Les informations saisies dans le formulaire de contact (comme l'adresse e-mail) sont traitées par Formspree conformément à leur politique de confidentialité."
+        },
+        "userRights": {
+          "title": "Droits des utilisateurs : ",
+          "text": "Les utilisateurs ont le droit d'accéder, de corriger et de supprimer leurs données personnelles. Pour exercer ces droits ou pour toute question concernant le traitement de vos données, veuillez consulter la politique de confidentialité de Formspree ou nous contacter en utilisant les coordonnées fournies ci-dessus."
+        }
+      },
+      "cookies": {
+        "title": "5. Cookies",
+        "text": "Ce site n'utilise pas de cookies."
+      },
+      "intellectualProperty": {
+        "title": "6. Propriété intellectuelle",
+        "text": "L'ensemble du contenu de ce site (y compris les textes, images, vidéos, etc.) est la propriété exclusive de",
+        "propertyOwner": "Erwan ROBIN",
+        "text2": ". Toute reproduction ou représentation totale ou partielle de ce site sans l'autorisation expresse de l'éditeur est interdite."
+      },
+      "externalLinks": {
+        "title": "7. Liens externes",
+        "text": "Le site inclut des liens vers mes profils professionnels sur",
+        "links": "Github, LinkedIn et Instagram",
+        "text2": "Ces liens sont fournis pour faciliter l'accès à mes différents réseaux. Ils sont indépendants de ce site et je ne peux être tenu responsable du contenu de ces sites externes. Il est recommandé de consulter directement les conditions d'utilisation et les politiques de confidentialité de ces plateformes."
+      },
+      "legalCompliance": {
+        "title": "Conformité légale",
+        "text": "Ces mentions légales ont été rédigées conformément à la Loi française n°2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (LCEN)."
+      }
+    }
+  }
+}

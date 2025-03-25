@@ -1,0 +1,286 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+
+  "navigation": {
+    "home": "Home",
+    "about": "About Me",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+
+  "feedbackForm": {
+    "labels": {
+      "label_name": "Name",
+      "label_rating": "Rating :",
+      "label_message": "Message"
+    },
+    "placeholder": {
+      "placeholder_name": "First / Last Name",
+      "placeholder_message": "Found a bug ? Have a suggestion ? Feedback is welcome and greatly appreciated! 😊"
+    },
+    "submit": "Send Feedback",
+    "thanks": "Thank you for your feedback!"
+  },
+
+  "hireMeForm": {
+    "headline": {
+      "ready": "Ready",
+      "collaborate": "to collaborate ?",
+      "share": "Share",
+      "details": "Your Project Details Below."
+    },
+    "labels": {
+      "label_name": "Nom",
+      "label_email": "Email",
+      "label_phone": "Phone number",
+      "label_organization": "Organization / Company",
+      "label_object": "Object / Project name*",
+      "label_deadline": "DeadLine",
+      "label_message": "Message"
+    },
+    "placeholder": {
+      "placeholder_name": "Name*",
+      "placeholder_email": "Email*",
+      "placeholder_phone": "Phone number",
+      "placeholder_organization": "Organization / Company",
+      "placeholder_object": "Object / Project name*",
+      "placeholder_deadline": "Any Deadline?",
+      "placeholder_message": "Tell me about your project *"
+    },
+    "button": {
+      "cancel": "Cancel",
+      "send": "Send",
+      "sending": "Sending ...",
+      "close": "Close"
+    },
+    "confirmation": {
+      "message_sent": "Message sent.",
+      "talkSoon": "I will get back to you soon.",
+      "thanks": "Thank you!"
+    }
+  },
+
+  "hero": {
+    "welcome_message": "Welcome.",
+    "name": "Erwan Robin",
+    "job": "Front-End developper",
+    "button": {
+      "github": "GitHub",
+      "download": "C.V.",
+      "feedback": "Feedbacks",
+      "hire_me": "Hire me"
+    }
+  },
+
+  "aboutMe": {
+    "sectionTitle": ["A", "B", "O", "U", "T", ".", "M", "E"],
+    "phrasesHeadline": ["HI, I'M A PASSIONATE FRONT-END DEVELOPER,"],
+    "phrasesHeadlineBis": [
+      "DEDICATED TO CRAFTING ENGAGING AND USER-FRIENDLY WEBSITES."
+    ],
+    "phraseBuildSomething": ["LET'S CREATE SOMETHING TOGETHER."],
+    "pPhrasesList": [
+      {
+        "phrase": "I specialize in blending clean, modern design with seamless functionality",
+        "variant": "secondary",
+        "align": "left"
+      },
+      {
+        "phrase": "to deliver solutions that are not only visually appealing but also highly effective.",
+        "variant": "secondary",
+        "align": "left"
+      },
+      {
+        "phrase": "Whether it's building responsive layouts, creating intuitive user interfaces,",
+        "variant": "secondary",
+        "align": "left"
+      },
+      {
+        "phrase": "or optimizing websites for performance and SEO, my focus is on delivering",
+        "variant": "secondary",
+        "align": "left"
+      },
+      {
+        "phrase": "measurable value to my clients. I take pride in solving problems and turning",
+        "variant": "secondary",
+        "align": "left"
+      },
+      {
+        "phrase": "ideas into reality with precision and creativity.",
+        "variant": "secondary",
+        "align": "left"
+      },
+      {
+        "phrase": "I'm committed to staying at the forefront of web development practices,",
+        "variant": "secondary",
+        "align": "left"
+      },
+      {
+        "phrase": "helping clients achieve their vision with impactful, efficient, scalable solutions.",
+        "variant": "secondary",
+        "align": "left"
+      }
+    ],
+    "allPhrases": [
+      "I specialize in blending clean, modern design with seamless functionality to deliver solutions that are not only visually appealing but also highly effective. Whether it's building responsive layouts, creating intuitive user interfaces, or optimizing websites for performance and SEO, my focus is on delivering measurable value to my clients. I take pride in solving problems and turning ideas into reality with precision and creativity. I'm committed to staying at the forefront of web development practices, helping clients achieve their vision with impactful, efficient, scalable solutions."
+    ],
+    "allHeadPhrases": [
+      "Hi, i'm a passionate front-end developer, dedicated to crafting engaging and user-friendly websites."
+    ]
+  },
+
+  "projects": {
+    "sectionTitle": {
+      "left": "P.R",
+      "right": "J.E.C.T.S_"
+    },
+    "projectsCard": {
+      "project1": {
+        "title": "TMPO",
+        "description": "Pet sitting Website, to be released soon"
+      },
+      "project2": {
+        "title": "Project 2 T.B.D",
+        "description": "No description yet"
+      },
+      "project3": {
+        "title": "Project 3 T.B.D",
+        "description": "No description yet"
+      },
+      "project4": {
+        "title": "Project 4 T.B.D",
+        "description": "No description yet"
+      }
+    }
+  },
+
+  "skills": {
+    "sectionTitle": "Skills & Tools"
+  },
+
+  "contact": {
+    "headLine": {
+      "head1": "Send me Feedbacks.",
+      "head2": "Ask any questions.",
+      "head3": "Get in touch.",
+      "head4": "Hire me"
+    },
+    "info": {
+      "email": "erobin.contact@gmail.com",
+      "phone": "+33 (0)6 10 50 28 37",
+      "address": "Strasbourg (67)",
+      "country": "France"
+    },
+    "links": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "instagram": "Instagram",
+      "download": "C.V."
+    },
+    "contactForm": {
+      "instructions": {
+        "gotFeedback": "Got a quick question? ",
+        "useForm": "Use the form below and i will get back to you shortly. ",
+        "comprehensive": "For comprehensive information,",
+        "prefer": "prefer the ",
+        "hireMeLink": "Hire me ",
+        "byEmail": "button or contact me by email."
+      },
+      "labels": {
+        "label_name": "Name",
+        "label_email": "Email",
+        "label_message": "Message"
+      },
+      "placeholder": {
+        "placeholder_name": "Name*",
+        "placeholder_email": "Email*",
+        "placeholder_message": "Your message*"
+      },
+      "confirmation": {
+        "message_sent": "Message sent.",
+        "thanks": "Thank you!"
+      },
+      "button": {
+        "send": "Send message",
+        "sending": "Sending ...",
+        "close": "Close"
+      }
+    }
+  },
+  "footer": {
+    "builtWith": "Built with React.js & Motion • Deployed on",
+    "vercel": "Vercel",
+    "legal": "Legal Mentions",
+    "lets_connect": "Let's connect !",
+    "madeWith": "Made with ❤️ by Erwan Robin",
+    "copyright": "© 2025 Erwan Robin. All rights reserved."
+  },
+
+  "legalMentions": {
+    "title": "LEGAL NOTICE",
+    "sections": {
+      "sitePublisher": {
+        "title": "1. Site Publisher",
+        "details": [
+          "Erwan ROBIN",
+          "Residence: Strasbourg (67100)",
+          "Contact: erobin.contact@gmail.com",
+          "Tel: +33 (0)6 10 50 28 37"
+        ]
+      },
+      "directorOfPublication": {
+        "title": "2. Director of Publication",
+        "text": "The director responsible for the website's content is:",
+        "directorName": "Erwan ROBIN"
+      },
+      "hostingProvider": {
+        "title": "3. Hosting Provider",
+        "text": "This website is hosted by:",
+        "companyName": "Vercel, Inc.",
+        "address": "Address: 548 Market St, Suite 255, San Francisco, CA 94104, USA.",
+        "note": "Phone: Vercel does not routinely publish a telephone number.",
+        "note2": "For any inquiries regarding hosting, please refer to their official website."
+      },
+      "dataProtection": {
+        "title": "4. Data Protection & Processing via Formspree",
+        "text": "The website does not directly collect personal data. However, the contact form is managed by the third-party service ",
+        "serviceName": "Formspree.",
+        "dataProcessing": {
+          "title": "Data Processing: ",
+          "text": "Information entered in the contact form (such as the email address) is processed by Formspree according to their privacy policy."
+        },
+        "userRights": {
+          "title": "User Rights: ",
+          "text": "Users have the right to access, correct, and delete their personal data. To exercise these rights or for any inquiries regarding the processing of your data, please refer to Formspree's privacy policy or contact us using the details provided above."
+        }
+      },
+      "cookies": {
+        "title": "5. Cookies",
+        "text": "This website does not use cookies."
+      },
+      "intellectualProperty": {
+        "title": "6. Intellectual Property",
+        "text": "All content on this website (including texts, images, videos, etc.) is the exclusive property of",
+        "propertyOwner": "Erwan ROBIN",
+        "text2": ". Any reproduction or representation of all or part of this website without the express permission of the publisher is prohibited."
+      },
+      "externalLinks": {
+        "title": "7. External Links",
+        "text": "The website includes links to my professional profiles on",
+        "links": "Github, LinkedIn, and Instagram",
+        "text2": "These links are provided to facilitate access to my various networks. They are independent of this website, and I cannot be held responsible for the content of these external sites. It is recommended that you review the terms of use and privacy policies directly on these platforms."
+      },
+      "legalCompliance": {
+        "title": "Legal Compliance",
+        "text": "These legal notices have been drafted in accordance with the French Law No. 2004-575 of 21 June 2004 for Confidence in the Digital Economy (LCEN)."
+      }
+    }
+  }
+}

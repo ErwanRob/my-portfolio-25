@@ -7,39 +7,41 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 
 import styles from "./ContactInfo.module.scss";
 
-const headLineList = [
-  { text: "Send me Feedbacks.", span: false },
-  { text: "Ask any questions.", span: false },
-  { text: "Get in touch.", span: false },
-  { text: "Hire me", span: true },
-];
-
-const infoList = [
-  { icon: faEnvelope, text: "erobin.contact@gmail.com" },
-  { icon: faPhone, text: "+33 (0)6 10 50 28 37" },
-  { icon: faHome, text: "Strasbourg (67)" },
-  { icon: faEarthEurope, text: "France" },
-];
-
-const linksList = [
-  { icon: faGithub, text: "GitHub", url: "https://github.com/ErwanRob" },
-  {
-    icon: faLinkedinIn,
-    text: "LinkedIn",
-    url: "https://www.linkedin.com/in/erwan-robin-0b7b58172/",
-  },
-  {
-    icon: faInstagram,
-    text: "Instagram",
-    url: "https://www.instagram.com/erwan.rob/",
-  },
-  { icon: faDownload, text: "C.V.", url: "/cv.pdf", download: true },
-];
-
 const ContactInfo = () => {
+  const { t } = useTranslation();
+  const headLineList = [
+    { text: `${t("contact.headLine.head1")}`, span: false },
+    { text: `${t("contact.headLine.head2")}`, span: false },
+    { text: `${t("contact.headLine.head3")}`, span: false },
+    { text: `${t("contact.headLine.head4")}`, span: true },
+  ];
+
+  const infoList = [
+    { icon: faEnvelope, text: "erobin.contact@gmail.com" },
+    { icon: faPhone, text: "+33 (0)6 10 50 28 37" },
+    { icon: faHome, text: "Strasbourg (67)" },
+    { icon: faEarthEurope, text: "France" },
+  ];
+
+  const linksList = [
+    { icon: faGithub, text: "GitHub", url: "https://github.com/ErwanRob" },
+    {
+      icon: faLinkedinIn,
+      text: "LinkedIn",
+      url: "https://www.linkedin.com/in/erwan-robin-0b7b58172/",
+    },
+    {
+      icon: faInstagram,
+      text: "Instagram",
+      url: "https://www.instagram.com/erwan.rob/",
+    },
+    { icon: faDownload, text: "C.V.", url: "/cv.pdf", download: true },
+  ];
+
   return (
     <div className={styles.contactInfo}>
       <div className={styles["contactInfo__container"]}>

@@ -79,8 +79,15 @@
           color: abs.$light-grey;
           &__modTrig {
             cursor: pointer;
+            text-decoration: underline;
           }
           &__connect {
+            @include abs.flxAllCtrBox;
+            gap: 0.875rem;
+            &__icon {
+              @include abs.flxAllCtrBox;
+              color: abs.$hover-purple2;
+            }
           }
           &__vercel {
             text-decoration: none;

@@ -6,8 +6,23 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import Button from "../Button/Button";
 import TextareaAutosize from "react-textarea-autosize";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
+import { useLenis } from "lenis/react";
 
 const ContactForm = ({ onReset }) => {
+  const { t } = useTranslation();
+
+  const lenis = useLenis();
+  const handleScroll = (target) => {
+    if (lenis) {
+      lenis.scrollTo(target, {
+        duration: 1,
+        easing: (x) => 1 - Math.pow(1 - x, 5),
+        offset: 0,
+        lock: true,
+      });
+    }
+  };
   const [state, handleSubmit] = useForm("xnnjvyye"); // formSpree hook with its id
 
   const formVariants = {
@@ -47,8 +62,6 @@ const ContactForm = ({ onReset }) => {
           <motion.form
             className={styles["contactForm__form"]}
             key="form"
-            action="https://formspree.io/f/xnnjvyye" //formSpree endpoint
-            method="POST"
             initial="initial"
             animate="active"
             variants={formVariants}
@@ -58,9 +71,27 @@ const ContactForm = ({ onReset }) => {
           >
             <div className={styles["contactForm__form__infos"]}>
               <p className={styles["contactForm__form__infos__txt"]}>
-                Got feedback, questions, or a detailed inquiry? <br /> Use the
-                form below for a quick message, or contact me by email for
-                comprehensive information.
+                {t("contact.contactForm.instructions.gotFeedback")}
+              </p>
+              <p className={styles["contactForm__form__infos__txt"]}>
+                {t("contact.contactForm.instructions.useForm")}
+              </p>
+              <p className={styles["contactForm__form__infos__txt"]}>
+                {t("contact.contactForm.instructions.comprehensive")}
+              </p>
+              <p className={styles["contactForm__form__infos__txt"]}>
+                {t("contact.contactForm.instructions.prefer")}
+                <a
+                  href="#hero"
+                  className={styles["contactForm__form__infos__txt__link"]}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleScroll("#hero");
+                  }}
+                >
+                  {t("contact.contactForm.instructions.hireMeLink")}
+                </a>
+                {t("contact.contactForm.instructions.byEmail")}
               </p>
             </div>
 
@@ -68,14 +99,16 @@ const ContactForm = ({ onReset }) => {
               htmlFor="name"
               className={styles["contactForm__form__sr-only"]}
             >
-              Name
+              {t("contact.contactForm.labels.label_name")}
             </label>
             <input
               id="name"
               className={styles["contactForm__form__name"]}
               type="text"
               name="Name"
-              placeholder="Name"
+              placeholder={t(
+                "contact.contactForm.placeholder.placeholder_name"
+              )}
               autoComplete="name"
               required
             />
@@ -84,14 +117,16 @@ const ContactForm = ({ onReset }) => {
               htmlFor="email"
               className={styles["contactForm__form__sr-only"]}
             >
-              Email
+              {t("contact.contactForm.labels.label_email")}
             </label>
             <input
               id="email"
               className={styles["contactForm__form__email"]}
               type="email"
               name="Email"
-              placeholder="Email"
+              placeholder={t(
+                "contact.contactForm.placeholder.placeholder_email"
+              )}
               autoComplete="email"
               required
             />
@@ -105,16 +140,18 @@ const ContactForm = ({ onReset }) => {
               htmlFor="message"
               className={styles["contactForm__form__sr-only"]}
             >
-              Message
+              {t("contact.contactForm.labels.label_message")}
             </label>
             <TextareaAutosize
               data-lenis-prevent
               id="message"
               className={styles["contactForm__form__message"]}
               name="Message"
-              placeholder="Message"
+              placeholder={t(
+                "contact.contactForm.placeholder.placeholder_message"
+              )}
               minRows={3}
-              maxRows={15}
+              maxRows={10}
               required
             />
             <ValidationError
@@ -133,7 +170,11 @@ const ContactForm = ({ onReset }) => {
             />
 
             <Button
-              text="Send"
+              text={
+                state.submitting
+                  ? t("contact.contactForm.button.sending")
+                  : t("contact.contactForm.button.send")
+              }
               type="submit"
               variant="primary"
               disabled={state.submitting}
@@ -164,14 +205,18 @@ const ContactForm = ({ onReset }) => {
               </motion.div>
               <div className={styles["confirmation__content__txt"]}>
                 <p className={styles["confirmation__content__txt__headLine"]}>
-                  Message sent.
+                  {t("contact.contactForm.confirmation.message_sent")}
                 </p>
                 <p className={styles["confirmation__content__txt__subLine"]}>
-                  Thank you!
+                  {t("contact.contactForm.confirmation.thanks")}
                 </p>
               </div>
             </div>
-            <Button text="Close" onClick={onReset} variant="secondary" />
+            <Button
+              text={t("contact.contactForm.button.close")}
+              onClick={onReset}
+              variant="secondary"
+            />
           </motion.div>
         )}
       </AnimatePresence>

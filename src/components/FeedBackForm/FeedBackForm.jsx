@@ -9,11 +9,12 @@ import Button from "../Button/Button";
 import { useForm, ValidationError } from "@formspree/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 
 const FeedBackForm = () => {
-  const [rating, setRating] = useState(5);
-
+  const { t } = useTranslation();
   const [state, handleSubmit] = useForm("mnnjkyzq"); // formSpree hook with its id
+  const [rating, setRating] = useState(5);
 
   const AnimatedEmoji = ({ children }) => (
     <motion.span
@@ -48,8 +49,6 @@ const FeedBackForm = () => {
     <>
       <motion.form
         className={styles.feedBackForm}
-        action="https://formspree.io/f/mnnjkyzq"
-        method="POST"
         onSubmit={handleSubmit}
         initial={{ opacity: 1, x: "0" }}
         animate={state.succeeded && { opacity: 0, x: "-110%" }}
@@ -60,40 +59,59 @@ const FeedBackForm = () => {
             htmlFor="name"
             className={styles["feedBackForm__name__sr-only"]}
           >
-            Name
+            {t("feedbackForm.labels.label_name")}
           </label>
           <input
             className={styles["feedBackForm__name__input"]}
             id="name"
             name="name"
             type="text"
-            placeholder="Full Name"
+            placeholder={t("feedbackForm.placeholder.placeholder_name")}
             required
           />
         </div>
         <ValidationError prefix="Name" field="name" errors={state.errors} />
         <div className={styles["feedBackForm__rating"]}>
+          <label
+            className={styles["feedBackForm__rating__label"]}
+            htmlFor="rating"
+          >
+            {t("feedbackForm.labels.label_rating")}
+          </label>
           <ReactSlider
             className={styles["feedBackForm__rating__slider"]}
             //using renderThumb to customize each thumb
-            renderThumb={(props, state) => (
-              <div {...props} className={styles["feedBackForm__rating__thumb"]}>
-                {state.valueNow}
-              </div>
-            )}
+            renderThumb={(props, state) => {
+              // eslint-disable-next-line react/prop-types
+              const { key, ...restProps } = props;
+              return (
+                <motion.div
+                  initial={{ rotate: 0, scale: 1 }}
+                  whileHover={{ scale: 1.125 }}
+                  whileTap={{ scale: 1.125, rotate: 360 }}
+                  key={key}
+                  {...restProps}
+                  className={styles["feedBackForm__rating__thumb"]}
+                >
+                  {state.valueNow}
+                </motion.div>
+              );
+            }}
             // Using renderTrackto customize each track segment
             renderTrack={(props, state) => {
+              // eslint-disable-next-line react/prop-types
+              const { key, ...restProps } = props;
               const trackClass =
                 state.index === 0
                   ? styles["feedBackForm__rating__track-left"]
                   : styles["feedBackForm__rating__track-right"];
-              return <div {...props} className={trackClass} />;
+              return <div key={key} {...restProps} className={trackClass} />;
             }}
             value={rating}
             onChange={(val) => setRating(val)}
             min={0}
             max={10}
-            step={1}
+            step={0.5}
           />
           {/* Hidden input to submit the value */}
           <div className={styles["feedBackForm__rating__emoji"]}>
@@ -106,14 +124,14 @@ const FeedBackForm = () => {
             htmlFor="message"
             className={styles["feedBackForm__message__sr-only"]}
           >
-            Message
+            {t("feedbackForm.labels.label_message")}
           </label>
           <TextareaAutosize
             data-lenis-prevent
             id="message"
             className={styles["feedBackForm__message__textarea"]}
             name="message"
-            placeholder="Found a bug ? Have a suggestion ? Feedback is welcome and greatly appreciated! 😊"
+            placeholder={t("feedbackForm.placeholder.placeholder_message")}
             minRows={4}
             maxRows={4}
             required
@@ -133,7 +151,7 @@ const FeedBackForm = () => {
         />
         <Button
           type="submit"
-          text="Send Feedback"
+          text={t("feedbackForm.submit")}
           variant="primary"
           disabled={state.submitting}
         />
@@ -158,7 +176,7 @@ const FeedBackForm = () => {
             delay: 0.5,
           }}
         >
-          Thank you for your feedback!
+          {t("feedbackForm.thanks")}
         </motion.p>
         <motion.div
           className={validationStyles["feedBackValidation__checkMark"]}

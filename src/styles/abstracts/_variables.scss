@@ -12,7 +12,7 @@
   /*PreLoader.jsx*/
   --initial-pL-x: 2rem;
   --initial-pL-opacity: 0;
-  --animate-pL-x: -10.25rem;
+  --animate-pL-x: -12rem; //previously -10.25rem and for a long time
   --animate-pL-opacity: 1;
   /*Cursor*/
   --initial-bC-x: 0;
@@ -39,6 +39,15 @@
   --whileInView-imgP-y: 5rem;
   --whileInView-imgP-y: 0;
 
+  @media (max-width: 1920px) {
+    --initial-pL-x: 2rem;
+    --initial-pL-opacity: 0;
+    --animate-pL-x: -10.25rem;
+    --animate-pL-opacity: 1;
+    /*Cursor*/
+    --initial-bC-x: 0;
+    --animate-bC-x: -8.5rem;
+  }
   /*XLarge*/
   @media (max-width: 1536px) {
     /* --initial-pL-x: 2rem;
@@ -55,7 +64,7 @@
   @media (max-width: 1280px) {
     --initial-pL-x: 2rem;
     --initial-pL-opacity: 0;
-    --animate-pL-x: -5rem;
+    --animate-pL-x: -10.25rem;
     --animate-pL-opacity: 1;
     --initial-bC-x: 0rem;
     --animate-bC-x: -8.5rem;
@@ -237,7 +246,7 @@ $bg-gradient-skills: linear-gradient(
 
 $bg-gradient-portrait: radial-gradient(
   circle at 50% 50%,
-  rgba(124, 60, 235, 0.3) 0%,
+  rgba(162, 135, 243, 0.3) 0%,
   rgba(124, 60, 235, 0) 70%,
   rgba(0, 0, 0, 0) 100%
 );

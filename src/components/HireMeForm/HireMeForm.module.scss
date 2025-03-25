@@ -60,34 +60,27 @@
         letter-spacing: 1px;
         line-height: 1;
         text-transform: uppercase;
-        gap: 0.25rem;
+        gap: 0.5rem;
         &__purple {
-          margin: 0 0.25rem;
+          @include abs.flxAllCtrBox;
           color: abs.$dark-purple;
         }
 
         @include abs.respond-to("xl") {
           font-size: 2rem;
         }
+        @include abs.respond-to("lg") {
+          font-size: 1.5rem;
+        }
+        @include abs.respond-to("md") {
+          font-size: 1.5rem;
+        }
+        @include abs.respond-to("sm") {
+          font-size: 0.875rem;
+        }
+
         @include abs.respond-to("xs") {
           text-align: left;
-        }
-
-        @include abs.respond-to-custom("xl", "xl") {
-          font-size: 2rem;
-        }
-
-        @include abs.respond-to-custom("sm", "md") {
-          font-size: 1.5rem;
-        }
-        @include abs.respond-to-custom("xl", "md") {
-          font-size: 2rem;
-        }
-        @include abs.respond-to-custom("sm", "sm") {
-          font-size: 1.25rem;
-        }
-        @include abs.respond-to-custom("lg", "sm") {
-          font-size: 1.5rem;
         }
       }
     }

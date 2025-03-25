@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
-import Header from "./Header/Header";
-import Settings from "./Settings/Settings";
-import SideMenuNavigation from "./SideMenuNavigation/SideMenuNavigation";
+import Header from "../Header/Header";
+import Settings from "../Settings/Settings";
+import SideMenuNavigation from "../SideMenuNavigation/SideMenuNavigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-import useMediaQuery from "./Hooks/useMediaQuery";
+import useMediaQuery from "../Hooks/useMediaQuery";
 
 const AllMenuWrapper = () => {
+  //MediaQuery
   const isMedium = useMediaQuery("(max-width: 1024px)");
+
+  //states
   const [isSideMenuVisible, setSideMenuVisible] = useState(false);
-  const [isHeaderVisible, setHeaderVisible] = useState(true);
+  const [isHeaderVisible, setHeaderVisible] = useState(false);
   const [isSettingsVisible, setSettingsVisible] = useState(false);
 
   useEffect(() => {

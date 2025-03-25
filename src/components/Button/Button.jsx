@@ -10,6 +10,7 @@ const Button = ({
   text,
   onClick,
   variant = "primary",
+  iconSide = "left",
   disabled = false,
 }) => {
   //Render a tag if href
@@ -22,10 +23,16 @@ const Button = ({
         rel="noopener noreferrer"
         className={`${styles.button} ${styles[variant]}`}
       >
-        {icon && <FontAwesomeIcon icon={icon} />} {text}
+        {iconSide === "left" && icon && <FontAwesomeIcon icon={icon} />}
+        {text}
+        {iconSide === "right" && icon && <FontAwesomeIcon icon={icon} />}
       </a>
     );
   }
+  /*       {icon && <FontAwesomeIcon icon={icon} />} {text}
+      </a>
+    );
+  } */
 
   //otherwise, button
   return (
@@ -35,7 +42,8 @@ const Button = ({
       disabled={disabled}
       type={type}
     >
-      {icon && <FontAwesomeIcon icon={icon} />} {text}
+      {iconSide === "left" && icon && <FontAwesomeIcon icon={icon} />} {text}
+      {iconSide === "right" && icon && <FontAwesomeIcon icon={icon} />}
     </button>
   );
 };
@@ -56,6 +64,7 @@ Button.propTypes = {
     "tertiary",
     "danger",
   ]), // Only specific values are allowed
+  iconSide: PropTypes.oneOf(["left", "right"]), // Only specific values are allowed
   disabled: PropTypes.bool, // Disabled is optional and should be a boolean
 };
 

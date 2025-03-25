@@ -111,6 +111,10 @@
       gap: 2rem;
       box-sizing: border-box;
 
+      @include abs.respond-to("xxl") {
+        gap: 1rem;
+      }
+
       @include abs.respond-to("xl") {
         gap: 1rem;
         padding: 0 0 0 1.5rem;
@@ -295,49 +299,6 @@
           height: 100%;
           object-fit: contain;
           box-sizing: border-box;
-          /*   clip-path: circle(65% at 50% 50%); */
-          /*   @include abs.respond-to("xl") {
-            clip-path: none;
-          } */
-        }
-
-        &__canvas {
-          z-index: 3;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          clip-path: circle(65% at 50% 50%);
-          @include abs.respond-to("xl") {
-            display: none;
-          }
-          @include abs.respond-to("xs") {
-            display: none;
-          }
-        }
-
-        &__resetButton {
-          @include abs.flxAllCtrBox;
-          width: 3rem;
-          height: 1rem;
-          position: absolute;
-          bottom: 5%; // Adjust position as needed
-          left: 50%;
-          transform: translateX(-50%);
-          padding: 10px 20px;
-          font-size: 0.875rem;
-          color: white;
-          background-color: #a287f3;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          z-index: 10; // Ensure it appears above the canvas
-          transition: background-color 0.3s;
-
-          &:hover {
-            background-color: #8c6de3; // Slightly darker shade on hover
-          }
         }
       }
     }
@@ -346,13 +307,17 @@
       z-index: 1;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      /* justify-content: flex-end; */
       align-items: flex-start;
       width: auto;
       height: 100%;
       padding: 0;
       box-sizing: border-box;
       gap: 3.5rem;
+
+      position: relative;
+      justify-content: flex-start;
+
       @include abs.respond-to("xl") {
         gap: 1rem;
         padding: 0 0 1rem 0;
@@ -369,15 +334,22 @@
         gap: 1rem;
       }
       &__maskTextWrapper {
+        margin-top: 3rem;
         display: flex;
         position: relative;
         flex-direction: column;
         width: 100%;
         gap: 0.25rem;
         box-sizing: border-box;
+        @include abs.respond-to("xl") {
+          margin-top: 0;
+        }
         @include abs.respond-to("xs") {
           text-align: justify;
           font-weight: 200;
+        }
+        @include abs.respond-to-custom("xl", "sm") {
+          margin-top: 0;
         }
         @include abs.respond-to-custom("xl", "xs") {
           flex-direction: row;
@@ -388,7 +360,13 @@
       &__subLine {
         display: flex;
         width: 100%;
+        margin-bottom: -0.5rem;
+
+        position: absolute;
+        bottom: 0;
+
         @include abs.respond-to("xl") {
+          position: relative;
           justify-content: flex-end;
         }
 

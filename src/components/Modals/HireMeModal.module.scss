@@ -28,11 +28,15 @@
     box-sizing: border-box;
     font-size: 1.25rem;
     font-weight: 200;
-    @include abs.respond-to("md") {
-      width: 100%;
-    }
+
     @include abs.respond-to-custom("sm", "sm") {
       padding: 1rem;
+    }
+    @include abs.respond-to-custom("sm", "lg") {
+      width: 80%;
+    }
+    @include abs.respond-to("md") {
+      width: 100%;
     }
   }
 }

@@ -69,16 +69,17 @@ const Settings = ({ isSettingsVisible, toggleSettings }) => {
       <ul className={styles["settings__list"]}>
         {settingsList.map((item, index) => (
           <li className={styles["settings__list__item"]} key={index}>
-            <motion.a
-              href="#"
+            <p
+              /*   href="#" */
               className={styles["settings__list__item__title"]}
-              initial={{ scale: 1 }}
-              whileHover={{ scaleX: 1.05, color: "#8b5cf6" }}
-              transition={{ duration: 0.05, ease: "easeInOut" }}
+              /*     initial={{ scale: 1 }} */
+              /* whileHover={{ scaleX: 1.05, color: "#8b5cf6" }} */
+              /*   whileHover={{ scaleX: 1.05 }}
+              transition={{ duration: 0.05, ease: "easeInOut" }} */
             >
               {item.icon}
               {item.title}
-            </motion.a>
+            </p>
             <p className={styles["settings__list__item__sub"]}>
               {item.description}
             </p>

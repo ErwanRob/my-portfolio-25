@@ -37,8 +37,8 @@
     @include abs.flxAllCtrBox;
     margin: abs.$headerHeight 0;
     top: 1rem;
-    width: 8rem;
-    height: 8rem;
+    width: 4rem;
+    height: 4rem;
     color: abs.$mid-grey;
     cursor: pointer;
     color: abs.$light-grey;
@@ -56,8 +56,7 @@
       width: 100%;
 
       &__title {
-        font-family: base.$main-btn-font-family;
-        font-weight: base.$main-btn-font-weight;
+        font-weight: 600;
         font-size: base.$main-btn-font-size;
         letter-spacing: base.$main-btn-spacing;
         z-index: 10;
@@ -65,10 +64,9 @@
         text-decoration: solid;
         box-sizing: border-box;
         width: 100%;
-        padding: 0.75rem 1.5rem;
-        margin: 2rem 0 0 0;
+        /* padding: 0.75rem 1.5rem; */
+        /*   margin: 2rem 0 0 0; */
         text-align: start;
-        color: abs.$mid-grey;
         font-size: 1.5rem;
         transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
         overflow: hidden;
@@ -78,10 +76,12 @@
         /* &:hover {
           color: abs.$hover-purple;
         } */
+
+        /* color: abs.$mid-grey; */
+        color: abs.$light-grey-rgba;
       }
 
       &__sub {
-        font-family: base.$main-btn-font-family;
         font-size: 1rem;
         font-weight: 100;
         margin: 0;
@@ -91,10 +91,13 @@
         width: auto;
         padding: 0 1.5rem;
         text-align: start;
-        color: abs.$mid-grey;
         overflow: hidden;
         white-space: nowrap;
         user-select: none;
+
+        /* color: abs.$mid-grey; */
+        color: abs.$light-grey-rgba;
+        font-weight: 200;
       }
     }
   }

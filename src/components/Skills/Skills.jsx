@@ -1,17 +1,19 @@
 import styles from "./Skills.module.scss";
 import { SkillsList } from "./SkillsList";
-/* import MagneticPull from "../MagneticPull"; */
 import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import { backOut } from "motion";
 import useMediaQuery from "../Hooks/useMediaQuery";
-
-/* const MagnetComponentClassName = styles["skills__container__grid__item__logo"]; */
+import { useTranslation } from "react-i18next";
 
 const Skills = () => {
+  const { t } = useTranslation();
+  //MediaQuery
   const isXSmall = useMediaQuery("(max-width: 480px)");
   const isSmall = useMediaQuery("(max-width: 768px)");
   const isMedium = useMediaQuery("(max-width: 1024px)");
+
+  //custom trigger for animation
   const { ref, inView } = useInView({
     threshold: 1,
     rootMargin: "300px 0px 300px 0px",
@@ -34,7 +36,9 @@ const Skills = () => {
   return (
     <div className={styles.skills} id="skills">
       <div className={styles["skills__container"]}>
-        <h3 className={styles["skills__container__title"]}>Skills & Tools</h3>
+        <h3 className={styles["skills__container__title"]}>
+          {t("skills.sectionTitle")}
+        </h3>
         <div className={styles["skills__container__grid"]}>
           {SkillsList.map((skill, index) => (
             <motion.div

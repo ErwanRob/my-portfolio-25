@@ -3,8 +3,11 @@ import PreLoader from "../../PreLoader/PreLoader";
 import { motion } from "motion/react";
 import { backIn, easeInOut, spring } from "motion";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const HeadLine = () => {
+  const { t } = useTranslation();
+
   const [isPreLoading, setIsPreLoading] = useState(true);
   const [shouldRenderPreLoader, setShouldRenderPreLoader] = useState(true);
   const handlePreLoaderExit = () => {
@@ -52,7 +55,7 @@ const HeadLine = () => {
           type: spring,
         }}
       >
-        Welcome.
+        {t("hero.welcome_message")}
       </motion.h1>
       <motion.span
         className={styles["headLine__blinkingCursor"]}

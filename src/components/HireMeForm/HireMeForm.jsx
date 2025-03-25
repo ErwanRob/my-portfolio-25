@@ -8,8 +8,10 @@ import Button from "../Button/Button";
 import TextareaAutosize from "react-textarea-autosize";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 
 const HireMeForm = ({ onClose }) => {
+  const { t } = useTranslation();
   const { minRows, maxRows } = useResponsiveRows();
   const [state, handleSubmit] = useForm("mpwpqvad"); // formSpree hook with its id
 
@@ -90,9 +92,9 @@ const HireMeForm = ({ onClose }) => {
                   transition={{ duration: 0.5, ease: "backOut", delay: 0.5 }}
                   viewport={{ once: true }}
                 >
-                  Ready
+                  {t("hireMeForm.headline.ready")}
                 </motion.span>
-                to Collaborate ?
+                {t("hireMeForm.headline.collaborate")}
               </p>
               <p className={styles["hireMeForm__form__headline__txt"]}>
                 <motion.span
@@ -102,9 +104,9 @@ const HireMeForm = ({ onClose }) => {
                   transition={{ duration: 0.4, ease: "backOut", delay: 0.75 }}
                   viewport={{ once: true }}
                 >
-                  Share
+                  {t("hireMeForm.headline.share")}
                 </motion.span>
-                Your Project Details Below.
+                {t("hireMeForm.headline.details")}
               </p>
             </div>
             <motion.div
@@ -115,14 +117,14 @@ const HireMeForm = ({ onClose }) => {
               viewport={{ once: true }}
             >
               <label htmlFor="name" className={styles.srOnly}>
-                Name
+                {t("hireMeForm.labels.label_name")}
               </label>
               <input
                 id="name"
                 className={styles["hireMeForm__form__userInfos__name"]}
                 type="text"
                 name="Name"
-                placeholder="Name*"
+                placeholder={t("hireMeForm.placeholder.placeholder_name")}
                 autoComplete="name"
                 onFocus={() => onFieldFocus("name")}
                 required
@@ -134,14 +136,14 @@ const HireMeForm = ({ onClose }) => {
                 errors={state.errors}
               />
               <label htmlFor="email" className={styles.srOnly}>
-                Email
+                {t("hireMeForm.labels.label_email")}
               </label>
               <input
                 id="email"
                 className={styles["hireMeForm__form__userInfos__email"]}
                 type="email"
                 name="Email"
-                placeholder="Email*"
+                placeholder={t("hireMeForm.placeholder.placeholder_email")}
                 autoComplete="email"
                 onFocus={() => onFieldFocus("email")}
                 required
@@ -156,14 +158,14 @@ const HireMeForm = ({ onClose }) => {
                 />
               )}
               <label htmlFor="phone" className={styles.srOnly}>
-                Phone number (optional)
+                {t("hireMeForm.labels.label_phone")}
               </label>
               <input
                 id="phone"
                 className={styles["hireMeForm__form__userInfos__phone"]}
                 type="phone"
                 name="phone"
-                placeholder="Phone number"
+                placeholder={t("hireMeForm.placeholder.placeholder_phone")}
                 autoComplete="phone"
                 onFocus={() => onFieldFocus("phone")}
               />
@@ -174,14 +176,16 @@ const HireMeForm = ({ onClose }) => {
                 errors={state.errors}
               />
               <label htmlFor="organization" className={styles.srOnly}>
-                Organization / Company (optional)
+                {t("hireMeForm.labels.label_organization")}
               </label>
               <input
                 id="organization"
                 className={styles["hireMeForm__form__userInfos__organization"]}
                 type="text"
                 name="organization"
-                placeholder="Organization / Company"
+                placeholder={t(
+                  "hireMeForm.placeholder.placeholder_organization"
+                )}
                 autoComplete="organization"
                 onFocus={() => onFieldFocus("organization")}
               />
@@ -203,7 +207,7 @@ const HireMeForm = ({ onClose }) => {
                 className={styles["hireMeForm__form__txtContent__txtProjInfo"]}
               >
                 <label htmlFor="object" className={styles.srOnly}>
-                  Object
+                  {t("hireMeForm.labels.label_object")}
                 </label>
                 <input
                   id="object"
@@ -212,7 +216,7 @@ const HireMeForm = ({ onClose }) => {
                   }
                   type="text"
                   name="object"
-                  placeholder="Object / Project name*"
+                  placeholder={t("hireMeForm.placeholder.placeholder_object")}
                   autoComplete="object"
                   onFocus={() => onFieldFocus("object")}
                   required
@@ -224,7 +228,7 @@ const HireMeForm = ({ onClose }) => {
                   errors={state.errors}
                 />
                 <label htmlFor="deadline" className={styles.srOnly}>
-                  Deadline
+                  {t("hireMeForm.labels.label_deadline")}
                 </label>
                 <input
                   id="deadline"
@@ -235,7 +239,7 @@ const HireMeForm = ({ onClose }) => {
                   }
                   type="text"
                   name="deadline"
-                  placeholder="Any Deadline?"
+                  placeholder={t("hireMeForm.placeholder.placeholder_deadline")}
                   autoComplete="deadline"
                   onFocus={() => onFieldFocus("deadline")}
                 />
@@ -247,14 +251,14 @@ const HireMeForm = ({ onClose }) => {
                 />
               </div>
               <label htmlFor="message" className={styles.srOnly}>
-                Message
+                {t("hireMeForm.labels.label_message")}
               </label>
               <TextareaAutosize
                 /* data-lenis-prevent */
                 id="message"
                 className={styles["hireMeForm__form__txtContent__message"]}
                 name="Message"
-                placeholder="Tell me about your project *"
+                placeholder={t("hireMeForm.placeholder.placeholder_message")}
                 minRows={minRows}
                 maxRows={maxRows}
                 onFocus={() => onFieldFocus("message")}
@@ -283,13 +287,17 @@ const HireMeForm = ({ onClose }) => {
               viewport={{ once: true }}
             >
               <Button
-                text="Cancel"
+                text={t("hireMeForm.button.cancel")}
                 onClick={onClose}
                 variant="secondaryShort"
                 disabled={state.submitting}
               />
               <Button
-                text={state.submitting ? "Sending ..." : "Send"}
+                text={
+                  state.submitting
+                    ? t("hireMeForm.button.sending")
+                    : t("hireMeForm.button.send")
+                }
                 type="submit"
                 variant="primaryShort"
                 disabled={state.submitting}
@@ -321,17 +329,21 @@ const HireMeForm = ({ onClose }) => {
               </motion.div>
               <div className={styles["confirmation__content__txt"]}>
                 <p className={styles["confirmation__content__txt__headLine"]}>
-                  Message sent.
+                  {t("hireMeForm.confirmation.message_sent")}
                 </p>
                 <p className={styles["confirmation__content__txt__subLine"]}>
-                  I will get back to you soon.
+                  {t("hireMeForm.confirmation.talkSoon")}
                 </p>
                 <p className={styles["confirmation__content__txt__thanks"]}>
-                  Thank you!
+                  {t("hireMeForm.confirmation.thanks")}
                 </p>
               </div>
             </div>
-            <Button text="Close" variant="secondaryShort" onClick={onClose} />
+            <Button
+              text={t("hireMeForm.button.close")}
+              variant="secondaryShort"
+              onClick={onClose}
+            />
           </motion.div>
         )}
       </AnimatePresence>

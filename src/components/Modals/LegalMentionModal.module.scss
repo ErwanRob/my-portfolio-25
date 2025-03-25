@@ -58,11 +58,17 @@
       font-weight: 500;
     }
 
+    &__provider {
+      display: flex;
+      flex-direction: column;
+    }
+
     &__personals {
       display: flex;
       flex-direction: column;
     }
     &__dataProcessing {
+      list-style-type: circle;
       display: flex;
       flex-direction: column;
     }

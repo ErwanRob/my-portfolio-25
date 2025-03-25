@@ -33,8 +33,8 @@
 
     @include abs.respond-to-custom("md", "sm") {
       padding: 0rem 0rem 0rem 2rem;
+      gap: 0.5rem;
     }
-
     @include abs.respond-to-custom("md", "xs") {
       padding: 2rem 0rem;
     }
@@ -57,17 +57,18 @@
       width: 100%;
       height: auto;
       padding: 2rem 0rem;
-      gap: 1rem;
+      gap: 0.25rem;
       @include abs.respond-to("xs") {
         padding: 0;
       }
 
       @include abs.respond-to-custom("md", "sm") {
-        padding: 0 0 1rem 0;
+        padding: 0 0 0rem 0;
+        gap: 0;
       }
 
       &__txt {
-        color: abs.$hover-purple2;
+        color: abs.$light-grey;
         text-align: center;
         font-size: 1.25rem;
         font-weight: 200;
@@ -77,6 +78,16 @@
         }
         @include abs.respond-to-custom("md", "sm") {
           font-size: 1rem;
+        }
+        &__link {
+          font-weight: 300;
+          color: abs.$light-grey;
+          text-decoration: none;
+          transition: all 0.15s ease-in-out;
+          -webkit-user-drag: none;
+          &:hover {
+            color: abs.$hover-purple;
+          }
         }
       }
     }
@@ -97,6 +108,9 @@
         color: abs.$hover-purple2;
         user-select: none;
       }
+      @include abs.respond-to-custom("md", "sm") {
+        font-size: 1rem;
+      }
     }
     &__name,
     &__email {
@@ -108,6 +122,10 @@
         color: abs.$hover-purple2;
         user-select: none;
         font-weight: 200;
+      }
+      @include abs.respond-to-custom("md", "sm") {
+        height: 2.5rem;
+        min-height: 2rem;
       }
     }
 
@@ -123,6 +141,10 @@
       scrollbar-color: abs.$hover-purple abs.$dark-grey;
       overscroll-behavior: contain;
       scrollbar-width: thin;
+      box-shadow: none;
+      @include abs.respond-to-custom("md", "sm") {
+        margin: 1rem 0 0.5rem 0;
+      }
     }
 
     &__sendButton {

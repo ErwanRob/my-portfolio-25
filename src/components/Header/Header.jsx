@@ -5,8 +5,10 @@ import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 
 const Header = ({ toggleSettings }) => {
+  const { t } = useTranslation();
   const lenis = useLenis();
   const handleScroll = (target) => {
     if (lenis) {
@@ -50,6 +52,7 @@ const Header = ({ toggleSettings }) => {
           y: -100,
         },
       }}
+      initial="hidden"
       animate={hidden ? "hidden" : "visible"}
       transition={{
         duration: 0.3,
@@ -58,6 +61,7 @@ const Header = ({ toggleSettings }) => {
     >
       <motion.nav
         className={styles["header__nav"]}
+        initial="hidden"
         variants={{
           visible: {
             opacity: 1,
@@ -85,7 +89,7 @@ const Header = ({ toggleSettings }) => {
                 handleScroll("#hero");
               }}
             >
-              Home
+              {t("header.home")}
             </a>
           </li>
           <li className={styles["header__nav__list__item"]}>
@@ -97,7 +101,7 @@ const Header = ({ toggleSettings }) => {
                 handleScroll("#about-me");
               }}
             >
-              About
+              {t("header.about")}
             </a>
           </li>
           <li className={styles["header__nav__list__item"]}>
@@ -109,7 +113,7 @@ const Header = ({ toggleSettings }) => {
                 handleScroll("#projects");
               }}
             >
-              Projects
+              {t("header.projects")}
             </a>
           </li>
           <li className={styles["header__nav__list__item"]}>
@@ -121,7 +125,7 @@ const Header = ({ toggleSettings }) => {
                 handleScroll("#skills");
               }}
             >
-              Skills
+              {t("header.skills")}
             </a>
           </li>
           <li className={styles["header__nav__list__item"]}>
@@ -133,7 +137,7 @@ const Header = ({ toggleSettings }) => {
                 handleScroll("#contact");
               }}
             >
-              Contact
+              {t("header.contact")}
             </a>
           </li>
         </ul>

@@ -7,7 +7,7 @@ const MaskText = ({ phrases, variant = "primary", align = "left" }) => {
   const { ref, inView } = useInView({
     threshold: 1,
     rootMargin: "100px 0px 0px 0px",
-    triggerOnce: true,
+    /*   triggerOnce: true, */
   });
   //Base class and variants modifiers to keep control of base styles anyways.
   const alignmentClass = styles[`maskText--${align}`];
@@ -57,68 +57,6 @@ export default MaskText;
 
 MaskText.propTypes = {
   phrases: PropTypes.arrayOf(PropTypes.string).isRequired,
-  prevPhrases: PropTypes.arrayOf(PropTypes.string),
   variant: PropTypes.oneOf(["primary", "secondary", "tertiary", "danger"]),
   align: PropTypes.oneOf(["center", "left", "right"]),
 };
-
-/*
-props
-prevPhrases = [""], 
-
-animation value:
- delay: 0.05 + (prevPhrases.length - 1) * 0.075  + i * 0.075,
- 
- */
-
-/* 
-  console.log(" Check in View " + inView);
-  console.log("Threshold:", 0.75); */
-
-/* import { useEffect, useState, useRef } from "react";
-
-const ManualInView = () => {
-  const ref = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        console.log("Intersection ratio:", entry.intersectionRatio);
-        setIsVisible(entry.intersectionRatio >= 0.75); // Use threshold of 0.75
-      },
-      { threshold: 0.75 }
-    );
-
-    if (ref.current) observer.observe(ref.current);
-
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div>
-      <div ref={ref} style={{ height: "300px", background: "lightblue" }}>
-        Observe Me
-      </div>
-      <p>{`Is visible: ${isVisible}`}</p>
-    </div>
-  );
-};
-
-export default ManualInView;
- */
-
-/* 
-  useEffect(() => {
-    if (ref.current) {
-      console.log(ref.current.getBoundingClientRect());
-    }
-  }, [inView, ref,]);
- */
-
-/*     
-    const ref = useRef(null);
-    const inView = useInView(ref, {
-    threshold: 0.75,
-  }); 
-  */
