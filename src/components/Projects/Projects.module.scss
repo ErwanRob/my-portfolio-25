@@ -16,10 +16,7 @@
     height: auto;
     background: abs.$dark-grey;
   }
-  @include abs.respond-to("xs") {
-    height: auto;
-    background: abs.$dark-grey;
-  }
+
   &__container {
     position: relative;
     @include abs.flxAllCtrBox;
@@ -32,15 +29,13 @@
       width: 100%;
       padding: 2rem;
       box-sizing: border-box;
-      background: abs.$bg-noise2 abs.$darker-grey;
+      background: abs.$bg-noise abs.$dark-purple;
     }
     @include abs.respond-to("xs") {
       height: auto;
       width: 100%;
       padding: 1rem;
-
       box-sizing: border-box;
-      background: abs.$bg-noise2 abs.$darker-grey;
     }
 
     &__content {
@@ -82,7 +77,6 @@
           font-size: 2.5rem;
           flex-wrap: wrap;
         }
-
         @include abs.respond-to("sm") {
           height: auto;
           font-size: 2rem;
@@ -90,6 +84,9 @@
           gap: 1rem;
           line-height: 1.5;
           padding: 0 1rem;
+          background: abs.$bg-noise, abs.$darker-grey;
+          border-radius: 4px;
+          padding: 1rem;
         }
         @include abs.respond-to("xs") {
           gap: 0.5rem;

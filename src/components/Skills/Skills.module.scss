@@ -13,7 +13,8 @@
   @include abs.respond-to("sm") {
     width: 100%;
     height: auto;
-    padding: 6rem 2rem 2rem 2rem;
+    padding: 6rem 2rem 6rem 2rem;
+    background: abs.$bg-noise, abs.$bg-patternLos-blackish, abs.$dark-grey;
   }
   @include abs.respond-to("xs") {
     padding: 6rem 1rem 2rem 1rem;
@@ -97,7 +98,8 @@
         gap: 1.5rem 1rem;
       }
       @include abs.respond-to("xs") {
-        gap: 1rem;
+        gap: 1rem 0rem;
+        padding: 0 1rem;
       }
       @include abs.respond-to-custom("md", "sm") {
         gap: 1rem 1rem;

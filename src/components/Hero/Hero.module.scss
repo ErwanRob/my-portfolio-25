@@ -15,14 +15,9 @@
   @include abs.respond-to("md") {
     background: abs.$dark-grey;
   }
-  @include abs.respond-to("md") {
-    background: abs.$dark-grey;
-  }
+
   @include abs.respond-to("sm") {
-    background: abs.$dark-grey;
-  }
-  @include abs.respond-to("xs") {
-    background: abs.$dark-grey;
+    background: abs.$bg-noise, abs.$bg-patternLos-blackish;
   }
 
   &__content {
@@ -39,17 +34,12 @@
       width: auto;
       @include abs.respond-to("sm") {
         align-items: center;
-        /* width: 100%;
-        height: 100vh;
-        padding: 0 2rem;
-        margin: -1.5rem 0 0 0;
-        justify-content: center; */
       }
       @include abs.respond-to("xs") {
         width: 100%;
         height: 100vh;
         padding: 0 2rem;
-        margin: -1.5rem 0 0 0;
+        /*   margin: -1.5rem 0 0 0; */
         justify-content: center;
       }
 

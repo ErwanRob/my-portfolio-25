@@ -16,11 +16,6 @@
     margin: 1rem 0 0rem 0;
   }
 
-  @include abs.respond-to("xs") {
-    align-items: center;
-    margin: 2rem 0 0rem 0;
-  }
-
   &__name {
     font-size: 3rem;
     color: abs.$light-grey;

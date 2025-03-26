@@ -8,9 +8,13 @@ import TextareaAutosize from "react-textarea-autosize";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 import { useLenis } from "lenis/react";
+import useMediaQuery from "../Hooks/useMediaQuery";
 
 const ContactForm = ({ onReset }) => {
   const { t } = useTranslation();
+
+  const isSmall = useMediaQuery("(max-width: 768px)");
+  const isXSmallHeight = useMediaQuery("(max-height: 600px)");
 
   const lenis = useLenis();
   const handleScroll = (target) => {
@@ -76,23 +80,28 @@ const ContactForm = ({ onReset }) => {
               <p className={styles["contactForm__form__infos__txt"]}>
                 {t("contact.contactForm.instructions.useForm")}
               </p>
-              <p className={styles["contactForm__form__infos__txt"]}>
-                {t("contact.contactForm.instructions.comprehensive")}
-              </p>
-              <p className={styles["contactForm__form__infos__txt"]}>
-                {t("contact.contactForm.instructions.prefer")}
-                <a
-                  href="#hero"
-                  className={styles["contactForm__form__infos__txt__link"]}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleScroll("#hero");
-                  }}
-                >
-                  {t("contact.contactForm.instructions.hireMeLink")}
-                </a>
-                {t("contact.contactForm.instructions.byEmail")}
-              </p>
+
+              {!isSmall && !isXSmallHeight && (
+                <>
+                  <p className={styles["contactForm__form__infos__txt"]}>
+                    {t("contact.contactForm.instructions.comprehensive")}
+                  </p>
+                  <p className={styles["contactForm__form__infos__txt"]}>
+                    {t("contact.contactForm.instructions.prefer")}
+                    <a
+                      href="#hero"
+                      className={styles["contactForm__form__infos__txt__link"]}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleScroll("#hero");
+                      }}
+                    >
+                      {t("contact.contactForm.instructions.hireMeLink")}
+                    </a>
+                    {t("contact.contactForm.instructions.byEmail")}
+                  </p>
+                </>
+              )}
             </div>
 
             <label
@@ -229,37 +238,3 @@ export default ContactForm;
 ContactForm.propTypes = {
   onReset: PropTypes.func.isRequired,
 };
-
-/* if (
-        textarea.scrollHeight > parseInt(getComputedStyle(textarea).maxHeight)
-      ) {
-        textarea.style.overflowY = "auto";
-      } else {
-        textarea.style.overflowY = "auto";
-      } */
-
-/* const textAreaRef = useRef(null); */
-
-/* const handleInput = () => {
-    const textarea = textAreaRef.current;
-    if (textarea) {
-      textarea.style.height = "auto";
-      textarea.style.height = `${textarea.scrollHeight}px`;
-
-      textarea.style.overflowY =
-        textarea.scrollHeight > parseInt(getComputedStyle(textarea).maxHeight)
-          ? "auto"
-          : "hidden";
-    }
-  };
-  
-  
-  
-  {/* <textarea
-              ref={textAreaRef}
-              className={styles["contactForm__form__message"]}
-              name="message"
-              placeholder="Message"
-              onInput={handleInput}
-              required
-            ></textarea> */

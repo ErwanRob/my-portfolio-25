@@ -59,7 +59,9 @@
       padding: 2rem 0rem;
       gap: 0.25rem;
       @include abs.respond-to("xs") {
-        padding: 0;
+        margin: 2rem 0;
+        padding: 2rem;
+        gap: 0.5rem;
       }
 
       @include abs.respond-to-custom("md", "sm") {
@@ -72,15 +74,14 @@
         text-align: center;
         font-size: 1.25rem;
         font-weight: 200;
-        font-style: italic;
-        @include abs.respond-to("xs") {
-          text-align: left;
-        }
+        font-style: normal;
+
         @include abs.respond-to-custom("md", "sm") {
           font-size: 1rem;
         }
         &__link {
-          font-weight: 300;
+          font-weight: 500;
+          font-style: italic;
           color: abs.$light-grey;
           text-decoration: none;
           transition: all 0.15s ease-in-out;

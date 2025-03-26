@@ -9,6 +9,10 @@ import { useTranslation } from "react-i18next";
 
 const AboutMe = () => {
   const { t } = useTranslation();
+  //MediaQuery
+  const isXSmall = useMediaQuery("(max-width: 480px)");
+  const isSmall = useMediaQuery("(max-width: 768px)");
+  const isXLarge = useMediaQuery("(max-width: 1536px)");
 
   //Side Title
   const sectionTitle = t("aboutMe.sectionTitle", { returnObjects: true });
@@ -24,16 +28,11 @@ const AboutMe = () => {
   const allPhrases = t("aboutMe.allPhrases", { returnObjects: true });
   const allHeadPhrases = t("aboutMe.allHeadPhrases", { returnObjects: true });
 
-  //MediaQuery
-  const isXSmall = useMediaQuery("(max-width: 480px)");
-  const isSmall = useMediaQuery("(max-width: 768px)");
-  const isXLarge = useMediaQuery("(max-width: 1536px)");
-
   return (
     <div className={styles.aboutMe} id="about-me">
       <div className={styles["aboutMe__container"]}>
         <div className={styles["aboutMe__container__headLine"]}>
-          {isXSmall || isSmall ? (
+          {isSmall ? (
             <MaskText phrases={allHeadPhrases} variant="primary" align="left" />
           ) : (
             <>
@@ -50,13 +49,13 @@ const AboutMe = () => {
             </>
           )}
         </div>
-
         <motion.h3
           className={styles["aboutMe__container__title"]}
           initial={{ y: "-5rem" }}
           whileInView={{ y: 0 }}
           transition={{ duration: 0.6 }}
-          /*   viewport={{ once: true }} */
+          key={isSmall ? "sm" : "default"}
+          viewport={{ once: isSmall }}
         >
           <ul className={styles["aboutMe__container__title__lList"]}>
             {sectionTitle.map((letter, index) => (
@@ -96,7 +95,8 @@ const AboutMe = () => {
             transition={{
               duration: 1,
             }}
-            /*   viewport={{ once: true }} */
+            key={isSmall ? "sm" : "default"}
+            viewport={{ once: isSmall }}
           >
             <img
               className={

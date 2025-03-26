@@ -91,8 +91,8 @@ body {
   width: 100%; /* Ensure it takes up the full viewport */
   position: relative;
   &::selection {
-    background: abs.$darker-grey;
-    color: abs.$hover-purple;
+    background: abs.$dark-purple;
+    color: abs.$light-grey;
   }
 }
 

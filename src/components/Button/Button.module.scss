@@ -23,7 +23,6 @@
   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   white-space: nowrap;
-
   &:disabled {
     background: abs.$grey;
     color: #666;
@@ -34,7 +33,6 @@
       background: abs.$grey;
     }
   }
-
   @include abs.respond-to-custom("md", "sm") {
     padding: 0.5rem 1.25rem;
     font-size: 0.875rem;
@@ -45,12 +43,9 @@
 /* Variants */
 .primary {
   background: abs.$dark-purple;
-  filter: drop-shadow(0px 0px 4px black);
   &:hover {
     background: abs.$hover-purple;
-    /*  box-shadow: 0px 2px 10px abs.$dark-purple-rgba; */
   }
-
   &:active {
     background: abs.$active-purple;
     transform: scale(0.95);
@@ -59,12 +54,7 @@
 
 .secondary {
   background: abs.$dark-grey;
-  /* box-shadow: abs.$sc-shdw-grey; */
-  filter: drop-shadow(0px 0px 4px black);
-
   &:hover {
-    /* background: abs.$grey; */
-    /* box-shadow: abs.$sc-shdw-purple; */
     color: abs.$hover-purple;
     transform: scale(1.025);
     &:active {
@@ -82,7 +72,7 @@
   letter-spacing: 2px;
   line-height: 1;
   text-transform: uppercase;
-  gap: 0.25rem;
+  gap: 1rem;
   @include abs.respond-to-custom("sm", "md") {
     height: 3rem;
     font-size: 1rem;
@@ -98,7 +88,6 @@
   &:hover {
     background: abs.$hover-purple;
   }
-
   &:active {
     background: abs.$active-purple;
     transform: scale(0.95);
@@ -108,10 +97,9 @@
 .secondaryShort {
   background: abs.$dark-grey;
   &:hover {
-    background: abs.$grey;
-    box-shadow: abs.$sc-shdw-purple;
+    color: abs.$hover-purple;
+    transform: scale(1.025);
     &:active {
-      background-color: abs.$active-purple;
       transform: scale(0.95);
     }
   }
@@ -121,17 +109,18 @@
   background: abs.$light-grey;
   color: abs.$dark-grey;
   font-weight: 700;
-  filter: drop-shadow(0px 0px 4px black);
-
   &:hover {
-    /* font-size: 1.1rem; */
-    transform: translateX(0.25rem); /* scaleX(1.025); */
+    transform: translateX(0.25rem);
     color: abs.$dark-purple;
-    box-shadow: abs.$sc-shdw-white;
   }
   &:active {
-    background: abs.$dark-grey;
-    color: abs.$light-grey;
     transform: scale(0.95) translateX(0.25rem);
+  }
+}
+
+.shadow {
+  filter: drop-shadow(0px 0px 4px black);
+  &:active:hover {
+    filter: none;
   }
 }

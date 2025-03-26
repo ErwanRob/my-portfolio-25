@@ -74,7 +74,7 @@ const Hero = () => {
             type: "linear",
           }}
         >
-          {shouldRenderParticles && particlesInView && (
+          {shouldRenderParticles && particlesInView && !isSmall && (
             <ParticlesComponent
               id="tsparticlesHero"
               direction="none"
@@ -106,6 +106,7 @@ const Hero = () => {
                 icon={faGithub}
                 text={t("hero.button.github")}
                 variant="primary"
+                shadowOn={true}
               ></Button>
               <Button
                 href={"/cv.pdf"}
@@ -113,18 +114,21 @@ const Hero = () => {
                 icon={faDownload}
                 text={t("hero.button.download")}
                 variant="secondary"
+                shadowOn={true}
               ></Button>
               <Button
                 icon={faThumbsUp}
                 text={t("hero.button.feedback")}
-                onClick={() => setFeedbackModalOpen(true)}
                 variant="secondary"
+                shadowOn={true}
+                onClick={() => setFeedbackModalOpen(true)}
               ></Button>
               <Button
                 icon={faHandshakeSimple}
                 text={t("hero.button.hire_me")}
-                onClick={handleHireMeClick}
                 variant="tertiary"
+                shadowOn={true}
+                onClick={handleHireMeClick}
               ></Button>
             </motion.div>
           </div>

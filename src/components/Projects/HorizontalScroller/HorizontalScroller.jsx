@@ -77,7 +77,7 @@ const HorizontalScroller = ({ bgTransform }) => {
 export default HorizontalScroller;
 
 HorizontalScroller.propTypes = {
-  bgTransform: PropTypes.object.isRequired,
+  bgTransform: PropTypes.object,
 };
 
 /* {isMedium

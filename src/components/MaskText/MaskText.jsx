@@ -2,12 +2,15 @@ import styles from "./MaskText.module.scss";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import PropTypes from "prop-types";
+import useMediaQuery from "../Hooks/useMediaQuery";
 
 const MaskText = ({ phrases, variant = "primary", align = "left" }) => {
+  const isSmall = useMediaQuery("(max-width: 768px)");
+
   const { ref, inView } = useInView({
     threshold: 1,
     rootMargin: "100px 0px 0px 0px",
-    /*   triggerOnce: true, */
+    triggerOnce: isSmall,
   });
   //Base class and variants modifiers to keep control of base styles anyways.
   const alignmentClass = styles[`maskText--${align}`];
