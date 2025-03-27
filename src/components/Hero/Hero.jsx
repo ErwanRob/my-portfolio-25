@@ -109,7 +109,7 @@ const Hero = () => {
                 shadowOn={true}
               ></Button>
               <Button
-                href={"/cv.pdf"}
+                href={"/CV_ErwanRobin_FrontEnd_27-3-2025"}
                 download={"ROBIN_Erwan_CV_18-07-2024"}
                 icon={faDownload}
                 text={t("hero.button.download")}

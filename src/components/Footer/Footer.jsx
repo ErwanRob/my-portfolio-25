@@ -44,7 +44,7 @@ const Footer = () => {
     {
       id: 4,
       text: `${t("contact.links.download")}`,
-      url: "/cv.pdf",
+      url: "/CV_ErwanRobin_FrontEnd_27-3-2025",
       download: true,
     },
   ];

@@ -39,7 +39,12 @@ const ContactInfo = () => {
       text: "Instagram",
       url: "https://www.instagram.com/erwan.rob/",
     },
-    { icon: faDownload, text: "C.V.", url: "/cv.pdf", download: true },
+    {
+      icon: faDownload,
+      text: "C.V.",
+      url: "/CV_ErwanRobin_FrontEnd_27-3-2025",
+      download: true,
+    },
   ];
 
   return (
