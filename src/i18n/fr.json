@@ -15,6 +15,13 @@
     "contact": "Contact"
   },
 
+  "langSwitcher": {
+    "button": {
+      "fr": "Français",
+      "en": "Anglais"
+    }
+  },
+
   "feedbackForm": {
     "labels": {
       "label_name": "Name",

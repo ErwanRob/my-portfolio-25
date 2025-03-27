@@ -64,6 +64,7 @@ Button.propTypes = {
     "secondary",
     "secondaryShort",
     "tertiary",
+    "quatro",
     "danger",
   ]), // Only specific values are allowed
   iconSide: PropTypes.oneOf(["left", "right"]), // Only specific values are allowed

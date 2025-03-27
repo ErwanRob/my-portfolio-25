@@ -1,6 +1,8 @@
 import "./i18n";
 import { ReactLenis } from "lenis/react";
-import { useCallback, useMemo } from "react";
+import { useCallback, useEffect, useMemo } from "react";
+import { useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Hero from "./components/Hero/Hero";
 import AboutMe from "./components/AboutMe/AboutMe";
 import Projects from "./components/Projects/Projects";
@@ -11,6 +13,16 @@ import ReloadHandler from "./components/common/ReloadHandler";
 import AllMenuWrapper from "./components/common/AllMenuWrapper";
 
 const App = () => {
+  const { lang } = useParams();
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    if (lang && i18n.language !== lang) {
+      i18n.changeLanguage(lang);
+    }
+    document.documentElement.lang = lang || i18n.language;
+  }, [lang, i18n]);
+
   const easeOutQuint = useCallback((x) => 1 - Math.pow(1 - x, 5), []);
   const lenisOptions = useMemo(
     () => ({

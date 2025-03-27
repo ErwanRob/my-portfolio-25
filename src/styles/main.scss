@@ -212,3 +212,13 @@ body {
   min-height: 100vh;
   z-index: 1;
 }
+
+.langSwitcher {
+  @include abs.flxAllCtrBox;
+  flex-direction: column;
+  gap: 1rem;
+  position: fixed;
+  top: 4rem;
+  left: 1rem;
+  z-index: 999;
+}

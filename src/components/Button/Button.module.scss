@@ -124,3 +124,16 @@
     filter: none;
   }
 }
+
+.quatro {
+  font-size: 0.875rem;
+  font-weight: 400;
+  height: auto;
+  background: abs.$dark-grey;
+  &:hover {
+    color: abs.$hover-purple;
+
+    /*   &:active {
+    } */
+  }
+}

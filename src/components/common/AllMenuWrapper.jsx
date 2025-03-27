@@ -5,6 +5,7 @@ import SideMenuNavigation from "../SideMenuNavigation/SideMenuNavigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import useMediaQuery from "../Hooks/useMediaQuery";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const AllMenuWrapper = () => {
   //MediaQuery
@@ -35,6 +36,7 @@ const AllMenuWrapper = () => {
 
   return (
     <>
+      <LanguageSwitcher />
       {isHeaderVisible && (
         <div className="header-wrapper">
           <Header toggleSettings={toggleSettings} />
