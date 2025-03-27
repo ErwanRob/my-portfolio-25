@@ -34,7 +34,7 @@ const Footer = () => {
     {
       id: 2,
       text: `${t("contact.links.linkedin")}`,
-      url: "https://www.linkedin.com/in/erwan-robin-0b7b58172/",
+      url: "https://www.linkedin.com/in/erwanrob",
     },
     {
       id: 3,
@@ -44,7 +44,7 @@ const Footer = () => {
     {
       id: 4,
       text: `${t("contact.links.download")}`,
-      url: "/CV_ErwanRobin_FrontEnd_27-3-2025.pdf",
+      url: "/cv.pdf",
       download: true,
     },
   ];

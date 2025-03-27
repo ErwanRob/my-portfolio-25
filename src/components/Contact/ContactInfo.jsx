@@ -32,7 +32,7 @@ const ContactInfo = () => {
     {
       icon: faLinkedinIn,
       text: "LinkedIn",
-      url: "https://www.linkedin.com/in/erwan-robin-0b7b58172/",
+      url: "https://www.linkedin.com/in/erwanrob",
     },
     {
       icon: faInstagram,
@@ -42,7 +42,7 @@ const ContactInfo = () => {
     {
       icon: faDownload,
       text: "C.V.",
-      url: "/CV_ErwanRobin_FrontEnd_27-3-2025.pdf",
+      url: "/cv.pdf",
       download: true,
     },
   ];
