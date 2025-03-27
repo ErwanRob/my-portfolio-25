@@ -109,8 +109,8 @@ const Hero = () => {
                 shadowOn={true}
               ></Button>
               <Button
-                href={"/CV_ErwanRobin_FrontEnd_27-3-2025"}
-                download={"ROBIN_Erwan_CV_18-07-2024"}
+                href={"/CV_ErwanRobin_FrontEnd_27-3-2025.pdf"}
+                download={"CV_ErwanRobin_27-3-2025.pdf"}
                 icon={faDownload}
                 text={t("hero.button.download")}
                 variant="secondary"

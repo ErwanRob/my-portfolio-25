@@ -42,7 +42,7 @@ const ContactInfo = () => {
     {
       icon: faDownload,
       text: "C.V.",
-      url: "/CV_ErwanRobin_FrontEnd_27-3-2025",
+      url: "/CV_ErwanRobin_FrontEnd_27-3-2025.pdf",
       download: true,
     },
   ];
@@ -99,7 +99,9 @@ const ContactInfo = () => {
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                {...(item.download ? { download: "ErwanRob_CV.pdf" } : {})}
+                {...(item.download
+                  ? { download: "CV_ErwanRobin_27-3-2025.pdf" }
+                  : {})}
                 className={
                   styles["contactInfo__container__links__itemWrapper__item"]
                 }

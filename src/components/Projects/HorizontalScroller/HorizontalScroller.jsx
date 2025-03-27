@@ -5,6 +5,8 @@ import { useRef } from "react";
 import styles from "./HorizontalScroller.module.scss";
 import ProjectsCard from "../ProjectsCard/ProjectsCard";
 import imgProject1 from "../../../assets/img/projects/projectTMPO.png";
+import imgProject2 from "../../../assets/img/projects/projectMyPocketCV.png";
+import imgProject3 from "../../../assets/img/projects/projectNeverForget.png";
 import { useTranslation } from "react-i18next";
 
 const cards = [
@@ -16,13 +18,13 @@ const cards = [
   },
   {
     id: 2,
-    url: "",
+    url: imgProject2,
     titleKey: "projects.projectsCard.project2.title",
     descriptionKey: "projects.projectsCard.project2.description",
   },
   {
     id: 3,
-    url: "",
+    url: imgProject3,
     titleKey: "projects.projectsCard.project3.title",
     descriptionKey: "projects.projectsCard.project3.description",
   },

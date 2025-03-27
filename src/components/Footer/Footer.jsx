@@ -44,7 +44,7 @@ const Footer = () => {
     {
       id: 4,
       text: `${t("contact.links.download")}`,
-      url: "/CV_ErwanRobin_FrontEnd_27-3-2025",
+      url: "/CV_ErwanRobin_FrontEnd_27-3-2025.pdf",
       download: true,
     },
   ];
@@ -83,7 +83,9 @@ const Footer = () => {
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  {...(item.download ? { download: "ErwanRob_CV.pdf" } : {})}
+                  {...(item.download
+                    ? { download: "CV_ErwanRobin_27-3-2025.pdf" }
+                    : {})}
                   className={
                     styles["footer__container__content__socials__item"]
                   }

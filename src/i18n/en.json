@@ -144,19 +144,19 @@
     "projectsCard": {
       "project1": {
         "title": "TMPO",
-        "description": "Pet sitting Website, to be released soon"
+        "description": "Pet sitting Website, T.B.D"
       },
       "project2": {
-        "title": "Project 2",
-        "description": "No description yet"
+        "title": "MyPocketCV",
+        "description": "Canva style CV website. This is a personal project created to meet my specific needs (cf github)"
       },
       "project3": {
-        "title": "Project 3",
-        "description": "No description yet"
+        "title": "NeverForget",
+        "description": "This is a bucketList website, but better! T.B.D"
       },
       "project4": {
         "title": "Project 4",
-        "description": "No description yet"
+        "description": "T.B.D"
       }
     }
   },

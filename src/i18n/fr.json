@@ -151,19 +151,19 @@
     "projectsCard": {
       "project1": {
         "title": "T.M.P.O",
-        "description": "Site de pet sitting, à venir"
+        "description": "Site de pet sitting, T.B.D"
       },
       "project2": {
-        "title": "Project 2",
-        "description": "Pas encore de description"
+        "title": "MyPocketCV",
+        "description": "Canva style CV website. Projet personnel créé pour répondre à mes besoins spécifiques (cf github)"
       },
       "project3": {
-        "title": "Project 3",
-        "description": "Pas encore de description"
+        "title": "NeverForget",
+        "description": "Un site BucketList, mais en mieux! T.B.D"
       },
       "project4": {
         "title": "Project 4",
-        "description": "Pas encore de description"
+        "description": "T.B.D"
       }
     }
   },

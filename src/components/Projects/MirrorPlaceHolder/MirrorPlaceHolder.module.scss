@@ -3,13 +3,15 @@
 .placeholderWrapper {
   position: relative;
   width: 100%;
+  max-width: 1200px;
   height: 100%;
+  max-height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
 
   &:hover &__layer {
-    animation: pulse 4s infinite 2s ease;
+    animation: pulse 4s infinite 500ms ease;
     @include abs.respond-to("md") {
       animation: none;
     }
