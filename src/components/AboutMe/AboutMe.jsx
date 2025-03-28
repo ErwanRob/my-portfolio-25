@@ -86,14 +86,14 @@ const AboutMe = () => {
             className={styles["aboutMe__container__portrait__imgWrapper"]}
             initial={{
               opacity: "var(--initial-imgP-opacity)",
-              y: "var(--initial-imgP-y)",
+              x: "var(--initial-imgP-y)",
             }}
             whileInView={{
               opacity: "var(--whileInView-imgP-opacity)",
-              y: "var(--whileInView-imgP-y)",
+              x: "var(--whileInView-imgP-y)",
             }}
             transition={{
-              duration: 1,
+              duration: 0.5,
             }}
             key={isSmall ? "sm" : "default"}
             viewport={{ once: isSmall }}

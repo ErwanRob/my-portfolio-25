@@ -5,23 +5,19 @@
   --scrollingSection-height: calc(var(--projectSection-height) - 100vh);
   --headerHeight: 4rem;
   --headerHeight-sm: 3rem;
-
   /*Query Breakpoints*/
-
   /*Default*/
   /*PreLoader.jsx*/
   --initial-pL-x: 2rem;
   --initial-pL-opacity: 0;
-  --animate-pL-x: -12rem; //previously -10.25rem and for a long time
+  --animate-pL-x: -12rem;
   --animate-pL-opacity: 1;
   /*Cursor*/
   --initial-bC-x: 0;
   --animate-bC-x: -8.5rem;
-
   /*glowingPlanet*/
-  --initial-gP-y: -15rem; // previously -30rem
+  --initial-gP-y: -15rem;
   --whileInView-gP-y: 0;
-
   /*Trigger PR*/
   --initial-pR-x: -15rem;
   --initial-pR-opacity: 0;
@@ -32,109 +28,41 @@
   --initial-ject-opacity: 0;
   --whileInView-ject-x: 0;
   --whileInView-ject-opacity: 1;
-
   /*imgPortrait*/
   --initial-imgP-opacity: 0;
   --whileInView-imgP-opacity: 1;
-  --whileInView-imgP-y: 5rem;
-  --whileInView-imgP-y: 0;
-
+  --initial-imgP-x: 2rem;
+  --whileInView-imgP-x: 0;
+  /*XXLarge*/
   @media (max-width: 1920px) {
-    --initial-pL-x: 2rem;
-    --initial-pL-opacity: 0;
     --animate-pL-x: -10.25rem;
-    --animate-pL-opacity: 1;
-    /*Cursor*/
-    --initial-bC-x: 0;
-    --animate-bC-x: -8.5rem;
   }
   /*XLarge*/
   @media (max-width: 1536px) {
-    /* --initial-pL-x: 2rem;
-    --initial-pL-opacity: 0;
-    --animate-pL-x: -10.25rem;
-    --animate-pL-opacity: 1; */
-
-    --initial-imgP-opacity: 0;
-    --whileInView-imgP-opacity: 1;
-    --whileInView-imgP-y: 0;
-    --whileInView-imgP-y: 0;
   }
   /*Large*/
   @media (max-width: 1280px) {
-    --initial-pL-x: 2rem;
-    --initial-pL-opacity: 0;
-    --animate-pL-x: -10.25rem;
-    --animate-pL-opacity: 1;
-    --initial-bC-x: 0rem;
-    --animate-bC-x: -8.5rem;
-    /*--initial-gP-y: 0;
-    --whileInView-gP-y: 0;
-    --initial-pR-x: 0;
-    --initial-pR-opacity: 0;
-    --whileInView-pR-x: 0;
-    --whileInView-pR-opacity: 1;  */
   }
-
   /*Medium*/
   @media (max-width: 1024px) {
-    --initial-pL-x: 2rem;
-    --initial-pL-opacity: 0;
-    --animate-pL-x: -10.25rem;
-    --animate-pL-opacity: 1;
-    --initial-bC-x: 0;
     --animate-bC-x: -13.5rem;
     --initial-gP-y: -2rem;
-    --whileInView-gP-y: 0;
     --initial-pR-x: -2rem;
-    --initial-pR-opacity: 0;
-    --whileInView-pR-x: 0;
-    --whileInView-pR-opacity: 1;
     --initial-ject-x: 2rem;
-    --initial-ject-opacity: 0;
-    --whileInView-ject-x: 0;
-    --whileInView-ject-opacity: 1;
   }
-
   /*Small*/
   @media (max-width: 768px) {
     --initial-pL-x: 0;
-    --initial-pL-opacity: 0;
     --animate-pL-x: 0;
-    --animate-pL-opacity: 1;
-    --initial-bC-x: 0;
     --animate-bC-x: 0;
     --initial-gP-y: -2rem;
-    --whileInView-gP-y: 0;
-    --initial-pR-x: -2rem;
-    --initial-pR-opacity: 0;
-    --whileInView-pR-x: 0;
-    --whileInView-pR-opacity: 1;
-    --initial-ject-x: 2rem;
-    --initial-ject-opacity: 0;
-    --whileInView-ject-x: 0;
-    --whileInView-ject-opacity: 1;
   }
   /*xSmall*/
   @media (max-width: 480px) {
-    --initial-pL-x: 0;
-    --initial-pL-opacity: 0;
-    --animate-pL-x: 0;
-    --animate-pL-opacity: 1;
-    --initial-bC-x: 0;
-    --animate-bC-x: 0;
     --initial-gP-y: 0;
-    --whileInView-gP-y: 0;
     --initial-pR-x: -1rem;
-    --initial-pR-opacity: 0;
-    --whileInView-pR-x: 0;
-    --whileInView-pR-opacity: 1;
     --initial-ject-x: 1rem;
-    --initial-ject-opacity: 0;
-    --whileInView-ject-x: 0;
-    --whileInView-ject-opacity: 1;
   }
-
   /// HEIGHT CHECKUP
   @media ((max-height: 768px) and (min-width: 769px)) {
     --initial-pL-x: 2rem;
@@ -142,11 +70,9 @@
     --animate-bC-x: -12rem;
   }
 }
-
 /*margins, paddings, widths, heights*/
 $headerHeight: 4rem;
 $headerHeight-sm: 3rem;
-
 /*Hex Colors*/
 $dark-grey: #1a1a1a;
 $darker-grey: #101010;
@@ -174,41 +100,18 @@ $white-rgba: rgba(255, 255, 255, 0.2);
 $active-purple-rgba: rgba(91, 35, 181, 0.5);
 $medium-grey-rgba: rgba(163, 163, 163, 1);
 $hover-purple2-rgba: rgb(206, 188, 247, 0.5);
+/*Shadow Box*/
+$sc-shdw: 0 16px 20px rgba(0, 0, 0, 0.2);
+$sc-shdw2: 0 -16px 20px rgba(0, 0, 0, 0.2);
+$filterS-Center-4px: drop-shadow(0px 0px 4px black);
+$projectCard-filterS: drop-shadow(0.5rem 1rem 0.5rem rgba(26, 26, 26, 1));
 /*Gradient Colors*/
-
 $bg-gradient-header: linear-gradient(
   180deg,
   rgba(26, 26, 26, 1) 0%,
   rgba(26, 26, 26, 1) 85%,
   rgba(26, 26, 26, 0) 100%
 );
-/*75% fade Hero section transition*/
-$bg-gradient-hero: linear-gradient(
-  185deg,
-  rgba(26, 26, 26, 0) 0%,
-  rgba(26, 26, 26, 0) 70%,
-  rgba(26, 26, 26, 0) 75%,
-  rgba(26, 26, 26, 1) 90%,
-  rgba(26, 26, 26, 1) 100%
-);
-$bg-gradient-about: linear-gradient(
-  185deg,
-  rgba(26, 26, 26, 1) 0%,
-  rgba(26, 26, 26, 1) 25%,
-  rgba(26, 26, 26, 1) 75%,
-  rgba(26, 26, 26, 0.7) 90%,
-  rgba(26, 26, 26, 0) 100%
-);
-
-/* $bg-gradient-project1: radial-gradient( // Not used anymore
-  circle at 50% 50%,
-  rgba(26, 26, 26, 1) 0%,
-  rgba(26, 26, 26, 1) 10%,
-  rgba(26, 26, 26, 0) 11%,
-  rgba(41, 41, 41, 0) 60%,
-  rgba(124, 60, 235, 0.25) 100%
-); */
-
 $bg-gradient-project1-2-800vh: radial-gradient(
   circle at 50% 50%,
   rgba(26, 26, 26, 1) 0%,
@@ -225,7 +128,6 @@ $bg-gradient-project1-2-500vh: radial-gradient(
   rgba(124, 60, 235, 0.2) 80%,
   rgba(124, 60, 235, 0.5) 100%
 );
-
 $bg-gradient-project2: linear-gradient(
   200deg,
   rgba(26, 26, 26, 1) 0%,
@@ -235,7 +137,6 @@ $bg-gradient-project2: linear-gradient(
   rgba(26, 26, 26, 1) 90%,
   rgba(26, 26, 26, 1) 100%
 );
-
 $bg-gradient-skills: linear-gradient(
   185deg,
   rgba(26, 26, 26, 0) 0%,
@@ -243,57 +144,17 @@ $bg-gradient-skills: linear-gradient(
   /*  rgba(26, 26, 26, 0) 75%, */ rgba(26, 26, 26, 1) 90%,
   rgba(26, 26, 26, 1) 100%
 );
-
 $bg-gradient-portrait: radial-gradient(
   circle at 50% 50%,
   rgba(162, 135, 243, 0.3) 0%,
   rgba(124, 60, 235, 0) 70%,
   rgba(0, 0, 0, 0) 100%
 );
-
 /*SVG Patterns*/
 $bg-patternLos-purpleish: url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%237C3CEB' fill-opacity='0.015' fill-rule='evenodd'%3E%3Cpath d='M8 0v20L0 10M16 0v10L8 0M16 10v10H8'/%3E%3C/g%3E%3C/svg%3E");
 $bg-patternLos-blackish: url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23292929' fill-opacity='0.015' fill-rule='evenodd'%3E%3Cpath d='M8 0v20L0 10M16 0v10L8 0M16 10v10H8'/%3E%3C/g%3E%3C/svg%3E");
-$bg-noise: url("../../assets/img/bgd/n2.svg");
-$bg-noise2: url("../../assets/img/bgd/n1.svg");
+//DotTexture
+$bg-noise: url("../../assets/img/bgd/n1.svg");
+$bg-noise2: url("../../assets/img/bgd/n2.svg");
+//Project's GlowingPlanet
 $bg-circle1: url("../../../assets/img/bgd/c1.svg");
-
-/*Shadow Box*/
-$sc-shdw: 0 16px 20px rgba(0, 0, 0, 0.2);
-$sc-shdw-inner: inset 0rem 2rem rgba(0, 0, 0, 0.1);
-$sc-shdw2: 0 -16px 20px rgba(0, 0, 0, 0.2);
-$sc-shdw-grey: 0px 0px 20px rgba(41, 41, 41, 0.7);
-$sc-shdw-purple: 4px 2px 20px rgba(124, 58, 237, 0.05);
-$sc-shdw-navitems: 0 0px 10px rgba(124, 58, 237, 0.2);
-$sc-shdw-navitems2: 0 0px 30px rgba(238, 231, 249, 0.05);
-$sc-shdw-white: 0 0 10px rgba(234, 234, 234, 0.3);
-
-/* 
-Travel line to try if need be
-$bg-gradient-line: linear-gradient(
-  300deg,
-  rgba(26, 26, 26, 1) 0%,
-  rgba(26, 26, 26, 1) 20%,
-  rgba(44, 33, 65, 1) 30%,
-  rgba(26, 26, 26, 1) 32%,
-  rgba(26, 26, 26, 1) 75%,
-  rgba(26, 26, 26, 1) 90%,
-  rgba(26, 26, 26, 1) 100%
-); */
-
-/* Diamond color purp after opacity
-dark:
-#2c2141
-rgba(44,33,65,1)
-
-corrigé :  normal dark grey
-
-light: 
-#2e2146
-rgba(46,33,70,1)
-
-corrigé : 
-#1f1c25
-rgba(31,28,37,1)
-
-*/

@@ -119,7 +119,7 @@
 }
 
 .shadow {
-  filter: drop-shadow(0px 0px 4px black);
+  filter: abs.$filterS-Center-4px;
   &:active:hover {
     filter: none;
   }
