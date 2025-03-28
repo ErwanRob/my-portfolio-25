@@ -28,6 +28,8 @@
   --initial-ject-opacity: 0;
   --whileInView-ject-x: 0;
   --whileInView-ject-opacity: 1;
+  /*aboutMe*/
+  --initial-aboutTitle-y: -5rem;
   /*imgPortrait*/
   --initial-imgP-opacity: 0;
   --whileInView-imgP-opacity: 1;
@@ -56,6 +58,9 @@
     --animate-pL-x: 0;
     --animate-bC-x: 0;
     --initial-gP-y: -2rem;
+    --initial-imgP-x: 0rem;
+    --initial-imgP-opacity: 1;
+    --initial-aboutTitle-y: 0rem;
   }
   /*xSmall*/
   @media (max-width: 480px) {

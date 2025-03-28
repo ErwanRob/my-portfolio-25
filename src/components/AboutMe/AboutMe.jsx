@@ -51,7 +51,7 @@ const AboutMe = () => {
         </div>
         <motion.h3
           className={styles["aboutMe__container__title"]}
-          initial={{ y: "-5rem" }}
+          initial={{ y: "var(--initial-aboutTitle-y)" }}
           whileInView={{ y: 0 }}
           transition={{ duration: 0.6 }}
           key={isSmall ? "sm" : "default"}
@@ -86,11 +86,11 @@ const AboutMe = () => {
             className={styles["aboutMe__container__portrait__imgWrapper"]}
             initial={{
               opacity: "var(--initial-imgP-opacity)",
-              x: "var(--initial-imgP-y)",
+              x: "var(--initial-imgP-x)",
             }}
             whileInView={{
               opacity: "var(--whileInView-imgP-opacity)",
-              x: "var(--whileInView-imgP-y)",
+              x: "var(--whileInView-imgP-x)",
             }}
             transition={{
               duration: 0.5,

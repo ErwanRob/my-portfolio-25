@@ -78,7 +78,7 @@
       }
       @include abs.respond-to("xs") {
         flex-direction: column;
-        gap: 3rem;
+        gap: 5rem;
         height: auto;
         padding: 0rem 0;
       }
