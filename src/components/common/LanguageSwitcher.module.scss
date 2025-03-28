@@ -13,4 +13,9 @@
     left: auto;
     right: 0.5rem;
   }
+  @include abs.respond-to("xs") {
+    top: 12%;
+    left: auto;
+    right: 0;
+  }
 }

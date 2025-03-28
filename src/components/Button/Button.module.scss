@@ -153,6 +153,11 @@
   }
   @include abs.respond-to("sm") {
     font-size: 1.25rem;
+    padding: 1rem 1.25rem;
+  }
+  @include abs.respond-to("sm") {
+    font-size: 1.125rem;
+    padding: 1rem 1rem;
   }
 }
 
