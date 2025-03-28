@@ -1,0 +1,16 @@
+@use "../../styles/abstracts" as abs;
+
+.langSwitcher {
+  z-index: 31;
+  position: absolute;
+  @include abs.flxAllCtrBox;
+  flex-direction: column;
+  top: 1rem;
+  left: 1rem;
+  filter: brightness(0.8);
+  @include abs.respond-to("md") {
+    top: 1rem;
+    left: auto;
+    right: 0.5rem;
+  }
+}

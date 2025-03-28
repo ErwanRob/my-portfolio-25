@@ -11,6 +11,7 @@ import { faScrewdriverWrench } from "@fortawesome/free-solid-svg-icons";
 import useMediaQuery from "../Hooks/useMediaQuery";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "../common/LanguageSwitcher";
 
 const navList = [
   { id: "hero", labelKey: "navigation.home", icon: faHouse },
@@ -36,7 +37,7 @@ const navList = [
   },
 ];
 
-const SideMenuNavigation = ({ isSideMenuVisible, toggleSideMenu }) => {
+const SideMenuNavigation = ({ display, toggleSideMenu }) => {
   const { t } = useTranslation();
 
   //MediaQuery
@@ -52,47 +53,52 @@ const SideMenuNavigation = ({ isSideMenuVisible, toggleSideMenu }) => {
   });
 
   return (
-    <motion.nav
-      className={`${styles.nav} ${
-        isSideMenuVisible ? styles.fadein : styles.fadeout
+    <div
+      className={`${styles.sideMenuNavigationWrapper} ${
+        display ? styles.visible : ""
       }`}
-      initial={{
-        y: "3rem",
-        opacity: 0,
-      }}
-      animate={{
-        y: 0,
-        opacity: 1,
-      }}
-      transition={{
-        duration: 0.5,
-        delay: 3.2,
-        ease: backOut,
-      }}
     >
-      <motion.ul className={styles["nav__list"]}>
-        {navList.map((item) => (
-          <SideMenuItem
-            key={item.id}
-            id={item.id}
-            icon={item.icon}
-            label={t(item.labelKey)}
-            setPosition={setPosition}
-            onClick={toggleSideMenu}
-          ></SideMenuItem>
-        ))}
+      <motion.nav
+        className={`${styles.nav} ${display ? styles.fadein : styles.fadeout}`}
+        initial={{
+          y: "3rem",
+          opacity: 0,
+        }}
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 0.5,
+          delay: 3.2,
+          ease: backOut,
+        }}
+      >
+        <motion.ul className={styles["nav__list"]}>
+          {navList.map((item) => (
+            <SideMenuItem
+              key={item.id}
+              id={item.id}
+              icon={item.icon}
+              label={t(item.labelKey)}
+              setPosition={setPosition}
+              onClick={toggleSideMenu}
+            ></SideMenuItem>
+          ))}
 
-        {isXSmall || isSmall || isMedium ? null : (
-          <SideMenuBubble position={position} />
-        )}
-      </motion.ul>
-    </motion.nav>
+          {isXSmall || isSmall || isMedium ? null : (
+            <SideMenuBubble position={position} />
+          )}
+        </motion.ul>
+        {isMedium && <LanguageSwitcher />}
+      </motion.nav>
+    </div>
   );
 };
 
 export default SideMenuNavigation;
 
 SideMenuNavigation.propTypes = {
-  isSideMenuVisible: PropTypes.bool.isRequired,
+  display: PropTypes.bool.isRequired,
   toggleSideMenu: PropTypes.func.isRequired,
 };

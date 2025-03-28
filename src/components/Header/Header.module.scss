@@ -1,8 +1,24 @@
 @use "../../styles/abstracts/" as abs;
+.headerWrapper {
+  z-index: 30;
+  position: sticky;
+  top: 0;
+  left: 0;
+  @include abs.flxAllCtrBox;
+  height: abs.$headerHeight;
+  width: 100%;
+  @include abs.respond-to("md") {
+    z-index: -999;
+  }
+
+  @include abs.respond-to-custom("md", "sm") {
+    height: abs.$headerHeight-sm;
+  }
+}
 
 .header {
   position: relative;
-  z-index: 999;
+  z-index: 31;
   background: abs.$dark-grey;
   width: 100%;
   height: 100%;

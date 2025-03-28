@@ -23,7 +23,8 @@
     justify-content: center;
     font-size: 2rem;
     height: 4rem;
-    background-color: abs.$dark-grey;
+    /*   background-color: abs.$dark-grey; */
+    background-color: transparent;
     width: 50%;
     /* top: 15rem; */
   }
@@ -42,6 +43,7 @@
     @include abs.respond-to("xs") {
       font-size: 2rem;
       width: 10%;
+      color: abs.$light-grey;
     }
   }
 

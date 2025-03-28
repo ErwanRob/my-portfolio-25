@@ -7,6 +7,7 @@ const Button = ({
   download,
   type,
   icon,
+  svg,
   text,
   onClick,
   variant = "primary",
@@ -14,7 +15,17 @@ const Button = ({
   shadowOn = false,
   disabled = false,
 }) => {
-  //Render a tag if href
+  const renderIcon = () => {
+    if (svg) {
+      if (typeof svg === "string") {
+        return <img className={styles.svgContainer} src={svg} alt="icon" />;
+      }
+      return svg;
+    } else if (icon) {
+      return <FontAwesomeIcon icon={icon} />;
+    }
+    return null;
+  };
 
   const buttonClass = `${styles.button} ${styles[variant]} ${
     shadowOn ? styles.shadow : null
@@ -22,6 +33,7 @@ const Button = ({
 
   if (href) {
     return (
+      //Render a tag if href
       <a
         href={href}
         download={download}
@@ -29,9 +41,9 @@ const Button = ({
         rel="noopener noreferrer"
         className={buttonClass}
       >
-        {iconSide === "left" && icon && <FontAwesomeIcon icon={icon} />}
+        {iconSide === "left" && renderIcon()}
         {text}
-        {iconSide === "right" && icon && <FontAwesomeIcon icon={icon} />}
+        {iconSide === "right" && renderIcon()}
       </a>
     );
   }
@@ -44,8 +56,9 @@ const Button = ({
       disabled={disabled}
       type={type}
     >
-      {iconSide === "left" && icon && <FontAwesomeIcon icon={icon} />} {text}
-      {iconSide === "right" && icon && <FontAwesomeIcon icon={icon} />}
+      {iconSide === "left" && renderIcon()}
+      {text}
+      {iconSide === "right" && renderIcon()}
     </button>
   );
 };
@@ -56,6 +69,7 @@ Button.propTypes = {
   download: PropTypes.string,
   type: PropTypes.string,
   icon: PropTypes.object, // Icon is optional but should be a FontAwesomeIcon
+  svg: PropTypes.node,
   text: PropTypes.string.isRequired,
   onClick: PropTypes.func, // onClick is optional but should be a function if provided
   variant: PropTypes.oneOf([

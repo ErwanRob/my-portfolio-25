@@ -2,15 +2,13 @@ import { useEffect, useState } from "react";
 import Header from "../Header/Header";
 import Settings from "../Settings/Settings";
 import SideMenuNavigation from "../SideMenuNavigation/SideMenuNavigation";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import SideMenuToggle from "../SideMenuNavigation/SideMenuToggle";
 import useMediaQuery from "../Hooks/useMediaQuery";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const AllMenuWrapper = () => {
   //MediaQuery
   const isMedium = useMediaQuery("(max-width: 1024px)");
-
   //states
   const [isSideMenuVisible, setSideMenuVisible] = useState(false);
   const [isHeaderVisible, setHeaderVisible] = useState(false);
@@ -36,45 +34,18 @@ const AllMenuWrapper = () => {
 
   return (
     <>
-      <LanguageSwitcher />
-      {isHeaderVisible && (
-        <div className="header-wrapper">
-          <Header toggleSettings={toggleSettings} />
-        </div>
-      )}
-
-      <div className={`settings-wrapper ${isSettingsVisible ? "visible" : ""}`}>
-        <Settings
-          toggleSettings={toggleSettings}
-          isSettingsVisible={isSettingsVisible}
-        />
-      </div>
-
-      <div
-        className={`sideMenuNavigation-wrapper ${
-          isSideMenuVisible ? "visible" : ""
-        }`}
-      >
-        <SideMenuNavigation
+      {!isMedium && <LanguageSwitcher />}
+      <Header display={isHeaderVisible} toggleSettings={toggleSettings} />
+      <Settings display={isSettingsVisible} toggleSettings={toggleSettings} />
+      <SideMenuNavigation
+        display={isSideMenuVisible}
+        toggleSideMenu={toggleSideMenu}
+      />
+      {isMedium && (
+        <SideMenuToggle
           isSideMenuVisible={isSideMenuVisible}
           toggleSideMenu={toggleSideMenu}
         />
-      </div>
-
-      {isMedium && (
-        <div className="sideMenuNavigation-toggle">
-          <button
-            className={"sideMenuNavigation-toggle__btn"}
-            onClick={toggleSideMenu}
-            aria-label="Toggle side menu"
-          >
-            {isSideMenuVisible ? (
-              <FontAwesomeIcon icon={faXmark} />
-            ) : (
-              <FontAwesomeIcon icon={faBars} />
-            )}
-          </button>
-        </div>
       )}
     </>
   );

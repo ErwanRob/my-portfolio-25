@@ -1,0 +1,21 @@
+@use "../../styles/abstracts" as abs;
+
+.sMNToggle {
+  z-index: 30;
+  position: fixed;
+  @include abs.flxAllCtrBox;
+  align-self: center;
+  flex-direction: column;
+  right: 1rem;
+  bottom: 2rem;
+  border-radius: 9999px;
+  background: abs.$dark-purple;
+  height: 3.5rem;
+  width: 3.5rem;
+  filter: drop-shadow(2px 2px 8px black);
+
+  &__btn {
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+  }
+}

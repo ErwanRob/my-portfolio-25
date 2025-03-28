@@ -24,7 +24,7 @@
   }
   @include abs.respond-to("xs") {
     height: auto;
-    padding: 2rem 1rem 4rem 1rem;
+    padding: 6rem 1rem 4rem 1rem;
   }
 
   &__container {
@@ -152,7 +152,9 @@
         margin: auto;
       }
       @include abs.respond-to("xs") {
-        padding: 0;
+        padding: 3rem 0 2rem 0;
+        height: auto;
+        border-top: 2px solid abs.$light-grey-rgba;
       }
 
       &__lList {

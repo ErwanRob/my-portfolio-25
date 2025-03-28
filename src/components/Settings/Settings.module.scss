@@ -1,6 +1,25 @@
 @use "../../styles/abstracts" as abs;
 @use "../../styles/base" as base;
 
+.settingsWrapper {
+  box-sizing: border-box;
+  position: fixed;
+  @include abs.flxAllCtrBox;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  padding: 0 3rem 0 3rem;
+  z-index: 10;
+  background: abs.$dark-grey;
+  transform: scaleX(0);
+  transform-origin: left;
+  overflow: hidden;
+  transition: transform 500ms cubic-bezier(0.19, 0.99, 0.31, 0.98);
+  &.visible {
+    transform: scaleX(1);
+  }
+}
+
 .settings {
   position: relative;
   display: flex;

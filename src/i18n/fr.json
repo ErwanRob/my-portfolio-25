@@ -16,10 +16,7 @@
   },
 
   "langSwitcher": {
-    "button": {
-      "fr": "Français WIP",
-      "en": "Anglais WIP"
-    }
+    "button": "EN"
   },
 
   "feedbackForm": {
