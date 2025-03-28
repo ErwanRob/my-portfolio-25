@@ -135,11 +135,18 @@
   gap: 0.5rem;
 
   &:hover {
-    color: abs.$hover-purple;
     transform: translateX(0.25rem);
+    @include abs.respond-to("md") {
+      transform: scale(1.025);
+    }
   }
   &:active {
+    color: abs.$hover-purple2;
+    background-color: abs.$mid-grey-rgba;
     transform: scale(0.95) translateX(0.25rem);
+    @include abs.respond-to("md") {
+      transform: scale(0.95);
+    }
   }
   @include abs.respond-to("md") {
     filter: none;

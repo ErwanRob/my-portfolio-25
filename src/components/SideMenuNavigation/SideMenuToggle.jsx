@@ -2,12 +2,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 import styles from "./SideMenuToggle.module.scss";
+import { motion } from "motion/react";
 
 const SideMenuToggle = ({ isSideMenuVisible, toggleSideMenu }) => {
   return (
     <div className={styles.sMNToggle}>
-      <button
+      <motion.button
         className={styles["sMNToggle__btn"]}
+        initial={{ scale: 1 }}
+        whileHover={{ scale: 1.25 }}
+        whileTap={{ scale: 0.8 }}
+        transition={{ duration: 0.15, ease: "backOut" }}
         onClick={toggleSideMenu}
         aria-label="Toggle side menu"
       >
@@ -16,7 +21,7 @@ const SideMenuToggle = ({ isSideMenuVisible, toggleSideMenu }) => {
         ) : (
           <FontAwesomeIcon icon={faBars} />
         )}
-      </button>
+      </motion.button>
     </div>
   );
 };
