@@ -11,6 +11,7 @@ const Button = ({
   text,
   onClick,
   variant = "primary",
+  subVariant,
   iconSide = "left",
   shadowOn = false,
   disabled = false,
@@ -28,8 +29,8 @@ const Button = ({
   };
 
   const buttonClass = `${styles.button} ${styles[variant]} ${
-    shadowOn ? styles.shadow : null
-  }`;
+    styles[subVariant]
+  } ${shadowOn ? styles.shadow : null}`;
 
   if (href) {
     return (
@@ -81,6 +82,7 @@ Button.propTypes = {
     "quatro",
     "danger",
   ]), // Only specific values are allowed
+  subVariant: PropTypes.oneOf(["header", "hero"]),
   iconSide: PropTypes.oneOf(["left", "right"]), // Only specific values are allowed
   shadowOn: PropTypes.bool,
   disabled: PropTypes.bool, // Disabled is optional and should be a boolean

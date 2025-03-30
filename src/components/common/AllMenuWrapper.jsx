@@ -34,7 +34,7 @@ const AllMenuWrapper = () => {
 
   return (
     <>
-      {!isMedium && <LanguageSwitcher />}
+      {!isMedium && <LanguageSwitcher env={"hero"} />}
       <Header display={isHeaderVisible} toggleSettings={toggleSettings} />
       <Settings display={isSettingsVisible} toggleSettings={toggleSettings} />
       <SideMenuNavigation

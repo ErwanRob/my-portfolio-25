@@ -5,17 +5,31 @@
   position: absolute;
   @include abs.flxAllCtrBox;
   flex-direction: column;
-  top: 1rem;
-  left: 1rem;
-  filter: brightness(0.8);
+
   @include abs.respond-to("md") {
     top: 1rem;
-    left: auto;
-    right: 0.5rem;
+    right: 0rem;
   }
-  @include abs.respond-to("xs") {
-    top: 12%;
-    left: auto;
+
+  &.hero {
+    margin-right: 5.5rem;
+    top: 1rem;
+    bottom: auto;
     right: 0;
+    @include abs.respond-to("xxl") {
+      margin-right: 3.5rem;
+    }
+    @include abs.respond-to("xl") {
+      margin-right: 2.5rem;
+    }
+    @include abs.respond-to("lg") {
+      margin-right: 0.5rem;
+    }
+  }
+  &.header {
+    top: auto;
+    bottom: auto;
+    right: 4.5rem;
+    left: auto;
   }
 }

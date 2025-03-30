@@ -17,6 +17,7 @@
 }
 
 .header {
+  user-select: none;
   position: relative;
   z-index: 31;
   background: abs.$dark-grey;
@@ -41,6 +42,7 @@
       &__item {
         border-radius: 4px;
         @include abs.flxAllCtrBox;
+
         &__link {
           text-decoration: none;
           padding: 0.5rem;
@@ -58,6 +60,7 @@
       }
     }
   }
+
   &__settingsBtn {
     position: absolute;
     top: 0;

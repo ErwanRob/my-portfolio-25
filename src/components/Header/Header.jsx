@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "../common/LanguageSwitcher";
 
 const Header = ({ toggleSettings, display }) => {
   const { t } = useTranslation();
@@ -146,6 +147,7 @@ const Header = ({ toggleSettings, display }) => {
               </li>
             </ul>
           </motion.nav>
+          <LanguageSwitcher env={"header"} />
           <div className={styles["header__settingsBtn"]}>
             <FontAwesomeIcon icon={faGear} onClick={toggleSettings} size="lg" />
           </div>

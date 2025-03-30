@@ -3,11 +3,11 @@ import Button from "../Button/Button";
 import frF from "../../assets/img/flag/fr.svg";
 import enF from "../../assets/img/flag/en.svg";
 import styles from "./LanguageSwitcher.module.scss";
-import useMediaQuery from "../Hooks/useMediaQuery";
 import { useTranslation } from "react-i18next";
+import PropTypes from "prop-types";
+import { motion } from "motion/react";
 
-const LanguageSwitcher = () => {
-  const isMedium = useMediaQuery("(max-width: 1024px)");
+const LanguageSwitcher = ({ env }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { lang } = useParams();
@@ -19,17 +19,27 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <div className={styles.langSwitcher}>
+    <motion.div
+      className={`${styles.langSwitcher} ${styles[env]}`}
+      initial={{ opacity: 0, y: "-3rem" }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "backOut", delay: 3.2 }}
+    >
       <Button
         text={t("langSwitcher.button")}
         svg={lang === "fr" ? enF : frF}
         onClick={() => switchLanguage()}
         variant="quatro"
+        subVariant={env}
+        iconSide="right"
         shadowOn={true}
-        iconSide={isMedium ? "right" : "left"}
       />
-    </div>
+    </motion.div>
   );
 };
 
 export default LanguageSwitcher;
+
+LanguageSwitcher.propTypes = {
+  env: PropTypes.oneOf(["header", "hero"]),
+};

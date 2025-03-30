@@ -126,38 +126,47 @@
 }
 
 .quatro {
-  background: abs.$grey;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.25rem;
+  font-weight: 200;
   width: auto;
   height: auto;
-  padding: 1rem 1.5rem;
   gap: 0.5rem;
 
   &:hover {
-    transform: translateX(0.25rem);
-    @include abs.respond-to("md") {
-      transform: scale(1.025);
-    }
+    transform: scale(1.025) translateX(0.25rem);
   }
   &:active {
-    color: abs.$hover-purple2;
-    background-color: abs.$mid-grey-rgba;
     transform: scale(0.95) translateX(0.25rem);
-    @include abs.respond-to("md") {
-      transform: scale(0.95);
-    }
   }
   @include abs.respond-to("md") {
+    background: abs.$grey;
+    padding: 1rem 1.5rem;
     filter: none;
-  }
-  @include abs.respond-to("sm") {
-    font-size: 1.25rem;
-    padding: 1rem 1.25rem;
   }
   @include abs.respond-to("sm") {
     font-size: 1.125rem;
     padding: 1rem 1rem;
+  }
+
+  &.hero {
+    background-color: abs.$dark-grey;
+    padding: 1rem 1.5rem;
+    &:hover {
+      background-color: abs.$hover-purple;
+      color: abs.$light-grey;
+    }
+  }
+
+  &.header {
+    background-color: transparent;
+    padding: 0.875rem 1.5rem;
+    color: abs.$medium-grey-rgba;
+    filter: none;
+    &:hover {
+      background-color: abs.$grey;
+      color: abs.$hover-purple2;
+      transform: scale(1.025);
+    }
   }
 }
 
