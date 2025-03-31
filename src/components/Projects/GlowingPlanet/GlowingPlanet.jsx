@@ -18,7 +18,7 @@ const GlowingPlanet = ({
   const handleScroll = () => {
     if (lenis) {
       lenis.scrollTo("#idProject1", {
-        duration: 1,
+        duration: 1.5,
         easing: (x) => 1 - Math.pow(1 - x, 5), // easeOutQuint
         offset: 0, // Bad for responsiveness, i shall not use
         lock: false, // lock scrolling during ScrollTo animation

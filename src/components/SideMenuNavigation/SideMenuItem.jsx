@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon } from "@fortawesome/fontawesome-svg-core";
 import useMediaQuery from "../Hooks/useMediaQuery";
 
-const SideMenuItem = ({ id, label, icon, setPosition, onClick }) => {
+const SideMenuItem = ({ id, label, icon, setPosition, onClick, active }) => {
   const isXSmall = useMediaQuery("(max-width: 480px)");
   const isSmall = useMediaQuery("(max-width: 768px)");
   const isMedium = useMediaQuery("(max-width: 1024px)");
@@ -40,7 +40,8 @@ const SideMenuItem = ({ id, label, icon, setPosition, onClick }) => {
   return (
     <motion.li
       ref={ref}
-      className={styles["nav__list__item"]}
+      className={`${styles["nav__list__item"]} 
+      ${active === id ? styles.active : ""}`}
       onClick={() => {
         handleScroll(`#${id}`);
         if (
@@ -77,4 +78,5 @@ SideMenuItem.propTypes = {
   setPosition: PropTypes.func.isRequired,
   icon: PropTypes.shape(icon).isRequired,
   onClick: PropTypes.func.isRequired,
+  active: PropTypes.string,
 };

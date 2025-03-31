@@ -226,7 +226,7 @@
     }
   },
   "footer": {
-    "builtWith": "Créer grâce à React.js & Motion • Déployé sur",
+    "builtWith": "Créer grâce à React.js & Motion • Déployé sur ",
     "vercel": "Vercel",
     "legal": "Mentions légales",
     "lets_connect": "Connectons-nous !",

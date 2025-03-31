@@ -219,7 +219,7 @@
     }
   },
   "footer": {
-    "builtWith": "Built with React.js & Motion • Deployed on",
+    "builtWith": "Built with React.js & Motion • Deployed on ",
     "vercel": "Vercel",
     "legal": "Legal Mentions",
     "lets_connect": "Let's connect !",

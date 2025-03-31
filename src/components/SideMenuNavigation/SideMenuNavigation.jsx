@@ -1,6 +1,6 @@
 import styles from "./SideMenuNavigation.module.scss";
 import { motion, backOut } from "motion/react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SideMenuBubble from "./SideMenuBubble";
 import SideMenuItem from "./SideMenuItem";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
@@ -41,16 +41,61 @@ const SideMenuNavigation = ({ display, toggleSideMenu }) => {
   const { t } = useTranslation();
 
   //MediaQuery
-  const isXSmall = useMediaQuery("(max-width: 480px)");
-  const isSmall = useMediaQuery("(max-width: 768px)");
   const isMedium = useMediaQuery("(max-width: 1024px)");
 
   //states
+  const [currentSection, setCurrentSection] = useState(null);
+  //bubble position state
   const [position, setPosition] = useState({
     top: 0,
     width: 0,
     opacity: 0,
   });
+
+  //SectionGetter
+  //avoid unnecessary state updates
+  const lastSectionRef = useRef(null);
+  const sections = ["hero", "about-me", "projects", "skills", "contact"];
+
+  useEffect(() => {
+    let ticking = false;
+    const updateCurrentSection = () => {
+      let newSection = null;
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (
+            rect.top <= window.innerHeight / 2 &&
+            rect.bottom >= window.innerHeight / 2
+          ) {
+            newSection = section;
+            break;
+          }
+        }
+      }
+
+      // Only update if the section has actually changed
+      if (newSection !== lastSectionRef.current) {
+        lastSectionRef.current = newSection;
+        setCurrentSection(newSection);
+      }
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateCurrentSection);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    // Run it once initially in case you're not at the top of the page
+    updateCurrentSection();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div
@@ -83,12 +128,11 @@ const SideMenuNavigation = ({ display, toggleSideMenu }) => {
               label={t(item.labelKey)}
               setPosition={setPosition}
               onClick={toggleSideMenu}
+              active={currentSection}
             ></SideMenuItem>
           ))}
 
-          {isXSmall || isSmall || isMedium ? null : (
-            <SideMenuBubble position={position} />
-          )}
+          {isMedium ? null : <SideMenuBubble position={position} />}
         </motion.ul>
         {isMedium && <LanguageSwitcher />}
       </motion.nav>
