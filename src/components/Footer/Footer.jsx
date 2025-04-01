@@ -30,7 +30,11 @@ const Footer = () => {
   ];
 
   const socials = [
-    { id: 1, text: `${t("contact.links.github")}` },
+    {
+      id: 1,
+      text: `${t("contact.links.github")}`,
+      url: "https://www.github.com/ErwanRob",
+    },
     {
       id: 2,
       text: `${t("contact.links.linkedin")}`,
