@@ -64,7 +64,7 @@ const Projects = () => {
   const particlesInView = useInView(particlesWrapperRef);
 
   return (
-    <div ref={targetRef} className={styles.projects} id="projects">
+    <section ref={targetRef} className={styles.projects} id="projects">
       <div className={styles["projects__container"]}>
         <motion.div
           className="particles-wrapper"
@@ -133,7 +133,7 @@ const Projects = () => {
         </div>
       </div>
       <HorizontalScroller bgTransform={isSmall ? null : bgTransform} />
-    </div>
+    </section>
   );
 };
 

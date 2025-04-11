@@ -4,7 +4,7 @@ import ContactInfo from "./ContactInfo";
 
 const Contact = () => {
   return (
-    <div className={styles.contact} id="contact">
+    <section className={styles.contact} id="contact">
       <div className={styles["contact__container"]}>
         <div className={styles["contact__container__content"]}>
           <div className={styles["contact__container__content__LBlock"]}>
@@ -15,9 +15,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-
-      <p></p>
-    </div>
+    </section>
   );
 };
 

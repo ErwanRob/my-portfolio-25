@@ -58,7 +58,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className={styles.hero} id="hero">
+      <section className={styles.hero} id="hero">
         <motion.div
           ref={particlesWrapperRef}
           className="particles-wrapper"
@@ -133,7 +133,7 @@ const Hero = () => {
             </motion.div>
           </div>
         </div>
-      </div>
+      </section>
       <FeedBackModal
         isOpen={isFeedbackModalOpen}
         onClose={() => setFeedbackModalOpen(false)}

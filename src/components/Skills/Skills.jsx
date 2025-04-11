@@ -34,7 +34,7 @@ const Skills = () => {
   };
 
   return (
-    <div className={styles.skills} id="skills">
+    <section className={styles.skills} id="skills">
       <div className={styles["skills__container"]}>
         <h3 className={styles["skills__container__title"]}>
           {t("skills.sectionTitle")}
@@ -61,7 +61,7 @@ const Skills = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

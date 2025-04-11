@@ -29,7 +29,7 @@ const AboutMe = () => {
   const allHeadPhrases = t("aboutMe.allHeadPhrases", { returnObjects: true });
 
   return (
-    <div className={styles.aboutMe} id="about-me">
+    <section className={styles.aboutMe} id="about-me">
       <div className={styles["aboutMe__container"]}>
         <div className={styles["aboutMe__container__headLine"]}>
           {isSmall ? (
@@ -139,7 +139,7 @@ const AboutMe = () => {
           )}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
