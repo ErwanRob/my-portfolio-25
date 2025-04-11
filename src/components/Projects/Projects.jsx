@@ -30,8 +30,13 @@ const Projects = () => {
   );
   const scaleTransform = useTransform(
     scrollYProgress,
-    [0, 0.08, 0.3, 0.4, 0.41],
-    [1, 1, 20, 20, 1]
+    [0, 0.08, 0.25, 0.3, 0.5],
+    [1, 1, 12, 12, 1]
+  );
+  const opacityTransformBlackHole = useTransform(
+    scrollYProgress,
+    [0, 0.08, 0.25, 0.29],
+    [1, 1, 1, 0]
   );
   const bgTransform = useTransform(
     scrollYProgress,
@@ -105,6 +110,9 @@ const Projects = () => {
               yTransform={isXSmall ? null : yTransform}
               scaleTransform={isXSmall ? null : scaleTransform}
               bgTransformBlackHole={isXSmall ? null : bgTransformBlackHole}
+              opacityTransformBlackHole={
+                isXSmall ? null : opacityTransformBlackHole
+              }
             />
             {/* Actual Trigger */}
             <motion.h3
@@ -154,3 +162,11 @@ const bgTransformBlackHole = useTransform(
   [0, 0.1],
   ["rgba(26, 26, 26,0)", "rgba(26, 26, 26,1)"]
 ); */
+
+//scrollYProgress console.log
+/*   useEffect(() => {
+    const unsubscribe = scrollYProgress.onChange((latest) => {
+      console.log("Scroll progress:", latest);
+    });
+    return () => unsubscribe();
+  }, [scrollYProgress]); */

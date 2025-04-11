@@ -19,7 +19,7 @@ const ParticlesComponent = ({ id, direction, speed, pushQuantity }) => {
         pauseOnOutsideViewport: true,
         particles: {
           number: {
-            value: 100, // Number of particles
+            value: 75, // Number of particles
             density: {
               enable: true,
               area: 800, // Density area
@@ -39,7 +39,7 @@ const ParticlesComponent = ({ id, direction, speed, pushQuantity }) => {
           },
           links: {
             enable: true, // Enable lines between particles
-            distance: 120, // Maximum distance for lines
+            distance: 140, // Maximum distance for lines
             color: "#fff", // Line color
             opacity: 0.2, // Line opacity
             width: 1, // Line width
@@ -64,7 +64,7 @@ const ParticlesComponent = ({ id, direction, speed, pushQuantity }) => {
           },
           modes: {
             grab: {
-              distance: 160, // Distance for grab effect
+              distance: 180, // Distance for grab effect
               links: {
                 opacity: 0.9, // Opacity of lines during grab
                 color: "#fff", // Line color

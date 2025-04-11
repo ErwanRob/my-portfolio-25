@@ -8,6 +8,7 @@ import useMediaQuery from "../../Hooks/useMediaQuery";
 const GlowingPlanet = ({
   yTransform,
   scaleTransform,
+  opacityTransformBlackHole,
   bgTransformBlackHole,
   spinTranformBlackHole,
 }) => {
@@ -33,7 +34,13 @@ const GlowingPlanet = ({
   return (
     <motion.div
       style={
-        isMedium || isHeightSm ? null : { y: yTransform, scale: scaleTransform }
+        isMedium || isHeightSm
+          ? null
+          : {
+              y: yTransform,
+              scale: scaleTransform,
+              opacity: opacityTransformBlackHole,
+            }
       }
       className={styles.glowingPlanet}
     >
@@ -97,6 +104,10 @@ GlowingPlanet.propTypes = {
     PropTypes.shape({ current: PropTypes.any }),
   ]),
   spinTranformBlackHole: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.any }),
+  ]),
+  opacityTransformBlackHole: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.shape({ current: PropTypes.any }),
   ]),
