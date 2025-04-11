@@ -37,7 +37,15 @@ const HeadLine = () => {
   const preLoaderExit = 3000; // Delay before Preloader exit after anim end
 
   return (
-    <div className={styles.headLine}>
+    <motion.div
+      className={styles.headLine}
+      initial={{ y: "-2rem", opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{
+        duration: 0.5,
+        ease: easeInOut,
+      }}
+    >
       <motion.h1
         className={styles["headLine__title"]} //Welcome animation
         initial={{
@@ -79,7 +87,7 @@ const HeadLine = () => {
           totalTime={totalTime}
         />
       )}
-    </div>
+    </motion.div>
   );
 };
 

@@ -3,14 +3,14 @@ import { ReactLenis } from "lenis/react";
 import { useCallback, useEffect, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import ReloadHandler from "./components/common/ReloadHandler";
+import AllMenuWrapper from "./components/common/AllMenuWrapper";
 import Hero from "./components/Hero/Hero";
 import AboutMe from "./components/AboutMe/AboutMe";
 import Projects from "./components/Projects/Projects";
 import Skills from "./components/Skills/Skills";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
-import ReloadHandler from "./components/common/ReloadHandler";
-import AllMenuWrapper from "./components/common/AllMenuWrapper";
 
 const App = () => {
   const { lang } = useParams();

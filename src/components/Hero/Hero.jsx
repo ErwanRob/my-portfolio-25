@@ -20,7 +20,6 @@ const Hero = () => {
   const lenis = useLenis();
   const isSmall = useMediaQuery("(max-width: 768px)");
   const isXSmallHeightThreshold = useMediaQuery("(max-height: 600px)");
-
   const handleScroll = (target) => {
     if (lenis) {
       lenis.scrollTo(target, {
@@ -32,6 +31,12 @@ const Hero = () => {
     }
   };
 
+  const particlesWrapperRef = useRef(null);
+  const particlesInView = useInView(particlesWrapperRef);
+  const [isFeedbackModalOpen, setFeedbackModalOpen] = useState(false);
+  const [isHireMeModalOpen, setHireMeModalOpen] = useState(false);
+  const [shouldRenderParticles, setShouldRenderParticles] = useState(false);
+
   const handleHireMeClick = () => {
     if (isSmall || isXSmallHeightThreshold) {
       handleScroll("#contact");
@@ -39,22 +44,17 @@ const Hero = () => {
       setHireMeModalOpen(true);
     }
   };
+  const handleFeedbackClick = () => {
+    setFeedbackModalOpen(true);
+  };
 
-  const [isFeedbackModalOpen, setFeedbackModalOpen] = useState(false);
-  const [isHireMeModalOpen, setHireMeModalOpen] = useState(false);
-  const [shouldRenderParticles, setShouldRenderParticles] = useState(false);
-
-  // Delay mounting of ParticlesComponent by 3 seconds
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setShouldRenderParticles(true);
-    }, 2700); // Timeout to match Preloader animation end. and not impact load time
+      setShouldRenderParticles(true); // Start rendering particles after PreLoader animation
+    }, 2700); // Timeout to match Preloader animation end. And not impact load time
 
-    return () => clearTimeout(timeout); // Cleanup timeout on unmount
+    return () => clearTimeout(timeout);
   }, []);
-
-  const particlesWrapperRef = useRef(null);
-  const particlesInView = useInView(particlesWrapperRef);
 
   return (
     <>
@@ -121,7 +121,7 @@ const Hero = () => {
                 text={t("hero.button.feedback")}
                 variant="secondary"
                 shadowOn={true}
-                onClick={() => setFeedbackModalOpen(true)}
+                onClick={handleFeedbackClick}
               ></Button>
               <Button
                 icon={faHandshakeSimple}
