@@ -8,6 +8,9 @@
   width: 25rem;
   height: 25rem;
   margin: 0 0.5rem 0 0;
+  will-change: transform, opacity, scale;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 
   @include abs.respond-to("xxl") {
     width: 14rem;

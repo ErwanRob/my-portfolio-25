@@ -4,6 +4,7 @@ import { backOut } from "motion";
 import { useLenis } from "lenis/react";
 import PropTypes from "prop-types";
 import useMediaQuery from "../../Hooks/useMediaQuery";
+/* import { useEffect, useState } from "react"; */
 
 const GlowingPlanet = ({
   yTransform,
@@ -12,6 +13,7 @@ const GlowingPlanet = ({
   bgTransformBlackHole,
   spinTranformBlackHole,
 }) => {
+  /* const [animationComplete, setAnimationComplete] = useState(false); */ //Solution to work on for better performance
   const isMedium = useMediaQuery("(max-width: 1024px)");
   const isHeightSm = useMediaQuery("(max-height: 768px)");
   const lenis = useLenis();
@@ -26,6 +28,25 @@ const GlowingPlanet = ({
       });
     }
   };
+
+  /*   useEffect(() => {
+    if (isMedium || isHeightSm) return;
+
+    const unsubscribe = scaleTransform.on("change", (latest) => {
+      if (latest >= 12) {
+        // Adjust this threshold as needed
+        setAnimationComplete(true);
+      } else if (latest < 12) {
+        setAnimationComplete(false);
+      }
+    });
+
+    return () => unsubscribe();
+  }, [scaleTransform, isMedium, isHeightSm]);
+
+  if (animationComplete && !isMedium && !isHeightSm) {
+    return null; 
+  } */
 
   const handleClick = () => {
     handleScroll();
