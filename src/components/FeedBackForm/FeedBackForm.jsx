@@ -145,7 +145,7 @@ const FeedBackForm = () => {
         <input
           type="text"
           name="_gotcha"
-          style={{ display: "none" }}
+          className={styles.hiddenInput}
           tabIndex="-1"
           autoComplete="off"
         />

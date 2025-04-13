@@ -1,13 +1,14 @@
 import styles from "./Projects.module.scss";
 import GlowingPlanet from "./GlowingPlanet/GlowingPlanet";
 import HorizontalScroller from "./HorizontalScroller/HorizontalScroller";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "motion/react";
 import { backOut } from "motion";
 import ParticlesComponent from "../common/ParticlesComponent";
 import useMediaQuery from "../Hooks/useMediaQuery";
 import { useTranslation } from "react-i18next";
 import { BREAKPOINTS } from "../../config/breakpoints";
+import { PROJECTS_TRANSFORM_CONFIG } from "../../config/xTransformConfig";
 
 const Projects = () => {
   const targetRef = useRef(null);
@@ -22,44 +23,33 @@ const Projects = () => {
     offset: ["30vh start", "end end"],
   });
 
-  // Map scroll progress to Y-axis movement (in vh units)
-  // Pin - SectionHeight
   const yTransform = useTransform(
     scrollYProgress,
-    [0, 0.074, 1],
-    ["0vh", "60vh", "400vh"]
+    PROJECTS_TRANSFORM_CONFIG.yTransform.progress,
+    PROJECTS_TRANSFORM_CONFIG.yTransform.values
   );
   const scaleTransform = useTransform(
     scrollYProgress,
-    [0, 0.08, 0.25, 0.3, 0.5],
-    [1, 1, 12, 12, 1]
+    PROJECTS_TRANSFORM_CONFIG.scaleTransform.progress,
+    PROJECTS_TRANSFORM_CONFIG.scaleTransform.values
   );
   const opacityTransformBlackHole = useTransform(
     scrollYProgress,
-    [0, 0.08, 0.25, 0.29],
-    [1, 1, 1, 0]
+    PROJECTS_TRANSFORM_CONFIG.opacityTransformBlackHole.progress,
+    PROJECTS_TRANSFORM_CONFIG.opacityTransformBlackHole.values
   );
   const bgTransform = useTransform(
     scrollYProgress,
-    [0, 0.2, 0.4],
-    ["rgba(133, 44, 112, 0)", "rgba(133, 44, 112, 0)", "rgb(139, 92, 246)"]
+    PROJECTS_TRANSFORM_CONFIG.bgTransform.progress,
+    PROJECTS_TRANSFORM_CONFIG.bgTransform.values
   );
   const bgTransformBlackHole = useTransform(
     scrollYProgress,
-    [0, 0.1],
-    ["rgba(26, 26, 26,0)", "rgba(26, 26, 26,1)"]
+    PROJECTS_TRANSFORM_CONFIG.bgTransformBlackHole.progress,
+    PROJECTS_TRANSFORM_CONFIG.bgTransformBlackHole.values
   );
 
-  const [shouldRenderParticles, setShouldRenderParticles] = useState(false);
-
   // Delay mounting of ParticlesComponent by 3 seconds
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setShouldRenderParticles(true);
-    }, 3000); // Timeout avoid mount on ScrollTo animation
-
-    return () => clearTimeout(timeout); // Cleanup timeout on unmount
-  }, []);
 
   const particlesWrapperRef = useRef(null);
   const particlesInView = useInView(particlesWrapperRef);
@@ -82,18 +72,15 @@ const Projects = () => {
             type: "linear",
           }}
         >
-          {shouldRenderParticles &&
-            particlesInView &&
-            !isXSmall &&
-            !isSmall && (
-              <ParticlesComponent
-                id="tsparticlesProjects"
-                direction="top"
-                speed={1.75}
-                pushQuantity={1}
-                aria-hidden="true"
-              />
-            )}
+          {particlesInView && !isXSmall && !isSmall && (
+            <ParticlesComponent
+              id="tsparticlesProjects"
+              direction="top"
+              speed={1.75}
+              pushQuantity={1}
+              aria-hidden="true"
+            />
+          )}
         </motion.div>
         <div className={styles["projects__container__content"]}>
           <div className={styles["projects__container__content__trigger"]}>
@@ -142,30 +129,6 @@ const Projects = () => {
 };
 
 export default Projects;
-
-/* 
-//FOR 7 PROJECTS
-
-const yTransform = useTransform(
-  scrollYProgress,
-  [0, 0.074, 1],
-  ["0vh", "100vh", "700vh"]
-);
-const scaleTransform = useTransform(
-  scrollYProgress,
-  [0, 0.05, 0.14, 0.3, 0.4],
-  [1, 1, 20, 20, 1]
-);
-const bgTransform = useTransform(
-  scrollYProgress,
-  [0, 0.1, 0.2],
-  ["rgba(133, 44, 112, 0)", "rgba(133, 44, 112, 0)", "rgb(139, 92, 246)"]
-);
-const bgTransformBlackHole = useTransform(
-  scrollYProgress,
-  [0, 0.1],
-  ["rgba(26, 26, 26,0)", "rgba(26, 26, 26,1)"]
-); */
 
 //scrollYProgress console.log
 /*   useEffect(() => {

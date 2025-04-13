@@ -8,7 +8,7 @@ import imgProject1 from "../../../assets/img/projects/projectTMPO.png";
 import imgProject2 from "../../../assets/img/projects/projectMyPocketCV.png";
 import imgProject3 from "../../../assets/img/projects/projectNeverForget.png";
 import { useTranslation } from "react-i18next";
-import { SCROLL_TRANSFORM_VALUES } from "../../../config/scrollConfig";
+import { SCROLL_TRANSFORM_VALUES } from "../../../config/xScrollConfig";
 
 const cards = [
   {

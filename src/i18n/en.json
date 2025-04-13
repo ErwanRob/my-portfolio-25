@@ -68,6 +68,9 @@
       "message_sent": "Message sent.",
       "talkSoon": "I will get back to you soon.",
       "thanks": "Thank you!"
+    },
+    "error": {
+      "generic": "An error occurred. Please try again later."
     }
   },
 
