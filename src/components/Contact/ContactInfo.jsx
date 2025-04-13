@@ -70,12 +70,14 @@ const ContactInfo = () => {
             </p>
           ))}
         </div>
-        <div className={styles["contactInfo__container__leftInfo"]}>
+        <div className={styles["contactInfo__container__leftInfo"]} role="list">
           {/* MAP HERE */}
           {infoList.map((item) => (
             <div
               key={item.text}
               className={styles["contactInfo__container__leftInfo__item"]}
+              role="listitem"
+              aria-label={`Contact detail: ${item.text}`}
             >
               <FontAwesomeIcon icon={item.icon} />
               <p
@@ -88,12 +90,14 @@ const ContactInfo = () => {
             </div>
           ))}
         </div>
-        <div className={styles["contactInfo__container__links"]}>
+        <div className={styles["contactInfo__container__links"]} role="list">
           {/* MAP HERE */}
           {linksList.map((item) => (
             <div
               key={item.text}
               className={styles["contactInfo__container__links__itemWrapper"]}
+              role="listitem"
+              aria-label={`Social detail: ${item.text}`}
             >
               <a
                 href={item.url}
@@ -105,6 +109,7 @@ const ContactInfo = () => {
                 className={
                   styles["contactInfo__container__links__itemWrapper__item"]
                 }
+                aria-label={`External link: ${item.text}`}
               >
                 <FontAwesomeIcon icon={item.icon} />
                 {item.text}

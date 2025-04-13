@@ -39,7 +39,7 @@ const Skills = () => {
         <h3 className={styles["skills__container__title"]}>
           {t("skills.sectionTitle")}
         </h3>
-        <div className={styles["skills__container__grid"]}>
+        <div className={styles["skills__container__grid"]} role="list">
           {SkillsList.map((skill, index) => (
             <motion.div
               className={styles["skills__container__grid__item"]}
@@ -49,6 +49,8 @@ const Skills = () => {
               variants={animation}
               initial={{ y: "150%", opacity: 0 }}
               animate={inView ? "enter" : "initial"}
+              role="listitem"
+              aria-label={`Skill: ${skill.name}`}
             >
               <div className={styles["skills__container__grid__item__logo"]}>
                 {skill.svgContent}

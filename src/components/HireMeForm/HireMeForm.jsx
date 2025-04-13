@@ -271,7 +271,6 @@ const HireMeForm = ({ onClose }) => {
                 errors={state.errors}
               />
             </motion.div>
-            {/* Honeypot field to deter spam bots */}
             <input
               type="text"
               name="_gotcha"

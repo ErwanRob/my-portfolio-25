@@ -90,6 +90,7 @@ const Projects = () => {
                 direction="top"
                 speed={1.75}
                 pushQuantity={1}
+                aria-hidden="true"
               />
             )}
         </motion.div>
@@ -103,6 +104,7 @@ const Projects = () => {
               }}
               whileInView={{ x: "0", opacity: 1 }}
               transition={{ duration: 1, ease: backOut }}
+              aria-label="Projects section title left part"
             >
               {t("projects.sectionTitle.left")}
             </motion.h3>
@@ -126,6 +128,7 @@ const Projects = () => {
                 opacity: "var(--whileInView-ject-opacity)",
               }}
               transition={{ duration: 1, ease: backOut }}
+              aria-label="Projects section title right part"
             >
               {t("projects.sectionTitle.right")}
             </motion.h3>

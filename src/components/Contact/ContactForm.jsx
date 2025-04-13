@@ -120,8 +120,14 @@ const ContactForm = ({ onReset }) => {
               )}
               autoComplete="name"
               required
+              aria-describedby="name-error"
             />
-            <ValidationError prefix="Name" field="name" errors={state.errors} />
+            <ValidationError
+              prefix="Name"
+              field="name"
+              errors={state.errors}
+              aria-live="polite"
+            />
             <label
               htmlFor="email"
               className={styles["contactForm__form__sr-only"]}
@@ -138,11 +144,13 @@ const ContactForm = ({ onReset }) => {
               )}
               autoComplete="email"
               required
+              aria-describedby="email-error"
             />
             <ValidationError
               prefix="Email"
               field="email"
               errors={state.errors}
+              aria-live="polite"
             />
 
             <label
@@ -162,14 +170,14 @@ const ContactForm = ({ onReset }) => {
               minRows={3}
               maxRows={10}
               required
+              aria-describedby="message-error"
             />
             <ValidationError
               prefix="Message"
               field="message"
               errors={state.errors}
+              aria-live="polite"
             />
-
-            {/* Honeypot field to deter spam bots */}
             <input
               type="text"
               name="_gotcha"

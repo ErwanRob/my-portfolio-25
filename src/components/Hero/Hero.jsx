@@ -70,7 +70,7 @@ const Hero = () => {
           }}
           transition={{
             duration: 0.5,
-            delay: 2.7,
+            delay: 2.8,
             type: "linear",
           }}
         >
@@ -80,6 +80,7 @@ const Hero = () => {
               direction="none"
               speed={0.75}
               pushQuantity={1}
+              aria-hidden="true"
             />
           )}
         </motion.div>
@@ -107,6 +108,7 @@ const Hero = () => {
                 text={t("hero.button.github")}
                 variant="primary"
                 shadowOn={true}
+                aria-label="Visit GitHub profile"
               ></Button>
               <Button
                 href={"/cv.pdf"}
@@ -115,6 +117,7 @@ const Hero = () => {
                 text={t("hero.button.download")}
                 variant="secondary"
                 shadowOn={true}
+                aria-label="Download CV"
               ></Button>
               <Button
                 icon={faThumbsUp}
@@ -122,6 +125,7 @@ const Hero = () => {
                 variant="secondary"
                 shadowOn={true}
                 onClick={handleFeedbackClick}
+                aria-label="Provide feedback"
               ></Button>
               <Button
                 icon={faHandshakeSimple}
@@ -129,6 +133,7 @@ const Hero = () => {
                 variant="tertiary"
                 shadowOn={true}
                 onClick={handleHireMeClick}
+                aria-label="Hire me"
               ></Button>
             </motion.div>
           </div>

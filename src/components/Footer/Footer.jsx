@@ -75,6 +75,7 @@ const Footer = () => {
                     e.preventDefault();
                     handleScroll(item.href);
                   }}
+                  aria-label={`Navigate to ${item.text} section`}
                 >
                   {item.text}
                 </a>
@@ -93,6 +94,7 @@ const Footer = () => {
                   className={
                     styles["footer__container__content__socials__item"]
                   }
+                  aria-label={`Visit ${item.text} on social media`}
                 >
                   {item.text}
                 </a>
@@ -126,6 +128,9 @@ const Footer = () => {
                   styles["footer__container__content__legal__item__modTrig"]
                 }
                 onClick={() => setLegalModalOpen(true)}
+                role="button"
+                tabIndex="0"
+                aria-label="Open legal mentions modal"
               >
                 {t("footer.legal")}
               </p>

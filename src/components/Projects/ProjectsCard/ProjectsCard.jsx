@@ -21,11 +21,11 @@ const ProjectsCard = ({ card }) => {
       transition={{ duration: 0.1, ease: "easeInOut" }}
     >
       {card.url ? (
-        <div
+        <img
           className={styles["projectsCard__img"]}
-          style={{
-            backgroundImage: `url(${card.url})`,
-          }}
+          src={card.url}
+          alt={card.title}
+          loading="lazy"
         />
       ) : (
         <div className={styles["projectsCard__img"]}>

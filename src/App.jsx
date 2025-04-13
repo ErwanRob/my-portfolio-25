@@ -15,13 +15,14 @@ import Footer from "./components/Footer/Footer";
 const App = () => {
   const { lang } = useParams();
   const { i18n } = useTranslation();
+  const { changeLanguage } = i18n;
 
   useEffect(() => {
     if (lang && i18n.language !== lang) {
-      i18n.changeLanguage(lang);
+      changeLanguage(lang);
     }
     document.documentElement.lang = lang || i18n.language;
-  }, [lang, i18n]);
+  }, [lang, changeLanguage, i18n.language]);
 
   const easeOutQuint = useCallback((x) => 1 - Math.pow(1 - x, 5), []);
   const lenisOptions = useMemo(

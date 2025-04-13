@@ -1,41 +1,39 @@
 import { useLenis } from "lenis/react";
 import styles from "./Header.module.scss";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
-import { useEffect, useState } from "react";
+import { useState, useCallback } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../common/LanguageSwitcher";
+import useViewportHeight from "../Hooks/useViewportHeight";
 
 const Header = ({ toggleSettings, display }) => {
   const { t } = useTranslation();
   const lenis = useLenis();
-  const handleScroll = (target) => {
-    if (lenis) {
-      lenis.scrollTo(target, {
-        duration: 1,
-        easing: (x) => 1 - Math.pow(1 - x, 5), // easeOutQuint
-        offset: 0, // adjust if needed
-        lock: true, // lock scrolling until animation completes
-      });
-    }
-  };
 
-  //viewPortHeight and the useEffect is used to get the height of the viewport in order to remove the header from the first section of the page, since the first section  is 100vh height, it works as intended.
+  const handleScroll = useCallback(
+    (target) => {
+      if (lenis) {
+        lenis.scrollTo(target, {
+          duration: 1,
+          easing: (x) => 1 - Math.pow(1 - x, 5), // easeOutQuint
+          offset: 0, // adjust if needed
+          lock: true, // lock scrolling until animation completes
+        });
+      }
+    },
+    [lenis]
+  );
+
   const [hidden, setHidden] = useState(true);
-  const [viewPortHeight, setViewPortHeight] = useState(window.innerHeight);
   const { scrollY } = useScroll();
-
-  useEffect(() => {
-    const handleResize = () => setViewPortHeight(window.innerHeight);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const viewportHeight = useViewportHeight();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
-    if (latest > previous || latest < viewPortHeight) {
+    if (latest > previous || latest < viewportHeight) {
       setHidden(true);
     } else {
       setHidden(false);
@@ -43,7 +41,7 @@ const Header = ({ toggleSettings, display }) => {
   });
 
   return (
-    <div className={styles.headerWrapper}>
+    <header className={styles.headerWrapper}>
       {display ? (
         <motion.div
           className={styles.header}
@@ -93,6 +91,7 @@ const Header = ({ toggleSettings, display }) => {
                     e.preventDefault();
                     handleScroll("#hero");
                   }}
+                  aria-label="Navigate to Home section"
                 >
                   {t("header.home")}
                 </a>
@@ -105,6 +104,7 @@ const Header = ({ toggleSettings, display }) => {
                     e.preventDefault();
                     handleScroll("#about-me");
                   }}
+                  aria-label="Navigate to About Me section"
                 >
                   {t("header.about")}
                 </a>
@@ -117,6 +117,7 @@ const Header = ({ toggleSettings, display }) => {
                     e.preventDefault();
                     handleScroll("#projects");
                   }}
+                  aria-label="Navigate to Projects section"
                 >
                   {t("header.projects")}
                 </a>
@@ -129,6 +130,7 @@ const Header = ({ toggleSettings, display }) => {
                     e.preventDefault();
                     handleScroll("#skills");
                   }}
+                  aria-label="Navigate to Skills section"
                 >
                   {t("header.skills")}
                 </a>
@@ -141,6 +143,7 @@ const Header = ({ toggleSettings, display }) => {
                     e.preventDefault();
                     handleScroll("#contact");
                   }}
+                  aria-label="Navigate to Contact section"
                 >
                   {t("header.contact")}
                 </a>
@@ -149,11 +152,16 @@ const Header = ({ toggleSettings, display }) => {
           </motion.nav>
           <LanguageSwitcher env={"header"} />
           <div className={styles["header__settingsBtn"]}>
-            <FontAwesomeIcon icon={faGear} onClick={toggleSettings} size="lg" />
+            <FontAwesomeIcon
+              icon={faGear}
+              onClick={toggleSettings}
+              size="lg"
+              aria-label="Open settings"
+            />
           </div>
         </motion.div>
       ) : null}
-    </div>
+    </header>
   );
 };
 

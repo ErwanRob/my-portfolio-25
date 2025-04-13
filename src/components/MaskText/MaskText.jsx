@@ -47,6 +47,7 @@ const MaskText = ({ phrases, variant = "primary", align = "left" }) => {
             variants={animation}
             initial="initial"
             animate={inView ? "enter" : "initial"}
+            aria-label="Animated description text"
           >
             {phrase}
           </motion.p>

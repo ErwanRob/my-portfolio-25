@@ -60,6 +60,8 @@ const SideMenuItem = ({ id, label, icon, setPosition, onClick, active }) => {
         duration: 0.2,
         ease: "easeOut",
       }}
+      aria-label={`Navigate to ${label} section`}
+      tabIndex="0"
     >
       {label}
 

@@ -41,6 +41,7 @@ const Button = ({
         target="_blank"
         rel="noopener noreferrer"
         className={buttonClass}
+        tabIndex="0"
       >
         {iconSide === "left" && renderIcon()}
         {text}
