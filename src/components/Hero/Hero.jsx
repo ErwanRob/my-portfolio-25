@@ -4,7 +4,7 @@ import SubLine from "./SubLine/SubLine";
 import Button from "../Button/Button";
 import ParticlesComponent from "../common/ParticlesComponent";
 import { motion, useInView } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
@@ -35,7 +35,6 @@ const Hero = () => {
   const particlesInView = useInView(particlesWrapperRef);
   const [isFeedbackModalOpen, setFeedbackModalOpen] = useState(false);
   const [isHireMeModalOpen, setHireMeModalOpen] = useState(false);
-  const [shouldRenderParticles, setShouldRenderParticles] = useState(false);
 
   const handleHireMeClick = () => {
     if (isSmall || isXSmallHeightThreshold) {
@@ -47,14 +46,6 @@ const Hero = () => {
   const handleFeedbackClick = () => {
     setFeedbackModalOpen(true);
   };
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setShouldRenderParticles(true); // Start rendering particles after PreLoader animation
-    }, 2700); // Timeout to match Preloader animation end. And not impact load time
-
-    return () => clearTimeout(timeout);
-  }, []);
 
   return (
     <>
@@ -74,7 +65,7 @@ const Hero = () => {
             type: "linear",
           }}
         >
-          {shouldRenderParticles && particlesInView && !isSmall && (
+          {particlesInView && !isSmall && (
             <ParticlesComponent
               id="tsparticlesHero"
               direction="none"
