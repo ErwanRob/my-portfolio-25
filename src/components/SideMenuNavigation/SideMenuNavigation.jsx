@@ -12,6 +12,8 @@ import useMediaQuery from "../Hooks/useMediaQuery";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../common/LanguageSwitcher";
+import { sections } from "../../config/sections";
+import { BREAKPOINTS } from "../../config/breakpoints";
 
 const navList = [
   { id: "hero", labelKey: "navigation.home", icon: faHouse },
@@ -41,7 +43,7 @@ const SideMenuNavigation = ({ display, toggleSideMenu }) => {
   const { t } = useTranslation();
 
   //MediaQuery
-  const isMedium = useMediaQuery("(max-width: 1024px)");
+  const isMedium = useMediaQuery(BREAKPOINTS.medium);
 
   //states
   const [currentSection, setCurrentSection] = useState(null);
@@ -55,7 +57,6 @@ const SideMenuNavigation = ({ display, toggleSideMenu }) => {
   //SectionGetter
   //avoid unnecessary state updates
   const lastSectionRef = useRef(null);
-  const sections = ["hero", "about-me", "projects", "skills", "contact"];
 
   useEffect(() => {
     let ticking = false;

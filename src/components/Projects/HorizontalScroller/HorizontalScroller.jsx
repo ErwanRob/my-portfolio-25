@@ -8,6 +8,7 @@ import imgProject1 from "../../../assets/img/projects/projectTMPO.png";
 import imgProject2 from "../../../assets/img/projects/projectMyPocketCV.png";
 import imgProject3 from "../../../assets/img/projects/projectNeverForget.png";
 import { useTranslation } from "react-i18next";
+import { SCROLL_TRANSFORM_VALUES } from "../../../config/scrollConfig";
 
 const cards = [
   {
@@ -46,8 +47,11 @@ const HorizontalScroller = ({ bgTransform }) => {
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
-  /* const x = useTransform(scrollYProgress, [0, 1], ["60%", "-45%"]); */ // for 7 projects
-  const x = useTransform(scrollYProgress, [0, 1], ["70%", "-41%"]);
+  const x = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [SCROLL_TRANSFORM_VALUES.start, SCROLL_TRANSFORM_VALUES.end]
+  );
 
   return (
     <motion.div

@@ -1,8 +1,9 @@
 import styles from "./MirrorPlaceHolder.module.scss";
 import useMediaQuery from "../../Hooks/useMediaQuery";
+import { BREAKPOINTS } from "../../../config/breakpoints";
 
 const MirrorPlaceHolder = () => {
-  const isMedium = useMediaQuery("(max-width: 1024px)");
+  const isMedium = useMediaQuery(BREAKPOINTS.medium);
 
   const numLayers = isMedium ? 10 : 15;
 

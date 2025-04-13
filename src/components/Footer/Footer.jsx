@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHandshakeSimple } from "@fortawesome/free-solid-svg-icons";
+import { navigation, socials, infoList } from "../../config/footerConfig";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -14,51 +15,11 @@ const Footer = () => {
     if (lenis) {
       lenis.scrollTo(target, {
         duration: 1,
-        easing: (x) => 1 - Math.pow(1 - x, 5), // easeOutQuint
-        offset: 0, // adjust if needed
-        lock: true, // lock scrolling until animation completes
+        easing: (x) => 1 - Math.pow(1 - x, 5),
+        lock: true,
       });
     }
   };
-
-  const navigation = [
-    { href: "#hero", text: `${t("navigation.home")}` },
-    { href: "#about-me", text: `${t("navigation.about")}` },
-    { href: "#projects", text: `${t("navigation.projects")}` },
-    { href: "#skills", text: `${t("navigation.skills")}` },
-    { href: "#contact", text: `${t("navigation.contact")}` },
-  ];
-
-  const socials = [
-    {
-      id: 1,
-      text: `${t("contact.links.github")}`,
-      url: "https://www.github.com/ErwanRob",
-    },
-    {
-      id: 2,
-      text: `${t("contact.links.linkedin")}`,
-      url: "https://www.linkedin.com/in/erwanrob",
-    },
-    {
-      id: 3,
-      text: `${t("contact.links.instagram")}`,
-      url: "https://www.instagram.com/erwan.rob/",
-    },
-    {
-      id: 4,
-      text: `${t("contact.links.download")}`,
-      url: "/cv.pdf",
-      download: true,
-    },
-  ];
-
-  const infoList = [
-    { id: 1, text: `${t("contact.info.email")}` },
-    { id: 2, text: `${t("contact.info.phone")}` },
-    { id: 3, text: `${t("contact.info.address")}` },
-    { id: 4, text: `${t("contact.info.country")}` },
-  ];
 
   return (
     <>
@@ -75,16 +36,16 @@ const Footer = () => {
                     e.preventDefault();
                     handleScroll(item.href);
                   }}
-                  aria-label={`Navigate to ${item.text} section`}
+                  aria-label={`Navigate to ${t(item.textKey)} section`}
                 >
-                  {item.text}
+                  {t(item.textKey)}
                 </a>
               ))}
             </div>
             <div className={styles["footer__container__content__socials"]}>
               {socials.map((item) => (
                 <a
-                  key={item.text}
+                  key={item.textKey}
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -94,9 +55,9 @@ const Footer = () => {
                   className={
                     styles["footer__container__content__socials__item"]
                   }
-                  aria-label={`Visit ${item.text} on social media`}
+                  aria-label={`Visit ${t(item.textKey)} on social media`}
                 >
-                  {item.text}
+                  {t(item.textKey)}
                 </a>
               ))}
             </div>
@@ -106,7 +67,7 @@ const Footer = () => {
                   key={item.id}
                   className={styles["footer__container__content__infos__item"]}
                 >
-                  {item.text}
+                  {t(item.textKey)}
                 </p>
               ))}
             </div>

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { sections } from "../../config/sections";
 
 const ReloadHandler = () => {
   useEffect(() => {
@@ -8,13 +9,6 @@ const ReloadHandler = () => {
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          const sections = [
-            "hero",
-            "about-me",
-            "projects",
-            "skills",
-            "contact",
-          ];
           let currentSection = null;
 
           for (const section of sections) {

@@ -6,11 +6,12 @@ import styles from "./SideMenuNavigation.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon } from "@fortawesome/fontawesome-svg-core";
 import useMediaQuery from "../Hooks/useMediaQuery";
+import { BREAKPOINTS } from "../../config/breakpoints";
 
 const SideMenuItem = ({ id, label, icon, setPosition, onClick, active }) => {
-  const isXSmall = useMediaQuery("(max-width: 480px)");
-  const isSmall = useMediaQuery("(max-width: 768px)");
-  const isMedium = useMediaQuery("(max-width: 1024px)");
+  /* const isXSmall = useMediaQuery(BREAKPOINTS.xSmall);
+  const isSmall = useMediaQuery(BREAKPOINTS.small); */
+  const isMedium = useMediaQuery(BREAKPOINTS.medium);
 
   const lenis = useLenis();
   const handleScroll = (target) => {
@@ -44,11 +45,7 @@ const SideMenuItem = ({ id, label, icon, setPosition, onClick, active }) => {
       ${active === id ? styles.active : ""}`}
       onClick={() => {
         handleScroll(`#${id}`);
-        if (
-          (onClick && isXSmall) ||
-          (onClick && isSmall) ||
-          (onClick && isMedium)
-        ) {
+        if (onClick && isMedium) {
           onClick();
         }
       }}

@@ -7,14 +7,15 @@ import { backOut } from "motion";
 import ParticlesComponent from "../common/ParticlesComponent";
 import useMediaQuery from "../Hooks/useMediaQuery";
 import { useTranslation } from "react-i18next";
+import { BREAKPOINTS } from "../../config/breakpoints";
 
 const Projects = () => {
   const targetRef = useRef(null);
   const { t } = useTranslation();
 
   //MediaQuery
-  const isXSmall = useMediaQuery("(max-width: 480px)");
-  const isSmall = useMediaQuery("(max-width: 768px)");
+  const isXSmall = useMediaQuery(BREAKPOINTS.xSmall);
+  const isSmall = useMediaQuery(BREAKPOINTS.small);
 
   const { scrollYProgress } = useScroll({
     target: targetRef,

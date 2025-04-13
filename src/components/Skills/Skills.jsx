@@ -5,19 +5,18 @@ import { useInView } from "react-intersection-observer";
 import { backOut } from "motion";
 import useMediaQuery from "../Hooks/useMediaQuery";
 import { useTranslation } from "react-i18next";
+import { BREAKPOINTS } from "../../config/breakpoints";
 
 const Skills = () => {
   const { t } = useTranslation();
   //MediaQuery
-  const isXSmall = useMediaQuery("(max-width: 480px)");
-  const isSmall = useMediaQuery("(max-width: 768px)");
-  const isMedium = useMediaQuery("(max-width: 1024px)");
+  const isMedium = useMediaQuery(BREAKPOINTS.medium);
 
   //custom trigger for animation
   const { ref, inView } = useInView({
     threshold: 1,
-    rootMargin: "300px 0px 300px 0px",
-    triggerOnce: isXSmall || isSmall || isMedium,
+    rootMargin: "1800px 0px 400px 0px",
+    triggerOnce: isMedium,
   });
 
   const animation = {
@@ -34,7 +33,7 @@ const Skills = () => {
   };
 
   return (
-    <section className={styles.skills} id="skills">
+    <section className={styles.skills} id="skills" ref={ref}>
       <div className={styles["skills__container"]}>
         <h3 className={styles["skills__container__title"]}>
           {t("skills.sectionTitle")}
@@ -43,7 +42,6 @@ const Skills = () => {
           {SkillsList.map((skill, index) => (
             <motion.div
               className={styles["skills__container__grid__item"]}
-              ref={ref}
               key={index}
               custom={index}
               variants={animation}
