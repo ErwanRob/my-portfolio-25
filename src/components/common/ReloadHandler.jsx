@@ -52,7 +52,7 @@ const ReloadHandler = () => {
     if (savedSection) {
       const targetElement = document.getElementById(savedSection);
       if (targetElement) {
-        targetElement.scrollIntoView({ behavior: "instant" });
+        targetElement.scrollIntoView({ behavior: "smooth" });
       } else {
         console.warn(`Element with ID ${savedSection} not found.`);
       }
