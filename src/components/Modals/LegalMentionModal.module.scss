@@ -27,7 +27,7 @@
     flex-direction: column-reverse;
   }
   @include abs.respond-to("sm") {
-    height: 100vh;
+    height: 80vh;
     width: 100%;
     padding: 1rem 1rem 1px 1rem;
     margin-bottom: 1px;
@@ -51,7 +51,7 @@
       font-size: 1.125rem;
     }
     @include abs.respond-to("md") {
-      height: 90vh;
+      height: 100%;
       font-size: 1rem;
     }
 
