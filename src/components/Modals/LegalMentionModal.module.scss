@@ -21,13 +21,13 @@
   }
 
   @include abs.respond-to("md") {
-    height: 90vh;
+    height: 100vh;
     width: 90%;
     padding: 2rem 2rem 1px 2rem;
     flex-direction: column-reverse;
   }
   @include abs.respond-to("sm") {
-    height: 90vh;
+    height: 100vh;
     width: 100%;
     padding: 1rem 1rem 1px 1rem;
     margin-bottom: 1px;
@@ -123,6 +123,7 @@
       height: 4rem;
       font-size: 1.5rem;
       padding: 0.5rem 0;
+      margin: 0.125rem 0;
     }
     svg {
       width: 4rem;
@@ -133,6 +134,8 @@
 .modalOverlay {
   z-index: 10;
   position: fixed;
+  box-sizing: border-box;
+  padding: 0.125rem;
   top: 0;
   left: 0;
   right: 0;
