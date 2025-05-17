@@ -51,7 +51,7 @@
       font-size: 1.125rem;
     }
     @include abs.respond-to("md") {
-      height: 100%;
+      height: 90vh;
       font-size: 1rem;
     }
 
